@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Du lịch và tận hưởng</title>
+  <link rel="stylesheet" href="view/css/index.css">
+
+</head>
+<body>
+    <!-- Header -->
+    <header>
+      <nav>
+        <a href="#" class="logo"><img src="img/logononfont.png" alt="logo"></a>
+        <ul>
+          <li>
+            <a href="#" class="link">tin tức</a>
+            <a href="#" class="link">du lịch</a>
+            <a href="#" class="link">chúng tôi</a>
+            <a href="#" class="link">hỗ trợ</a>
+          </li>
+        </ul>
+          <form action="#" method="post" id="search-container">
+             <input type="text" name="text" placeholder="Nhập tên dịch vụ..." id="text">
+        <input type="submit" value="Tìm" name="find">
+          </form>
+          <img src="img/search.png" alt="find" id="search-icon-hr" title="esc for out">
+        <div class="hr_user"><a href="" title="Control"><img src="img/user.png" alt=""></a></div>
+      </nav>
+    </header>
+    <div class="video">
+      <video id="video" src="video/video1.mp4" autoplay></video>
+    </div>
+</body>
+<script >
+  const searchIcon = document.getElementById('search-icon-hr');
+const searchContainer = document.getElementById('search-container');
+searchIcon.addEventListener('click', function(event) {
+  searchContainer.style.display = 'block';
+  searchIcon.style.display = 'none';
+  event.stopPropagation();
+});
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    searchContainer.style.display = 'none';  
+  searchIcon.style.display = 'block';
+  }
+});
+</script>
+</html>
