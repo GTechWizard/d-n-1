@@ -1,0 +1,85 @@
+*{
+  box-sizing: border-box;
+  margin: auto;
+  padding: 0;
+  width: 100%;
+}
+header{
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .undo img{
+  width: 10%;
+  padding: 2%;
+  float: left;
+}
+header .logo img{
+  width: 20%;
+  display: grid;
+  place-items: center;
+}
+header .user img{
+  width: 10%;
+  padding: 2%;
+  float: right;
+}
+header img{
+  width: 10%;
+}
+section{
+  text-align: right;
+  padding: .5%;
+  width: 100%;
+  background-color: green;
+  color: white;
+  font-weight: bold;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+article{
+  display: grid;
+  grid-template-columns: 15% 80%;
+}
+nav{
+  background-color: rgb(255, 153, 0);
+  padding: 1% 2%;
+}
+nav ul{
+  list-style: none;
+}
+nav ul li{
+margin-top: 10%;
+font-weight: bold;
+background-color: rgb(255, 153, 0);
+padding: 3%;
+position: relative;
+transition: .2s linear;
+font-family: monospace;
+border-radius: 15px;
+}
+nav ul li:hover{
+background-color: rgb(255, 255, 255);
+}
+nav ul li:hover ul{
+display: block;
+}
+nav ul li ul{
+  display: none;
+}
+nav ul li ul li:hover{
+background-color: rgb(60, 255, 0);
+}
+nav ul li ul li{
+background-color: rgb(255, 255, 255);
+}
+nav ul li a{
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+nav a img{
+  width: 15%;
+  transform: translate(280%);
+}

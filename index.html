@@ -1,17 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Du lịch và tận hưởng</title>
-  <link rel="stylesheet" href="view/css/index.css">
-
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Du lịch và tận hưởng</title>
+    <link rel="stylesheet" href="view/css/index.css" />
+    <link rel="stylesheet" href="view/css/dkdn1.css" />
+    <link rel="stylesheet" href="view/css/slide.css" />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
     <!-- Header -->
     <header>
       <nav>
-        <a href="#" class="logo"><img src="img/logononfont.png" alt="logo"></a>
+        <a href="#" class="logo"
+          ><img src="img/logononfont.png" alt="logo"
+        /></a>
         <ul>
           <li>
             <a href="#" class="link">tin tức</a>
@@ -20,31 +34,228 @@
             <a href="#" class="link">hỗ trợ</a>
           </li>
         </ul>
-          <form action="#" method="post" id="search-container">
-             <input type="text" name="text" placeholder="Nhập tên dịch vụ..." id="text">
-        <input type="submit" value="Tìm" name="find">
-          </form>
-          <img src="img/search.png" alt="find" id="search-icon-hr" title="esc for out">
-        <div class="hr_user"><a href="" title="Control"><img src="img/user.png" alt=""></a></div>
+        <form action="#" method="post" id="search-container_hr">
+          <input
+            type="text"
+            name="text"
+            placeholder="Nhập tên dịch vụ..."
+            id="text"
+          />
+          <input type="submit" value="Tìm" name="find" />
+        </form>
+        <img
+          src="img/search.png"
+          alt="find"
+          id="search-icon-hr"
+          title="esc for out"
+        />
+        <div class="hr_user">
+          <a href="#" title="Control"><img src="img/user.png" alt="" /></a>
+        </div>
       </nav>
     </header>
+    <!-- banner -->
     <div class="video">
-      <video id="video" src="video/video1.mp4" autoplay></video>
+      <video id="video" src="video/video1.mp4" autoplay controls></video>
+      <div class="main_bn">
+        <div class="slide_show_bn">
+          <img class="mySlides_bn" src="img/1.jpg" />
+          <img class="mySlides_bn" src="img/2.jpg" />
+          <img class="mySlides_bn" src="img/3.jpg" />
+        </div>
+        <div class="form_find_bn">
+          <h2>tìm dịch vụ nhanh</h2>
+          <form action="#" method="post">
+            <div class="form_in">
+              <label for="date1"
+                >Ngày bắt đầu
+                <input type="date" name="" id="date1" />
+              </label>
+              <label for="date2"
+                >Ngày kết thúc
+                <input type="date" name="" id="date2" />
+              </label>
+              <label for="gia"
+                >Giá tiền
+                <input type="text" name="" id="gia" placeholder="Giá..." />
+              </label>
+              <label for="place"
+                >Nơi đến
+                <input type="text" name="" id="place" placeholder="Nơi đến" />
+              </label>
+            </div>
+            <input type="submit" name="find" id="find_bn_hr" value="Tìm" />
+          </form>
+        </div>
+      </div>
     </div>
-</body>
-<script >
-  const searchIcon = document.getElementById('search-icon-hr');
-const searchContainer = document.getElementById('search-container');
-searchIcon.addEventListener('click', function(event) {
-  searchContainer.style.display = 'block';
-  searchIcon.style.display = 'none';
-  event.stopPropagation();
-});
-document.addEventListener('keydown', function(event) {
-  if (event.key === 'Escape') {
-    searchContainer.style.display = 'none';  
-  searchIcon.style.display = 'block';
-  }
-});
-</script>
+    <!-- nút trỏ lại-->
+    <div class="get_top">
+      <a href="#"><img src="img/get_top.png" alt="get top" /></a>
+    </div>
+    <!-- about us -->
+    <div class="conten">
+      <div class="conten-container">
+        <div class="conten-font">
+          <div class="conten-font-main">
+            <div class="conten-font-top">
+              <h2>HÃY CHỌN TOURPROECK</h2>
+            </div>
+            <div class="conten-font-mid">
+              <span
+                >Chúng tôi xin cảm ơn bạn đã dành thời gian để ghé thăm trang web của chúng tôi và tìm hiểu về các dịch vụ du lịch mà chúng tôi cung cấp.</span
+              >
+            </div>
+            <div class="conten-font-mid-1">
+              <span
+                >Với hơn 16 năm kinh nghiệm tổ chức và triển khai các tour du
+                lịch trong và ngoài nước, chúng tôi cam kết đem lại cho khách
+                hàng chuyến hành trình tuyệt vời và ấn tượng nhất thông qua
+                những dịch vụ chuyện nghiệp mà chúng tôi thực hiện như
+              </span>
+            </div>
+            <div class="conten-font-bottom">
+              <div class="conten-font-bottom-1">
+                <div class="conten-icon-1">
+                  <i class="fa fa-plane"></i><span>Chuyến bay đẳng cấp</span>
+                </div>
+                <div class="conten-icon-1">
+                  <i class="fa fa-taxi"></i><span>Hành trình hấp dẫn</span>
+                </div>
+                <div class="conten-icon-1">
+                  <i class="fa fa-check"></i>
+                  <span>Chất lượng đỉnh cao</span>
+                </div>
+              </div>
+              <div class="conten-font-bottom-1">
+                <div class="conten-icon-1">
+                  <i class="fa fa-university"></i
+                  ><span>Khách sạn tiện nghi</span>
+                </div>
+                <div class="conten-icon-1">
+                  <i class="fa fa-hourglass-half"></i>
+                  <span>Quản lý chặt chẽ</span>
+                </div>
+                <div class="conten-icon-1">
+                  <i class="fa fa-users"></i><span>Hơn 100 Tour du lịch</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="conten-all">
+          <div class="conten-font-top">
+            <h2>CÁC THƯƠNG HIỆU HỢP TÁC</h2>
+          </div>
+          <div class="conten-carrousel">
+            <figure><img src="img/th1.jpg" /></figure>
+            <figure><img src="img/th2.jpg" /></figure>
+            <figure><img src="img/th3.png" /></figure>
+            <figure><img src="img/th4.png" /></figure>
+            <figure><img src="img/th5.png" /></figure>
+            <figure><img src="img/th6.png" /></figure>
+            <figure><img src="img/th7.png" /></figure>
+            <figure><img src="img/th8.jfif" /></figure>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer-section">
+      <div class="img_fr"><img src="img/4.jpg" alt="img" /></div>
+      <div class="container">
+        <div class="footer-cta pt-5">
+          <div class="row">
+            <div class="col-xl-4 col-md-4 mb-30">
+              <div class="single-cta">
+                <i class="uil-map-marker"></i>
+                <div class="cta-text">
+                  <h4>Chúng Tôi</h4>
+                  <span>Quận 12, Công Viên Phần Mềm Quang Trung</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-md-4 mb-30">
+              <div class="single-cta">
+                <i class="uil-phone-alt"></i>
+                <div class="cta-text">
+                  <h4>Liên Hệ</h4>
+                  <span>+84 39 8446 212 </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-md-4 mb-30">
+              <div class="single-cta">
+                <i class="uil-envelope"></i>
+                <div class="cta-text">
+                  <h4>Email</h4>
+                  <span>discoveronetime@gmail.com</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-content pt-5 pb-1">
+          <div class="row">
+            <div class="col-xl-4 col-lg-4 mb-50">
+              <div class="footer-widget">
+                <div class="footer-text">
+                  <p>
+                    Chúng tôi xin cảm ơn bạn đã dành thời gian để ghé thăm trang
+                    web của chúng tôi và tìm hiểu về các dịch vụ du lịch mà
+                    chúng tôi cung cấp.<br />
+                    Chúng tôi cam kết cung cấp cho bạn những trải nghiệm du lịch
+                    chân thành và tận tâm nhất. <br />Chúng tôi hiểu rằng, du
+                    lịch là một trải nghiệm đáng giá và chúng tôi sẽ luôn cố
+                    gắng để đáp ứng tất cả các nhu cầu của bạn, từ việc đặt
+                    phòng khách sạn, đặt vé máy bay cho đến việc sắp xếp các
+                    tour du lịch.<br />Nếu bạn cần bất kỳ thông tin hoặc hỗ trợ
+                    nào, đừng ngần ngại liên hệ với chúng tôi. Chúng tôi rất vui
+                    khi được phục vụ bạn và mong sớm được đón tiếp bạn trong
+                    những chuyến du lịch sắp tới.
+                  </p>
+                </div>
+                <div class="footer-social-icon">
+                  <span>THEO DÕI CHÚNG TÔI</span>
+                  <ul class="social_icon">
+                    <li>
+                      <a href="#"><i class="uil-facebook-f"> </i></a>FACEBOOK
+                    </li>
+                    <li>
+                      <a href="#"><i class="uil-twitter"></i></a>TWITTER
+                    </li>
+                    <li>
+                      <a href="#"><i class="uil-instagram"></i></a>INSTARGRAM
+                    </li>
+                    <li>
+                      <a href="#"><i class="uil-youtube"></i></a>YOUTUBE
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+              <div class="footer-widget">
+                <div class="footer-widget-heading">
+                  <h3>Useful Links</h3>
+                </div>
+                <ul>
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">FAQ</a></li>
+                  <li><a href="#">Contact us</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-3.7.0.min.js"
+    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+    crossorigin="anonymous"
+  ></script>
+  <script src="view/js/index.js"></script>
 </html>

@@ -5,8 +5,10 @@
   padding: 0;
 }
 header{
-  background: #ffffff80;
+  background: #ffffff6a;
   position: fixed;
+  z-index: 100;
+  padding: 1%;
 }
 header nav{
   display: grid;
@@ -26,6 +28,7 @@ header nav ul li{
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 2%;
 }
 header nav ul li a{
   width: 100%;
@@ -49,6 +52,7 @@ header nav a img{
 header nav .hr_user a img{
   width: 100%;
   object-fit: contain;
+  padding:5%;
 }
 header nav form{
   width: 100%;
@@ -56,22 +60,23 @@ header nav form{
   padding: .7%;
   position: relative;
 }
-header nav #search-container{
+header nav #search-container_hr{
   display: none;
 }
 header nav form input[type='text']{
   width: 100%;
   border: none;
-  padding: 2%;
+  padding: 3%;
   border-radius: 5px;
+  margin-top: 3%;
 }
 header nav form input[type='submit']{
   width: 15%;
   position: absolute;
-  top:11%;
+  top:18%;
   right: 1%;
   background-color: #ff7300 ;
-  padding: 1.5%;
+  padding: 2.5%;
   border: none;
   font-weight: bold;
   color: white;
@@ -83,11 +88,145 @@ header nav form input[type='submit']:hover{
 header nav #search-icon-hr{
   width: 5%;
   margin-left: 90%;
+  margin-top: 5%;
 }
 .video{
   width: 100%;
+  position: relative;
 }
 .video video{
   object-fit: cover;
   width: 100%;
+}
+.main_bn{
+  position: absolute;
+  top: 15%;
+  display: grid;
+  grid-template-columns: 60% 40%;
+}
+.slide_show_bn{
+  width: 95%;
+  margin-left: 5%;
+}
+.slide_show_bn img{
+  width: 70%;
+  object-fit: cover;
+  height: 80vh;
+  border-radius: 25px;
+  box-shadow: 10px 5px 15px black;
+}
+.main_bn .form_find{
+  background-color: rgba(255, 255, 255, 0.815);
+  width: 90%;
+  height: 50vh;
+  margin: 5%;
+  margin-top: 10%;
+  padding: 5%;
+  border-top-left-radius: 40px;
+  border-bottom-right-radius: 90px;
+}
+.main_bn .form_find h2{
+color: rgb(16, 157, 0);
+text-align: center;
+width: 100%;
+text-transform: capitalize;
+text-shadow: 2px 5px 10px rgb(255, 251, 0);
+}
+.main_bn .form_find form{
+  padding: 3%;
+  display: grid;
+  place-items: center;
+}
+.main_bn .form_find form .form_in{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5%;
+  margin-bottom: 5%;
+}
+.main_bn .form_find form label{
+  margin-top: 10%;
+}
+.main_bn .form_find form input[type=submit]{
+  background-color: #ff5e00;
+  border: none;
+  padding: 2%;
+  width: 20%;
+  color: white;
+  font-weight: bold;
+  margin-top: 5%;
+  border-radius: 20px;
+}
+.main_bn .form_find form input[type=submit]:hover{
+  background-color: #fbff04;
+  color: rgb(0, 0, 0);
+}
+.main_bn .form_find form input:not(input[type=submit]) {
+  padding: 4%;
+  border: none;
+  border-radius: 5px;
+  margin-top: 3%;
+}
+.get_top a{
+  width: 3vw;
+  height: 6vh;
+  background-color: #00d12d;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 99;
+  top: 90%;
+  right: 1%;
+}
+.get_top img{
+  width: 60%;
+  transform: rotate(270deg);
+}
+.form_find_bn{
+  background-color: rgba(255, 255, 255, 0.573);
+  width: 90%;
+  padding: 5%;
+  display: grid;
+  place-items: center;
+  height: 50vh;
+  margin-top: 15%;
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 90px;
+}
+.form_find_bn h2{
+  text-transform: capitalize;
+  text-align: center;
+}
+.form_find_bn .form_in{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5%;
+}
+.form_find_bn .form_in label input{
+  padding: 3%;
+  border-radius: 10px;
+  border: none;
+  width: 100%;
+  color: #008912;
+}
+.form_find_bn form input[type=submit]{
+  width: 20%;
+  background-color: #ff7300;
+  padding: 2%;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  margin-top: 10%;
+  font-weight: bold;
+}
+.form_find_bn form input[type=submit]:hover{
+  background-color: #fff200;
+  color: rgb(70, 50, 50);
+}
+.form_find_bn form{
+  display: grid;
+  place-items: center;
+}
+.form_find_bn .form_in label{
+  margin-top: 10%;
 }
