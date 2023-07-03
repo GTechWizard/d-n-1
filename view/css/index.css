@@ -1,3 +1,6 @@
+html{
+  scroll-behavior: smooth;
+}
 *{
   box-sizing: border-box;
   width: 100%;
@@ -49,10 +52,35 @@ header nav a img{
   width: 50%;
   object-fit: contain;
 }
+header nav .hr_user{
+  position: relative;
+}
 header nav .hr_user a img{
   width: 100%;
   object-fit: contain;
   padding:5%;
+}
+header nav .hr_user:hover ul{
+  display: block;
+}
+header nav .hr_user ul{
+  background-color: #ffffff;
+  width: 400%;
+  right: 0;
+  top: 7.8vh;
+  position: absolute;
+  font-size: 12px;
+  text-align: center;
+  padding: 1vw;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 10px;
+  display: none;
+}
+header nav .hr_user ul li{
+  padding: 10% 0;
+}
+header nav .hr_user ul li:not(li:last-child){
+ border-bottom: 1px solid black ;
 }
 header nav form{
   width: 100%;
@@ -229,4 +257,19 @@ text-shadow: 2px 5px 10px rgb(255, 251, 0);
 }
 .form_find_bn .form_in label{
   margin-top: 10%;
+}
+.form_find_bn form .form_in select {
+  padding: 3%;
+  border-radius: 10px;
+  border: none;
+  width: 100%;
+  color: #008912;
+  text-transform: capitalize;
+}
+.form_find_bn form .form_in select option{
+  color: rgb(0, 0, 0);
+  text-transform: capitalize;
+}
+.form_find_bn form .form_in select option:checked{
+  background-color: #c6ffc2;
 }

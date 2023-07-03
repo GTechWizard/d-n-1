@@ -21,6 +21,23 @@ a {
   width: 100%;
   margin: 0 auto;
 }
+.nav a img{
+  margin-top: 5%;
+  width: 17%;
+  object-fit: cover;
+  border: 3px inset rgb(255, 255, 255);
+  border-radius: 50%;
+  background-color: rgb(255, 232, 189);
+  transition: .2s linear;
+}
+.nav a img:hover{
+  margin-top: 5%;
+  width: 17%;
+  object-fit: cover;
+  border: 3px outset rgb(255, 255, 255);
+  border-radius: 50%;
+  background-color: rgb(255, 214, 137);
+}
 .nav,
 .nav_item {
   column-gap: 25px;
@@ -45,7 +62,7 @@ a {
 }
 .button {
   padding: 6px 24px;
-  border: 2px solid aqua;
+  border: 2px solid rgb(255, 213, 0);
   background: transparent;
   border-radius: 6px;
   cursor: pointer;

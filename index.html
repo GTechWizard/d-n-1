@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="view/css/index.css" />
     <link rel="stylesheet" href="view/css/dkdn1.css" />
     <link rel="stylesheet" href="view/css/slide.css" />
+    <link rel="stylesheet" href="view/css/libswiper.css" />
+    <link rel="stylesheet" href="view/css/tourhot.css" />
     <link
       rel="stylesheet"
       href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
@@ -30,8 +32,8 @@
           <li>
             <a href="#" class="link">tin tức</a>
             <a href="#" class="link">du lịch</a>
-            <a href="#" class="link">chúng tôi</a>
-            <a href="#" class="link">hỗ trợ</a>
+            <a href="#chungtoi" class="link">chúng tôi</a>
+            <a href="#hotro" class="link">hỗ trợ</a>
           </li>
         </ul>
         <form action="#" method="post" id="search-container_hr">
@@ -50,7 +52,11 @@
           title="esc for out"
         />
         <div class="hr_user">
-          <a href="#" title="Control"><img src="img/user.png" alt="" /></a>
+          <a href="view/user.html" title="Control"><img src="img/user.png" alt="" /></a>
+          <ul>
+            <li><a href="view/dkdn.html">đăng nhập</a></li>
+            <li><a href="#">Thoát</a></li>
+          </ul>
         </div>
       </nav>
     </header>
@@ -77,7 +83,12 @@
               </label>
               <label for="gia"
                 >Giá tiền
-                <input type="text" name="" id="gia" placeholder="Giá..." />
+                <select name="" id="gia">
+                  <option>Chọn giá</option>
+                  <option value="">1 triệu -> 2 triệu</option>
+                  <option value="">5 triệu -> 7 triệu</option>
+                  <option value="">9 triệu -> 12 triệu</option>
+                </select>
               </label>
               <label for="place"
                 >Nơi đến
@@ -94,7 +105,7 @@
       <a href="#"><img src="img/get_top.png" alt="get top" /></a>
     </div>
     <!-- about us -->
-    <div class="conten">
+    <div class="conten" id="chungtoi">
       <div class="conten-container">
         <div class="conten-font">
           <div class="conten-font-main">
@@ -103,7 +114,9 @@
             </div>
             <div class="conten-font-mid">
               <span
-                >Chúng tôi xin cảm ơn bạn đã dành thời gian để ghé thăm trang web của chúng tôi và tìm hiểu về các dịch vụ du lịch mà chúng tôi cung cấp.</span
+                >Chúng tôi xin cảm ơn bạn đã dành thời gian để ghé thăm trang
+                web của chúng tôi và tìm hiểu về các dịch vụ du lịch mà chúng
+                tôi cung cấp.</span
               >
             </div>
             <div class="conten-font-mid-1">
@@ -161,8 +174,167 @@
       </div>
     </div>
 
+    <!-- tour nổi bậc -->
+    <div class="tourhot">
+      <div class="content_tourhot">
+        <h1>Những Tour Đặc Biệt</h1>
+        <b>đã có những sự thay đổi lớn</b>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus
+          dolor dolorem quia similique ipsum facere asperiores, commodi fuga
+          natus aliquid illo dignissimos obcaecati tenetur nulla. Molestias a
+          odio est nobis.
+        </p>
+        <div class="slide-container swiper bodytourhot">
+          <div class="slide-content">
+            <div class="card-wrapper swiper-wrapper">
+              <div class="card swiper-slide">
+                <div class="card-1">
+                  <div class="card-top">
+                    <div class="card-top-img">
+                      <img src="img/tourhot.jpg" alt="img" />
+                    </div>
+                    <div class="card-top-hover">
+                      <div class="card-top-hover-price">
+                        <a href=""><img src="img/heart.png" alt="heart" /></a>
+                        <p>29.000.000Đ</p>
+                      </div>
+                      <div class="card-top-submit">
+                        <a href="#">đặt Tour</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-bottom">
+                    <div class="card-bottom-h1">
+                      <span>du lịch đảo cát bà <br>(2 ngày 3 đêm)</span>
+                    </div>
+                    <div class="card-bottom-main">
+                      <div class="cart-bottom-span-main">
+                        <div class="card-bottom-span">
+                          <span>sao đánh giá</span>
+                        </div>
+                        <div class="card-bottom-span">
+                          <span>còn trống:20</span>
+                        </div>
+                      </div>
+                      <div class="card-bottom-span-container">
+                        <div class="card-bottom-span">
+                          <span>12/12/2023</span> -
+                          <span>12/12/2023</span>
+                        </div>
+                        <div class="div"></div>
+                      </div>
+
+                      <div class="card-bottom-submit">
+                        <a href="#">chi tiết</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card swiper-slide">
+                <div class="card-1">
+                  <div class="card-top">
+                    <div class="card-top-img">
+                      <img src="img/tourhot.jpg" alt="img" />
+                    </div>
+                    <div class="card-top-hover">
+                      <div class="card-top-hover-price">
+                        <a href="#"><img src="img/heart.png" alt="heart" /></a>
+                        <p>200.000Đ</p>
+                      </div>
+                      <div class="card-top-submit">
+                        <a href="#">đặt Tour</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-bottom">
+                    <div class="card-bottom-h1">
+                      <span>du lịch đảo cát bà (2 ngày 3 đêm)</span>
+                    </div>
+                    <div class="card-bottom-main">
+                      <div class="card-bottom-span-container">
+                        <div class="card-bottom-span">
+                          <span>12/12/2023</span> -
+                          <span>12/12/2023</span>
+                        </div>
+                        <div class="div"></div>
+                      </div>
+                      <div class="cart-bottom-span-main">
+                        <div class="card-bottom-span-1">
+                          <span>sao đánh giá</span>
+                        </div>
+                        <div class="card-bottom-span-2">
+                          <span>còn trống:20</span>
+                        </div>
+                      </div>
+
+                      <div class="card-bottom-submit">
+                        <a href="#">chi tiết</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card swiper-slide">
+                <div class="card-1">
+                  <div class="card-top">
+                    <div class="card-top-img">
+                      <img src="img/tourhot.jpg" alt="img" />
+                    </div>
+                    <div class="card-top-hover">
+                      <div class="card-top-hover-price">
+                        <a href="#"><img src="img/heart.png" alt="heart" /></a>
+                        <p>200.000Đ</p>
+                      </div>
+                      <div class="card-top-submit">
+                        <a href="#">đặt Tour</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-bottom">
+                    <div class="card-bottom-h1">
+                      <span>du lịch đảo cát bà (2 ngày 3 đêm)</span>
+                    </div>
+                    <div class="card-bottom-main">
+                      <div class="card-bottom-span-container">
+                        <div class="card-bottom-span">
+                          <span>12/12/2023</span> -
+                          <span>12/12/2023</span>
+                        </div>
+                        <div class="div"></div>
+                      </div>
+                      <div class="cart-bottom-span-main">
+                        <div class="card-bottom-span-1">
+                          <span>sao đánh giá</span>
+                        </div>
+                        <div class="card-bottom-span-2">
+                          <span>còn trống:20</span>
+                        </div>
+                      </div>
+
+                      <div class="card-bottom-submit">
+                        <a href="#">chi tiết</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-button-next swiper-navBtn"></div>
+          <div class="swiper-button-prev swiper-navBtn"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+      <div class="img_bg_tourhot">
+        <img src="img/img_tour_hot.jpg" alt="img" />
+      </div>
+    </div>
+
     <!-- footer -->
-    <footer class="footer-section">
+    <footer class="footer-section" id="hotro">
       <div class="img_fr"><img src="img/4.jpg" alt="img" /></div>
       <div class="container">
         <div class="footer-cta pt-5">
@@ -257,5 +429,7 @@
     integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
     crossorigin="anonymous"
   ></script>
+  <!-- Swiper JS -->
+  <script src="view/js/swiper-bundle.min.js"></script>
   <script src="view/js/index.js"></script>
 </html>

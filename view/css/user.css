@@ -40,6 +40,7 @@ section{
 article{
   display: grid;
   grid-template-columns: 15% 80%;
+  position: relative;
 }
 nav{
   background-color: rgb(255, 153, 0);

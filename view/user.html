@@ -1,47 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>User</title>
-    <link rel="stylesheet" href="css/user.css" />
-  </head>
-  <body>
-    <header>
-      <div class="undo">
-        <a href="../index.html"><img src="../img/undo.png" alt="image" title="come back"/></a>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User</title>
+  <link rel="stylesheet" href="css/user.css" />
+</head>
+
+<body>
+  <header>
+    <div class="undo">
+      <a href="../index.html"><img src="../img/undo.png" alt="image" title="come back" /></a>
+    </div>
+    <div class="logo"><img src="../img/logofontwhite.png" alt="image" /></div>
+    <div class="user"><img src="../img/user.png" alt="image" /></div>
+  </header>
+  <section>
+    <p>Xin chào <span>kin</span></p>
+  </section>
+  <article>
+    <nav>
+      <ul>
+        <li>
+          <a href="user.html">Tài Khoản</a>
+          <ul>
+            <li><a href="">đổi mật khẩu</a></li>
+          </ul>
+        </li>
+        <li>Tin Tức Đã Thích</li>
+        <li>Dịch vụ Đã Thích</li>
+        <li>Dịch vụ Của Bạn</li>
+        <li><a href="">Đăng Nhập Admin</a></li>
+      </ul>
+      <a href=""><img src="../img/logout.png" alt="log out" title="log out" /></a>
+    </nav>
+    <div class="control">
+      <div class="tk">
+        <h2>hồ sơ của tôi</h2>
+        <p>quản lý thông tin hồ sơ</p>
+        <div class="form_tt">
+          <form action="#" method="post">
+            <div class="check_tt">
+              <div class="form_ck">
+                <label for="">
+                  Tên đăng nhập
+                  <input type="text" name="" id="" />
+                </label>
+                <label for="">
+                  Email
+                  <input type="email" name="" id="" /><a href="#">Thay đổi</a>
+                </label>
+                <label for="">
+                  Số điện thoại
+                  <input type="tel" name="" id="" /><a href="#">Thay đổi</a>
+                </label>
+                <label for="">
+                  Địa chỉ
+                  <input type="text" name="" id="" />
+                </label>
+              </div>
+              <div class="img_ur">
+                <img src="../img/user.png" alt="ảnh đại diện" />
+                <input type="file" name="" id="iput_file" />
+              </div>
+            </div>
+            <input type="submit" value="Lưu" name="save">
+          </form>
+        </div>
       </div>
-      <div class="logo"><img src="../img/logofontwhite.png" alt="image" /></div>
-      <div class="user"><img src="../img/user.png" alt="image" /></div>
-    </header>
-    <section>
-      <p>Xin chào <span>kin</span></p>
-    </section>
-    <article>
-      <nav>
-        <ul>
-          <li>
-            <a href="user.html">Tài Khoản</a>
-            <ul>
-              <li><a href="">cập nhật thông tin</a></li>
-              <li><a href="">đổi mật khẩu</a></li>
-            </ul>
-          </li>
-          <li>Tin Tức Đã Thích</li>
-          <li>Dịch vụ Đã Thích</li>
-          <li>Dịch vụ Của Bạn</li>
-          <li><a href="">Đăng Nhập Admin</a></li>
-        </ul> 
-        <a href=""><img src="../img/logout.png" alt="log out" title="log out"/></a>
-      </nav>
-      <div class="control">
-        <div class="tk"></div>
-        <div class="cn"></div>
-        <div class="mk"></div>
-        <div class="tt"></div>
-        <div class="dvl"></div>
-        <div class="dv"></div>
+      <div class="mk">
+        <h2> Đổi mật khẩu</h2>
+        <form action="#" method="post">
+          <label for="">Mật khẩu cũ:
+            <input type="password" name="" id="">
+          </label>
+          <label for="">Mật khẩu mới:
+            <input type="password" name="" id="">
+          </label>
+          <label for="">Nhập lại mật khẩu mới:
+            <input type="password" name="" id="">
+          </label>
+          <input type="submit" value="Lưu" name="">
+          <a href="#">Quên mật khẩu</a>
+        </form>
       </div>
-    </article>
-  </body>
+      <div class="tt">
+        <a href="#">
+          <img src="../img/bgdkdn.jpg" alt="img">
+          <div class="content_tt">
+            <h3>mới thi chính trị xong</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora tenetur quo molestias ea quia odit dicta, dignissimos maiores! Mollitia excepturi quis modi quam quod tempora dolore ea
+              praesentium accusamus pariatur!</p>
+            <p><span>25/01/2101</span><span>tác giả:meow meow</span></p>
+          </div>
+        </a>
+        <a href="#">
+          <img src="../img/bgdkdn.jpg" alt="img">
+          <div class="content_tt">
+            <h3>mới thi chính trị xong</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora tenetur quo molestias ea quia odit dicta, dignissimos maiores! Mollitia excepturi quis modi quam quod tempora dolore ea
+              praesentium accusamus pariatur!</p>
+            <p><span>25/01/2101</span><span>tác giả:meow meow</span></p>
+          </div>
+        </a>
+        <a href="#">
+          <img src="../img/bgdkdn.jpg" alt="img">
+          <div class="content_tt">
+            <h3>mới thi chính trị xong</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora tenetur quo molestias ea quia odit dicta, dignissimos maiores! Mollitia excepturi quis modi quam quod tempora dolore ea
+              praesentium accusamus pariatur!</p>
+            <p><span>25/01/2101</span><span>tác giả:meow meow</span></p>
+          </div>
+        </a>
+        <a href="#">
+          <img src="../img/bgdkdn.jpg" alt="img">
+          <div class="content_tt">
+            <h3>mới thi chính trị xong</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora tenetur quo molestias ea quia odit dicta, dignissimos maiores! Mollitia excepturi quis modi quam quod tempora dolore ea
+              praesentium accusamus pariatur!</p>
+            <p><span>25/01/2101</span><span>tác giả:meow meow</span></p>
+          </div>
+        </a>
+        <a href="#">
+          <img src="../img/bgdkdn.jpg" alt="img">
+          <div class="content_tt">
+            <h3>mới thi chính trị xong</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora tenetur quo molestias ea quia odit dicta, dignissimos maiores! Mollitia excepturi quis modi quam quod tempora dolore ea
+              praesentium accusamus pariatur!</p>
+            <p><span>25/01/2101</span><span>tác giả:meow meow</span></p>
+          </div>
+        </a>
+      </div>
+      <div class="dvl">
+
+      </div>
+      <div class="dvs">
+        <div class="dv">
+        <tr>
+          <th>STT</th>
+          <th>Ảnh</th>
+          <th>Vũng tàu những chuyến đi</th>
+          <th>Ngày đi</th>
+          <th>tình trạng</th>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias accusamus tenetur illo molestiae dolores, </td>
+          <td>25/12/1212</td>
+          <td>chưa đi</td>
+        </tr>
+      </div>
+      </div>
+      <div class="qmk">
+        <p>Đã gửi tin nhắn về email của bạn</p>
+        <form action="#">
+          <label for="">Nhập dãy số trong email<input type="text"></label>
+          <input type="submit" value="Gửi" name="">
+        </form>
+      </div>
+      <div class="mk_new">
+        <h2> Đổi mật khẩu</h2>
+        <form action="#" method="post">
+          <label for="">Mật khẩu mới:
+            <input type="password" name="" id="">
+          </label>
+          <label for="">Nhập lại mật khẩu mới:
+            <input type="password" name="" id="">
+          </label>
+          <input type="submit" value="Lưu" name="">
+        </form>
+      </div>
+    </div>
+  </article>
+</body>
+
 </html>
