@@ -12,8 +12,7 @@
   overflow: hidden;
   border-radius: 25px;
 }
-.bodytourhot .card{
-  border-radius: 25px;
+.ltour .bodytourhot .card{
   background-color: black;
 }
 
@@ -94,6 +93,7 @@
 }
 .bodytourhot .ui-card .description h3{
 	font-weight: 700;
+  text-transform: capitalize;
 	font-size: 32px;
 	margin: 0 0 20px;
 	transform: translateY(30px);
@@ -107,7 +107,9 @@
 }
 .bodytourhot .ui-card .description a{
 	color: #fff;
-	background:#34aff3;
+  width: 50%;
+  font-weight: bold;
+	background:#ffc400;
 	display: inline-block;
 	padding: 5px 15px;
 	border-radius: 5px;
@@ -118,7 +120,7 @@
   margin-top: 10px;
 }
 .bodytourhot .ui-card .description a:hover{
-	background:#0a83c5;
+	background:#0cef00;
 }
 .bodytourhot .ui-card:hover .description h3{
 	opacity: 1;
@@ -144,13 +146,43 @@
 .bodytourhot{
 	font-family: arial;
 	font-size: 16px;
-	margin:0;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	min-height: 90vh;
+  width: 95%;
+  position: absolute;
+  top: 29%;
+}
+.ltour{
+  background-image: url(../../img/boat.jpg);
+  position: relative;
+  padding:4% 2% ;
+  width: 100%;
+  background-repeat: no-repeat;
+}
+.ltour h2{
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 200%;
+  color: #fffef3;
+}
+.ltour p{
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 100%;
+  margin: 1% 2%;
+
+}
+.ltour .bodytourhot{
+	font-family: arial;
+	font-size: 16px;
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
 	min-height: 100vh;
-  width: 90%;
-  position: absolute;
+  width: 100%;
+  position: relative;
   top: 29%;
 }
 .bodytourhot .card-1
@@ -252,7 +284,6 @@ text-overflow: ellipsis;
 }
 .bodytourhot .card-bottom-submit
 {
-    margin-top: 10px;
     text-align: center;
 }
 .bodytourhot .card-bottom-submit a
@@ -283,12 +314,13 @@ text-overflow: ellipsis;
 }
 .img_bg_tourhot{
   position: absolute;
-  width: 40%;
+  width: 50%;
   right: -9%;
   top: -15%;
 }
 .img_bg_tourhot img{
   width: 100%;
+  max-height: 120vh;
   object-fit: cover;
   box-shadow: -1px 5px 5px black,-5px 10px 10px black;
 }
@@ -303,6 +335,7 @@ color: black;
 margin: 2% auto;
 color: rgb(195, 127, 0);
 text-shadow: 2px 10px 9px rgb(152, 152, 152);
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .content_tourhot b{
   margin: 2% auto;
@@ -348,4 +381,12 @@ text-shadow: 2px 10px 9px rgb(152, 152, 152);
 .card-top-submit a:first-child:active{
   background-color: pink;
   font-weight: bold;
+}
+.card-bottom-span-1 span{
+   text-transform: capitalize;
+}
+.card-bottom-span-2 span{
+  margin-left: 15%;
+  text-transform: capitalize;
+  font-size: small;
 }

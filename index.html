@@ -13,6 +13,7 @@
       rel="stylesheet"
       href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
     />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!-- Font Awesome CSS -->
     <link
       rel="stylesheet"
@@ -21,6 +22,7 @@
       crossorigin="anonymous"
     />
   </head>
+
   <body>
     <!-- Header -->
     <header>
@@ -30,8 +32,8 @@
         /></a>
         <ul>
           <li>
-            <a href="#" class="link">tin tức</a>
-            <a href="#" class="link">du lịch</a>
+            <a href="#news" class="link">tin tức</a>
+            <a href="#dvs" class="link">du lịch</a>
             <a href="#chungtoi" class="link">chúng tôi</a>
             <a href="#hotro" class="link">hỗ trợ</a>
           </li>
@@ -63,7 +65,7 @@
       </nav>
     </header>
     <!-- banner -->
-    <div class="video">
+    <div class="video" data-aos="fade-down">
       <video id="video" src="video/video1.mp4" autoplay controls></video>
       <div class="main_bn">
         <div class="slide_show_bn">
@@ -71,7 +73,12 @@
           <img class="mySlides_bn" src="img/2.jpg" />
           <img class="mySlides_bn" src="img/3.jpg" />
         </div>
-        <div class="form_find_bn">
+        <div
+          class="form_find_bn"
+          data-aos="fade-right"
+          data-aos-offset="300"
+          data-aos-easing="ease-in-sine"
+        >
           <h2>tìm dịch vụ nhanh</h2>
           <form action="#" method="post">
             <div class="form_in">
@@ -102,15 +109,71 @@
         </div>
       </div>
     </div>
-    <!-- nút trỏ lại-->
-    <div class="get_top">
-      <a href="#top"><img src="img/get_top.png" alt="get top" /></a>
+    <!-- danh sách loại du lịch -->
+    <div class="ltour">
+      <h2
+        data-aos="fade-right"
+        data-aos-offset="100"
+        data-aos-easing="ease-in-sine"
+      >
+        CHỌN NƠI ĐẾN VÀ TRÃI NGHIỆM THÔI
+      </h2>
+      <p data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+        chúng tôi có ở đây các loại tour bạn có thể chọn và xem
+      </p>
+      <div
+        class="slide-container swiper bodytourhot"
+        data-aos="fade-up"
+        data-aos-duration="3000"
+      >
+        <div class="slide-content">
+          <div class="card-wrapper swiper-wrapper">
+            <div class="card swiper-slide">
+              <div class="ui-card">
+                <img src="img/tourhot.jpg" />
+                <div class="description">
+                  <h3>tour miền bắc</h3>
+                  <p>SỐ TOUR:10</p>
+                  <a href="">TÌM THÊM</a>
+                </div>
+              </div>
+            </div>
+            <div class="card swiper-slide">
+              <div class="ui-card">
+                <img src="img/hous.jpg" />
+                <div class="description">
+                  <h3>TOUR MIỀN NAM</h3>
+                  <p>SỐ TOUR:1</p>
+                  <a href="">TÌM THÊM</a>
+                </div>
+              </div>
+            </div>
+            <div class="card swiper-slide">
+              <div class="ui-card">
+                <img src="img/boat.jpg" />
+                <div class="description">
+                  <h3>TOUR NƯỚC NGOÀI</h3>
+                  <p>SỐ TOUR:15</p>
+                  <a href="">TÌM THÊM</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-button-next swiper-navBtn"></div>
+        <div class="swiper-button-prev swiper-navBtn"></div>
+      </div>
     </div>
+
     <!-- about us -->
     <div class="conten" id="chungtoi">
       <div class="conten-container">
         <div class="conten-font">
-          <div class="conten-font-main">
+          <div
+            class="conten-font-main"
+            data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom"
+          >
             <div class="conten-font-top">
               <h2>HÃY CHỌN TOURPROECK</h2>
             </div>
@@ -129,7 +192,7 @@
                 những dịch vụ chuyện nghiệp mà chúng tôi thực hiện như
               </span>
             </div>
-            <div class="conten-font-bottom">
+            <div class="conten-font-bottom" data-aos="flip-left">
               <div class="conten-font-bottom-1">
                 <div class="conten-icon-1">
                   <i class="fa fa-plane"></i><span>Chuyến bay đẳng cấp</span>
@@ -158,7 +221,13 @@
             </div>
           </div>
         </div>
-        <div class="conten-all">
+        <div
+          class="conten-all"
+          data-aos="fade-left"
+          data-aos-anchor="#example-anchor"
+          data-aos-offset="1000"
+          data-aos-duration="1000"
+        >
           <div class="conten-font-top">
             <h2>CÁC THƯƠNG HIỆU HỢP TÁC</h2>
           </div>
@@ -179,9 +248,9 @@
     <!-- tour nổi bậc -->
     <div class="tourhot">
       <div class="content_tourhot">
-        <h1>Những Tour Đặc Biệt</h1>
-        <b>đã có những sự thay đổi lớn</b>
-        <p>
+        <h1 data-aos="flip-left">Những Tour Đặc Biệt</h1>
+        <b data-aos="flip-up">đã có những sự thay đổi lớn</b>
+        <p data-aos="flip-up">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus
           dolor dolorem quia similique ipsum facere asperiores, commodi fuga
           natus aliquid illo dignissimos obcaecati tenetur nulla. Molestias a
@@ -208,7 +277,7 @@
                   </div>
                   <div class="card-bottom">
                     <div class="card-bottom-h1">
-                      <span>du lịch đảo cát bà<br>(2 ngày 3 đêm)</span>
+                      <span>du lịch đảo cát bà<br />(2 ngày 3 đêm)</span>
                     </div>
                     <div class="card-bottom-main">
                       <div class="card-bottom-span-container">
@@ -220,7 +289,10 @@
                       </div>
                       <div class="cart-bottom-span-main">
                         <div class="card-bottom-span-1">
-                          <span>sao đánh giá</span>
+                          <span
+                            >sao đánh giá
+                            <p>*****</p>
+                          </span>
                         </div>
                         <div class="card-bottom-span-2">
                           <span>còn trống:20</span>
@@ -243,17 +315,16 @@
                     <div class="card-top-hover">
                       <div class="card-top-hover-price">
                         <p>200.000Đ</p>
-                        <p>2ngày-3đêm</p>
                       </div>
                       <div class="card-top-submit">
-                        <input type="submit" value="yêu thích" />
-                        <input type="submit" value="đặt Tour" />
+                        <a href="#">like</a>
+                        <a href="#">Đặt tour</a>
                       </div>
                     </div>
                   </div>
                   <div class="card-bottom">
                     <div class="card-bottom-h1">
-                      <span>du lịch đảo cồn sơn (2 ngày 3 đêm)</span>
+                      <span>du lịch đảo cát bà<br />(2 ngày 3 đêm)</span>
                     </div>
                     <div class="card-bottom-main">
                       <div class="card-bottom-span-container">
@@ -265,7 +336,10 @@
                       </div>
                       <div class="cart-bottom-span-main">
                         <div class="card-bottom-span-1">
-                          <span>sao đánh giá</span>
+                          <span
+                            >sao đánh giá
+                            <p>*****</p>
+                          </span>
                         </div>
                         <div class="card-bottom-span-2">
                           <span>còn trống:20</span>
@@ -273,7 +347,7 @@
                       </div>
 
                       <div class="card-bottom-submit">
-                        <input type="submit" value="chi tiết" />
+                        <a href="#">chi tiết</a>
                       </div>
                     </div>
                   </div>
@@ -288,17 +362,16 @@
                     <div class="card-top-hover">
                       <div class="card-top-hover-price">
                         <p>200.000Đ</p>
-                        <p>2ngày-3đêm</p>
                       </div>
                       <div class="card-top-submit">
-                        <input type="submit" value="yêu thích" />
-                        <input type="submit" value="đặt Tour" />
+                        <a href="#">like</a>
+                        <a href="#">Đặt tour</a>
                       </div>
                     </div>
                   </div>
                   <div class="card-bottom">
                     <div class="card-bottom-h1">
-                      <span>du lịch đảo vịnh hạ long (2 ngày 3 đêm)</span>
+                      <span>du lịch đảo cát bà<br />(2 ngày 3 đêm)</span>
                     </div>
                     <div class="card-bottom-main">
                       <div class="card-bottom-span-container">
@@ -310,7 +383,10 @@
                       </div>
                       <div class="cart-bottom-span-main">
                         <div class="card-bottom-span-1">
-                          <span>sao đánh giá</span>
+                          <span
+                            >sao đánh giá
+                            <p>*****</p>
+                          </span>
                         </div>
                         <div class="card-bottom-span-2">
                           <span>còn trống:20</span>
@@ -318,7 +394,7 @@
                       </div>
 
                       <div class="card-bottom-submit">
-                        <input type="submit" value="chi tiết" />
+                        <a href="#">chi tiết</a>
                       </div>
                     </div>
                   </div>
@@ -331,10 +407,247 @@
           <div class="swiper-button-prev swiper-navBtn"></div>
         </div>
       </div>
-      <div class="img_bg_tourhot">
-        <img src="img/img_tour_hot.jpg" alt="img" />
+      <div
+        class="img_bg_tourhot"
+        data-aos="flip-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000"
+      >
+        <img src="img/img_tour_hot_1.jpg" alt="img" />
       </div>
     </div>
+    <!-- dịch vụ khác -->
+    <section id="dvs">
+      <h2>dịch vụ khác</h2>
+      <main>
+        <div class="product" data-aos="flip-left">
+          <div class="img">
+            <div class="layer_img">
+              <img src="img/hous.jpg" alt="img" />
+              <div class="layer"></div>
+            </div>
+            <div class="on_img">
+              <p>12.020.000VND</p>
+              <div class="btn_dv">
+                <a href="#">like</a><a href="#">Đặt tour</a>
+              </div>
+            </div>
+          </div>
+          <div class="content_dv">
+            <h3>DU LỊCH ĐẢO HÒN CHÉN<br />(1 năm không trở lại)</h3>
+            <div class="content">
+              <p>12/12/2023 - 12/12/2024</p>
+              <p>
+                <span>sao đánh giá <span>*****</span></span>
+                <span>còn trống: <span>11</span></span>
+              </p>
+            </div>
+            <a href="#">Chi tiết</a>
+          </div>
+        </div>
+        <div class="product" data-aos="flip-left">
+          <div class="img">
+            <div class="layer_img">
+              <img src="img/hous.jpg" alt="img" />
+              <div class="layer"></div>
+            </div>
+            <div class="on_img">
+              <p>12.020.000VND</p>
+              <div class="btn_dv">
+                <a href="#">like</a><a href="#">Đặt tour</a>
+              </div>
+            </div>
+          </div>
+          <div class="content_dv">
+            <h3>DU LỊCH ĐẢO HÒN CHÉN<br />(1 năm không trở lại)</h3>
+            <div class="content">
+              <p>12/12/2023 - 12/12/2024</p>
+              <p>
+                <span>sao đánh giá <span>*****</span></span>
+                <span>còn trống: <span>11</span></span>
+              </p>
+            </div>
+            <a href="#">Chi tiết</a>
+          </div>
+        </div>
+        <div class="product" data-aos="flip-left">
+          <div class="img">
+            <div class="layer_img">
+              <img src="img/hous.jpg" alt="img" />
+              <div class="layer"></div>
+            </div>
+            <div class="on_img">
+              <p>12.020.000VND</p>
+              <div class="btn_dv">
+                <a href="#">like</a><a href="#">Đặt tour</a>
+              </div>
+            </div>
+          </div>
+          <div class="content_dv">
+            <h3>DU LỊCH ĐẢO HÒN CHÉN<br />(1 năm không trở lại)</h3>
+            <div class="content">
+              <p>12/12/2023 - 12/12/2024</p>
+              <p>
+                <span>sao đánh giá <span>*****</span></span>
+                <span>còn trống: <span>11</span></span>
+              </p>
+            </div>
+            <a href="#">Chi tiết</a>
+          </div>
+        </div>
+        <div class="product" data-aos="flip-left">
+          <div class="img">
+            <div class="layer_img">
+              <img src="img/hous.jpg" alt="img" />
+              <div class="layer"></div>
+            </div>
+            <div class="on_img">
+              <p>12.020.000VND</p>
+              <div class="btn_dv">
+                <a href="#">like</a><a href="#">Đặt tour</a>
+              </div>
+            </div>
+          </div>
+          <div class="content_dv">
+            <h3>DU LỊCH ĐẢO HÒN CHÉN<br />(1 năm không trở lại)</h3>
+            <div class="content">
+              <p>12/12/2023 - 12/12/2024</p>
+              <p>
+                <span>sao đánh giá <span>*****</span></span>
+                <span>còn trống: <span>11</span></span>
+              </p>
+            </div>
+            <a href="#">Chi tiết</a>
+          </div>
+        </div>
+        <div class="product" data-aos="flip-left">
+          <div class="img">
+            <div class="layer_img">
+              <img src="img/hous.jpg" alt="img" />
+              <div class="layer"></div>
+            </div>
+            <div class="on_img">
+              <p>12.020.000VND</p>
+              <div class="btn_dv">
+                <a href="#">like</a><a href="#">Đặt tour</a>
+              </div>
+            </div>
+          </div>
+          <div class="content_dv">
+            <h3>DU LỊCH ĐẢO HÒN CHÉN<br />(1 năm không trở lại)</h3>
+            <div class="content">
+              <p>12/12/2023 - 12/12/2024</p>
+              <p>
+                <span>sao đánh giá <span>*****</span></span>
+                <span>còn trống: <span>11</span></span>
+              </p>
+            </div>
+            <a href="#">Chi tiết</a>
+          </div>
+        </div>
+        <div class="product" data-aos="flip-left">
+          <div class="img">
+            <div class="layer_img">
+              <img src="img/hous.jpg" alt="img" />
+              <div class="layer"></div>
+            </div>
+            <div class="on_img">
+              <p>12.020.000VND</p>
+              <div class="btn_dv">
+                <a href="#">like</a><a href="#">Đặt tour</a>
+              </div>
+            </div>
+          </div>
+          <div class="content_dv">
+            <h3>DU LỊCH ĐẢO HÒN CHÉN<br />(1 năm không trở lại)</h3>
+            <div class="content">
+              <p>12/12/2023 - 12/12/2024</p>
+              <p>
+                <span>sao đánh giá <span>*****</span></span>
+                <span>còn trống: <span>11</span></span>
+              </p>
+            </div>
+            <a href="#">Chi tiết</a>
+          </div>
+        </div>
+      </main>
+      <p class="cont">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore omnis tempora deleniti placeat odio consequuntur et, alias velit dicta perspiciatis dolor, culpa aspernatur provident nihil cumque nobis. Repellat, saepe soluta!</p>
+      <a href="#dvs">
+        <img src="img/plus.png" alt="more" title="xem thêm...">
+      </a>
+    </section>
+    <!-- tin tức -->
+    <section id="news">
+      <h2 data-aos="flip-up">tin mới nhất</h2>
+      <main>
+        <a href="#" class="tt" title="xem chi tiết" data-aos="zoom-in">
+          <img src="img/boat.jpg" alt="image" />
+          <div class="content">
+            <h3>du ngoạn thủy cung cùng mèo dihia</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+              temporibus doloremque nobis hic culpa dignissimos accusantium
+              eligendi molestias sed, sequi dolore quos officiis itaque commodi
+              similique veniam dolorem eum ipsa. Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Architecto quisquam accusamus non,
+              alias a beatae laborum recusandae, dignissimos autem ad, adipisci
+              nobis quae distinctio culpa. Dolorem iusto ipsum voluptatibus
+              exercitationem.
+            </p>
+            <p>
+              <span>tác giả</span>
+              <span></span>
+              <span>ngày đăng 11/11/1111</span>
+            </p>
+          </div>
+        </a>
+        <a href="#" class="tt" title="xem chi tiết" data-aos="zoom-in">
+          <img src="img/boat.jpg" alt="image" />
+          <div class="content">
+            <h3>du ngoạn thủy cung cùng mèo dihia</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+              temporibus doloremque nobis hic culpa dignissimos accusantium
+              eligendi molestias sed, sequi dolore quos officiis itaque commodi
+              similique veniam dolorem eum ipsa. Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Architecto quisquam accusamus non,
+              alias a beatae laborum recusandae, dignissimos autem ad, adipisci
+              nobis quae distinctio culpa. Dolorem iusto ipsum voluptatibus
+              exercitationem.
+            </p>
+            <p>
+              <span>tác giả</span>
+              <span></span>
+              <span>ngày đăng 11/11/1111</span>
+            </p>
+          </div>
+        </a>
+        <a href="#" class="tt" title="xem chi tiết" data-aos="zoom-in">
+          <img src="img/boat.jpg" alt="image" />
+          <div class="content">
+            <h3>du ngoạn thủy cung cùng mèo dihia</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+              temporibus doloremque nobis hic culpa dignissimos accusantium
+              eligendi molestias sed, sequi dolore quos officiis itaque commodi
+              similique veniam dolorem eum ipsa. Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Architecto quisquam accusamus non,
+              alias a beatae laborum recusandae, dignissimos autem ad, adipisci
+              nobis quae distinctio culpa. Dolorem iusto ipsum voluptatibus
+              exercitationem.
+            </p>
+            <p>
+              <span>tác giả</span>
+              <span></span>
+              <span>ngày đăng 11/11/1111</span>
+            </p>
+          </div>
+        </a>
+      </main>
+      <a href="#tintuc" class="more"
+        ><img src="img/plus.png" alt="more" title="xem thêm..."
+      /></a>
+    </section>
 
     <!-- footer -->
     <footer class="footer-section" id="hotro">
@@ -435,4 +748,8 @@
   <!-- Swiper JS -->
   <script src="view/js/swiper-bundle.min.js"></script>
   <script src="view/js/index.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </html>
