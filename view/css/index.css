@@ -15,25 +15,139 @@ header{
 }
 header nav{
   display: grid;
-  grid-template-columns:17% 57% 22% 2%;
+  grid-template-columns:17% 83%;
+}
+header nav .icon_menu .icon_menu_hr{
+display: none;
+}
+header nav .icon_menu .icon_menu_hr .left{
+width: 20px;
+position: relative;
+height: 20px;
+border: 2px solid black;
+border-radius: 5px;
+}
+header nav .icon_menu .icon_menu_hr .right{
+width: 20px;
+height: 20px;
+position: relative;
+border: 2px solid black;
+border-radius: 5px;
+}
+header nav .icon_menu .icon_menu_hr .left::after{
+  content: '';
+  position: absolute;
+  right: -22px;
+  top: -2px;
+width: 17px;
+height: 17px;
+border: 2px solid black;
+border-radius: 5px;
+}
+header nav .icon_menu .icon_menu_hr .right::after{
+  content: '';
+width: 17px;
+position: absolute;
+right: -22px;
+top: -2px;
+height: 17px;
+border: 2px solid black;
+border-radius: 5px;
+}
+@media screen and (max-width: 768px) {
+  /* body{
+    width: 90%;
+  } */
+  header nav{
+display: flex;
+justify-content: center;
+align-items: center;
+position: relative;
+  }
+  header nav .icon_menu{
+width: 50%;
+  }
+  header nav a[class='logo']{
+width: 20%;
+  }
+  header nav .icon_menu .icon_menu_hr{
+    display: block;
+    }
+  header nav .icon_menu .icon_menu_hr{
+    display: block;
+    }
+  header nav .icon_menu{
+    position: relative;
+    background-color: #ffffff;
+    width: 30%;
+    border-top-right-radius: 70px;
+    border-bottom-left-radius: 50px;
+    }
+    header nav .icon_menu .menu ul li{
+      display: grid;
+      place-items: center;
+      grid-template-columns: 1fr;
+      width: 100%;
+    }
+    header nav .icon_menu .menu ul li a{
+      background-color: #29c41e;
+      margin: 5% auto;
+      padding: 2%;
+      font-weight: bold;
+      width: 50%;
+      text-align: center;
+    }
+    header nav .icon_menu .menu{
+      display: grid;
+      place-items: center;
+      grid-template-columns: 1fr;
+      width: 100%;
+    }
+    header nav .menu .control{
+      display: block;
+    }
+    header nav #search-icon-hr{
+      display: block;
+    }
+    header nav .control form{
+      display: block;
+    }
+    header nav .control .hr_user{
+      display: block;
+      position: relative;
+      background-color: #29c41e;
+      width: 100%;
+    }
+    header nav .control .hr_user ul{
+      display: block;
+      position: relative;
+      width: 100%;
+      border-radius: 0;
+    }
+    header nav .control .hr_user ul::after{
+      display: none;
+    }
+    header nav .control .hr_user a img{
+      width: 40%;
+    }
 }
 header nav .logo img{
   width: 45%;
   object-fit: cover;
   height: 10vh;
 }
-header nav ul{
+header nav .menu ul{
   width: 100%;
   list-style: none;
 }
-header nav ul li{
+header nav .menu ul li{
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 2%;
 }
-header nav ul li a{
+header nav .menu ul li a{
   width: 100%;
   text-decoration: none;
   text-transform: uppercase;
@@ -44,19 +158,29 @@ header nav ul li a{
   font-size: 90%;
   font-family: Arial, Helvetica, sans-serif;
 }
-header nav ul li a:hover{
+header nav .menu ul li a:hover{
   color: #ff7300;
 }
-header nav a img{
+header nav .menu a img{
   margin-left: 10%;
   width: 50%;
   object-fit: contain;
 }
-header nav .hr_user{
+header nav .menu{
+  display: grid;
+  grid-template-columns: 60% 40%;
+  width: 100%;
+}
+header nav .menu .control{
+  display: grid;
+  grid-template-columns: 90% 10%;
+  place-items: center;
+}
+header nav .menu .control .hr_user{
   position: relative;
 }
 header nav .hr_user a img{
-  width: 100%;
+  width: 80%;
   object-fit: contain;
   padding:5%;
 }
@@ -65,16 +189,26 @@ header nav .hr_user:hover ul{
 }
 header nav .hr_user ul{
   background-color: #ffffff;
-  width: 400%;
+  width: 300%;
   right: 0;
-  top: 7.8vh;
+  top: 7vh;
   position: absolute;
   font-size: 12px;
   text-align: center;
-  padding: 1vw;
+  padding: 1%;
   border-top-left-radius: 50px;
   border-bottom-left-radius: 10px;
   display: none;
+}
+header nav .hr_user ul::after{
+  background-color: #ffffff;
+  content: '';
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: -1vh;
+  right: 1vw;
+  transform: rotate(45deg);
 }
 header nav .hr_user ul li{
   padding: 10% 0;
@@ -101,7 +235,7 @@ header nav form input[type='text']{
 header nav form input[type='submit']{
   width: 15%;
   position: absolute;
-  top:18%;
+  top:28.2%;
   right: 1%;
   background-color: #ff7300 ;
   padding: 2.5%;
@@ -116,7 +250,6 @@ header nav form input[type='submit']:hover{
 header nav #search-icon-hr{
   width: 5%;
   margin-left: 90%;
-  margin-top: 5%;
 }
 .video{
   width: 100%;
@@ -491,4 +624,15 @@ place-items: center;
   width: 50%;
   margin: 0 auto;
   text-align: center;
+}
+/* media */
+
+@media screen and (max-width: 768px) {
+  
+}
+@media screen and (max-width: 768px) {
+  
+}
+@media screen and (max-width: 768px) {
+  
 }
