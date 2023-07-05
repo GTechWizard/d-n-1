@@ -12,6 +12,11 @@ document.addEventListener('keydown', function(event) {
   }
 });
 
+const icon_menu= document.querySelector('.icon_menu_hr');
+const menu= document.querySelector('.icon_menu');
+icon_menu.addEventListener('click',() => {
+  menu.classList.toggle("controll_icon_menu");
+})
 
 const video = document.getElementById('video');
 video.play();

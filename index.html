@@ -32,44 +32,43 @@
         /></a>
         <div class="icon_menu">
           <div class="icon_menu_hr">
-            <div class="left"></div>
-            <div class="right"></div>
+            <img src="img/more.png" alt="more">
           </div>
           <div class="menu">
-            <ul>
+            <ul class="main">
               <li>
                 <a href="#chungtoi" class="link">chúng tôi</a>
                 <a href="#dv" class="link">du lịch</a>
                 <a href="#news" class="link">tin tức</a>
                 <a href="#hotro" class="link">hỗ trợ</a>
               </li>
-            </ul>
-            <div class="control">
-              <form action="#" method="post" id="search-container_hr">
-                <input
-                  type="text"
-                  name="text"
-                  placeholder="Nhập tên dịch vụ..."
-                  id="text"
+              <li>
+                <form action="#" method="post" id="search-container_hr">
+                  <input
+                    type="text"
+                    name="text"
+                    placeholder="Nhập tên dịch vụ..."
+                    id="text"
+                  />
+                  <input type="submit" value="Tìm" name="find" />
+                </form>
+                <img
+                  src="img/search.png"
+                  alt="find"
+                  id="search-icon-hr"
+                  title="esc for out"
                 />
-                <input type="submit" value="Tìm" name="find" />
-              </form>
-              <img
-                src="img/search.png"
-                alt="find"
-                id="search-icon-hr"
-                title="esc for out"
-              />
-              <div class="hr_user">
-                <a href="view/user.html" title="Control"
-                  ><img src="img/user.png" alt=""
-                /></a>
-                <ul>
-                  <li><a href="view/dkdn.html">đăng nhập</a></li>
-                  <li><a href="#">Thoát</a></li>
-                </ul>
-              </div>
-            </div>
+              </li>
+              <li>
+                  <a href="view/user.html" title="Control"
+                    ><img src="img/user.png" alt=""
+                  /></a>
+                  <ul>
+                    <li><a href="view/dkdn.html">đăng nhập</a></li>
+                    <li><a href="#">Thoát</a></li>
+                  </ul>
+              </li>
+            </ul>
           </div>
         </div>
       </nav>
@@ -747,8 +746,7 @@
                   </div>
                 </div>
               </div>
-              <div class="footer_end">
-              </div>
+              <div class="footer_end"></div>
             </div>
           </div>
         </div>

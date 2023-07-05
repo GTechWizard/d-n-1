@@ -20,7 +20,8 @@
   width: 100%;
 }
 .ltour .bodytourhot .card{
-  background-color: black;
+  background-color: rgb(0, 0, 0);
+  max-height: 38vh;
 }
 .ltour .bodytourhot .swiper-slide{
  height: 60vh; 

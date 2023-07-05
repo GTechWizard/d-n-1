@@ -15,7 +15,7 @@ header{
 }
 header nav{
   display: grid;
-  grid-template-columns:17% 83%;
+  grid-template-columns:15% 85%;
 }
 header nav .icon_menu .icon_menu_hr{
 display: none;
@@ -34,54 +34,42 @@ position: relative;
 border: 2px solid black;
 border-radius: 5px;
 }
-header nav .icon_menu .icon_menu_hr .left::after{
-  content: '';
-  position: absolute;
-  right: -22px;
-  top: -2px;
-width: 17px;
-height: 17px;
-border: 2px solid black;
-border-radius: 5px;
+.icon_menu_hr{
+  width: 15%;
+  display: none;
 }
-header nav .icon_menu .icon_menu_hr .right::after{
-  content: '';
-width: 17px;
-position: absolute;
-right: -22px;
-top: -2px;
-height: 17px;
-border: 2px solid black;
-border-radius: 5px;
+.icon_menu_hr img{
+  width: 50%;
+  object-fit: contain;
 }
 @media screen and (max-width: 768px) {
-  /* body{
-    width: 90%;
-  } */
+  body{
+    width: 100%;
+  }
   header nav{
 display: flex;
-justify-content: center;
-align-items: center;
 position: relative;
   }
   header nav .icon_menu{
-width: 50%;
+position: absolute;
+background-color: #ffffff;
+width: 30%;
+padding: 2%;
+right: 0;
   }
   header nav a[class='logo']{
 width: 20%;
   }
   header nav .icon_menu .icon_menu_hr{
-    display: block;
+    display: grid;
+    place-items: center;
+    position: absolute;
+    left: -5vw;
+    height: 3vh;
+    border-radius: 25px;
+    background-color:#ffffff ;
     }
-  header nav .icon_menu .icon_menu_hr{
-    display: block;
-    }
-  header nav .icon_menu{
-    position: relative;
-    background-color: #ffffff;
-    width: 30%;
-    border-top-right-radius: 70px;
-    border-bottom-left-radius: 50px;
+    .controll_icon_menu{
     }
     header nav .icon_menu .menu ul li{
       display: grid;
@@ -89,13 +77,22 @@ width: 20%;
       grid-template-columns: 1fr;
       width: 100%;
     }
+    header nav .icon_menu .menu ul{
+      display: grid;
+      place-items: center;
+      grid-template-columns: 1fr;
+      width: 100%;
+    }
     header nav .icon_menu .menu ul li a{
-      background-color: #29c41e;
       margin: 5% auto;
       padding: 2%;
       font-weight: bold;
       width: 50%;
       text-align: center;
+    }
+    header nav .icon_menu .menu ul li a:hover{
+      color: black;
+      background-color: rgb(198, 198, 198);
     }
     header nav .icon_menu .menu{
       display: grid;
@@ -103,36 +100,29 @@ width: 20%;
       grid-template-columns: 1fr;
       width: 100%;
     }
-    header nav .menu .control{
+    header nav .menu{
       display: block;
     }
-    header nav #search-icon-hr{
+    header nav .menu ul li form[id='search-container_hr']{
       display: block;
     }
-    header nav .control form{
-      display: block;
-    }
-    header nav .control .hr_user{
-      display: block;
-      position: relative;
-      background-color: #29c41e;
-      width: 100%;
-    }
-    header nav .control .hr_user ul{
-      display: block;
-      position: relative;
-      width: 100%;
-      border-radius: 0;
-    }
-    header nav .control .hr_user ul::after{
+    header nav .menu ul li img[id='search-icon-hr']{
       display: none;
     }
-    header nav .control .hr_user a img{
-      width: 40%;
+    header nav .menu ul li a img{
+      width: 50%;
+    }
+    header nav .menu ul li ul{
+      background-color: #ffffff;
+      width: 100%;
+      padding: 0;
+      position: relative;
+      display: block;
+      top: 0;
     }
 }
 header nav .logo img{
-  width: 45%;
+  width: 55%;
   object-fit: cover;
   height: 10vh;
 }
@@ -166,79 +156,97 @@ header nav .menu a img{
   width: 50%;
   object-fit: contain;
 }
-header nav .menu{
-  display: grid;
-  grid-template-columns: 60% 40%;
+header nav .menu ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
 }
-header nav .menu .control{
-  display: grid;
-  grid-template-columns: 90% 10%;
-  place-items: center;
-}
-header nav .menu .control .hr_user{
-  position: relative;
-}
-header nav .hr_user a img{
-  width: 80%;
+header nav .menu li a img{
+  width: 100%;
   object-fit: contain;
   padding:5%;
 }
-header nav .hr_user:hover ul{
-  display: block;
+header nav .menu li:last-child {
+  width: 20%;
 }
-header nav .hr_user ul{
-  background-color: #ffffff;
-  width: 300%;
-  right: 0;
-  top: 7vh;
-  position: absolute;
-  font-size: 12px;
+header nav .menu li:last-child a{
+  width: 40%;
+}
+header nav .menu li:last-child ul li a{
+  width: 100%;
   text-align: center;
-  padding: 1%;
-  border-top-left-radius: 50px;
-  border-bottom-left-radius: 10px;
-  display: none;
+  padding: 3% 0;
 }
-header nav .hr_user ul::after{
-  background-color: #ffffff;
-  content: '';
-  width: 10px;
-  height: 10px;
+header nav .menu li{
+  position: relative;
+}
+header nav .menu li ul{
+  display: none ;
   position: absolute;
-  top: -1vh;
-  right: 1vw;
-  transform: rotate(45deg);
+  top: 7vh;
+  right: 0;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 2%;
 }
-header nav .hr_user ul li{
-  padding: 10% 0;
+header nav .menu ul[class='main'] li ul li {
+  padding: 4% 0;
+  width: 100%;
 }
-header nav .hr_user ul li:not(li:last-child){
- border-bottom: 1px solid black ;
+header nav .menu ul[class='main'] li ul li:first-child {
+  width: 100%;
+}
+header nav .menu ul[class='main'] li ul li:last-child {
+  width: 100%;
+}
+header nav .menu li ul li a{
+  font-weight: bold;
+  font-size: 80%;
+}
+header nav .menu li ul li:hover{
+  background-color: #b7b7b7;
+}
+header nav .menu li ul li a:hover{
+ color: black;
+}
+header nav .menu li:hover ul{
+  display: block;
 }
 header nav form{
   width: 100%;
   display: flex;
-  padding: .7%;
   position: relative;
+  margin: 0 2%;
 }
 header nav #search-container_hr{
   display: none;
 }
+header nav #search-icon-hr{
+  width: 5%;
+  margin-left: 90%;
+  display: block;
+}
+header nav .menu ul[class='main'] li:nth-child(2){
+  width: 90%;
+}
+header nav .menu ul[class='main'] li:first-child{
+  width: 130%;
+  margin: 0;
+}
 header nav form input[type='text']{
-  width: 100%;
+  width: 90%;
+  margin: 0 auto;
   border: none;
-  padding: 3%;
+  padding: 2%;
   border-radius: 5px;
-  margin-top: 3%;
 }
 header nav form input[type='submit']{
   width: 15%;
   position: absolute;
-  top:28.2%;
-  right: 1%;
+  right: 10%;
   background-color: #ff7300 ;
-  padding: 2.5%;
+  padding: 2%;
   border: none;
   font-weight: bold;
   color: white;
@@ -246,10 +254,6 @@ header nav form input[type='submit']{
 }
 header nav form input[type='submit']:hover{
   background-color: #dc6503;
-}
-header nav #search-icon-hr{
-  width: 5%;
-  margin-left: 90%;
 }
 .video{
   width: 100%;
