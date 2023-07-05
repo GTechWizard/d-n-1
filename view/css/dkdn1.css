@@ -1,14 +1,11 @@
 .img_fr{
   width: 100%;
-  height: 67vh;
-}
-.img_fr img{
-  object-fit: contain;
+  background-image: url(../../img/4.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .footer-section .container {
-  position: absolute;
-  top: .01%;
-  background: rgba(195, 162, 0, 0.68);
+  background: rgba(255, 255, 255, 0.824);
 }
 .footer-section {
   position: relative;
@@ -29,17 +26,17 @@
   display: inline-block;
 }
 .cta-text h4 {
-  color: #fff;
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 2px;
 }
 .cta-text span {
-  color: #757575;
   font-size: 15px;
+  background-color: #935917;
+  padding: 1% 2%;
+  border-radius: 25px;
 }
 .footer-content {
-  position: relative;
   z-index: 2;
 }
 .footer-pattern img {
@@ -58,7 +55,7 @@
   text-align: center;
 }
 .footer-social-icon span {
-  color: #fff;
+  color: #ff6f00;
   display: block;
   font-size: 20px;
   font-weight: 700;
@@ -103,8 +100,6 @@
   background: #04ff00;
 }
 .footer-widget ul li {
-  display: inline-block;
-  float: left;
   width: 50%;
   margin-bottom: 12px;
 }
@@ -129,7 +124,6 @@
 .footer-cta .row{
   display: flex;
   padding-left: 10%;
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.806), rgba(195, 162, 0, 0.68));
   padding-top:2%;
 }
 .footer-cta .row .col-xl-4 .single-cta .cta-text span {
@@ -172,7 +166,7 @@
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .footer-social-icon .social_icon li:hover {
-  color: white;
+  color: rgb(255, 98, 0);
   font-weight: bold;
 }
 .footer-social-icon .social_icon li a i {
@@ -263,4 +257,10 @@
 .social_icon li:nth-child(4):hover a {
   background: #fff;
   color: #ff0000;
+}
+.footer_end{
+  background-color: black;
+  padding: 1%;
+  color: white;
+  margin-top: 5%;
 }
