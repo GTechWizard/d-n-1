@@ -1,14 +1,7 @@
-const formOpenBtn = document.querySelector("#form-open"),
-  home = document.querySelector(".home"),
+const home = document.querySelector(".home"),
   formContainer = document.querySelector(".form_container"),
   formCloseBtn = document.querySelector(".form_close"),
-  signupBtn = document.querySelector("#signup"),
-  loginBtn = document.querySelector("#login"),
   pwShowHide = document.querySelectorAll(".pw_hide");
-
-formOpenBtn.addEventListener("click", () => home.classList.add("show"));
-formCloseBtn.addEventListener("click", () => home.classList.remove("show"));
-
 pwShowHide.forEach((icon) => {
   icon.addEventListener("click", () => {
     let getPwInput = icon.parentElement.querySelector("input");
@@ -22,11 +15,17 @@ pwShowHide.forEach((icon) => {
   });
 });
 
-signupBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  formContainer.classList.add("active");
+var signupBtn = document.getElementById("signup");
+var loginBtn = document.getElementById("login");
+var loginForm = document.querySelector(".login_form");
+var signupForm = document.querySelector(".signup_form");
+signupBtn.addEventListener("click", (event) => {
+  signupForm.style.display='block';
+  loginForm.style.display='none';
+  event.preventDefault();
 });
-loginBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  formContainer.classList.remove("active");
+loginBtn.addEventListener("click", (event) => {
+  signupForm.style.display='none';
+  loginForm.style.display='block';
+  event.preventDefault();
 });
