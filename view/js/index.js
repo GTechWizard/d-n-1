@@ -13,9 +13,14 @@ document.addEventListener('keydown', function(event) {
 });
 
 const icon_menu= document.querySelector('.icon_menu_hr');
-const menu= document.querySelector('.icon_menu');
-icon_menu.addEventListener('click',() => {
-  menu.classList.toggle("controll_icon_menu");
+const menu= document.getElementById('menu')
+icon_menu.addEventListener('click',function(event){
+  if (menu.style.display === "none") {
+    menu.style.display = "block";
+  } else {
+    menu.style.display = "none";
+  }
+  event.stopPropagation();
 })
 
 const video = document.getElementById('video');
