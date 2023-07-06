@@ -249,14 +249,6 @@ background-color: rgb(255, 179, 0);
   border-radius: 10px;
   border: 1px solid #afafaf;
 }
-.tt{
-}
-.dvl{
-}
-.dvs{
-}
-.cntt{
-}
 .qmk{
   display: none;
   padding: 2%;
@@ -355,6 +347,61 @@ font-weight: bold;
 .mk_new form label p:first-child{
   margin-left: 2%;
   width: 38%;
+}
+.dvs{
+  padding: 1%;
+}
+.dvs .dv{
+  padding: 1%;
+}
+th, td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+}
+.dvs h2{
+  background-color: #ffd8db;
+  padding: 1%;
+  text-align: right;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.dvs table{
+  width: 100%;
+  text-align: center;
+}
+.dvs table tr th{
+  width: 100%;
+  background-color: blue;
+  color: white;
+  padding: 1%;
+}
+.dvs table tr th:nth-child(1){
+  width: 5%;
+}
+.dvs table tr th:nth-child(2){
+  width: 20%;
+}
+.dvs table tr th:nth-child(3){
+  width: 15%;
+}
+.dvs table tr th:nth-child(4){
+  width: 15%;
+}
+.dvs table tr th:nth-child(5){
+  width: 10%;
+}
+.dvs table tr th:nth-child(6){
+  width: 25%;
+}
+.dvs table tr td p{
+  color: red;
+  font-weight: bold;
+}
+.dvs table tr td img{
+ width: 50%;
+ height: 20vh;
+ object-fit: contain;
 }
 .query {
   display: none;

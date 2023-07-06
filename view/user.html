@@ -1,203 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User</title>
+    <link rel="stylesheet" href="css/user.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>User</title>
-  <link rel="stylesheet" href="css/user.css" />
-</head>
-
-<body>
-  <header>
-    <div class="undo">
-      <a href="../index.html"><img src="../img/undo.png" alt="image" title="come back" /></a>
-    </div>
-    <div class="logo"><img src="../img/logofontwhite.png" alt="image" /></div>
-    <div class="user"><img src="../img/user.png" alt="image" /></div>
-  </header>
-  <section>
-    <p>Xin chào <span>kin</span></p>
-  </section>
-  <article>
-    <main>
-    <nav>
-      <ul>
-        <li>
-          <a href="user.html" data-target="tk" class="query_btn">Tài Khoản</a>
+  <body>
+    <header>
+      <div class="undo">
+        <a href="../index.html"
+          ><img src="../img/undo.png" alt="image" title="come back"
+        /></a>
+      </div>
+      <div class="logo"><img src="../img/logofontwhite.png" alt="image" /></div>
+      <div class="user"><img src="../img/user.png" alt="image" /></div>
+    </header>
+    <section>
+      <p>Xin chào <span>kin</span></p>
+    </section>
+    <article>
+      <main>
+        <nav>
           <ul>
-            <li><a data-target="mk" class="query_btn">đổi mật khẩu</a></li>
-            <li><a data-target="cntt" class="query_btn">cập nhật thông tin</a></li>
+            <li>
+              <a href="user.html" data-target="tk" class="query_btn"
+                >Tài Khoản</a
+              >
+              <ul>
+                <li><a data-target="mk" class="query_btn">đổi mật khẩu</a></li>
+                <li>
+                  <a data-target="cntt" class="query_btn">cập nhật thông tin</a>
+                </li>
+              </ul>
+            </li>
+            <li data-target="tt" class="query_btn">Tin Tức Đã Thích</li>
+            <li data-target="dvl" class="query_btn">Dịch vụ Đã Thích</li>
+            <li data-target="dvs" class="query_btn">Dịch vụ Của Bạn</li>
+            <li><a href="">Đăng Nhập Admin</a></li>
           </ul>
-        </li>
-        <li data-target="tt" class="query_btn">Tin Tức Đã Thích</li>
-        <li data-target="dvl" class="query_btn">Dịch vụ Đã Thích</li>
-        <li data-target="dvs" class="query_btn">Dịch vụ Của Bạn</li>
-        <li><a href="">Đăng Nhập Admin</a></li>
-      </ul>
-      <a href=""><img src="../img/logout.png" alt="log out" title="log out" /></a>
-    </nav>
-    </main>
-    <div class="control">
-      <div class="query tk active" id="tk">
-        <h2>hồ sơ của tôi</h2>
-        <p>quản lý thông tin hồ sơ</p>
-        <div class="form_tt">
-          <form action="#" method="post">
-            <div class="check_tt">
-              <div class="form_ck">
-                <label for="">
-                  <p>Tên đăng nhập</p>
-                  <input type="text" name=""  />
-                </label>
-                <label for="">
-                  <p>Email</p>
-                  <input type="email" name=""  disabled/>
-                </label>
-                <label for="">
-                  <p>Số điện thoại</p>
-                  <input type="tel" name=""  disabled/>
-                </label>
-                <label for="">
-                  <p>Địa chỉ</p>
-                  <input type="text" name=""  />
-                </label>
+          <a href=""
+            ><img src="../img/logout.png" alt="log out" title="log out"
+          /></a>
+        </nav>
+      </main>
+      <div class="control">
+        <div class="query tk" id="tk">
+          <h2>hồ sơ của tôi</h2>
+          <p>quản lý thông tin hồ sơ</p>
+          <div class="form_tt">
+            <form action="#" method="post">
+              <div class="check_tt">
+                <div class="form_ck">
+                  <label for="">
+                    <p>Tên đăng nhập</p>
+                    <input type="text" name="" />
+                  </label>
+                  <label for="">
+                    <p>Email</p>
+                    <input type="email" name="" disabled />
+                  </label>
+                  <label for="">
+                    <p>Số điện thoại</p>
+                    <input type="tel" name="" disabled />
+                  </label>
+                  <label for="">
+                    <p>Địa chỉ</p>
+                    <input type="text" name="" />
+                  </label>
+                </div>
+                <div class="img_ur">
+                  <img src="../img/user.png" alt="ảnh đại diện" />
+                  <input type="file" name="" id="iput_file" />
+                </div>
               </div>
-              <div class="img_ur">
-                <img src="../img/user.png" alt="ảnh đại diện" />
-                <input type="file" name="" id="iput_file" />
+              <input type="submit" value="Lưu" name="save" />
+            </form>
+          </div>
+        </div>
+        <div class="query mk" id="mk">
+          <div class="content_mk">
+            <h2>Đổi mật khẩu</h2>
+            <form action="#" method="post">
+              <label for=""
+                ><p>Mật khẩu cũ:</p>
+                <input type="password" name="" class="input_pass" id="see1" />
+                <label data-pass_see="see1" class="input_check_pass" id="hmk1"
+                  >ẩn/hiện</label
+                >
+              </label>
+              <label for=""
+                ><p>Mật khẩu mới:</p>
+                <input type="password" name="" class="input_pass" id="see3" />
+                <label data-pass_see="see3" class="input_check_pass" id="hmk2"
+                  >ẩn/hiện</label
+                >
+              </label>
+              <label for=""
+                ><p>Nhập lại mật khẩu mới:</p>
+                <input type="password" name="" class="input_pass" id="see2" />
+                <label data-pass_see="see2" class="input_check_pass" id="hmk3">
+                  ẩn/hiện</label
+                >
+              </label>
+              <div class="input_submit">
+                <input type="submit" value="Lưu" name="" />
               </div>
+              <p data-target="qmk" class="query_btn">Quên mật khẩu</p>
+            </form>
+          </div>
+        </div>
+        <div class="query tt" id="tt">
+          <a href="#">
+            <img src="../img/bgdkdn.jpg" alt="img" />
+            <div class="content_tt">
+              <h3>mới thi chính trị xong</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Tempora tenetur quo molestias ea quia odit dicta, dignissimos
+                maiores! Mollitia excepturi quis modi quam quod tempora dolore
+                ea praesentium accusamus pariatur!
+              </p>
+              <p><span>25/01/2101</span><span>tác giả:meow meow</span></p>
             </div>
-            <input type="submit" value="Lưu" name="save">
+          </a>
+          <a href="#">
+            <img src="../img/bgdkdn.jpg" alt="img" />
+            <div class="content_tt">
+              <h3>mới thi chính trị xong</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Tempora tenetur quo molestias ea quia odit dicta, dignissimos
+                maiores! Mollitia excepturi quis modi quam quod tempora dolore
+                ea praesentium accusamus pariatur!
+              </p>
+              <p><span>25/01/2101</span><span>tác giả:meow meow</span></p>
+            </div>
+          </a>
+          <a href="#">
+            <img src="../img/bgdkdn.jpg" alt="img" />
+            <div class="content_tt">
+              <h3>mới thi chính trị xong</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Tempora tenetur quo molestias ea quia odit dicta, dignissimos
+                maiores! Mollitia excepturi quis modi quam quod tempora dolore
+                ea praesentium accusamus pariatur!
+              </p>
+              <p><span>25/01/2101</span><span>tác giả:meow meow</span></p>
+            </div>
+          </a>
+          <a href="#">
+            <img src="../img/bgdkdn.jpg" alt="img" />
+            <div class="content_tt">
+              <h3>mới thi chính trị xong</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Tempora tenetur quo molestias ea quia odit dicta, dignissimos
+                maiores! Mollitia excepturi quis modi quam quod tempora dolore
+                ea praesentium accusamus pariatur!
+              </p>
+              <p><span>25/01/2101</span><span>tác giả:meow meow</span></p>
+            </div>
+          </a>
+          <a href="#">
+            <img src="../img/bgdkdn.jpg" alt="img" />
+            <div class="content_tt">
+              <h3>mới thi chính trị xong</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Tempora tenetur quo molestias ea quia odit dicta, dignissimos
+                maiores! Mollitia excepturi quis modi quam quod tempora dolore
+                ea praesentium accusamus pariatur!
+              </p>
+              <p><span>25/01/2101</span><span>tác giả:meow meow</span></p>
+            </div>
+          </a>
+        </div>
+        <div class="query dvl" id="dvl"></div>
+        <div class="query dvs active" id="dvs">
+          <h2>dịch vụ đã đăng ký</h2>
+          <div class="dv">
+            <table>
+              <tr>
+                <th>Mã đơn</th>
+                <th>Ngày đặt</th>
+                <th>Số lượng mặt hàng</th>
+                <th>Tổng tiền</th>
+                <th>Tình trạng đơn hàng</th>
+              </tr>
+              <tr>
+                <td>DAM-'.$value['id'].'</td>
+                <td>'.$value['ngay_dh'].'</td>
+                <td>'.$slmh.'</td>
+                <td>'.$value['total'].'</td>
+                <td>'.$ttdh.'</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="query qmk" id="qmk">
+          <p>Đã gửi tin nhắn về email của bạn</p>
+          <form action="#">
+            <label for=""
+              >Nhập dãy số trong email<input
+                type="text"
+                placeholder="1234..."
+                name=""
+            /></label>
+            <input
+              type="submit"
+              value="Gửi"
+              name=""
+              data-target="mk_new"
+              class="query_btn"
+            />
+          </form>
+        </div>
+        <div class="query mk_new" id="mk_new">
+          <h2>Đổi mật khẩu</h2>
+          <form action="#" method="post">
+            <label for=""
+              ><p>Mật khẩu mới:</p>
+              <input type="password" name="" class="input_pass" id="mknew_1" />
+              <p class="input_check_pass" data-pass_see="mknew_1">ẩn/hiện</p>
+            </label>
+            <label for=""
+              ><p>Nhập lại mật khẩu mới:</p>
+              <input type="password" name="" class="input_pass" id="mknew_2" />
+              <p class="input_check_pass" data-pass_see="mknew_2">ẩn/hiện</p>
+            </label>
+            <input type="submit" value="Lưu" name="" />
+          </form>
+        </div>
+        <div class="query cntt" id="cntt">
+          <h2>cập nhật thông tin</h2>
+          <form action="#" method="post">
+            <label for=""
+              >Mật khẩu mới:
+              <input type="password" name="" />
+            </label>
+            <label for=""
+              >Nhập lại mật khẩu mới:
+              <input type="password" name="" />
+            </label>
+            <input type="submit" value="Lưu" name="" />
           </form>
         </div>
       </div>
-      <div class="query mk " id="mk">
-        <div class="content_mk">
-        <h2> Đổi mật khẩu</h2>
-        <form action="#" method="post">
-          <label for=""><p>Mật khẩu cũ:</p>
-            <input type="password" name="" class="input_pass" id="see1" >
-            <label data-pass_see="see1"  class="input_check_pass" id="hmk1">ẩn/hiện</label>
-          </label>
-          <label for=""><p>Mật khẩu mới:</p>
-            <input type="password" name="" class="input_pass" id="see3">
-            <label data-pass_see="see3" class="input_check_pass" id="hmk2">ẩn/hiện</label>
-          </label>
-          <label for=""><p>Nhập lại mật khẩu mới:</p>
-            <input type="password" name="" class="input_pass"id="see2">
-            <label data-pass_see="see2"  class="input_check_pass" id="hmk3"> ẩn/hiện</label>
-          </label>
-          <div class="input_submit"> 
-            <input type="submit" value="Lưu" name="">
-          </div>
-          <p data-target="qmk" class="query_btn">Quên mật khẩu</p>
-        </form>
-      </div>
-      </div>
-      <div class="query tt" id="tt">
-        <a href="#">
-          <img src="../img/bgdkdn.jpg" alt="img">
-          <div class="content_tt">
-            <h3>mới thi chính trị xong</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora tenetur quo molestias ea quia odit dicta, dignissimos maiores! Mollitia excepturi quis modi quam quod tempora dolore ea
-              praesentium accusamus pariatur!</p>
-            <p><span>25/01/2101</span><span>tác giả:meow meow</span></p>
-          </div>
-        </a>
-        <a href="#">
-          <img src="../img/bgdkdn.jpg" alt="img">
-          <div class="content_tt">
-            <h3>mới thi chính trị xong</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora tenetur quo molestias ea quia odit dicta, dignissimos maiores! Mollitia excepturi quis modi quam quod tempora dolore ea
-              praesentium accusamus pariatur!</p>
-            <p><span>25/01/2101</span><span>tác giả:meow meow</span></p>
-          </div>
-        </a>
-        <a href="#">
-          <img src="../img/bgdkdn.jpg" alt="img">
-          <div class="content_tt">
-            <h3>mới thi chính trị xong</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora tenetur quo molestias ea quia odit dicta, dignissimos maiores! Mollitia excepturi quis modi quam quod tempora dolore ea
-              praesentium accusamus pariatur!</p>
-            <p><span>25/01/2101</span><span>tác giả:meow meow</span></p>
-          </div>
-        </a>
-        <a href="#">
-          <img src="../img/bgdkdn.jpg" alt="img">
-          <div class="content_tt">
-            <h3>mới thi chính trị xong</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora tenetur quo molestias ea quia odit dicta, dignissimos maiores! Mollitia excepturi quis modi quam quod tempora dolore ea
-              praesentium accusamus pariatur!</p>
-            <p><span>25/01/2101</span><span>tác giả:meow meow</span></p>
-          </div>
-        </a>
-        <a href="#">
-          <img src="../img/bgdkdn.jpg" alt="img">
-          <div class="content_tt">
-            <h3>mới thi chính trị xong</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora tenetur quo molestias ea quia odit dicta, dignissimos maiores! Mollitia excepturi quis modi quam quod tempora dolore ea
-              praesentium accusamus pariatur!</p>
-            <p><span>25/01/2101</span><span>tác giả:meow meow</span></p>
-          </div>
-        </a>
-      </div>
-      <div class="query dvl" id="dvl">
-
-      </div>
-      <div class="query dvs" id="dvs">
-        <div class="dv">
-        <tr>
-          <th>STT</th>
-          <th>Ảnh</th>
-          <th>Vũng tàu những chuyến đi</th>
-          <th>Ngày đi</th>
-          <th>tình trạng</th>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias accusamus tenetur illo molestiae dolores, </td>
-          <td>25/12/1212</td>
-          <td>chưa đi</td>
-        </tr>
-      </div>
-      </div>
-      <div class="query qmk " id="qmk">
-        <p>Đã gửi tin nhắn về email của bạn</p>
-        <form action="#">
-          <label for="">Nhập dãy số trong email<input type="text" placeholder="1234..." name=""></label>
-          <input type="submit" value="Gửi" name="" data-target="mk_new" class="query_btn">
-        </form>
-      </div>
-      <div class="query mk_new" id="mk_new">
-        <h2> Đổi mật khẩu</h2>
-        <form action="#" method="post">
-          <label for=""><p>Mật khẩu mới:</p>
-            <input type="password" name="" class="input_pass" id="mknew_1">
-            <p class="input_check_pass" data-pass_see="mknew_1">ẩn/hiện</p>
-          </label>
-          <label for=""><p>Nhập lại mật khẩu mới:</p>
-            <input type="password" name="" class="input_pass" id="mknew_2">
-            <p class="input_check_pass" data-pass_see="mknew_2">ẩn/hiện</p>
-          </label>
-          <input type="submit" value="Lưu" name="">
-        </form>
-      </div>
-      <div class="query cntt" id="cntt">
-        <h2>cập nhật thông tin</h2>
-        <form action="#" method="post">
-          <label for="">Mật khẩu mới:
-            <input type="password" name="" >
-          </label>
-          <label for="">Nhập lại mật khẩu mới:
-            <input type="password" name="" >
-          </label>
-          <input type="submit" value="Lưu" name="">
-        </form>
-      </div>
-    </div>
-  </article>
-</body>
-<script src="../view/js/user.js"></script>
+    </article>
+  </body>
+  <script src="../view/js/user.js"></script>
 </html>
