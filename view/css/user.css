@@ -3,6 +3,7 @@
   margin: auto;
   padding: 0;
   width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
 }
 header{
   background-color: #ffffff;
@@ -38,9 +39,15 @@ section{
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 article{
-  display: grid;
-  grid-template-columns: 15% 80%;
   position: relative;
+}
+main{
+  float: left;
+  width: 20%;
+}
+.control{
+  float: right;
+  width: 80%;
 }
 nav{
   background-color: rgb(255, 153, 0);
@@ -81,6 +88,184 @@ nav ul li a{
   text-transform: capitalize;
 }
 nav a img{
+  margin-top: 20%;
   width: 15%;
   transform: translate(280%);
+}
+.tk{
+padding: 1%;
+display: none;
+}
+.tk h2{
+  text-align: center;
+  padding: 2% 0;
+  text-transform: uppercase;
+font-weight: bold;
+background-color: rgb(255, 179, 0);
+}
+.tk p{
+  text-transform: capitalize;
+  margin: 1% 0 0 .5%;
+  font-weight: bold;
+}
+.tk .form_tt{
+  line-height: 150%;
+}
+.tk .form_tt form{
+  line-height: 150%;
+  display: grid;
+  place-items: center;
+}
+.tk .form_tt form .check_tt{
+  line-height: 150%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2% 0;
+}
+.tk .form_tt form .check_tt .form_ck{
+  width: 60%;
+}
+.tk .form_tt form .check_tt .img_ur{
+  display: grid;
+  place-items: center;
+  width: 50%;
+}
+.tk .form_tt form .check_tt .img_ur img{
+  width: 40%;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+.tk .form_tt form .check_tt .img_ur input{
+  width: 70%;
+  margin-top: 2%;
+}
+.tk .form_tt form .check_tt .img_ur input::-webkit-file-upload-button{
+  width: 30%;
+  padding: 2%;
+  font-weight: bold;
+  border-radius: 12px;
+  border: 1px solid rgb(255, 255, 255);
+  background-image: linear-gradient(to right bottom,#ff7b00,white);
+}
+.tk .form_tt form .check_tt .img_ur input::-webkit-file-upload-button:hover{
+  background-image: linear-gradient(to right bottom,#ffffff,rgb(109, 187, 0));
+}
+.tk .form_tt form .check_tt .form_ck label{
+  color: rgb(255, 98, 0) ;
+  margin: .5% 0;
+  display: inline-block;
+  background-color: rgb(232, 232, 232);
+  border-radius: 15px;
+  padding: 2%;
+  width: 70%;
+}
+.tk .form_tt form .check_tt .form_ck label input{
+  width: 100%;
+  padding: 2%;
+  border-radius: 16px;
+  text-transform: capitalize;
+  border: 1px solid black;
+  background-color: white;
+}
+.tk .form_tt form input[type='submit']{
+  width: 7%;
+  padding: 1%;
+  border-radius: 16px;
+  text-transform: capitalize;
+  border: 1px solid rgb(255, 157, 0);
+  background-color: rgb(255, 177, 51);
+  font-weight: bold;
+  color: white;
+}
+.tk .form_tt form input[type='submit']:hover{
+  background-color: rgb(211, 130, 0);
+}
+.mk{
+  padding: 2%;
+}
+.mk .content_mk{
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+}
+.mk .content_mk h2{
+  background-color: #ffa734;
+  padding: 1%;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.mk form{
+  padding: 1%;
+  margin: 1% 0;
+  width: 50%;
+}
+.mk form input[type='submit']{
+  padding: 2%;
+  margin: 1% auto;
+  width: 20%;
+  border: 1px solid black;
+  border-radius: 15px;
+  background-color: #ffa734;
+  font-weight: bold;
+}
+.mk form input[type='submit']:hover{
+  background-color: #c97200;
+  color: white;
+}
+.mk form .input_submit{
+  width: 100%;
+  display: grid;
+  place-items: center;
+  margin-top: 5%;
+}
+.mk form label{
+  display: grid;
+  grid-template-columns: 35% 50% 14%;
+  margin-top: 2%;
+  padding: 1%;
+  text-align: right;
+  grid-gap: 2%;
+}
+.mk form label label{
+  background-color: #ffeede;
+  width: 100%;
+  margin: 0 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+  font-size: small;
+  padding: 1%;
+  border-radius: 12px;
+}
+.mk form label label:hover{
+  background-color: #ffc692;
+  font-weight: bold;
+}
+.mk form label input{
+  padding: 2%;
+  border-radius: 10px;
+  border: 1px solid #afafaf;
+}
+.tt{
+}
+.dvl{
+}
+.dvs{
+}
+.cntt{
+}
+.qmk{
+  display: none;
+}
+.mk_new{
+  display: none;
+}
+.query {
+  display: none;
+}
+.query.active {
+  display: block;
 }

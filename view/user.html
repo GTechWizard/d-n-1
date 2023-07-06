@@ -20,23 +20,26 @@
     <p>Xin chào <span>kin</span></p>
   </section>
   <article>
+    <main>
     <nav>
       <ul>
         <li>
-          <a href="user.html">Tài Khoản</a>
+          <a href="user.html" data-target="tk" class="query_btn">Tài Khoản</a>
           <ul>
-            <li><a href="">đổi mật khẩu</a></li>
+            <li><a data-target="mk" class="query_btn">đổi mật khẩu</a></li>
+            <li><a data-target="cntt" class="query_btn">cập nhật thông tin</a></li>
           </ul>
         </li>
-        <li>Tin Tức Đã Thích</li>
-        <li>Dịch vụ Đã Thích</li>
-        <li>Dịch vụ Của Bạn</li>
+        <li data-target="tt" class="query_btn">Tin Tức Đã Thích</li>
+        <li data-target="dvl" class="query_btn">Dịch vụ Đã Thích</li>
+        <li data-target="dvs" class="query_btn">Dịch vụ Của Bạn</li>
         <li><a href="">Đăng Nhập Admin</a></li>
       </ul>
       <a href=""><img src="../img/logout.png" alt="log out" title="log out" /></a>
     </nav>
+    </main>
     <div class="control">
-      <div class="tk">
+      <div class="query tk " id="tk">
         <h2>hồ sơ của tôi</h2>
         <p>quản lý thông tin hồ sơ</p>
         <div class="form_tt">
@@ -44,20 +47,20 @@
             <div class="check_tt">
               <div class="form_ck">
                 <label for="">
-                  Tên đăng nhập
-                  <input type="text" name="" id="" />
+                  <p>Tên đăng nhập</p>
+                  <input type="text" name=""  />
                 </label>
                 <label for="">
-                  Email
-                  <input type="email" name="" id="" /><a href="#">Thay đổi</a>
+                  <p>Email</p>
+                  <input type="email" name=""  disabled/>
                 </label>
                 <label for="">
-                  Số điện thoại
-                  <input type="tel" name="" id="" /><a href="#">Thay đổi</a>
+                  <p>Số điện thoại</p>
+                  <input type="tel" name=""  disabled/>
                 </label>
                 <label for="">
-                  Địa chỉ
-                  <input type="text" name="" id="" />
+                  <p>Địa chỉ</p>
+                  <input type="text" name=""  />
                 </label>
               </div>
               <div class="img_ur">
@@ -69,23 +72,30 @@
           </form>
         </div>
       </div>
-      <div class="mk">
+      <div class="query mk active" id="mk">
+        <div class="content_mk">
         <h2> Đổi mật khẩu</h2>
         <form action="#" method="post">
-          <label for="">Mật khẩu cũ:
-            <input type="password" name="" id="">
+          <label for=""><p>Mật khẩu cũ:</p>
+            <input type="password" name="" class="input_pass" id="see1" >
+            <label data-pass_see="see1"  class="input_check_pass" id="hmk1">ẩn/hiện</label>
           </label>
-          <label for="">Mật khẩu mới:
-            <input type="password" name="" id="">
+          <label for=""><p>Mật khẩu mới:</p>
+            <input type="password" name="" class="input_pass" id="see3">
+            <label data-pass_see="see3" class="input_check_pass" id="hmk2">ẩn/hiện</label>
           </label>
-          <label for="">Nhập lại mật khẩu mới:
-            <input type="password" name="" id="">
+          <label for=""><p>Nhập lại mật khẩu mới:</p>
+            <input type="password" name="" class="input_pass"id="see2">
+            <label data-pass_see="see2"  class="input_check_pass" id="hmk3"> ẩn/hiện</label>
           </label>
-          <input type="submit" value="Lưu" name="">
-          <a href="#">Quên mật khẩu</a>
+          <div class="input_submit"> 
+            <input type="submit" value="Lưu" name="">
+          </div>
+          <p data-target="qmk" class="query_btn">Quên mật khẩu</p>
         </form>
       </div>
-      <div class="tt">
+      </div>
+      <div class="query tt" id="tt">
         <a href="#">
           <img src="../img/bgdkdn.jpg" alt="img">
           <div class="content_tt">
@@ -132,10 +142,10 @@
           </div>
         </a>
       </div>
-      <div class="dvl">
+      <div class="query dvl" id="dvl">
 
       </div>
-      <div class="dvs">
+      <div class="query dvs" id="dvs">
         <div class="dv">
         <tr>
           <th>STT</th>
@@ -153,21 +163,33 @@
         </tr>
       </div>
       </div>
-      <div class="qmk">
+      <div class="query qmk" id="qmk">
         <p>Đã gửi tin nhắn về email của bạn</p>
         <form action="#">
           <label for="">Nhập dãy số trong email<input type="text"></label>
           <input type="submit" value="Gửi" name="">
         </form>
       </div>
-      <div class="mk_new">
+      <div class="query mk_new" id="mk_new">
         <h2> Đổi mật khẩu</h2>
         <form action="#" method="post">
           <label for="">Mật khẩu mới:
-            <input type="password" name="" id="">
+            <input type="password" name="" >
           </label>
           <label for="">Nhập lại mật khẩu mới:
-            <input type="password" name="" id="">
+            <input type="password" name="" >
+          </label>
+          <input type="submit" value="Lưu" name="">
+        </form>
+      </div>
+      <div class="query cntt" id="cntt">
+        <h2>cập nhật thông tin</h2>
+        <form action="#" method="post">
+          <label for="">Mật khẩu mới:
+            <input type="password" name="" >
+          </label>
+          <label for="">Nhập lại mật khẩu mới:
+            <input type="password" name="" >
           </label>
           <input type="submit" value="Lưu" name="">
         </form>
@@ -175,5 +197,5 @@
     </div>
   </article>
 </body>
-
+<script src="../view/js/user.js"></script>
 </html>
