@@ -259,9 +259,64 @@ background-color: rgb(255, 179, 0);
 }
 .qmk{
   display: none;
+  padding: 2%;
+}
+.qmk p{
+  color:#ff7f8a ;
+  font-weight: bold;
+  margin: 2% 0;
+}
+.qmk form{
+  font-weight: bold;
+  margin: 2% 0;
+}
+.qmk form input[type='text']{
+  padding: .5%;
+  margin: 0 2%;
+  width:30%;
+  border: none;
+  border-bottom: 1px solid black;
+}
+.qmk form input[type='submit']{
+  padding: 1%;
+  width:5%;
+  font-weight: bold;
+  border-radius: 10px;
+  border: none;
+  background-color: #f06000;
+  color: white;
+}
+.qmk form input[type='submit']:hover{
+  background-color: #ff7f2a;
+}
+form input:focus{
+  outline: none;
+}
+.qmk form label{
+  display: inline-block;
+  padding: 1% 2%;
 }
 .mk_new{
-  display: none;
+ background-color: #f06000;
+ padding: 1%;
+}
+.mk_new h2{
+ text-align: center;
+ padding: 1%;
+}
+.mk_new form{
+ padding: 1%;
+ width: 50%;
+}
+.mk_new form label{
+ background-color: #ffc692;
+ display: inline-block;
+ margin-top: 2%;
+}
+.mk_new form label input{
+ padding: 1%;
+ width: 60%;
+ margin-top: 2%;
 }
 .query {
   display: none;
