@@ -1,3 +1,7 @@
+@font-face {
+  font-family: 'fontzeroone';
+  src: url('../../fonts/PTSansNarrow-Bold.ttf');
+}
 *{
   box-sizing: border-box;
   margin: auto;
@@ -43,11 +47,11 @@ article{
 }
 main{
   float: left;
-  width: 20%;
+  width: 15%;
 }
 .control{
   float: right;
-  width: 80%;
+  width: 85%;
 }
 nav{
   background-color: rgb(255, 153, 0);
@@ -85,6 +89,7 @@ nav ul li a{
   text-decoration: none;
   color: black;
   font-weight: bold;
+  font-size: 80%;
   text-transform: capitalize;
 }
 nav a img{
@@ -354,10 +359,48 @@ font-weight: bold;
 .dvs .dv{
   padding: 1%;
 }
-th, td {
-  border: 1px solid black;
-  padding: 10px;
+.dvs .dv ul[class='uldvth']{
+  width: 100%;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 2% 20% 18% 27%  10% 8% 10% 5%;
+}
+.dvs .dv ul[class='uldvth'] li{
+  text-transform: capitalize;
   text-align: center;
+  width: 100%;
+  font-weight: bold;
+}
+.dvs .dv ul[class='uldvtd']{
+  width: 100%;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 2% 20% 18% 27% 10% 8% 10% 5%;
+  padding: .2%;
+  margin-top: 1%;
+}
+.dvs .dv ul[class='uldvtd']:nth-child(even){
+  background-color: #f0f0f0;
+}
+.dvs .dv ul[class='uldvtd']:nth-child(odd){
+  background-color: #ffffff;
+}
+.dvs .dv ul[class='uldvtd'] li:not(li:nth-child(4)){
+  text-transform: capitalize;
+  text-align: center;
+  width: 100%;
+}
+.dvs .dv ul[class='uldvtd'] li a{
+  text-decoration: none;
+  color:  black;
+}
+.dvs .dv ul[class='uldvtd'] li img{
+  width: 80%;
+  border-radius: 10px;
+}
+.dvs .dv ul[class='uldvtd'] li a:hover{
+  text-decoration: none;
+  color:  rgb(255, 140, 0);
 }
 .dvs h2{
   background-color: #ffd8db;
@@ -366,43 +409,124 @@ th, td {
   text-transform: uppercase;
   font-weight: bold;
 }
-.dvs table{
-  width: 100%;
-  text-align: center;
-}
-.dvs table tr th{
-  width: 100%;
-  background-color: blue;
-  color: white;
+/* =================================tt==================================== */
+.tt h2{
   padding: 1%;
-}
-.dvs table tr th:nth-child(1){
-  width: 5%;
-}
-.dvs table tr th:nth-child(2){
-  width: 20%;
-}
-.dvs table tr th:nth-child(3){
-  width: 15%;
-}
-.dvs table tr th:nth-child(4){
-  width: 15%;
-}
-.dvs table tr th:nth-child(5){
-  width: 10%;
-}
-.dvs table tr th:nth-child(6){
-  width: 25%;
-}
-.dvs table tr td p{
-  color: red;
+  text-transform: uppercase;
   font-weight: bold;
 }
-.dvs table tr td img{
- width: 50%;
- height: 20vh;
- object-fit: contain;
+.tt article{
+  margin-top: 2%;
 }
+.tt article a{
+  background-color: #f3f3f3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: black; 
+  padding: 1%;
+  margin-top: 1.5%;
+}
+.tt article a .content_tt{
+  margin-left: 1%;
+  background-color: white;
+  display: block;
+}
+.tt article a .content_tt h3{
+  padding: 1%;
+  border-left: 2px solid greenyellow;
+  border-bottom: 2px solid rgb(145, 241, 0);
+  text-transform: capitalize;
+  font-family:'fontzeroone' ;
+}
+.tt article a .content_tt p{
+  padding: 1%;
+  line-height: 120%;
+}
+.tt article a .content_tt p[class='p_content_tt_2'] span{
+  text-transform: capitalize;
+}
+.tt article a .content_tt p[class='p_content_tt_2'] span:last-child{
+  margin-left: 50%;
+}
+.tt article a img{
+  width: 20%;
+}
+/* ------------------------cntt----------------------------- */
+.cntt{
+  background-image: url(../../img/hot-air-balloons.jpg);
+  padding: 1%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.cntt h2{
+  padding: 1%;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  text-shadow: 10px 1px 15px black;
+}
+.cntt form{
+  width: 50%;
+  display: grid;
+  place-items: center;
+  backdrop-filter:blur(40px);
+  padding: 2%;
+  border-radius: 15px;
+}
+.cntt form label{
+  display: inline-block;
+  padding: 1%;
+  margin-top: 1%;
+  width: 90%;
+}
+.cntt form label em{
+  font-size: smaller;
+  text-decoration: underline;
+}
+.cntt form label p{
+  text-transform: capitalize;
+  font-weight: bold;
+  color: white;
+}
+.cntt form label input{
+  padding: 1.5%;
+  border: none;
+  border-radius: 5px;
+  margin-top: 2%;
+}
+.cntt form .check{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cntt form .check input{
+  text-transform: capitalize;
+  font-weight: bold;
+  text-align: center;
+  background-color: #ff9500;
+  color: white;
+  border: 1px solid white;
+  padding: 2%;
+  border-radius: 5px;
+  margin-top: 2%;
+}
+.cntt form input[type='submit']{
+  width: 20%;
+}
+.cntt form input[type='submit']:hover{
+  background-color: green;
+}
+.cntt form input[type='reset']:hover{
+  background-color: rgb(213, 96, 0);
+}
+.cntt form input[type='reset']{
+  width: 30%;
+}
+/* ------------------------query----------------------------- */
 .query {
   display: none;
 }
