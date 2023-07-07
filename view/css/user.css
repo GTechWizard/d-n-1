@@ -69,9 +69,19 @@ position: relative;
 transition: .2s linear;
 font-family: monospace;
 border-radius: 15px;
+color: white;
+}
+@media screen and (max-width: 768px) {
+  nav{
+  height: 50vh;
+}
+nav ul li{
+  line-height: 150%;
+}
 }
 nav ul li:hover{
 background-color: rgb(255, 255, 255);
+color: black;
 }
 nav ul li:hover ul{
 display: block;
@@ -80,23 +90,31 @@ nav ul li ul{
   display: none;
 }
 nav ul li ul li:hover{
+  color: rgb(0, 0, 0);
 background-color: rgb(60, 255, 0);
 }
 nav ul li ul li{
 background-color: rgb(255, 255, 255);
 }
+nav ul li ul li a{
+  color: black;
+}
 nav ul li a{
   text-decoration: none;
-  color: black;
+  color: rgb(255, 255, 255);
   font-weight: bold;
   font-size: 80%;
   text-transform: capitalize;
+}
+nav ul li:hover a{
+  color: rgb(0, 0, 0);
 }
 nav a img{
   margin-top: 20%;
   width: 15%;
   transform: translate(280%);
 }
+/* --------------------------------------------tk------------------------------------------ */
 .tk{
 padding: 1%;
 display: none;
@@ -186,8 +204,10 @@ background-color: rgb(255, 179, 0);
 .tk .form_tt form input[type='submit']:hover{
   background-color: rgb(211, 130, 0);
 }
+/* --------------------------------------------------------mk------------------------------------------- */
 .mk{
   padding: 2%;
+  width: 100%;
 }
 .mk .content_mk{
   margin: 0 auto;
@@ -204,7 +224,8 @@ background-color: rgb(255, 179, 0);
 .mk form{
   padding: 1%;
   margin: 1% 0;
-  width: 50%;
+  min-width: 50%;
+  width: 80%;
 }
 .mk form input[type='submit']{
   padding: 2%;
@@ -254,12 +275,13 @@ background-color: rgb(255, 179, 0);
   border-radius: 10px;
   border: 1px solid #afafaf;
 }
+/* --------------------------------------qmk---------------------------------------------- */
 .qmk{
   display: none;
   padding: 2%;
 }
 .qmk p{
-  color:#ff7f8a ;
+  color:#349400 ;
   font-weight: bold;
   margin: 2% 0;
 }
@@ -276,7 +298,8 @@ background-color: rgb(255, 179, 0);
 }
 .qmk form input[type='submit']{
   padding: 1%;
-  width:5%;
+  width:10%;
+  min-width:5%;
   font-weight: bold;
   border-radius: 10px;
   border: none;
@@ -293,6 +316,7 @@ form input:focus{
   display: inline-block;
   padding: 1% 2%;
 }
+/* --------------------------------------------------------------------mk_new----------------------------------------- */
 .mk_new{
  padding: 1%;
  background-image: linear-gradient(45deg, rgb(255, 170, 0), yellow, rgb(119, 255, 0), rgb(11, 176, 2));
@@ -307,6 +331,7 @@ form input:focus{
 .mk_new form{
  padding: 1%;
  width: 50%;
+ min-width: 70%;
 }
 .mk_new form label{
  margin-top: 2%;
@@ -325,8 +350,9 @@ form input:focus{
  margin-top: 2%;
 }
 .mk_new form input[type='submit']{
- width: 10%;
- padding: 1%;
+ max-width: 70px;
+ max-width: 10%;
+ padding: 2%;
  margin: 5% 0 0 10% ;
  border-radius: 40px;
  border: 1px solid black;
@@ -339,12 +365,13 @@ font-weight: bold;
 }
 .mk_new form label p:last-child{
   margin-left: 2%;
-  width: 12%;
+  max-width: 65px;
   background-color: #ffc17f;
   padding: 1%;
   text-transform:capitalize;
   font-size: small;
   border-radius: 12px;
+  text-align: center;
 }
 .mk_new form label p:last-child:hover{
   background-color: #ff9864;
@@ -353,6 +380,7 @@ font-weight: bold;
   margin-left: 2%;
   width: 38%;
 }
+/* -------------------------------------------------------------dvs---------------------------- */
 .dvs{
   padding: 1%;
 }
@@ -370,6 +398,16 @@ font-weight: bold;
   text-align: center;
   width: 100%;
   font-weight: bold;
+}
+@media only screen and (max-width: 768px) {
+  .dvs .dv ul[class='uldvtd'] li:nth-child(4),.dvs .dv ul[class='uldvth'] li:nth-child(4){
+    display: none;
+  }
+  .dvs .dv ul[class='uldvtd'] li{
+    text-transform: capitalize;
+    text-align: center;
+    width: 100%;
+  }
 }
 .dvs .dv ul[class='uldvtd']{
   width: 100%;
@@ -443,15 +481,20 @@ font-weight: bold;
 .tt article a .content_tt p{
   padding: 1%;
   line-height: 120%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 95%;
 }
 .tt article a .content_tt p[class='p_content_tt_2'] span{
   text-transform: capitalize;
+  font-size: small;
+  flex-basis: calc(50% - 20px);
 }
-.tt article a .content_tt p[class='p_content_tt_2'] span:last-child{
-  margin-left: 50%;
-}
-.tt article a img{
+.tt article a img {
   width: 20%;
+  min-width: 160px;
 }
 /* ------------------------cntt----------------------------- */
 .cntt{
@@ -514,8 +557,18 @@ font-weight: bold;
   border-radius: 5px;
   margin-top: 2%;
 }
+@media only screen and (max-width:768px) {
+  .cntt form label em{
+   color: white;
+   text-decoration: none;
+  }
+  .cntt form .check input{
+    padding: 3%;
+  }
+}
 .cntt form input[type='submit']{
   width: 20%;
+  min-width: 40%;
 }
 .cntt form input[type='submit']:hover{
   background-color: green;
@@ -524,6 +577,7 @@ font-weight: bold;
   background-color: rgb(213, 96, 0);
 }
 .cntt form input[type='reset']{
+  min-width: 50%;
   width: 30%;
 }
 /* ------------------------query----------------------------- */
