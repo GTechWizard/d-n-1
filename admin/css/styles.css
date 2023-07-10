@@ -79,7 +79,7 @@ input.form-control {
   border: 1px solid #f9243f; }
 
 .navbar-custom {
-  background: #222;
+  background: #000000;
   height: 60px; }
 
 .navbar-header .navbar-brand {
@@ -91,7 +91,7 @@ input.form-control {
   padding-top: 18px; }
 
 .navbar-header .navbar-brand span {
-  color: #30a5ff; }
+  color: #ff8330; }
 
 .navbar-toggle {
   background: rgba(255, 255, 255, 0.1);
@@ -167,7 +167,7 @@ input.form-control {
   color: #444; }
 
 .dropdown-menu li a:hover {
-  color: #30a5ff;
+  color: #58e33c;
   text-decoration: none;
   background: none; }
 
@@ -201,8 +201,8 @@ a.btn:active, button:active {
   color: #1b3548; }
 
 .btn-primary, .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary, .btn-primary.disabled, .btn-primary[disabled], fieldset[disabled] .btn-primary, .btn-primary.disabled:hover, .btn-primary[disabled]:hover, fieldset[disabled] .btn-primary:hover, .btn-primary.disabled:focus, .btn-primary[disabled]:focus, fieldset[disabled] .btn-primary:focus, .btn-primary.disabled:active, .btn-primary[disabled]:active, fieldset[disabled] .btn-primary:active, .btn-primary.disabled.active, .btn-primary[disabled].active, fieldset[disabled] .btn-primary.active {
-  background-color: #30a5ff;
-  border-color: #30a5ff; }
+  background-color: #2373ff;
+  border-color: #30a9ff; }
 
 .btn-success, .btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open > .dropdown-toggle.btn-success, .btn-success.disabled, .btn-success[disabled], fieldset[disabled] .btn-success, .btn-success.disabled:hover, .btn-success[disabled]:hover, fieldset[disabled] .btn-success:hover, .btn-success.disabled:focus, .btn-success[disabled]:focus, fieldset[disabled] .btn-success:focus, .btn-success.disabled:active, .btn-success[disabled]:active, fieldset[disabled] .btn-success:active, .btn-success.disabled.active, .btn-success[disabled].active, fieldset[disabled] .btn-success.active {
   background-color: #8ad919;
@@ -1031,3 +1031,10 @@ p.back-link {
   margin-bottom: 20px;
   font-size: 12px;
   text-transform: uppercase; }
+  .input-daterange form input[type="submit"]{
+    min-width: 20px;
+    width: 10%;
+  }
+  .selectcontrol{
+    width: 50%;
+  }

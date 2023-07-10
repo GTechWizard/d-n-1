@@ -1,7 +1,7 @@
 var randomScalingFactor = function(){ return Math.round(Math.random()*1000)};
 	
 	var lineChartData = {
-		labels : ["January","February","March","April","May","June","July"],
+		labels : ["Tháng 1","Tháng 2","Tháng 3","Tháng 4","Tháng 5","Tháng 6","Tháng 7","Tháng 8","Tháng 9","Tháng 10","Tháng 11","Tháng 12"],
 		datasets : [
 			{
 				label: "My First dataset",
@@ -11,7 +11,7 @@ var randomScalingFactor = function(){ return Math.round(Math.random()*1000)};
 				pointStrokeColor : "#fff",
 				pointHighlightFill : "#fff",
 				pointHighlightStroke : "rgba(220,220,220,1)",
-				data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+				data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
 			},
 			{
 				label: "My Second dataset",
@@ -21,91 +21,91 @@ var randomScalingFactor = function(){ return Math.round(Math.random()*1000)};
 				pointStrokeColor : "#fff",
 				pointHighlightFill : "#fff",
 				pointHighlightStroke : "rgba(48, 164, 255, 1)",
-				data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+				data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
 			}
 		]
 
 	}
 		
-	var barChartData = {
-		labels : ["January","February","March","April","May","June","July"],
-		datasets : [
-			{
-				fillColor : "rgba(220,220,220,0.5)",
-				strokeColor : "rgba(220,220,220,0.8)",
-				highlightFill: "rgba(220,220,220,0.75)",
-				highlightStroke: "rgba(220,220,220,1)",
-				data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
-			},
-			{
-				fillColor : "rgba(48, 164, 255, 0.2)",
-				strokeColor : "rgba(48, 164, 255, 0.8)",
-				highlightFill : "rgba(48, 164, 255, 0.75)",
-				highlightStroke : "rgba(48, 164, 255, 1)",
-				data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
-			}
-		]
+	// var barChartData = {
+	// 	labels : ["January","February","March","April","May","June","July"],
+	// 	datasets : [
+	// 		{
+	// 			fillColor : "rgba(220,220,220,0.5)",
+	// 			strokeColor : "rgba(220,220,220,0.8)",
+	// 			highlightFill: "rgba(220,220,220,0.75)",
+	// 			highlightStroke: "rgba(220,220,220,1)",
+	// 			data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+	// 		},
+	// 		{
+	// 			fillColor : "rgba(48, 164, 255, 0.2)",
+	// 			strokeColor : "rgba(48, 164, 255, 0.8)",
+	// 			highlightFill : "rgba(48, 164, 255, 0.75)",
+	// 			highlightStroke : "rgba(48, 164, 255, 1)",
+	// 			data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+	// 		}
+	// 	]
 
-	}
+	// }
 
-	var pieData = [
-			{
-				value: 300,
-				color:"#30a5ff",
-				highlight: "#62b9fb",
-				label: "Blue"
-			},
-			{
-				value: 50,
-				color: "#ffb53e",
-				highlight: "#fac878",
-				label: "Orange"
-			},
-			{
-				value: 100,
-				color: "#1ebfae",
-				highlight: "#3cdfce",
-				label: "Teal"
-			},
-			{
-				value: 120,
-				color: "#f9243f",
-				highlight: "#f6495f",
-				label: "Red"
-			}
+	// var pieData = [
+	// 		{
+	// 			value: 300,
+	// 			color:"#30a5ff",
+	// 			highlight: "#62b9fb",
+	// 			label: "Blue"
+	// 		},
+	// 		{
+	// 			value: 50,
+	// 			color: "#ffb53e",
+	// 			highlight: "#fac878",
+	// 			label: "Orange"
+	// 		},
+	// 		{
+	// 			value: 100,
+	// 			color: "#1ebfae",
+	// 			highlight: "#3cdfce",
+	// 			label: "Teal"
+	// 		},
+	// 		{
+	// 			value: 120,
+	// 			color: "#f9243f",
+	// 			highlight: "#f6495f",
+	// 			label: "Red"
+	// 		}
 
-		];
+	// 	];
 			
-	var doughnutData = [
-				{
-					value: 300,
-					color:"#30a5ff",
-					highlight: "#62b9fb",
-					label: "Blue"
-				},
-				{
-					value: 50,
-					color: "#ffb53e",
-					highlight: "#fac878",
-					label: "Orange"
-				},
-				{
-					value: 100,
-					color: "#1ebfae",
-					highlight: "#3cdfce",
-					label: "Teal"
-				},
-				{
-					value: 120,
-					color: "#f9243f",
-					highlight: "#f6495f",
-					label: "Red"
-				}
+	// var doughnutData = [
+	// 			{
+	// 				value: 300,
+	// 				color:"#30a5ff",
+	// 				highlight: "#62b9fb",
+	// 				label: "Blue"
+	// 			},
+	// 			{
+	// 				value: 50,
+	// 				color: "#ffb53e",
+	// 				highlight: "#fac878",
+	// 				label: "Orange"
+	// 			},
+	// 			{
+	// 				value: 100,
+	// 				color: "#1ebfae",
+	// 				highlight: "#3cdfce",
+	// 				label: "Teal"
+	// 			},
+	// 			{
+	// 				value: 120,
+	// 				color: "#f9243f",
+	// 				highlight: "#f6495f",
+	// 				label: "Red"
+	// 			}
 
-			];
+	// 		];
 			
 	var radarData = {
-	    labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
+	    labels: ["trong nước", "ngoài nước", "bắc", "trung ", "nam", "biển", "núi"],
 	    datasets: [
 	        {
 	            label: "My First dataset",
@@ -130,31 +130,31 @@ var randomScalingFactor = function(){ return Math.round(Math.random()*1000)};
 	    ]
 	};
 	
-	var polarData = [
-		    {
-		    	value: 300,
-		    	color: "#1ebfae",
-		    	highlight: "#38cabe",
-		    	label: "Teal"
-		    },
-		    {
-		    	value: 140,
-		    	color: "#ffb53e",
-		    	highlight: "#fac878",
-		    	label: "Orange"
-		    },
-		    {
-		    	value: 220,
-		    	color:"#30a5ff",
-		    	highlight: "#62b9fb",
-		    	label: "Blue"
-		    },
-		    {
-		    	value: 250,
-		    	color: "#f9243f",
-		    	highlight: "#f6495f",
-		    	label: "Red"
-		    }
+	// var polarData = [
+	// 	    {
+	// 	    	value: 300,
+	// 	    	color: "#1ebfae",
+	// 	    	highlight: "#38cabe",
+	// 	    	label: "Teal"
+	// 	    },
+	// 	    {
+	// 	    	value: 140,
+	// 	    	color: "#ffb53e",
+	// 	    	highlight: "#fac878",
+	// 	    	label: "Orange"
+	// 	    },
+	// 	    {
+	// 	    	value: 220,
+	// 	    	color:"#30a5ff",
+	// 	    	highlight: "#62b9fb",
+	// 	    	label: "Blue"
+	// 	    },
+	// 	    {
+	// 	    	value: 250,
+	// 	    	color: "#f9243f",
+	// 	    	highlight: "#f6495f",
+	// 	    	label: "Red"
+	// 	    }
 		
-	];
+	// ];
 

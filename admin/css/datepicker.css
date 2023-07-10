@@ -449,8 +449,31 @@
   width: 16px;
   height: 16px;
 }
-.input-daterange input {
+.input-daterange input[type='submit']{
   text-align: center;
+  border: 1px solid rgb(255, 255, 255);
+  width: 100%;
+}
+.input-daterange {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  margin-top: 2%;
+}
+.input-daterange label input{
+  text-align: center;
+  width: 100%;
+  font-weight: 200;
+  border: 1px solid black;
+}
+.input-daterange label {
+  width: 80%;
+}
+input:focus{
+  outline: none!important;
+}
+.input-daterange form .col label input {
+  width: 100vh;
 }
 .input-daterange input:first-child {
   -webkit-border-radius: 3px 0 0 3px;
@@ -458,8 +481,8 @@
   border-radius: 3px 0 0 3px;
 }
 .input-daterange input:last-child {
-  -webkit-border-radius: 0 3px 3px 0;
-  -moz-border-radius: 0 3px 3px 0;
+  -webkit-border-radius: 10px 3px 3px 0;
+  -moz-border-radius: 10px 3px 3px 0;
   border-radius: 0 3px 3px 0;
 }
 .input-daterange .add-on {
@@ -499,8 +522,9 @@
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box;
-  *border-right-width: 2px;
-  *border-bottom-width: 2px;
+  /* aaaaaaaaaaaaaa */
+  border-right-width: 2px;
+  border-bottom-width: 2px;
   color: #333333;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 13px;
