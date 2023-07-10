@@ -1038,3 +1038,28 @@ p.back-link {
   .selectcontrol{
     width: 50%;
   }
+  .card{
+    margin-top: 7%;
+    border: 2px inset rgb(198, 198, 198);
+    padding: 1%;
+    border-radius: 15px;
+    background-color: white;
+  }
+  .card img{
+    width: 100%;
+    border-radius: 15px;
+  }
+  .list-group-item a{
+    cursor: pointer;
+    color: black;
+  }
+  .card-body-btn{
+    text-align: center;
+  }
+  .card-body-btn a:last-child{
+    margin-left: 10%;
+  }
+  .card-title{
+    text-align: center;
+    text-transform: capitalize;
+  }
