@@ -76,16 +76,9 @@
 .fixed-table-container tbody td img{
     max-width: 130px;
 }
-.fixed-table-container tbody td{
-    text-align: center;
-    vertical-align:middle;
-}
 .fixed-table-container thead th{
     text-align: center;
     vertical-align:middle;
-}
-.fixed-table-container tbody td a{
-    margin-left: 30%;
 }
 
 .fixed-table-container .bs-checkbox {

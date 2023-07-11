@@ -4,19 +4,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Người dùng</title>
-  <link href="../css/bootstrap.min.css" rel="stylesheet" />
-  <link href="../css/font-awesome.min.css" rel="stylesheet" />
-  <link href="../css/datepicker3.css" rel="stylesheet" />
-  <link href="../css/styles.css" rel="stylesheet" />
-  <link href="../css/bootstrap-table.css" rel="stylesheet" />
+  <title>Loại Dịch Vụ</title>
+  <link href="../../css/bootstrap.min.css" rel="stylesheet" />
+  <link href="../../css/font-awesome.min.css" rel="stylesheet" />
+  <link href="../../css/datepicker3.css" rel="stylesheet" />
+  <link href="../../css/styles.css" rel="stylesheet" />
+  <link href="../../css/bootstrap-table.css" rel="stylesheet" />
 
   <!--Custom Font-->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet" />
-  <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
-    <![endif]-->
 </head>
 
 <body>
@@ -62,10 +58,10 @@
     <!-- menu main -->
     <ul class="nav menu">
       <li>
-        <a href="../index.html"><em class="fa fa-dashboard">&nbsp;</em> Trang Chính</a>
+        <a href="../../../index.html"><em class="fa fa-dashboard">&nbsp;</em> Trang Chính</a>
       </li>
-      <li class="active">
-        <a href="user/user.html"><em class="fa fa-user">&nbsp;</em>Người Dùng</a>
+      <li>
+        <a href="../../user/user.html"><em class="fa fa-user">&nbsp;</em>Người Dùng</a>
       </li>
       <li class="parent">
         <a data-toggle="collapse" href="#sub-item-1" >
@@ -74,22 +70,22 @@
         </a>
         <ul class="children collapse" id="sub-item-1">
           <li>
-            <a class="" href="../dv_ldv/ldv/ldv.html">
+            <a class="" href="../ldv/ldv.html">
               <span class="fa fa-arrow-right">&nbsp;</span> Loại Dịch Vụ
             </a>
           </li>
           <li>
-            <a class="" href="../dv_ldv/ldv/add_ldv.html">
+            <a class="" href="../ldv/add_ldv.html">
               <span class="fa fa-arrow-right">&nbsp;</span> Thêm Loại Dịch Vụ
             </a>
           </li>
           <li>
-            <a class="" href="../dv_ldv/dv/dv.html">
+            <a class="" href="../dv/dv.html">
               <span class="fa fa-arrow-right">&nbsp;</span> Quản Lý Dịch Vụ
             </a>
           </li>
           <li>
-            <a class="" href="../dv_ldv/dv/add_dv.html">
+            <a class="" href="../dv/add_dv.html">
               <span class="fa fa-arrow-right">&nbsp;</span> Thêm Dịch Vụ
             </a>
           </li>
@@ -97,16 +93,16 @@
       </li>
 
       <li>
-        <a href="../tt/news.html"><em class="fa fa-meetup">&nbsp;</em>Tin Tức</a>
+        <a href="../../tt/news.html"><em class="fa fa-meetup">&nbsp;</em>Tin Tức</a>
       </li>
       <li>
-        <a href="../dv_ldv/dv_act/dv_act.html"><em class="fa fa-bolt">&nbsp;</em>Dịch Vụ Đang Có</a>
+        <a href="dv_act.html"><em class="fa fa-bolt">&nbsp;</em>Dịch Vụ Đang Có</a>
       </li>
       <li>
-        <a href="../tt/add_news.html"><em class="fa fa-window-restore">&nbsp;</em>Thêm Mới Tin Tức</a>
+        <a href="../../tt/add_news.html"><em class="fa fa-window-restore">&nbsp;</em>Thêm Mới Tin Tức</a>
       </li>
       <li>
-        <a href="../bl/comments.html"><em class="fa fa-comment">&nbsp;</em>Bình Luận</a>
+        <a href="../../bl/comments.html"><em class="fa fa-comment">&nbsp;</em>Bình Luận</a>
       </li>
       <li>
         <a href="login.html"><em class="fa fa-power-off">&nbsp;</em> Trang Khách</a>
@@ -124,7 +120,7 @@
             <em class="fa fa-home"></em>
           </a>
         </li>
-        <li class="active">Người Dùng</li>
+        <li class="active">Dịch vụ đang hiện hành</li>
       </ol>
     </div>
     <!--/.row-->
@@ -133,38 +129,21 @@
         <table class="table fixed-table-container ">
           <thead class="fixed-table-header th-inner">
             <th class="th-inner">STT</th>
-            <th class="th-inner">ID</th>
-            <th class="th-inner">Tên</th>
-            <th class="th-inner">SĐT</th>
-            <th class="th-inner">Địa Chỉ</th>
-            <th class="th-inner">Email</th>
-            <th class="th-inner">Ảnh Đại Diện</th>
-            <th class="th-inner">Vai Trò</th>
+            <th class="th-inner">ID DV</th>
+            <th class="th-inner">Ngày Đi</th>
+            <th class="th-inner">Ngày Về</th>
+            <th class="th-inner">Tổng Người Đã Đăng Ký </th>
+            <th class="th-inner">Trạng Thái</th>
           </thead>
           <tbody class="fixed-table-body">
             <td class="th-inner">1</td>
             <td class="th-inner">01</td>
-            <td class="th-inner">MEow meow</td>
-            <td class="th-inner">0123456789</td>
-            <td class="th-inner">Con heo đường phố biết cười hì hì</td>
-            <td class="th-inner">heocondangyeu123@gmail.com</td>
-            <td class="th-inner"><img src="../../img/4.jpg" alt=""></td>
-            <td class="th-inner">khách hàng</td>
+            <td class="th-inner">12/12/1212</td>
+            <td class="th-inner">01/01/1213</td>
+            <td class="th-inner">25</td>
+            <td class="th-inner">chưa đi</td>
           <tbody>
-            <td colspan="8"><a href="change_user.html">Sửa</a><a href="#act=xoa?id">Xóa</a></td>
-          </tbody>
-          </tbody>
-          <tbody class="fixed-table-body">
-            <td class="th-inner">1</td>
-            <td class="th-inner">01</td>
-            <td class="th-inner">MEow meow</td>
-            <td class="th-inner">0123456789</td>
-            <td class="th-inner">Con heo đường phố biết cười hì hì</td>
-            <td class="th-inner">heocondangyeu123@gmail.com</td>
-            <td class="th-inner"><img src="../../img/4.jpg" alt=""></td>
-            <td class="th-inner">khách hàng</td>
-          <tbody>
-            <td colspan="8"><a href="change_user.html">Sửa</a><a href="#act=xoa?id">Xóa</a></td>
+            <td colspan="11"><a href="change_dv_act.html">Sửa</a> <a href="">Xóa</a></td>
           </tbody>
           </tbody>
         </table>
@@ -173,14 +152,14 @@
   </div>
   <!--/.main-->
 
-  <script src="../js/jquery-1.11.1.min.js"></script>
-  <script src="../js/bootstrap.min.js"></script>
-  <script src="../js/chart.min.js"></script>
-  <script src="../js/chart-data.js"></script>
-  <script src="../js/easypiechart.js"></script>
-  <script src="../js/easypiechart-data.js"></script>
-  <script src="../js/bootstrap-datepicker.js"></script>
-  <script src="../js/custom.js"></script>
+  <script src="../../js/jquery-1.11.1.min.js"></script>
+  <script src="../../js/bootstrap.min.js"></script>
+  <script src="../../js/chart.min.js"></script>
+  <script src="../../js/chart-data.js"></script>
+  <script src="../../js/easypiechart.js"></script>
+  <script src="../../js/easypiechart-data.js"></script>
+  <script src="../../js/bootstrap-datepicker.js"></script>
+  <script src="../../js/custom.js"></script>
 </body>
 
 </html>

@@ -999,7 +999,9 @@ h1.page-header {
   background: #fff; }
 
 .fixed-table-container {
-  border: 1px solid #e9ecf2; }
+  border: 1px solid #e9ecf2; 
+  padding: 1%;
+}
 
 .fixed-table-container thead th {
   background: #f7f7f8;
@@ -1063,17 +1065,13 @@ p.back-link {
     text-align: center;
     text-transform: capitalize;
   }
-  .formbv p{
-    text-transform: capitalize;
-    color: rgb(0, 0, 0);
-  }
   .control-from{
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 2% 0;
   }
-  .control-from input[type='reset']{
+  .control-from input[type='reset'], .control-from a{
     margin-left: 20%;
   }
   input{
@@ -1086,6 +1084,10 @@ p.back-link {
     margin: 1%;
     padding: 2%;
   }
-  .form input[type='text']{
-    width: 120%;
+  td {
+    font-size: small;
+  }
+  td a:nth-child(2){
+    margin-left: 5%;
+    color: orangered;
   }
