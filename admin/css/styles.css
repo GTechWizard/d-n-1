@@ -1063,3 +1063,29 @@ p.back-link {
     text-align: center;
     text-transform: capitalize;
   }
+  .formbv p{
+    text-transform: capitalize;
+    color: rgb(0, 0, 0);
+  }
+  .control-from{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2% 0;
+  }
+  .control-from input[type='reset']{
+    margin-left: 20%;
+  }
+  input{
+    text-transform: capitalize;
+    font-weight: 100;
+    font-size: smaller;
+    padding: .5%;
+  }
+  .form{
+    margin: 1%;
+    padding: 2%;
+  }
+  .form input[type='text']{
+    width: 120%;
+  }

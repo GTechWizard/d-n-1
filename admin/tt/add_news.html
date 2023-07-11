@@ -14,10 +14,13 @@
 
   <!--Custom Font-->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet" />
-  <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
-    <![endif]-->
+
+  <script src="../../tinymce/js/tinymce/tinymce.min.js" referrerpolicy="origin"></script>
+  <script>
+    tinymce.init({
+      selector: '#mytextarea'
+    });
+  </script>
 </head>
 
 <body>
@@ -65,7 +68,7 @@
       <li>
         <a href="../index.html"><em class="fa fa-dashboard">&nbsp;</em> Trang Chính</a>
       </li>
-      <li class="active">
+      <li >
         <a href="user/user.html"><em class="fa fa-user">&nbsp;</em>Người Dùng</a>
       </li>
       <li class="parent">
@@ -79,7 +82,7 @@
               <span class="fa fa-arrow-right">&nbsp;</span> Loại Dịch Vụ
             </a>
           </li>
-          <li>
+          <li >
             <a class="" href="#">
               <span class="fa fa-arrow-right">&nbsp;</span> Thêm Loại Dịch Vụ
             </a>
@@ -103,7 +106,7 @@
       <li>
         <a href="elements.html"><em class="fa fa-bolt">&nbsp;</em>Dịch Vụ Đã Đăng ký</a>
       </li>
-      <li>
+      <li class="active">
         <a href="../tt/add_news.html"><em class="fa fa-window-restore">&nbsp;</em>Thêm Mới Tin Tức</a>
       </li>
       <li>
@@ -129,9 +132,56 @@
       </ol>
     </div>
     <!--/.row-->
-   <div class="row">
-    
-   </div>
+    <div class="row">
+      <form method="post" class="form">
+        <div class="col-md-6">
+          <label for="tacgia" class="formbv">
+            <p>tên tác giả</p>
+            <input type="text" name="" id="tacgia" placeholder="tên...">
+          </label>
+          </div>
+
+          <div class="col-md-6">
+          <label for="day" class="formbv">
+            <p>ngày đăng bài</p>
+            <input type="date" name="" id="day">
+          </label>
+        </div>
+
+        <div class="col-md-6">
+          <label for="tuabv" class="formbv">
+            <p>tựa bài viết</p>
+            <input type="text" name="" id="tuabv" placeholder="tên bài viết...">
+          </label>
+</div>
+          
+          <div class="col-md-6">
+          <label for="place" class="formbv">
+            <p>địa điểm (bài viết về nơi nào)</p>
+            <input type="text" name="" id="place" placeholder="tên địa điểm...">
+          </label>
+          <label class="formbv">
+        </div>
+        <div class="col-md-12">
+        <label class="formbv">
+          <p> nội dung </p>
+          <textarea id="mytextarea" name="" style="width:65vw;"></textarea>
+        </label>
+      </div>
+      <div class="col-md-12">
+        <label class="formbv">
+          <p>mô tả ngắn (200 từ) </p>
+          <textarea name="" class="form-control" rows="5" style="width:50vw;"></textarea>
+        </label>
+          <input type="file" name="" id="">
+        </div>
+        <div class="control-from col-md-12">
+          <input type="submit" value="Lưu" class="btn btn-sm btn-success">
+          <input type="reset" value="Làm Lại" class="btn btn-sm btn-primary">
+        </div>
+
+      </form>
+    </div>
   </div>
   <!--/.main-->
 
