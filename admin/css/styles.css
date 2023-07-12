@@ -329,8 +329,15 @@ a.label:hover, a.label:focus {
   background-color: #f9243f; }
 
 .panel {
-  border: 0; }
-
+  border: 0; 
+}
+.loginbg{
+  background-image: url(../../img/4.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+}
 .panel-container {
   padding-top: 20px; }
 
@@ -402,7 +409,7 @@ a.label:hover, a.label:focus {
   line-height: 38px; }
 
 .panel-default .panel-heading {
-  background: #fff;
+  background: #ffffff;
   border-bottom: 1px solid #e9ecf2;
   color: #444444; }
 

@@ -9,35 +9,15 @@
   width: 100%;
   font-family: Arial, Helvetica, sans-serif;
 }
-header{
-  background-color: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-header .undo img{
-  width: 10%;
-  padding: 2%;
-  float: left;
-}
-header .logo img{
-  width: 20%;
-  display: grid;
-  place-items: center;
-}
-header .user img{
-  width: 10%;
-  padding: 2%;
-  float: right;
-}
-header img{
-  width: 10%;
+body::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
 }
 section{
   text-align: right;
   padding: .5%;
   width: 100%;
-  background-color: green;
+  background-color: rgb(0, 140, 255);
   color: white;
   font-weight: bold;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -47,15 +27,75 @@ article{
 }
 main{
   float: left;
-  width: 15%;
+  width: 20%;
 }
 .control{
   float: right;
-  width: 85%;
+  width: 80%;
+  height: 85vh;
+  overflow:auto ;
+}
+.control::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+.header-user{
+margin: 0;
+padding: 0;
+width: 100%;
+}
+.header-user nav{
+display: grid;
+grid-template-columns: 20% 80%;
+padding: 0;
+background-color: #ffffff;
+overflow: hidden;
+height: 10vh;
+}
+.header-user nav a{
+position: relative;
+height: 10vh;
+}
+.header-user nav a img{
+width: 40%;
+position: relative;
+transform: translate(0,-60%);
+}
+.header-user ul {
+margin: 0;
+height: 0;
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+vertical-align: middle;
+position: relative;
+}
+.header-user ul li{
+padding: 0;
+text-align: center;
+vertical-align: middle;
+transform: translate(0%,-10%);
+height: 5vh;
+margin-top: 3vh;
+background-color: #ffffff;
+}
+.header-user ul li a{
+background-color: #ffffff;
+padding: 1%;
+margin: 0% 3%;
+border-radius: 15px;
+color: black;
+}
+.header-user ul li a:hover{
+background-color: #e6e6e6;
 }
 nav{
-  background-color: rgb(255, 153, 0);
+  background-color: rgb(255, 162, 0);
   padding: 1% 2%;
+  width: 100%;
+  height: 85vh;
+  overflow:auto ;
 }
 nav ul{
   list-style: none;
@@ -63,8 +103,8 @@ nav ul{
 nav ul li{
 margin-top: 10%;
 font-weight: bold;
-background-color: rgb(255, 153, 0);
-padding: 3%;
+background-color: rgb(255, 162, 0);
+padding: 5%;
 position: relative;
 transition: .2s linear;
 font-family: monospace;
@@ -90,8 +130,8 @@ nav ul li ul{
   display: none;
 }
 nav ul li ul li:hover{
-  color: rgb(0, 0, 0);
-background-color: rgb(60, 255, 0);
+  color: rgb(255, 255, 255);
+background-color: rgb(0, 110, 255);
 }
 nav ul li ul li{
 background-color: rgb(255, 255, 255);
@@ -130,6 +170,9 @@ background-color: rgb(255, 179, 0);
   text-transform: capitalize;
   margin: 1% 0 0 .5%;
   font-weight: bold;
+}
+.tk em{
+  color: rgb(0, 0, 0);
 }
 .tk .form_tt{
   line-height: 150%;
@@ -391,7 +434,7 @@ font-weight: bold;
   width: 100%;
   list-style: none;
   display: grid;
-  grid-template-columns: 2% 20% 18% 27%  10% 8% 10% 5%;
+  grid-template-columns: 7% 20% 28% 15% 10% 10% 10%;
 }
 .dvs .dv ul[class='uldvth'] li{
   text-transform: capitalize;
@@ -413,20 +456,16 @@ font-weight: bold;
   width: 100%;
   list-style: none;
   display: grid;
-  grid-template-columns: 2% 20% 18% 27% 10% 8% 10% 5%;
+  grid-template-columns: 7% 20% 28% 15% 10% 10% 10%;
   padding: .2%;
   margin-top: 1%;
+  text-align: center;
 }
 .dvs .dv ul[class='uldvtd']:nth-child(even){
   background-color: #f0f0f0;
 }
 .dvs .dv ul[class='uldvtd']:nth-child(odd){
   background-color: #ffffff;
-}
-.dvs .dv ul[class='uldvtd'] li:not(li:nth-child(4)){
-  text-transform: capitalize;
-  text-align: center;
-  width: 100%;
 }
 .dvs .dv ul[class='uldvtd'] li a{
   text-decoration: none;
@@ -447,138 +486,69 @@ font-weight: bold;
   text-transform: uppercase;
   font-weight: bold;
 }
-/* =================================tt==================================== */
-.tt h2{
-  padding: 1%;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-.tt article{
-  margin-top: 2%;
-}
-.tt article a{
-  background-color: #f3f3f3;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  color: black; 
-  padding: 1%;
-  margin-top: 1.5%;
-}
-.tt article a .content_tt{
-  margin-left: 1%;
-  background-color: white;
-  display: block;
-}
-.tt article a .content_tt h3{
-  padding: 1%;
-  border-left: 2px solid greenyellow;
-  border-bottom: 2px solid rgb(145, 241, 0);
-  text-transform: capitalize;
-  font-family:'fontzeroone' ;
-}
-.tt article a .content_tt p{
-  padding: 1%;
-  line-height: 120%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 95%;
-}
-.tt article a .content_tt p[class='p_content_tt_2'] span{
-  text-transform: capitalize;
-  font-size: small;
-  flex-basis: calc(50% - 20px);
-}
-.tt article a img {
-  width: 20%;
-  min-width: 160px;
-}
-/* ------------------------cntt----------------------------- */
+/* -------------------------------------------------------------------cntt----------------------------------- */
 .cntt{
-  background-image: url(../../img/hot-air-balloons.jpg);
-  padding: 1%;
-  background-repeat: no-repeat;
-  background-size: cover;
+  padding: 2%;
 }
 .cntt h2{
   padding: 1%;
   text-transform: uppercase;
   font-weight: bold;
-  text-align: center;
-  color: white;
-  text-shadow: 10px 1px 15px black;
+  margin: 1% 0;
+}
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 .cntt form{
-  width: 50%;
-  display: grid;
-  place-items: center;
-  backdrop-filter:blur(40px);
+  background-color: #ededed;
   padding: 2%;
-  border-radius: 15px;
+  border-radius: 10px;
 }
-.cntt form label{
-  display: inline-block;
-  padding: 1%;
-  margin-top: 1%;
-  width: 90%;
+.cntt form .form-group{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
-.cntt form label em{
-  font-size: smaller;
-  text-decoration: underline;
-}
-.cntt form label p{
+.cntt label p{
   text-transform: capitalize;
-  font-weight: bold;
-  color: white;
+  margin: .5% 0;
 }
-.cntt form label input{
-  padding: 1.5%;
-  border: none;
-  border-radius: 5px;
-  margin-top: 2%;
+.cntt label em{
+  font-size: smaller;
+  color: #a1a1a1;
 }
-.cntt form .check{
-  width: 50%;
+.cntt input{
+  padding: 1%;
+  border-radius: 10px;
+  border: 1px solid black;
+  width: 70%;
+}
+.check {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 2% 0 0 0 ;
 }
-.cntt form .check input{
+.check input{
+  width: 10%;
   text-transform: capitalize;
-  font-weight: bold;
   text-align: center;
-  background-color: #ff9500;
+}
+.check input[type='submit']{
+  background-color:#6eff20;
+}
+.check input[type='submit']:hover{
+  background-color:#44c200;
   color: white;
-  border: 1px solid white;
-  padding: 2%;
-  border-radius: 5px;
-  margin-top: 2%;
 }
-@media only screen and (max-width:768px) {
-  .cntt form label em{
-   color: white;
-   text-decoration: none;
-  }
-  .cntt form .check input{
-    padding: 3%;
-  }
+.check input[type='reset']{
+  background-color:rgb(255, 55, 0);
+  color: white;
 }
-.cntt form input[type='submit']{
-  width: 20%;
-  min-width: 40%;
-}
-.cntt form input[type='submit']:hover{
-  background-color: green;
-}
-.cntt form input[type='reset']:hover{
-  background-color: rgb(213, 96, 0);
-}
-.cntt form input[type='reset']{
-  min-width: 50%;
-  width: 30%;
+.check input[type='reset']:hover{
+  background-color:rgb(255, 81, 33);
 }
 /* ------------------------query----------------------------- */
 .query {

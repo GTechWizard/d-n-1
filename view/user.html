@@ -1,23 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>User</title>
-    <link rel="stylesheet"
-  href="https://fonts.googleapis.com/css?family=Font+Name">
-    <link rel="stylesheet" href="css/user.css" />
-  </head>
 
-  <body>
-    <header>
-      <div class="undo">
-        <a href="../index.html"
-          ><img src="../img/undo.png" alt="image" title="come back"
-        /></a>
-      </div>
-      <div class="logo"><img src="../img/logofontwhite.png" alt="image" /></div>
-      <div class="user"><img src="../img/user.png" alt="image" /></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Font+Name">
+  <link rel="stylesheet" href="css/user.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header-user">
+      <nav>
+        <a href="../index.html" class="logo">
+          <img src="../img/logononfont.png" alt="logo" />
+        </a>
+          <ul>
+            <li>
+              <a href="../index.html#chungtoi" class="link">chúng tôi</a>
+              </li>
+              <li>
+              <a href="../index.html#dv" class="link">du lịch</a>
+            </li>
+            <li>
+              <a href="../index.html#news" class="link">tin tức</a>
+            </li>
+            <li>
+              <a href="../index.html#hotro" class="link">hỗ trợ</a>
+            </li>
+          </ul>
+      </nav>
     </header>
     <section>
       <p>Xin chào <span>kin</span></p>
@@ -36,14 +49,11 @@
                 </li>
               </ul>
             </li>
-            <li data-target="tt" class="query_btn">Tin Tức Đã Thích</li>
             <li data-target="dvl" class="query_btn">Dịch vụ Đã Thích</li>
             <li data-target="dvs" class="query_btn">Dịch vụ Của Bạn</li>
-            <li><a href="">Đăng Nhập Admin</a></li>
+            <li><a href="../admin/index.html">Đăng Nhập Admin</a></li>
           </ul>
-          <a href=""
-            ><img src="../img/logout.png" alt="log out" title="log out"
-          /></a>
+          <a href=""><img src="../img/logout.png" alt="log out" title="log out" /></a>
         </nav>
       </main>
       <div class="control">
@@ -56,19 +66,19 @@
                 <div class="form_ck">
                   <label for="">
                     <p>Tên đăng nhập</p>
-                    <input type="text" name="" />
+                    <em>trung minh</em>
                   </label>
                   <label for="">
                     <p>Email</p>
-                    <input type="email" name="" disabled />
+                    <em>123*******com</em>
                   </label>
                   <label for="">
                     <p>Số điện thoại</p>
-                    <input type="tel" name="" disabled />
+                    <em>0123****90</em>
                   </label>
                   <label for="">
                     <p>Địa chỉ</p>
-                    <input type="text" name="" />
+                   <em>quang trung, tp hcm</em>
                   </label>
                 </div>
                 <div class="img_ur">
@@ -84,26 +94,21 @@
           <div class="content_mk">
             <h2>Đổi mật khẩu</h2>
             <form action="#" method="post">
-              <label for=""
-                ><p>Mật khẩu cũ:</p>
+              <label for="">
+                <p>Mật khẩu cũ:</p>
                 <input type="password" name="" class="input_pass" id="see1" />
-                <label data-pass_see="see1" class="input_check_pass" id="hmk1"
-                  >ẩn/hiện</label
-                >
+                <label data-pass_see="see1" class="input_check_pass" id="hmk1">ẩn/hiện</label>
               </label>
-              <label for=""
-                ><p>Mật khẩu mới:</p>
+              <label for="">
+                <p>Mật khẩu mới:</p>
                 <input type="password" name="" class="input_pass" id="see3" />
-                <label data-pass_see="see3" class="input_check_pass" id="hmk2"
-                  >ẩn/hiện</label
-                >
+                <label data-pass_see="see3" class="input_check_pass" id="hmk2">ẩn/hiện</label>
               </label>
-              <label for=""
-                ><p>Nhập lại mật khẩu mới:</p>
+              <label for="">
+                <p>Nhập lại mật khẩu mới:</p>
                 <input type="password" name="" class="input_pass" id="see2" />
                 <label data-pass_see="see2" class="input_check_pass" id="hmk3">
-                  ẩn/hiện</label
-                >
+                  ẩn/hiện</label>
               </label>
               <div class="input_submit">
                 <input type="submit" value="Lưu" name="" />
@@ -111,107 +116,6 @@
               <p data-target="qmk" class="query_btn">Quên mật khẩu</p>
             </form>
           </div>
-        </div>
-        <div class="query tt " id="tt">
-          <h2>tin tức của bạn</h2>
-          <article>
-          <a href="#">
-            <img src="../img/bgdkdn.jpg" alt="img" />
-            <div class="content_tt">
-              <h3>mới thi chính trị xong</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora tenetur quo molestias ea quia odit dicta, dignissimos
-                maiores! Mollitia excepturi quis modi quam quod tempora dolore
-                ea praesentium accusamus pariatur!
-              </p>
-              <p class="p_content_tt_2">
-                <span>ngày đăng: 25/01/2101</span>
-                <span>tác giả: meow meow</span>
-              </p>
-            </div>
-          </a>
-          <a href="#">
-            <img src="../img/bgdkdn.jpg" alt="img" />
-            <div class="content_tt">
-              <h3>mới thi chính trị xong</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora tenetur quo molestias ea quia odit dicta, dignissimos
-                maiores! Mollitia excepturi quis modi quam quod tempora dolore
-                ea praesentium accusamus pariatur!
-              </p>
-              <p class="p_content_tt_2">
-                <span>ngày đăng: 25/01/2101</span>
-                <span>tác giả: meow meow</span>
-              </p>
-            </div>
-          </a>
-          <a href="#">
-            <img src="../img/bgdkdn.jpg" alt="img" />
-            <div class="content_tt">
-              <h3>mới thi chính trị xong</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora tenetur quo molestias ea quia odit dicta, dignissimos
-                maiores! Mollitia excepturi quis modi quam quod tempora dolore
-                ea praesentium accusamus pariatur!
-              </p>
-              <p class="p_content_tt_2">
-                <span>ngày đăng: 25/01/2101</span>
-                <span>tác giả: meow meow</span>
-              </p>
-            </div>
-          </a>
-          <a href="#">
-            <img src="../img/bgdkdn.jpg" alt="img" />
-            <div class="content_tt">
-              <h3>mới thi chính trị xong</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora tenetur quo molestias ea quia odit dicta, dignissimos
-                maiores! Mollitia excepturi quis modi quam quod tempora dolore
-                ea praesentium accusamus pariatur!
-              </p>
-              <p class="p_content_tt_2">
-                <span>ngày đăng: 25/01/2101</span>
-                <span>tác giả: meow meow</span>
-              </p>
-            </div>
-          </a>
-          <a href="#">
-            <img src="../img/bgdkdn.jpg" alt="img" />
-            <div class="content_tt">
-              <h3>mới thi chính trị xong</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora tenetur quo molestias ea quia odit dicta, dignissimos
-                maiores! Mollitia excepturi quis modi quam quod tempora dolore
-                ea praesentium accusamus pariatur!
-              </p>
-              <p class="p_content_tt_2">
-                <span>ngày đăng: 25/01/2101</span>
-                <span>tác giả: meow meow</span>
-              </p>
-            </div>
-          </a>
-          <a href="#">
-            <img src="../img/bgdkdn.jpg" alt="img" />
-            <div class="content_tt">
-              <h3>mới thi chính trị xong</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora tenetur quo molestias ea quia odit dicta, dignissimos
-                maiores! Mollitia excepturi quis modi quam quod tempora dolore
-                ea praesentium accusamus pariatur!
-              </p>
-              <p class="p_content_tt_2">
-                <span>ngày đăng: 25/01/2101</span>
-                <span>tác giả: meow meow</span>
-              </p>
-            </div>
-          </a>
-        </article>
         </div>
         <div class="query dvl " id="dvl"></div>
         <div class="query dvs " id="dvs">
@@ -221,7 +125,6 @@
               <li>stt</li>
               <li>tên dịch vụ</li>
               <li>ảnh</li>
-              <li>mô tả</li>
               <li>ngày di chuyển</li>
               <li>số người</li>
               <li>Trạng thái</li>
@@ -231,42 +134,6 @@
               <li>1</li>
               <li>cắm trại nơi sơn la kỳ thú</li>
               <li><img src="../img/3.jpg" alt="" /></li>
-              <li>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
-                nihil esse ex perferendis a dicta est quasi quam at dolores
-                voluptatem laudantium reiciendis hic eos aspernatur, beatae
-                impedit autem! Aliquid.
-              </li>
-              <li>12/02/1212</li>
-              <li>12</li>
-              <li>chưa đi</li>
-              <li><a href="#">chi tiết</a></li>
-            </ul>
-            <ul class="uldvtd">
-              <li>1</li>
-              <li>cắm trại nơi sơn la kỳ thú</li>
-              <li><img src="../img/3.jpg" alt="" /></li>
-              <li>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
-                nihil esse ex perferendis a dicta est quasi quam at dolores
-                voluptatem laudantium reiciendis hic eos aspernatur, beatae
-                impedit autem! Aliquid.
-              </li>
-              <li>12/02/1212</li>
-              <li>12</li>
-              <li>chưa đi</li>
-              <li><a href="#">chi tiết</a></li>
-            </ul>
-            <ul class="uldvtd">
-              <li>1</li>
-              <li>cắm trại nơi sơn la kỳ thú</li>
-              <li><img src="../img/3.jpg" alt="" /></li>
-              <li>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
-                nihil esse ex perferendis a dicta est quasi quam at dolores
-                voluptatem laudantium reiciendis hic eos aspernatur, beatae
-                impedit autem! Aliquid.
-              </li>
               <li>12/02/1212</li>
               <li>12</li>
               <li>chưa đi</li>
@@ -277,31 +144,20 @@
         <div class="query qmk " id="qmk">
           <p>Đã gửi tin nhắn về email của bạn</p>
           <form>
-            <label for=""
-              >Nhập dãy số trong email<input
-                type="text"
-                placeholder="1234..."
-                name=""
-            /></label>
-            <input
-              type="submit"
-              value="Gửi"
-              name=""
-              data-target="mk_new"
-              class="query_btn"
-            />
+            <label for="">Nhập dãy số trong email<input type="text" placeholder="1234..." name="" /></label>
+            <input type="submit" value="Gửi" name="" data-target="mk_new" class="query_btn" />
           </form>
         </div>
         <div class="query mk_new " id="mk_new">
           <h2>Đổi mật khẩu</h2>
           <form action="#" method="post">
-            <label for=""
-              ><p>Mật khẩu mới:</p>
+            <label for="">
+              <p>Mật khẩu mới:</p>
               <input type="password" name="" class="input_pass" id="mknew_1" />
               <p class="input_check_pass" data-pass_see="mknew_1">ẩn/hiện</p>
             </label>
-            <label for=""
-              ><p>Nhập lại mật khẩu mới:</p>
+            <label for="">
+              <p>Nhập lại mật khẩu mới:</p>
               <input type="password" name="" class="input_pass" id="mknew_2" />
               <p class="input_check_pass" data-pass_see="mknew_2">ẩn/hiện</p>
             </label>
@@ -311,28 +167,34 @@
         <div class="query cntt " id="cntt">
           <h2>cập nhật thông tin</h2>
           <form action="#" method="post">
-            <label for=""
-              ><p>tên đăng nhập:</p>
-              <input type="password" name="" />
+            <div class="form-group">
+            <div>
+            <label for="">
+              <p>tên đăng nhập:</p>
+              <input type="text" name="" />
             </label>
-            <label for=""
-              ><p>email:</p>
-              <input type="password" name="" />
+            <label for="">
+              <p>email:</p>
+              <input type="email" name="" />
             </label>
-            <label for=""
-              ><p>số điện thoại:</p>
-              <input type="password" name="" />
-            </label>
-            <label for=""
-              ><p>địa chỉ:</p>
-              <input type="password" name="" />
-              <em>Lưu ý: chúng tôi sẽ xác định bạn ở đâu, để chọn tuyến đường phù hợp</em>
-            </label>
-            <label for=""
-              ><p>Mật khẩu:</p>
-              <input type="password" name="" />
+            <label for="">
+              <p>Mật khẩu:</p>
+              <input type="password" name="" /><br>
               <em>Lưu ý: mật khẩu phải đúng</em>
             </label>
+          </div>
+          <div>
+            <label for="">
+              <p>số điện thoại:</p>
+              <input type="number" name="" />
+            </label>
+            <label for="">
+              <p>địa chỉ:</p>
+              <input type="text" name="" /><br>
+              <em>Lưu ý: chúng tôi sẽ xác định bạn ở đâu, để chọn tuyến đường phù hợp</em>
+            </label>
+          </div>
+        </div>
             <div class="check">
               <input type="submit" value="lưu" name="save">
               <input type="reset" value="làm lại">
@@ -341,6 +203,8 @@
         </div>
       </div>
     </article>
-  </body>
-  <script src="../view/js/user.js"></script>
+  </div>
+</body>
+<script src="../view/js/user.js"></script>
+
 </html>
