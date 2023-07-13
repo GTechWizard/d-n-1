@@ -1,0 +1,135 @@
+body {
+	padding: 0px;
+	margin: 0px;
+	background-color: #00ffff;
+}
+
+.container {
+	margin-left: 5%;
+	margin-right: 5%;
+	width: 90%;
+	background-color: rgb(255, 0, 0);
+}
+
+.header, .navbar, .logo, .menu, .body-content {
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+	background-color: rgb(255, 0, 0);
+}
+
+.navbar {
+	height: 30px;
+	border-bottom: solid #e6e8e8 1px;
+}
+
+.navbar .left {
+	float: left;
+	padding: 10px;
+}
+
+.navbar .right {
+	float: right;
+	padding: 10px;
+}
+
+.logo {
+	display: inline-block;
+}
+
+.logo .search-form {
+	float: right;
+	margin-top: 25px;
+	margin-right: 10px;
+	padding: 3px;
+	border: solid #b8b8b8 1px;
+	border-radius: 5px;
+}
+
+.logo .search-form input {
+	width: 250px;
+	font-size: 20px;
+	border: none;
+	outline: none;
+}
+
+.logo .search-form input:hover {
+	border: none;
+	outline: none;
+}
+
+.logo .search-form button {
+	font-size: 20px;
+	border: none;
+	background-color: transparent;
+}
+
+.menu {
+	background-color: #00ff1a;
+}
+
+.menu ul {
+	display: flex;
+	list-style-type: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+.menu ul li {
+	color: white;
+	text-transform: uppercase;
+	font-weight: bold;
+	padding: 15px;
+	cursor: pointer;
+}
+
+.menu ul li:hover {
+	background-color: aqua;
+}
+
+.body-content {
+	display: flex;
+}
+
+.main-content {
+	width: 70%;
+	float: left;
+	background-color: white;
+	height: 100%;
+}
+
+.menu-right {
+	width: 30%;
+	float: left;
+	background-color: white;
+}
+
+.row {
+	width: 100%;
+	display: flex;
+}
+
+.col-4 {
+	width: calc(100%/3);
+	float: left;
+}
+
+.col-8 {
+	width: calc(2 * 100%/3);
+	float: left;
+}
+
+.group {
+	width: 100%;
+	display: block;
+}
+
+.group h2 {
+	background-color: #00ff1a;
+	padding: 10px;
+	color: white;
+}
+
+.content {
+	padding: 10px;
+}
