@@ -62,14 +62,14 @@
 			<li>
 				<a href="tt/news.html"><em class="fa fa-meetup">&nbsp;</em>Tin Tức</a>
 			</li>
+			<li>
+				<a href="tt/add_news.html"><em class="fa fa-window-restore">&nbsp;</em>Thêm Mới Tin Tức</a>
+			</li>
       <li>
 				<a href="dv_ldv/dv_act/dv_act.html"><em class="fa fa-bolt">&nbsp;</em>Dịch Vụ Đang Có</a>
       </li>
 			<li>
-				<a href="tt/add_news.html"><em class="fa fa-window-restore">&nbsp;</em>Thêm Mới Tin Tức</a>
-			</li>
-			<li>
-				<a href="bl/comments.html"><em class="fa fa-comment">&nbsp;</em>Bình Luận</a>
+				<a href="?act=comment"><em class="fa fa-comment">&nbsp;</em>Bình Luận</a>
 			</li>
 			<li>
 				<a href="../index.html"><em class="fa fa-power-off">&nbsp;</em> Trang Khách</a>
