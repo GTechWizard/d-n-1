@@ -1,21 +1,21 @@
 body {
 	padding: 0px;
 	margin: 0px;
-	background-color: #e6e8e8;
+	background-color: #00ffff;
 }
 
 .container {
 	margin-left: 5%;
 	margin-right: 5%;
 	width: 90%;
-	background-color: white;
+	background-color: rgb(255, 0, 0);
 }
 
 .header, .navbar, .logo, .menu, .body-content {
 	width: 100%;
 	padding: 0px;
 	margin: 0px;
-	background-color: white;
+	background-color: rgb(255, 0, 0);
 }
 
 .navbar {
