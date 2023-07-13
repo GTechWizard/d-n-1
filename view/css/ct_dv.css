@@ -8,9 +8,8 @@ header{
     background-color: rgb(239, 239, 255);
 }
 .product-container-top
-{
+{   
     display: flex;
-    background-color: antiquewhite;
 
 }
 .product-container-top-name
@@ -26,11 +25,16 @@ header{
 {
     margin-top: 10px;
 }
+.product-container-top-price ul
+{
+    width: 30%;
+}
 .product-container-top-price ul li
 {
     list-style: none;
     font-size: 1.25em;
     font-weight: bold;
+    text-transform: capitalize;
 }
 .product-container-top-price ul select
 {
@@ -103,8 +107,14 @@ header{
 	opacity: 0;
 	transition: all 0.3s ease-out;
 }
-.card-top-submit input
+.card-top-submit a
 {
+    text-decoration: none;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 1%;
+    color: black;
     transform: translateY(30px);
 	opacity: 0;
 	transition: all 0.5s ease-out;
@@ -114,7 +124,7 @@ header{
 	opacity: 1;
 	transform: translateY(0px);
 }
-.card-top:hover .card-top-submit input
+.card-top:hover .card-top-submit a
 {
     opacity: 1;
 	transform: translateY(0px);
@@ -158,8 +168,22 @@ text-overflow: ellipsis;
 }
 .card-bottom-submit
 {
-    margin-top: 10px;
+    margin: 0 0 2% 0;
     text-align: center;
+}
+.card-bottom-submit a
+{
+   background-color: orange;
+   text-decoration: none;
+   padding: 1% 7%;
+   border-radius: 10px;
+   border: 1px solid black;
+   color: white;
+   margin: 0 0 5% 0;
+}
+.card-bottom-submit a:hover
+{
+   background-color: rgb(212, 138, 0);
 }
 @media screen and (max-width: 560px)  {
     .product-container {
