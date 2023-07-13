@@ -79,10 +79,13 @@ label{
   justify-content: center;
   align-items: center;
 }
-
+/*   Đánh Giá */
 div.stars {
   width: 270px;
   display: inline-block;
+}
+.stars form{
+display: flex;
 }
  
 input.star { display: none; }
@@ -113,4 +116,14 @@ label.star:hover { transform: rotate(-15deg) scale(1.3); }
 label.star:before {
   content: '\f006';
   font-family: FontAwesome;
+}
+/* comment */
+.comment {
+  width: 40%;
+  height: 100px;
+  padding: 10px;
+  background-color: #d0e2bc;
+}
+.submit{
+width:10%
 }
