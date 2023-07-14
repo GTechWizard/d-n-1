@@ -14,7 +14,7 @@
       <div class="row">
         <!-- form -->
         <form action="?act=dv_new" class="form" method="post" enctype="multipart/form-data">
-          <!-- <div class="col-md-6">
+          <div class="col-md-6">
           <div class="form-group">
               <label>Tên Dịch Vụ</label>
               <input type="text" class="form-control" placeholder="name..." name="name" required/>
@@ -61,11 +61,11 @@
               <label>Nơi Bắt Đầu</label>
               <input type="text" class="form-control" placeholder="Hà Nội,..." name="noi_bd" required/>
             </div>
-          </div> -->
+          </div>
           <div class="col-md-12">
             <div class="form-group">
               <label> Bài Viết </label>
-              <textarea id="mytextarea" name="bai_viet" style="width: 70vw" required></textarea>
+              <textarea id="mytextarea" name="bai_viet" style="width: 70vw"></textarea>
             </div>
           </div>
           <div class="control-form col-md-12">

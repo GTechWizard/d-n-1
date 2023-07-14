@@ -203,11 +203,11 @@ if (isset($_GET['act']) && $_GET['act']) {
 					move_uploaded_file($_FILES["img_dv"]["tmp_name"], $target_file);
 				}
 				var_dump("$bai_viet") ;
-				// $dv = new dv;
-				// $dv->insert_DV($name, $diem_den, $gia, $tong_ng, $target_file, $ngay_bd, $ngay_kt, $id_pk_loai, $noi_bd, $bai_viet);
-				// if (isset($alert) && $alert != "")
-				// 	echo "<script>alert('$alert');</script>";
-				// header('location:?act=dv');
+				$dv = new dv;
+				$dv->insert_DV($name, $diem_den, $gia, $tong_ng, $target_file, $ngay_bd, $ngay_kt, $id_pk_loai, $noi_bd, $bai_viet);
+				if (isset($alert) && $alert != "")
+					echo "<script>alert('$alert');</script>";
+				header('location:?act=dv');
 			}
 			break;
 
