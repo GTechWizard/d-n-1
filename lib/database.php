@@ -16,7 +16,6 @@ private function connectDB(){
   $this->link = new mysqli($this->host,$this->user,$this->pass,$this->dbname);
   if(!$this->link){
     $this->error="Connection fail". $this->link->connect_error;
-    echo "erro!!!";
     return false;
   }
 }
@@ -26,7 +25,6 @@ public function select($query){
   if($result->num_rows>0){
     return $result;
   }else{
-    echo "erro!!!";
     return false;
   }
 }

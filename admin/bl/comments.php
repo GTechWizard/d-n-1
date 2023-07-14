@@ -26,10 +26,8 @@
           <?php 
             $comment = new comment;
             $blList=$comment->getAllComment();
-            $i=0;
             if($blList){
               while($result=$blList->fetch_assoc()){
-                $i++;
           ?>
           <tbody class="fixed-table-body">
             <td class="th-inner"><?=$result['id_pk_dv']?></td>

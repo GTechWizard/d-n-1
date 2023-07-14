@@ -1,6 +1,3 @@
-<?php
-require_once('../model/model_user.php');
-?>
 <!-- trang chính -->
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
   <div class="row">
@@ -62,9 +59,9 @@ require_once('../model/model_user.php');
             <input type="submit" name="save" value="Lưu" class="btn btn-md btn-success">
             <a href="?act=user">Cancel</a>
           </div>
-        </form>
       <?php }
       } ?>
+        </form>
   </div>
 </div>
 <!--/.main-->

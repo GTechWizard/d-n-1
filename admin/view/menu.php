@@ -37,22 +37,22 @@
 					</a>
 					<ul class="children collapse" id="sub-item-1">
 						<li>
-							<a class="" href="dv_ldv/ldv/ldv.html">
+							<a  href="?act=loai">
 								<span class="fa fa-arrow-right">&nbsp;</span> Loại Dịch Vụ
 							</a>
 						</li>
 						<li>
-							<a class="" href="dv_ldv/ldv/add_ldv.html">
+							<a href="?act=add_loai">
 								<span class="fa fa-arrow-right">&nbsp;</span> Thêm Loại Dịch Vụ
 							</a>
 						</li>
 						<li>
-							<a class="" href="dv_ldv/dv/dv.html">
+							<a href="?act=dv">
 								<span class="fa fa-arrow-right">&nbsp;</span> Quản Lý Dịch Vụ
 							</a>
 						</li>
 						<li>
-							<a class="" href="dv_ldv/dv/add_dv.html">
+							<a class="" href="?act=add_dv">
 								<span class="fa fa-arrow-right">&nbsp;</span> Thêm Dịch Vụ
 							</a>
 						</li>
