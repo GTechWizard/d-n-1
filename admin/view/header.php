@@ -12,9 +12,20 @@
 
 	<!--Custom Font-->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet" />
-	<style>
-
-	</style>
+	<script
+      src="../tinymce/js/tinymce/tinymce.min.js"
+      referrerpolicy="origin"
+    ></script>
+    <script>
+      tinymce.init({
+        selector: "#mytextarea",
+      });
+    </script>
+		<style>
+			.pa-2{
+				padding: 2%;
+			}
+		</style>
 </head>
 
 <body>

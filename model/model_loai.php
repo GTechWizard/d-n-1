@@ -32,24 +32,12 @@ class loai{
     $this->db->update($query);
     }
   }
-  public function insert_loai($cateName){
-    $cateName=$this->fm->validation($cateName);
+  public function insert_loai($kieu_dv,$img){
+    $kieu_dv=$this->fm->validation($kieu_dv);
     // xử lý ký tự đặc biệt
-    $cateName =mysqli_real_escape_string($this->db->link, $cateName);
-    if(empty($cateName)){
-      $alert="empty";
-      return $alert;
-    }else{
-      $query ="INSERT INTO tbl_category(cateName) VALUE ('$cateName')";
-      $result =$this->db->insert($query);
-      if($result){
-        $aleart="Successfully";
-        return $aleart;
-      }else{
-        $aleart=" Not Success";
-        return $aleart;
-      }
-    }
+    $kieu_dv =mysqli_real_escape_string($this->db->link, $kieu_dv);
+      $query ="INSERT INTO `loai` (`id_loai`, `kieu_dv`, `img`) VALUES (NULL, '$kieu_dv', '$img');";
+      $this->db->insert($query);
   }
 }
 
