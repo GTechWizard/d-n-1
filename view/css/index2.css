@@ -69,7 +69,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: rgb(255, 255, 255);
+  color: rgb(255, 115, 0);
   font-size: 20px;
   text-decoration: none;
   text-transform: capitalize;
@@ -87,21 +87,20 @@ nav ul li a {
 nav .search_box {
   display: flex;
   margin: auto 0;
-  height: 30px;
+  height: 35px;
   line-height: 30px;
-  border: 1px solid black solid red;
+  border: 1px solid black;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 10px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  box-shadow: 0px 0px 5px 2px #000;
 }
 
 nav .search_box input {
   border: none;
   outline: none;
   height: 100%;
-  padding: 0 10px;
+  padding: 2%;
   font-size: 16px;
   width: 350px;
   border-top-left-radius: 20px;
@@ -126,7 +125,7 @@ nav .search_box span::after {
   height: 100%;
   width: 0%;
   content: '';
-  background-color: red;
+  background-color: rgb(255, 128, 0);
   position: absolute;
   top: 0;
   left: 0;
@@ -161,7 +160,7 @@ nav .search_box span::after {
   width: 0px;
   height: 2.4rem;
   width: 2.7rem;
-  background-color: rgb(255, 0, 0);
+  background-color: rgb(255, 123, 0);
   position: relative;
   box-shadow: 0px 0px 5px 2px #000;
   cursor: pointer;
@@ -178,7 +177,7 @@ nav .search_box span::after {
   transform: translate(-50%, -50%) rotate(-280deg);
   width: 150%;
   height: 150%;
-  background-image: conic-gradient(#ff00bb 0deg, #ff00bb 90deg, transparent 130deg, transparent 180deg, #4530FF 180deg, #4530FF 270deg, transparent 310deg, transparent 360deg);
+  background-image: conic-gradient(#ff9e58 0deg, #ff863a 90deg, transparent 130deg, transparent 180deg, #61b8ff 180deg, #68aeff 270deg, transparent 310deg, transparent 360deg);
   transition: transform 2s;
 }
 
@@ -211,7 +210,7 @@ nav .search_box span::after {
   content: "\f2f6";
   font-family: "Font Awesome 6 Free";
   font-weight: 900;
-  font-size: 17px;
+  font-size: 14px;
   color: rgb(0, 0, 0);
   background-color: rgb(255, 255, 255);
   display: flex;
@@ -283,19 +282,20 @@ input[type="checkbox"] {
   width: 100%;
   height: 100vh;
   position: relative;
-
 }
 
 .video::before {
   z-index: 1;
   content: "";
   position: absolute;
-  background-color: #4530FF;
+  background-color: #9fd9fffd;
   width: 100%;
   height: 100vh;
   top: 0;
   left: 0;
   opacity: 0.3;
+  border-bottom-left-radius: 23%;
+  border-bottom-right-radius: 65%;
 }
 
 .video video {
@@ -303,166 +303,123 @@ input[type="checkbox"] {
   width: 100%;
   height: 100vh;
 }
-
+/* xx */
 .main_bn {
   z-index: 2;
+  position: absolute;
   margin-top: 30px;
   display: flex;
   flex-wrap: wrap;
-  position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  right: 50%;
+  /* transform: translate(-50%, -50%); */
 }
 
 .main_bn-font {
   color: white;
-  text-align: center;
 }
-
-.main_bn .form_find {
-  background-color: rgba(255, 255, 255, 0.815);
-  width: 90%;
-  height: 50vh;
-  margin: 5%;
-  margin-top: 10%;
-  padding: 5%;
-  border-top-left-radius: 40px;
-  border-bottom-right-radius: 90px;
+/* xx */
+.form_find_bn{
+  background-image: url(../../img/balloon-gbd200c392_1280.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  width: 98%;
+  margin: 1%;
+  border-radius: 25px;
 }
-
+.form_find_bn label p{
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin-bottom: 1%;
+  font-size: large;
+}
 .main_bn-font .h2-font {
-  font-size: 20px;
+  font-size: 10px;
   margin-bottom: 5px;
   font-family: 'Dancing Script', cursive;
 
 }
-
+/* xx */
 .main_bn-font .h1-font {
   font-size: 1.8em;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
-.main_bn .form_find h2 {
-  color: rgb(16, 157, 0);
-  text-align: center;
+.form_find_bn h2 {
+  color: rgb(130, 98, 30);
+  text-align: left;
   width: 100%;
   text-transform: capitalize;
-  text-shadow: 2px 5px 10px rgb(255, 251, 0);
+  text-shadow: 0px 5px 10px rgba(255, 239, 239, 0.822);
+  font-size: 200%;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  padding: .5%;
 }
 
-.main_bn .form_find form {
-  padding: 3%;
+.form_find_bn form {
+  padding: 2%;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+.form_find_bn form .form_in {
   display: grid;
   place-items: center;
 }
-
-.main_bn .form_find form .form_in {
+.form_find_bn form .form_in input{
+  padding: 2%;
+  border-radius: 15px;
+  width: 80%;
+  border: 1px solid gray;
+}
+.form_find_bn form .form_in select{
+  padding: 2%;
+  border-radius: 15px;
+  width: 80%;
+  border: 1px solid gray;
+}
+.form_find_bn form .form_in input[type='text']{
+  width: 100%;
+  padding: 1.5%;
+  border: none;
+  color: rgb(66, 151, 255);
+}
+input:focus{
+  outline: none;
+}
+.form_find_bn form .form_in .box_form{
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 5%;
-  margin-bottom: 5%;
+  grid-template-columns: minmax(200px, 1fr) minmax(200px, 1fr) minmax(200px, 1fr) ;
+  margin-top: 2%;
+}
+.form_find_bn form .form_in .box_form_1{
+  position: relative;
+  width: 80%;
+}
+.form_find_bn form .form_in input[type='submit']{
+  width: 10%;
+  padding: 1.3%;
+  border: none;
+  background-color: orange;
+  text-align: center;
+  font-weight: bold;
+  font-size: large;
+  color: white;
+  transition: .2s linear;
+  position: absolute;
+  right: 0;
+
+}
+.form_find_bn form .form_in input[type='submit']:hover{
+  background-color: #3091ff;
 }
 
 .main_bn .form_find form label {
   margin-top: 10%;
-}
-
-.main_bn .form_find form input[type=submit] {
-  background-color: #ff5e00;
-  border: none;
-  padding: 2%;
-  width: 20%;
-  color: white;
-  font-weight: bold;
-  margin-top: 5%;
-  border-radius: 20px;
-}
-
-.main_bn .form_find form input[type=submit]:hover {
-  background-color: #fbff04;
-  color: rgb(0, 0, 0);
-}
-
-.main_bn .form_find form input:not(input[type=submit]) {
-  padding: 4%;
-  border: none;
-  border-radius: 5px;
-  margin-top: 3%;
-}
-
-.form_find_bn {
-  background-color: rgba(255, 255, 255, 0.573);
-  margin: auto;
-  display: grid;
-  place-items: center;
-  margin-top: 4%;
-  text-align: center;
-  border-radius: 10px;
-}
-
-.form_find_bn h2 {
-  text-transform: capitalize;
-  text-align: center;
-  margin-top: 10px;
-}
-
-.form_find_bn .form_in {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 5%;
-}
-
-.form_find_bn .form_in label input {
-  padding: 3%;
-  border-radius: 10px;
-  border: none;
-  width: 90%;
-  color: #008912;
-}
-
-.form_find_bn form input[type=submit] {
-  width: 20%;
-  background-color: #ff7300;
-  padding: 2%;
-  border-radius: 10px;
-  border: none;
-  color: white;
-  margin-top: 10%;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.form_find_bn form input[type=submit]:hover {
-  background-color: #fff200;
-  color: rgb(70, 50, 50);
-}
-
-.form_find_bn form {
-  display: grid;
-  place-items: center;
-}
-
-.form_find_bn .form_in label {
-  margin-top: 10%;
-}
-
-.form_find_bn form .form_in select {
-  padding: 3%;
-  border-radius: 10px;
-  border: none;
-  width: 90%;
-  color: #008912;
-  text-transform: capitalize;
-}
-
-.form_find_bn form .form_in select option {
-  color: rgb(0, 0, 0);
-  text-transform: capitalize;
-}
-
-.form_find_bn form .form_in select option:checked {
-  background-color: #c6ffc2;
 }
 /* thông tin 1 */
 .conten { 
@@ -593,7 +550,7 @@ input[type="checkbox"] {
     width: 80%;
     border-radius: 20px;
     position: relative;
-    background:url("../image/testimonial.jpg") no-repeat fixed;
+    background:url("../../img/testimonial.jpg") no-repeat fixed;
 
 }
 .main-font::before
@@ -621,11 +578,13 @@ input[type="checkbox"] {
 {
     font-size:30px;
     text-transform: uppercase;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .main-h1 h3
 {
-    font-size:15px;
-    text-transform: uppercase;
+  text-transform: capitalize;
+    font-size:18px;
+    text-decoration: underline;
 }
 .main-h1 img
 {
@@ -646,7 +605,10 @@ input[type="checkbox"] {
 }
 
 .card {
-    background-color: black;
+    background-color:rgb(255, 255, 255);
+}
+.card_slide {
+    background-color:rgba(0, 0, 0, 0.571);
 }
 
 .button {
@@ -887,8 +849,15 @@ img {
 	opacity: 0;
 	transition: all 0.3s ease-out;
 }
-.card-top-submit input
+.card-top-submit a
 {
+  text-decoration: none;
+  color: #265DF2;
+  background-color: white;
+  border-radius: 15px;
+  border: 2px solid orange;
+  padding: 1%;
+  font-weight: bold;
     transform: translateY(30px);
 	opacity: 0;
 	transition: all 0.5s ease-out;
@@ -898,7 +867,7 @@ img {
 	opacity: 1;
 	transform: translateY(0px);
 }
-.card-top:hover .card-top-submit input
+.card-top:hover .card-top-submit a
 {
     opacity: 1;
 	transform: translateY(0px);
@@ -922,14 +891,14 @@ img {
 {
     text-align: center;
     font-size: large;
-    text-transform: uppercase;
+    text-transform: capitalize;
     font-weight: bold;
 }
 .card-bottom-h3
 {
     margin-top: 2px;
     font-size: 14px;
-    text-align: center;
+    padding: 1%;
 } 
 .card-bottom-span-container
 {
@@ -945,6 +914,7 @@ text-overflow: ellipsis;
     margin-top: 10px;
     display: flex;
     justify-content: space-between;
+    padding: 1%;
 }
 .card-bottom-submit 
 {
@@ -953,65 +923,48 @@ text-overflow: ellipsis;
 }
 .card-bottom-span-1 span
 {
-    padding: 2px;
     border-radius: 4px; 
-    background-color: brown;
 }
 .card-bottom-span-1 span span
 {
-    color: rgb(13, 255, 0); font-weight:bold ;
+    color: rgb(0, 0, 0); 
+    font-weight:bold ;
 }
 .card-bottom-span-2 
 {
     padding: 2px;
     border-radius: 4px; 
-    background-color: brown;
 }
 .card-bottom-span-2 span
 {
-    color: #fff;
+    color: #000000;
     font-weight: bold;
 }
-.card-bottom-submit input
+.card-bottom-submit a
 {
+  text-decoration: none;
     padding: 5px 10px;
     border-radius: 10px;
-    color: red;
+    color: rgb(255, 128, 0);
     background-color: rgba(255, 255, 255, 0.789);
-    border: 1.5px solid red;
+    border: 1.5px solid rgb(255, 196, 0);
     text-transform: uppercase;
     font-weight: bold;
     transition: all 0.5s ease;
 }
-.card-bottom-submit input:hover
+.card-bottom-submit a:hover
 {
-    color: rgb(0, 119, 255);
-    background-color: rgba(0, 0, 0, 0.119);
-    border: 1.5px solid rgb(255, 0, 0);
+    color: rgb(255, 255, 255);
+    background-color: orange;
 }
-.card-top-submit input
-{
-    padding: 5px 10px;
-    border-radius: 10px;
-    color: red;
-    background-color: rgba(255, 255, 255, 0.789);
-    border: 1.5px solid red;
-    text-transform: uppercase;
-    font-weight: bold;
-    transition: all 0.5s ease;
-}
-.card-top-submit input:hover
+.card-top-submit a:hover
 {
     color: white;
-    background-color: rgba(51, 0, 255, 0.789);
-    border: 1.5px solid rgb(160, 147, 147);
+    background-color: rgba(117, 177, 255, 0.789);
+    border: 1.5px solid rgb(103, 77, 250);
 }
 
-
-
 /* the tour yeu thich nhat */
-
-
   
 .tf-container
 {
@@ -1065,26 +1018,31 @@ text-overflow: ellipsis;
 .tf-h1 h1
 {
     text-transform: uppercase;
+    font-family: sans-serif;
+}
+.tf-time{
+  text-transform: capitalize;
 }
 .tf-h1 h1
 {
     font-size: 40px;
 }
-.tf-input input
+.tf-input a
 {
+  text-decoration: none;
      padding: 10px;
      border-radius: 10px;
      text-transform: uppercase;
      font-weight: bold;
-     background-color: red;
+     background-color: rgb(255, 174, 0);
      color: white;
      transition: all 0.5s ease;
-     border: 2px solid red;
+     border: 2px solid rgb(255, 196, 0);
 }
-.tf-input input:hover
+.tf-input a:hover
 {
     background-color: white;
-    color: red;
+    color: rgb(255, 174, 0);
 }
 .p20
 {
@@ -1100,7 +1058,6 @@ text-overflow: ellipsis;
 {
     margin: auto;
     width: 80%;
-    height: 80vh;
 }
 .main-container-new-h1
 {
@@ -1140,12 +1097,10 @@ text-overflow: ellipsis;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
 }
 
 .new-bottom
 {
-   
     margin-top: 10px;
 }
 .new-bottom-main
@@ -1164,17 +1119,25 @@ text-overflow: ellipsis;
 {
   font-size: 26px;
 }
-.new-bottom-h3
+.new-bottom-h3 h3
 {
-    margin-top: 2px;
-    font-size: 25px;
     text-align: center;
+} 
+.new-bottom-h3 
+{
+    padding: 1%;
+} 
+.new-bottom-h3 span
+{
+    font-size: 17px;
 } 
 .new-bottom-span-container
 {
     margin-top: 10px;
-    font-size: 8px;
+    font-size: 12px;
+    text-transform: capitalize;
     display: flex;
+    justify-content: space-between;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -1211,22 +1174,23 @@ text-overflow: ellipsis;
     color: #fff;
     font-weight: bold;
 }
-.new-bottom-submit input
+.new-bottom-submit a
 {
+  text-decoration: none;
     padding: 5px 10px;
     border-radius: 10px;
-    color: red;
+    color: rgb(63, 188, 255);
     background-color: rgba(255, 255, 255, 0.789);
-    border: 1.5px solid red;
+    border: 1.5px solid rgb(255, 170, 0);
     text-transform: uppercase;
     font-weight: bold;
     transition: all 0.5s ease;
 }
-.new-bottom-submit input:hover
+.new-bottom-submit a:hover
 {
-    color: rgb(0, 119, 255);
-    background-color: rgba(0, 0, 0, 0.119);
-    border: 1.5px solid rgb(255, 0, 0);
+    color: rgb(255, 255, 255);
+    background-color: rgba(32, 158, 254, 0.82);
+    border: none;
 }
 .new-top-submit input
 {
@@ -1269,7 +1233,7 @@ text-overflow: ellipsis;
 {
 	right: 10px;
 	padding: 10px 13px 8px 13px;
-	border: 2px solid red;
+	border: 2px solid rgb(156, 200, 255);
 	border-radius: 50px;
 	transition: all 0.5s ease;
 	position: absolute;
@@ -1277,7 +1241,7 @@ text-overflow: ellipsis;
 }
 .icon-ft i
 {
-	color: rgb(255, 120, 120);
+	color: rgb(255, 197, 120);
 	font-size: 20px;
 	font-weight: bold;
 	z-index:4 ;
@@ -1286,8 +1250,7 @@ text-overflow: ellipsis;
 
 .icon-ft:hover
 {
-	background-color: red;
-	box-shadow: 0px 0px 5px 5px rgb(255, 0, 0);
+	background-color: rgb(254, 174, 36);
 }
 .icon-ft:hover i
 {

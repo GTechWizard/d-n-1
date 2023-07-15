@@ -11,8 +11,7 @@
   <link rel="stylesheet" href="view/css/index2.css">
   <!-- icon-font -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://kit.fontawesome.com/67c66657c7.js"></script>
   <link
     href="https://fonts.googleapis.com/css?family=Dancing+Script|Itim|Lobster|Montserrat:500|Noto+Serif|Nunito|Patrick+Hand|Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i|Roboto+Slab|Saira"
@@ -37,14 +36,14 @@
       <span class="fa fa-search"></span>
     </div>
     <ul>
-      <li><a href="#" class="card">Chúng tôi</a></li>
-      <li><a href="#" class="card">Du Lịch</a></li>
-      <li><a href="#" class="card">Tin Tức</a></li>
-      <li><a href="#" class="card">Hỗ Trợ</a></li>
+      <li><a href="#chungtoi" class="card">Chúng tôi</a></li>
+      <li><a href="view/dv.html" class="card">Du Lịch</a></li>
+      <li><a href="view/tt.html" class="card">Tin Tức</a></li>
+      <li><a href="#hotro" class="card">Hỗ Trợ</a></li>
     </ul>
     <div class="navbar">
-      <a href="php/login.php" class="btn-icon fas fa-arrow-right-to-bracket"></a>
-      <!-- <div id="user-btn" class="far fa-user"></div> -->
+      <a href="view/dkdn.html" class="btn-icon fas fa-arrow-right-to-bracket"></a>
+      <a href="view/user.html"id="user-btn" class="far fa-user"></a>
 
     </div>
     <label for="check" class="bar">
@@ -58,9 +57,6 @@
     <video id="video" src="video/video (2160p).mp4" autoplay muted loop></video>
     <div class="main_bn">
       <div class="main_bn-font">
-        <div class="h2-font">
-          <h2>wecome to du lịch DCR</h2>
-        </div>
         <div class="h1-font">
           <h1>khám phá địa điểm yêu thích của bạn với chúng tôi</h1>
         </div>
@@ -68,32 +64,41 @@
           <h3>liên hệ với chúng tôi nếu bạn muốn đi du lịch đến những địa điểm mới lạ</h3>
         </div>
       </div>
-      <div class="form_find_bn" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
-        <h2>tìm dịch vụ nhanh</h2>
-        <form action="#" method="post">
-          <div class="form_in">
-            <label for="date1">Ngày bắt đầu
-              <input type="date" name="" id="date1" />
-            </label>
-            <label for="date2">Ngày kết thúc
-              <input type="date" name="" id="date2" />
-            </label>
-            <label for="gia">Giá tiền
-              <select name="" id="gia">
-                <option>Chọn giá</option>
-                <option value="">1 triệu -> 2 triệu</option>
-                <option value="">5 triệu -> 7 triệu</option>
-                <option value="">9 triệu -> 12 triệu</option>
-              </select>
-            </label>
-            <label for="place">Nơi đến
-              <input type="text" name="" id="place" placeholder="Nơi đến" />
-            </label>
-          </div>
-          <input type="submit" name="find" id="find_bn_hr" value="Tìm" />
-        </form>
-      </div>
     </div>
+  </div>
+  <!-- form tìm nhanh -->
+  <div class="form_find_bn" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+    <h2>lựa chọn chuyến đi của bạn</h2>
+    <form action="#" method="post">
+      <div class="form_in">
+        <div class="box_form_1">
+          <label for="place">
+            <p>Nơi đến</p>
+            <input type="text" name="" id="place" placeholder="Nơi đến" />
+          </label>
+          <input type="submit" name="find" id="find_bn_hr" value="Tìm" />
+        </div>
+        <div class="box_form">
+          <label for="gia">
+            <p>Giá tiền</p>
+            <select name="" id="gia">
+              <option>Chọn giá</option>
+              <option value="">1 triệu -> 2 triệu</option>
+              <option value="">5 triệu -> 7 triệu</option>
+              <option value="">9 triệu -> 12 triệu</option>
+            </select>
+          </label>
+          <label for="date1">
+            <p>Ngày bắt đầu</p>
+            <input type="date" name="" id="date1" />
+          </label>
+          <label for="date2">
+            <p>Ngày kết thúc</p>
+            <input type="date" name="" id="date2" />
+          </label>
+        </div>
+      </div>
+    </form>
   </div>
   <!-- thông tin 1 -->
   <div class="conten" id="chungtoi">
@@ -101,7 +106,7 @@
       <div class="conten-font">
         <div class="conten-font-main" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
           <div class="conten-font-top">
-            <h2>HÃY CHỌN TOURPROECK</h2>
+            <h2>HÃY CHỌN DCR</h2>
           </div>
           <div class="conten-font-mid">
             <span>Chúng tôi xin cảm ơn bạn đã dành thời gian để ghé thăm trang
@@ -143,8 +148,7 @@
           </div>
         </div>
       </div>
-      <div class="conten-all" data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-offset="1000"
-        data-aos-duration="1000">
+      <div class="conten-all" data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-offset="1000" data-aos-duration="1000">
         <div class="conten-font-top">
           <h2>CÁC THƯƠNG HIỆU HỢP TÁC</h2>
         </div>
@@ -175,33 +179,33 @@
     <div class="slide-container swiper">
       <div class="slide-content">
         <div class="card-wrapper swiper-wrapper">
-          <div class="card swiper-slide">
+          <div class="card_slide swiper-slide">
             <div class="ui-card">
               <img src="img/dulich1.jpg">
               <div class="description">
                 <h3>TOUR MIỀN BẮC</h3>
                 <p>SỐ TOUR:10</p>
-                <a href="">TÌM THÊM</a>
+                <a href="view/dv.html">TÌM THÊM</a>
               </div>
             </div>
           </div>
-          <div class="card swiper-slide">
+          <div class="card_slide swiper-slide">
             <div class="ui-card">
               <img src="img/dulich2.jpg">
               <div class="description">
                 <h3>TOUR MIỀN NAM</h3>
                 <p>SỐ TOUR:1</p>
-                <a href="">TÌM THÊM</a>
+                <a href="view/dv.html">TÌM THÊM</a>
               </div>
             </div>
           </div>
-          <div class="card swiper-slide">
+          <div class="card_slide swiper-slide">
             <div class="ui-card">
               <img src="img/dulich3.jpg">
               <div class="description">
                 <h3>TOUR NƯỚC NGOÀI</h3>
                 <p>SỐ TOUR:15</p>
-                <a href="">TÌM THÊM</a>
+                <a href="view/dv.html">TÌM THÊM</a>
               </div>
             </div>
           </div>
@@ -220,7 +224,6 @@
       <br>
       <div class="div-mb">
       </div>
-
     </div>
 
     <div class="slide-container swiper">
@@ -234,15 +237,15 @@
                 </div>
                 <div class="card-top-hover">
                   <div class="card-top-hover-price">
-                    <p><span>200.000.000</span> <span>Đ</span></p>
+                    <p><span>200.000.000</span> <span>VNĐ</span></p>
                     <p>
                       <span>12/12/2023</span> -
                       <span>12/12/2023</span>
                     </p>
                   </div>
                   <div class="card-top-submit">
-                    <input type="submit" value="yêu thích">
-                    <input type="submit" value="đặt Tour">
+                    <a href="">Yêu Thích</a>
+                    <a href="view/ctdv.html">Đặt Tour</a>
                   </div>
                 </div>
               </div>
@@ -265,12 +268,12 @@
                       </span>
                     </div>
                     <div class="card-bottom-span-2">
-                      <span>Vacant: 20</span>
+                      <span>Trống: 20</span>
                     </div>
                   </div>
 
                   <div class="card-bottom-submit">
-                    <input type="submit" value="chi tiết">
+                    <a href="view/ctdv.html">Chi tiết</a>
                   </div>
                 </div>
               </div>
@@ -291,8 +294,8 @@
                     </p>
                   </div>
                   <div class="card-top-submit">
-                    <input type="submit" value="yêu thích">
-                    <input type="submit" value="đặt Tour">
+                    <a href="">Yêu Thích</a>
+                    <a href="">Đặt Tour</a>
                   </div>
                 </div>
               </div>
@@ -320,7 +323,7 @@
                   </div>
 
                   <div class="card-bottom-submit">
-                    <input type="submit" value="chi tiết">
+                    <a href="view/ctdv.html">Chi tiết</a>
                   </div>
                 </div>
               </div>
@@ -341,8 +344,8 @@
                     </p>
                   </div>
                   <div class="card-top-submit">
-                    <input type="submit" value="yêu thích">
-                    <input type="submit" value="đặt Tour">
+                    <a href="">Yêu Thích</a>
+                    <a href="">Đặt Tour</a>
                   </div>
                 </div>
               </div>
@@ -370,7 +373,7 @@
                   </div>
 
                   <div class="card-bottom-submit">
-                    <input type="submit" value="chi tiết">
+                    <a href="view/ctdv.html">Chi tiết</a>
                   </div>
                 </div>
               </div>
@@ -394,7 +397,7 @@
           <div class="tf-h2">
             <span style="font-size:16px ; text-transform:uppercase ;">
               <span>đánh giá:</span>
-              <span>3.5</span>
+              <span>5</span>
               <i class="fas fa-star" style="color:yellow ;"></i>
             </span>
           </div>
@@ -407,7 +410,7 @@
           </div>
           <br>
           <div class="tf-input mt20">
-            <input type="submit" value="xem thêm">
+            <a href="view/ctdv.html">Xem Thêm</a>
           </div>
         </div>
       </div>
@@ -435,14 +438,17 @@
               </div>
               <div class="new-bottom">
                 <div class="new-bottom-h3 mt10">
+                  <h3>Đảo Cát Bà</h3>
                   <span>Đảo Cát Bà là một địa điểm du lịch phổ biến với vẻ đẹp hoang sơ của thiên nhiên, phong cảnh rừng
                     núi và biển cả hùng vĩ.</span>
                 </div>
                 <div class="new-bottom-main">
                   <div class="new-bottom-span-container">
+                    <p>tác giả:ma ma</p>
+                    <p>12/12/1221</p>
                   </div>
                   <div class="new-bottom-submit">
-                    <input type="submit" value="chi tiết">
+                    <a href="view/ct_tt.html">Chi tiết</a>
                   </div>
                 </div>
               </div>
@@ -457,14 +463,17 @@
               </div>
               <div class="new-bottom">
                 <div class="new-bottom-h3 mt10">
+                  <h3>Đảo Cát Bà</h3>
                   <span>Đảo Cát Bà là một địa điểm du lịch phổ biến với vẻ đẹp hoang sơ của thiên nhiên, phong cảnh rừng
                     núi và biển cả hùng vĩ.</span>
                 </div>
                 <div class="new-bottom-main">
                   <div class="new-bottom-span-container">
+                    <p>tác giả:ma ma</p>
+                    <p>12/12/1221</p>
                   </div>
                   <div class="new-bottom-submit">
-                    <input type="submit" value="chi tiết">
+                    <a href="view/ct_tt.html">Chi tiết</a>
                   </div>
                 </div>
               </div>
@@ -479,14 +488,17 @@
               </div>
               <div class="new-bottom">
                 <div class="new-bottom-h3 mt10">
+                  <h3>Đảo Cát Bà</h3>
                   <span>Đảo Cát Bà là một địa điểm du lịch phổ biến với vẻ đẹp hoang sơ của thiên nhiên, phong cảnh rừng
                     núi và biển cả hùng vĩ.</span>
                 </div>
                 <div class="new-bottom-main">
                   <div class="new-bottom-span-container">
+                    <p>tác giả:ma ma</p>
+                    <p>12/12/1221</p>
                   </div>
                   <div class="new-bottom-submit">
-                    <input type="submit" value="chi tiết">
+                    <a href="view/ct_tt.html">Chi tiết</a>
                   </div>
                 </div>
               </div>
@@ -499,54 +511,54 @@
   <!-- footer -->
   <br>
   <br>
-  <footer class="footer ">
+  <footer class="footer " id="hotro">
     <div class="icon-ft">
       <a href="#"><i class="fa-solid fa-arrow-up"></i></a>
     </div>
-       <div class="fot-container">
-      
-         <div class="row">
-           <div class="footer-col">
-             <h4>về chúng tôi</h4>
-             <ul>
-               <li><a href="#">địa chỉ: trường cao đẳng fpt polytechnic,Q12,HCM </a></li>
-               <li><a href="#">sdt: 0364898403</a></li>
-               <li><a href="#">gmail: onhbinh55430@gmail.com</a></li>
-               <li><a href="#">fb: Đào Thanh Bình</a></li>
-             </ul>
-           </div>
-           <div class="footer-col">
-             <h4>menu</h4>
-             <ul>
-               <li><a href="#">trang chủ</a></li>
-               <li><a href="#">du lịch miền nam</a></li>
-               <li><a href="#">du lịch quốc tế</a></li>
-               <li><a href="#">du lịch miền bắc</a></li>
-               <li><a href="#">tin tức</a></li>
-             </ul>
-           </div>
-           <div class="footer-col">
-             <h4>online shop</h4>
-             <ul>
-               <li><a href="#">liên hệ</a></li>
-               <li><a href="#">hỗ trợ</a></li>
-               <li><a href="#">giới thiệu</a></li>
-               <li><a href="#">địa chỉ</a></li>
-             </ul>
-           </div>
-           <div class="footer-col">
-             <h4>theo dõi chúng tôi</h4>
-             <div class="social-links">
-               <a href="#"><i class="fab fa-facebook-f"></i></a>
-               <a href="#"><i class="fab fa-twitter"></i></a>
-               <a href="#"><i class="fab fa-instagram"></i></a>
-               <a href="#"><i class="fab fa-linkedin-in"></i></a>
-             </div>
-           </div>
-        
-         </div>
-       </div>
-    </footer>
+    <div class="fot-container">
+
+      <div class="row">
+        <div class="footer-col">
+          <h4>về chúng tôi</h4>
+          <ul>
+            <li><a href="#">địa chỉ: trường cao đẳng fpt polytechnic,Q12,HCM </a></li>
+            <li><a href="#">sdt: 0364898403</a></li>
+            <li><a href="#">gmail: onhbinh55430@gmail.com</a></li>
+            <li><a href="#">fb: Đào Thanh Bình</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>menu</h4>
+          <ul>
+            <li><a href="#">trang chủ</a></li>
+            <li><a href="#">du lịch miền nam</a></li>
+            <li><a href="#">du lịch quốc tế</a></li>
+            <li><a href="#">du lịch miền bắc</a></li>
+            <li><a href="#">tin tức</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>online shop</h4>
+          <ul>
+            <li><a href="#">liên hệ</a></li>
+            <li><a href="#">hỗ trợ</a></li>
+            <li><a href="#">giới thiệu</a></li>
+            <li><a href="#">địa chỉ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>theo dõi chúng tôi</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
   <!-- cuộn thẻ header  -->
   <script src="view/js/header.js"></script>
   <!-- slide -->
