@@ -65,7 +65,6 @@ nav ul {
 }
 
 nav ul li {
-
   margin: 0 3px;
 }
 
@@ -74,15 +73,13 @@ nav ul li a {
   font-size: 20px;
   text-decoration: none;
   text-transform: capitalize;
-  letter-spacing: 1px solid black;
   padding: 5px 10px;
   display: block;
-  border: 3px blueviolet solid;
   position: relative;
   overflow: hidden;
   z-index: 2;
   border-radius: 10px;
-  box-shadow: 0px 0px 5px 1px solid black rgb(196, 107, 255);
+  background-color: white;
 }
 
 /* card */
