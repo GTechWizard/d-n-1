@@ -6,4 +6,4 @@
   // mật khẩu máy chủ
   define("DB_PASS","");
   // tên database
-  define("DB_NAME","");
+  define("DB_NAME","dcr_dv");
