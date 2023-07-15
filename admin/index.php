@@ -61,8 +61,6 @@ if (isset($_GET['act']) && $_GET['act']) {
 				$id_loai = $_GET['id'];
 				$loai = new loai;
 				$loai->delete_loai($id_loai);
-			} else {
-				die();
 			}
 			header('location:?act=loai');
 			break;
