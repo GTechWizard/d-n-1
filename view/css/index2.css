@@ -317,6 +317,7 @@ input[type="checkbox"] {
 
 .main_bn-font {
   color: white;
+  margin-left: 1%;
 }
 /* xx */
 .form_find_bn{
@@ -1697,10 +1698,6 @@ ul{
   .main_bn-font .h1-font {
     font-size: 0.6em;
     text-transform: uppercase;
-  }
-  .main_bn-font .h3-font
-  {
-    font-size: 0.2em;
   }
   .form_find_bn {
     text-align: start;
