@@ -1,6 +1,7 @@
 <?php
 ob_start();
 require_once('../model/model_user.php');
+require_once('../model/model_tt.php');
 require_once('../model/model_dv.php');
 require_once('../model/model_loai.php');
 require_once('../model/model_bl.php');
@@ -70,8 +71,6 @@ if (isset($_GET['act']) && $_GET['act']) {
 				$loai = new loai;
 				$loaiID = $loai->getLoaiID($id_loai);
 				include('dv_ldv/ldv/change_ldv.php');
-			} else {
-				die();
 			}
 			break;
 		case 'update_loai':
@@ -200,7 +199,6 @@ if (isset($_GET['act']) && $_GET['act']) {
 				} else {
 					move_uploaded_file($_FILES["img_dv"]["tmp_name"], $target_file);
 				}
-				var_dump("$bai_viet") ;
 				$dv = new dv;
 				$dv->insert_DV($name, $diem_den, $gia, $tong_ng, $target_file, $ngay_bd, $ngay_kt, $id_pk_loai, $noi_bd, $bai_viet);
 				if (isset($alert) && $alert != "")
@@ -281,6 +279,73 @@ if (isset($_GET['act']) && $_GET['act']) {
 					header('location:?act=dv');
 				}
 			}
+			break;
+		case 'tt':
+			$tt = new tt;
+			$tts = $tt->getAllTT();
+			include('tt/news.php');
+			break;
+		case 'add_tt':
+			include('tt/add_news.php');
+			break;
+		case 'add_news':
+			if (isset($_POST['get']) && $_POST['get']) {
+				extract($_POST);
+				$target_dir = "../uploads/";
+				$target_name = basename($_FILES["img"]["name"]);
+				$target_file = $target_dir . date('HisadmY') . basename($_FILES["img"]["name"]);
+				$uploadOk = 1;
+				$imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+				echo "$bai_viet, $name, $mo_ta, $dia_diem, $tac_gia, $target_file, $ngay_d";
+				// Kiểm tra xem tệp có phải là ảnh hay không
+				// if ($target_name != "") {
+				// 	$check = getimagesize($_FILES["img"]["tmp_name"]);
+				// 	if ($check !== false) {
+				// 		$uploadOk = 1;
+				// 	} else {
+				// 		$alert = "không phải file ảnh, vui lòng chọn lại";
+				// 		$uploadOk = 0;
+				// 	}
+				// }
+				// // Cho phép chỉ tải lên các định dạng ảnh nhất định
+				// if (
+				// 	$imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+				// 	&& $imageFileType != "gif"
+				// ) {
+				// 	$alert = "chỉ cho phép ảnh có đuôi JPG, JPEG, PNG & GIF";
+				// 	$uploadOk = 0;
+				// }
+				// // Kiểm tra xem có xảy ra lỗi khi tải lên tệp hay không
+				// if ($uploadOk == 0) {
+				// 	$alert = "đăng ảnh không thành công";
+				// } else {
+				// 	move_uploaded_file($_FILES["img"]["tmp_name"], $target_file);
+				// }
+				// $tt = new tt;
+				// if ($target_name == "") {
+				// 	$tt->insert_TT($bai_viet, $name, $mo_ta, $dia_diem, $tac_gia, '', $ngay_d);
+				// 	if (isset($alert) && $alert != "")
+				// 		echo "<script>alert('$alert');</script>";
+				// 	header('location:?act=tt');
+				// } else {
+				// 	$tt->insert_TT($bai_viet, $name, $mo_ta, $dia_diem, $tac_gia, $target_file, $ngay_d);
+				// 	if (isset($alert) && $alert != "") {
+				// 		echo "<script>alert('$alert');</script>";
+				// 		header('location:?act=tt');
+				// 	}
+				// }
+			}
+			break;
+		case 'edit_tt':
+			if (isset($_GET['id'])&&$_GET['id']!='') {
+				$id = $_GET['id'];
+				$tt = new tt;
+				$ttID=$tt->getTTID($id);
+				include('tt/change_news.php');
+			}
+			break;
+		case 'delete_tt':
+
 			break;
 		default:
 			require_once('view/home.php');

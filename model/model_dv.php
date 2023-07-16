@@ -33,19 +33,19 @@ class dv{
     }
   }
   public function insert_DV($name,$diem_den,$gia,$tong_ng,$img_dv,$ngay_bd,$ngay_kt,$id_pk_loai,$noi_bd,$bv){
-    // $name=$this->fm->validation($name);
-    // $diem_den=$this->fm->validation($diem_den);
-    // $noi_bd=$this->fm->validation($noi_bd);
-    // $name =mysqli_real_escape_string($this->db->link, $name);
-    // $diem_den =mysqli_real_escape_string($this->db->link, $diem_den);
-    // $noi_bd =mysqli_real_escape_string($this->db->link, $noi_bd);
-    // if(empty($name)||empty($diem_den)||empty($noi_bd)){
-    //   $alert="Lỗi";
-    //   return $alert;
-    // }else{
+    $name=$this->fm->validation($name);
+    $diem_den=$this->fm->validation($diem_den);
+    $noi_bd=$this->fm->validation($noi_bd);
+    $name =mysqli_real_escape_string($this->db->link, $name);
+    $diem_den =mysqli_real_escape_string($this->db->link, $diem_den);
+    $noi_bd =mysqli_real_escape_string($this->db->link, $noi_bd);
+    if(empty($name)||empty($diem_den)||empty($noi_bd)){
+      $alert="Lỗi";
+      return $alert;
+    }else{
       $query ="INSERT INTO `dv` (`id_dv`, `id_pk_loai`, `name`, `gia`, `diem_den`, `bai_viet`, `ngay_bd`, `ngay_kt`, `luot_xem`, `img_dv`, `noi_bd`, `tong_ng`) VALUES (NULL, '$id_pk_loai', '$name', '$gia', '$diem_den', '$bv', '$ngay_bd', '$ngay_kt','0', '$img_dv', '$noi_bd', '$tong_ng');";
       $this->db->insert($query);
-    // }    
+    }    
   }
 }
 
