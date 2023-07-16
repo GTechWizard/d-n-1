@@ -35,10 +35,10 @@
           </div>
         </div>
         <div class="col-md-12">
-          <!-- <div class="form-group">
+          <div class="form-group">
             <label>Bài Viết </label>
-            <textarea id="mytextarea" name="bai_viet"required></textarea>
-          </div> -->
+            <textarea id="mytextarea" name="bai_viet"></textarea>
+          </div>
           <div class="form-group">
             <label>Mô tả ngắn (200 từ) </label>
             <textarea name="mo_ta" class="form-control" rows="5" required></textarea>
@@ -46,7 +46,7 @@
         </div>
         <input type="file" name="img" required>
         <div class="control-from col-md-12">
-          <input type="submit" value="Lưu" class="btn btn-sm btn-success" name="get">
+          <input type="submit" value="Lưu" class="btn btn-sm btn-success" name="save">
           <input type="reset" value="Làm Lại" class="btn btn-sm btn-primary">
         </div>
 

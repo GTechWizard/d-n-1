@@ -18,11 +18,12 @@
           ?>
     <div class="col-md-4 col-lg-3 col-sm-6">
       <div class="card">
-        <img src="../../img/hous.jpg" class="card-img-top" alt="img" />
+        <img src="<?=$result['img_tt']?>" class="card-img-top" alt="img" />
         <div class="card-body">
           <h5 class="card-title"><?=$result['name']?></h5>
           <p class="card-text"><?=$result['mo_ta']?></p>
-          <p class="card-text"><?=$result['tac_gia']?>--<?=$result['ngay_d']?></p>
+          <p class="card-text">Tác giả: <?=$result['tac_gia']?></p>
+          <p class="card-text">Ngày Đăng: <?=$result['ngay_d']?></p>
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item"><a href="?act=bai_viet_tt&id=<?=$result['id_tt']?>">Nội dung</a></li>

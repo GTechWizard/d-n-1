@@ -12,44 +12,52 @@
     </div>
     <!--/.row-->
     <div class="row">
-      <form method="post" class="form" action="?act=update_tt">
+      <form method="post" class="form" action="?act=update_tt" enctype="multipart/form-data">
+      <?php
+      if ($ttID) {
+        while ($result = $ttID->fetch_assoc()) {
+          ?>
         <div class="col-md-6">
           <div class="form-group">
             <label for="name">Tên tác giả</label>
-            <input type="text" class="form-control" value="<?=$ttID['tac_gia']?>" name="tac_gia" id="name" />
+            <input type="text" class="form-control" value="<?=$result['tac_gia']?>" name="tac_gia" id="name" />
+            <input type="hidden" value="<?=$result['id_tt']?>" name="id_tt"/>
           </div>
           <div class="form-group">
             <label for="day">Ngày đăng bài</label>
-            <input type="date" value="<?=$ttID['ngay_d']?>" name="ngay_d" id="day" class="form-control">
+            <input type="date" value="<?=$result['ngay_d']?>" name="ngay_d" id="day" class="form-control">
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
             <label for="tuabv">Tựa bài viết </label>
-            <input type="text" value="<?=$ttID['name']?>" name="name" class="form-control" id="tuabv">
+            <input type="text" value="<?=$result['name']?>" name="name" class="form-control" id="tuabv">
           </div>
           <div class="form-group">
             <label for="place">Địa điểm (bài viết về nơi nào) </label>
-            <input type="text" value="<?=$ttID['dia_diem']?>" name="dia_diem" class="form-control" id="place">
+            <input type="text" value="<?=$result['dia_diem']?>" name="dia_diem" class="form-control" id="place">
             <label>
           </div>
         </div>
         <div class="col-md-12">
           <div class="form-group">
             <label>Bài viết</label>
-            <textarea id="mytextarea" value="<?=$ttID['bai_viet']?>" name="bai_viet"></textarea>
+            <textarea id="mytextarea" name="bai_viet"><?=$result['bai_viet']?></textarea>
           </div>
           <div class="form-group">
             <label>Mô tả ngắn (200 từ) </label>
-            <textarea value="<?=$ttID['mo_ta']?>" name="mo_ta" class="form-control" rows="5"></textarea>
+            <textarea name="mo_ta" class="form-control" rows="5"><?=$result['mo_ta']?></textarea>
           </div>
         </div>
-        <input type="file" name="" id="">
+          <div class="col-md-12">
+        <img src="<?=$result['img_tt']?>" alt="ảnh trước" width="20%" title="ảnh trước">
+        <input type="file" name="img">
+      </div>
         <div class="control-from col-md-12">
           <input type="submit" value="Lưu" class="btn btn-sm btn-success" name="save">
-          <input type="reset" value="Làm Lại" class="btn btn-sm btn-primary">
+          <a href="?act=tt" class="btn btn-sm btn-primary">Cancel</a>
         </div>
-
+          <?php }}?>
       </form>
     </div>
   </div>

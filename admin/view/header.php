@@ -25,6 +25,13 @@
 			.pa-2{
 				padding: 2%;
 			}
+			.card-body p,.card-body h5{
+				display: block;
+				word-wrap: break-word;
+			}
+			.mr-l-5{
+				margin-left: 5%;
+			}
 		</style>
 </head>
 
