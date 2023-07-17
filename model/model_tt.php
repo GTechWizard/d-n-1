@@ -54,7 +54,7 @@ class tt{
       $alert="Lỗi";
       return $alert;
     }else{
-      if($img_tt=''){
+      if($img_tt==''){
         $query ="UPDATE `tt` SET `bai_viet` = '$bai_viet', `name`='$name', `mo_ta` = '$mo_ta', `dia_diem`='$dia_diem', `tac_gia` = '$tac_gia', `ngay_d`='$ngay_d' WHERE `id_tt` = '$id_tt'";
       $this->db->update($query);
       }else{

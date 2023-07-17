@@ -13,7 +13,7 @@
   <!--/.row-->
   <div class="row">
     <!-- form -->
-    <form class="form" method="index.php?act=update_dv_user">
+    <form class="form" method="post" action="?act=update_dv_user">
       <?php
       if ($dvIdUser) {
         while ($result = $dvIdUser->fetch_assoc()) {
