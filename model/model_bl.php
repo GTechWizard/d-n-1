@@ -14,6 +14,11 @@ class comment{
     $result =$this->db->select($query);
       return $result;
   }
+  public function count_bl(){
+    $query ="SELECT COUNT(`bl`.`id_bl`) AS `count_bl` FROM `bl`";
+    $result =$this->db->select($query);
+      return $result;
+  }
   public function delete_comment($blID){
     $query ="DELETE FROM `bl` WHERE `bl`.`id_bl` = '$blID'";
     $this->db->detele($query);

@@ -26,7 +26,13 @@
 					<div class="panel panel-teal panel-widget border-right">
 						<div class="row no-padding">
 							<em class="fa fa-xl fa-shopping-cart color-blue"></em>
-							<div class="large">120</div>
+							<div class="large"><?php 
+								$dv= new dv;
+								$count_dv= $dv->count_dv();
+								while ($result = $count_dv->fetch_assoc()) {
+									echo $result['count_dv'];
+							}
+							?></div>
 							<div class="text-muted">DỊCH VỤ</div>
 						</div>
 					</div>
@@ -36,7 +42,13 @@
 					<div class="panel panel-blue panel-widget border-right">
 						<div class="row no-padding">
 							<em class="fa fa-xl fa-comments color-orange"></em>
-							<div class="large">52</div>
+							<div class="large"><?php 
+								$bl= new comment;
+								$count_bl= $bl->count_bl();
+								while ($result = $count_bl->fetch_assoc()) {
+									echo $result['count_bl'];
+							}
+							?></div>
 							<div class="text-muted">BÌNH LUẬN</div>
 						</div>
 					</div>
@@ -46,7 +58,13 @@
 					<div class="panel panel-orange panel-widget border-right">
 						<div class="row no-padding">
 							<em class="fa fa-xl fa-users color-teal"></em>
-							<div class="large">24</div>
+							<div class="large"><?php 
+								$user= new user;
+								$count_user= $user->count_user();
+								while ($result = $count_user->fetch_assoc()) {
+									echo $result['count_user'];
+							}
+							?></div>
 							<div class="text-muted">NGƯỜI DÙNG</div>
 						</div>
 					</div>
@@ -92,7 +110,7 @@
 			<div class="col-xs-6 col-md-3">
 				<div class="panel panel-default">
 					<div class="panel-body easypiechart-panel">
-						<h4>Dịch Vụ Mới</h4>
+						<h4>Dịch Vụ Mới Trong Tuần</h4>
 						<div class="easypiechart" id="easypiechart-blue" data-percent="92">
 							<span class="percent">92%</span>
 						</div>
@@ -102,7 +120,7 @@
 			<div class="col-xs-6 col-md-3">
 				<div class="panel panel-default">
 					<div class="panel-body easypiechart-panel">
-						<h4>Bình Luận Mới</h4>
+						<h4>Bình Luận Mới Trong Tuần</h4>
 						<div class="easypiechart" id="easypiechart-orange" data-percent="65">
 							<span class="percent">65%</span>
 						</div>
@@ -112,7 +130,7 @@
 			<div class="col-xs-6 col-md-3">
 				<div class="panel panel-default">
 					<div class="panel-body easypiechart-panel">
-						<h4>Người Dùng Mới</h4>
+						<h4>Người Dùng Mới Trong Tuần</h4>
 						<div class="easypiechart" id="easypiechart-teal" data-percent="56">
 							<span class="percent">56%</span>
 						</div>

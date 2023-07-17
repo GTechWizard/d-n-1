@@ -338,7 +338,6 @@ if (isset($_GET['act']) && $_GET['act']) {
 			}
 			break;
 		case 'update_tt':
-			// Lỗi ảnh
 			if(isset($_POST['save'])&&($_POST['save'])){
 				extract($_POST);
 			$target_dir = "../uploads/";
@@ -370,18 +369,13 @@ if (isset($_GET['act']) && $_GET['act']) {
 				} else {
 					move_uploaded_file($_FILES["img"]["tmp_name"], $target_file);
 				}
-
 				$tt = new tt;
 				if ($target_name == "") {
 					$tt->update_TT($bai_viet,$name,$mo_ta,$dia_diem,$tac_gia,'',$ngay_d,$id_tt);
-					if (isset($alert) && $alert != "")
-						echo "<script>alert('$alert');</script>";
 				} else {
 					$tt->update_TT($bai_viet,$name,$mo_ta,$dia_diem,$tac_gia,$target_file,$ngay_d,$id_tt);
-					if (isset($alert) && $alert != "") {
-						echo "<script>alert('$alert');</script>";
-					}
 				}
+				if (isset($alert) && $alert != "")echo "<script>alert('$alert');</script>";
 				header('location:?act=tt');
 			}
 			break;
@@ -434,8 +428,8 @@ if (isset($_GET['act']) && $_GET['act']) {
 			}
 			break;
 		case 'update_dv_user':
-			// lỗi truy sâu
 			if (isset($_POST['save'])&&$_POST['save']) {
+				// lỗ hổng bảo mật
 				extract($_POST);
 				$dvUser = new dvUser;
 				$dvUser->updateDVUser($ng_dk,$trang_thai,$id_pk_user);

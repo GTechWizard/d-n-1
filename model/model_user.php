@@ -14,6 +14,11 @@ class user{
     $result =$this->db->select($query);
       return $result;
   }
+  public function count_user(){
+    $query ="SELECT COUNT(`user`.`id_user`) AS `count_user` FROM `user`";
+    $result =$this->db->select($query);
+      return $result;
+  }
   public function getUserID($id){
     $query ="SELECT * FROM user WHERE id_user = '$id'";
     $result =$this->db->select($query);

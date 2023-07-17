@@ -14,6 +14,11 @@ class dv{
     $result =$this->db->select($query);
       return $result;
   }
+  public function count_dv(){
+    $query ="SELECT COUNT(`dv`.`id_dv`) AS `count_dv` FROM `dv`";
+    $result =$this->db->select($query);
+      return $result;
+  }
   public function getDVID($id_dv){
     $query ="SELECT * FROM `dv` LEFT JOIN `loai` ON `dv`.`id_pk_loai` = `loai`.`id_loai` WHERE id_dv = '$id_dv'";
     $result =$this->db->select($query);
