@@ -16,7 +16,8 @@
       <table class="table fixed-table-container ">
         <thead class="fixed-table-header th-inner">
           <th class="th-inner">STT</th>
-          <th class="th-inner">ID DV</th>
+          <th class="th-inner">Nơi xuất Phát</th>
+          <th class="th-inner">Điểm đến</th>
           <th class="th-inner">Ngày Đi</th>
           <th class="th-inner">Ngày Về</th>
           <th class="th-inner">Tổng Người</th>
@@ -34,7 +35,10 @@
                 <?= $i ?>
               </td>
               <td class="th-inner">
-                <?= $result['id_pk_dv'] ?>
+                <?= $result['noi_bd'] ?>
+              </td>
+              <td class="th-inner">
+                <?= $result['diem_den'] ?>
               </td>
               <td class="th-inner">
                 <?= $result['day_start'] ?>
@@ -71,6 +75,7 @@
               <td colspan="11">
                 <a href="?act=ct_dv_act&id=<?= $result['id_pk_dv'] ?>">Chi tiết</a>
                 <a href="?act=delete_dv_act&id=<?= $result['id_pk_dv'] ?>">Xóa</a>
+                <a href="?act=edit_act&id=<?= $result['id_price']?>" class="mr-l-5">Sửa</a>
               </td>
             </tbody>
             </tbody>

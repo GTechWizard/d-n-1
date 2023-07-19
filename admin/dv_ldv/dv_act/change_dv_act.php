@@ -15,8 +15,8 @@
     <!-- form -->
     <form class="form" method="post" action="?act=update_dv_user">
       <?php
-      if ($dvIdUser) {
-        while ($result = $dvIdUser->fetch_assoc()) {
+      if ($trang_thai) {
+        while ($result = $trang_thai->fetch_assoc()) {
           ?>
           <div class="form-group  col-md-6">
             <label>Trạng Thái</label>
@@ -46,15 +46,10 @@
               <option value="3">Hoàn thành tour</option>
             </select>
           </div>
-          <div class="form-group col-md-6">
-            <label for="day">Lượng Người</label>
-            <p>Số lượng người trong chuyến đi đã được đăng ký</p>
-            <input type="number" value="<?=$result['ng_dk']?>" name="ng_dk" id="day" class="form-control">
-            <input type="hidden" value="<?=$result['id_pk_user']?>" name="id_pk_user">
-          </div>
+          <input type="hidden" value="<?=$result['id_price']?>"name="id_price">
           <div class="control-form col-md-12">
             <input type="submit" value="Lưu" class="btn btn-success" name="save">
-            <a href="?act=ct_dv_act&id=<?=$result['id_dv']?>">Cancel</a>
+            <a href="?act=dv_act">Cancel</a>
           </div>
         <?php }
       } ?>

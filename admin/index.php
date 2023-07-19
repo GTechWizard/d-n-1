@@ -421,9 +421,9 @@ if (isset($_GET['act']) && $_GET['act']) {
 			break;
 		case 'edit_act':
 			if (isset($_GET['id'])&&$_GET['id']!='') {
-				$id_user = $_GET['id'];
+				$id = $_GET['id'];
 				$dvUser = new dvUser;
-				$dvIdUser=$dvUser->getDVUserID_user($id_user);
+				$trang_thai=$dvUser->gettrang_thai($id);
 				include('dv_ldv/dv_act/change_dv_act.php');
 			}
 			break;
@@ -432,7 +432,7 @@ if (isset($_GET['act']) && $_GET['act']) {
 				// lỗ hổng bảo mật
 				extract($_POST);
 				$dvUser = new dvUser;
-				$dvUser->updateDVUser($ng_dk,$trang_thai,$id_pk_user);
+				$dvUser->updateDVUser($trang_thai,$id_price);
 				header('location:?act=dv_act');
 			}
 			break;
