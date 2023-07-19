@@ -10,12 +10,12 @@ class dvUser{
     $this->fm =new Format;
   }
   public function getAllDVUser(){
-    $query ="SELECT `id_dv_user`, `id_dv`, `ngay_bd`, `ngay_kt`, `dv`.`tong_ng` AS `so_luong`, SUM(`dv_user`.`tong_ng`) AS `ng_dk`, `trang_thai` FROM `dv` LEFT JOIN `dv_user` ON `dv`.`id_dv` = `dv_user`.`id_pk_dv` GROUP BY `id_dv` ";
+    $query ="SELECT dv_user.id_dv_user,dv_user.id_pk_dv, dv_user.user_name, price_tour.day_start, price_tour.day_end, dv.tong_ng, SUM(sl_ng_dk_user.so_luong) AS so_luong, price_tour.trang_thai, price_tour.type_ng, dv.tag FROM dv_user JOIN sl_ng_dk_user ON dv_user.id_dv_user = sl_ng_dk_user.id_pk_dv_user JOIN price_tour ON price_tour.id_price = sl_ng_dk_user.id_pk_price_tour JOIN dv ON dv.id_dv = dv_user.id_pk_dv GROUP BY dv.tong_ng";
     $result =$this->db->select($query);
       return $result;
   }
   public function getDVUserID($id_dv){
-    $query ="SELECT `ngay_bd`, `ngay_kt`, `dv`.`tong_ng` AS `so_luong`, `dv_user`.`tong_ng` AS `ng_dk`, `trang_thai`, `id_user`, `user`.`name` AS `ten_user`, `sdt`, `dia_chi`, `email`, `vai_tro`,`ngay_dkdv` FROM `dv` LEFT JOIN `dv_user` ON `dv`.`id_dv` = `dv_user`.`id_pk_dv` LEFT JOIN `user` ON `dv_user`.`id_pk_user` = `user`.`id_user` WHERE `id_dv`= '$id_dv'";
+    $query ="SELECT sl_ng_dk_user.so_luong,price_tour.type_ng, user.id_user, user.name, user.sdt, user.dia_chi, user.email,dv_user.ngay_dkdv, price_tour.trang_thai, user.vai_tro FROM dv_user JOIN sl_ng_dk_user ON dv_user.id_dv_user = sl_ng_dk_user.id_pk_dv_user JOIN price_tour ON price_tour.id_price = sl_ng_dk_user.id_pk_price_tour JOIN dv ON dv.id_dv = dv_user.id_pk_dv JOIN user ON user.id_user = dv_user.id_pk_user WHERE dv.id_dv='$id_dv'";
     $result =$this->db->select($query);
       return $result;
   }
@@ -25,7 +25,7 @@ class dvUser{
       return $result;
   }
   public function delete_DVUser($id_dv_act){
-    $query ="DELETE FROM `dv_user` WHERE `id_dv_user` = '$id_dv_act'";
+    $query ="DELETE FROM dv_user WHERE dv_user.id_pk_dv='$id_dv_act';";
     $this->db->detele($query);
   }
   public function updateDVUser($ng_dk,$trang_thai,$id_pk_user){

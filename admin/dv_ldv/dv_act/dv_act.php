@@ -34,19 +34,19 @@
                 <?= $i ?>
               </td>
               <td class="th-inner">
-                <?= $result['id_dv'] ?>
+                <?= $result['id_pk_dv'] ?>
               </td>
               <td class="th-inner">
-                <?= $result['ngay_bd'] ?>
+                <?= $result['day_start'] ?>
               </td>
               <td class="th-inner">
-                <?= $result['ngay_kt'] ?>
+                <?= $result['day_end'] ?>
+              </td>
+              <td class="th-inner">
+                <?= $result['tong_ng'] ?>
               </td>
               <td class="th-inner">
                 <?= $result['so_luong'] ?>
-              </td>
-              <td class="th-inner">
-                <?= $result['ng_dk'] ?>
               </td>
               <td class="th-inner">
                 <?php
@@ -69,8 +69,8 @@
               </td>
             <tbody>
               <td colspan="11">
-                <a href="?act=ct_dv_act&id=<?= $result['id_dv'] ?>">Chi tiết</a>
-                <a href="?act=delete_dv_act&id=<?= $result['id_dv_user'] ?>">Xóa</a>
+                <a href="?act=ct_dv_act&id=<?= $result['id_pk_dv'] ?>">Chi tiết</a>
+                <a href="?act=delete_dv_act&id=<?= $result['id_pk_dv'] ?>">Xóa</a>
               </td>
             </tbody>
             </tbody>
