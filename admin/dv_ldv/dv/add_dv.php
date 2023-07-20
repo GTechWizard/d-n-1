@@ -17,34 +17,33 @@
           <div class="col-md-6">
           <div class="form-group">
               <label>Tên Dịch Vụ</label>
-              <input type="text" class="form-control" placeholder="name..." name="name" required/>
+              <input type="text" class="form-control" name="name" placeholder="Chuyến Du Lịch Kỳ Thú,..."required/>
+            </div>
+            <div class="form-group">
+              <label>Nơi Bắt Đầu</label>
+              <input type="text" class="form-control" name="noi_bd" placeholder="Hồ Chí Minh,.."required/>
             </div>
             <div class="form-group">
               <label>Điểm đến</label>
-              <input type="text"class="form-control"placeholder="vũng tàu, hải nam,..."name="diem_den"required/>
+              <input type="text" class="form-control"name="diem_den" placeholder="Đảo Cát Bà,.."required/>
             </div>
             <div class="form-group">
-              <label>Giá</label>
-              <input type="number" class="form-control" placeholder="2000000" name="gia"required/>
+              <label>Giá Người Lớn</label>
+              <input type="number" class="form-control"name="price_old" placeholder="1.200.000 VNĐ"required/>
             </div>
             <div class="form-group">
-              <label>Tổng người</label>
-              <input type="number" class="form-control" placeholder="10,11,..." name="tong_ng"required/>
-            </div>
-            <div class="form-group">
-              <label>Ảnh</label>
-              <input type="file" name="img_dv"required/>
+              <label>Giá Trẻ Em</label>
+              <input type="number" class="form-control" name="price_young" placeholder="500.000 VNĐ"required/>
             </div>
           </div>
-
           <div class="col-md-6">
             <div class="form-group">
               <label>Ngày bắt đầu</label>
-              <input type="date" class="form-control" name="ngay_bd"required/>
+              <input type="date" class="form-control" name="day_start" placeholder="12/12/2022"required/>
             </div>
             <div class="form-group">
               <label>Ngày kết thúc</label>
-              <input type="date" class="form-control" name="ngay_kt"required/>
+              <input type="date" class="form-control"name="day_end" placeholder="01/01/2023"required/>
             </div>
             <div class="form-group">
               <label>Loại Dịch Vụ</label>
@@ -55,17 +54,22 @@
                     echo "<option value=" . $id_loai . ">" . $kieu_dv . "</option>";
                 }
                 ?>
-              </select>
+               </select>
             </div>
             <div class="form-group">
-              <label>Nơi Bắt Đầu</label>
-              <input type="text" class="form-control" placeholder="Hà Nội,..." name="noi_bd" required/>
+              <label>Tổng người</label>
+              <input type="number" class="form-control" name="tong_ng" required placeholder="10-100"/>
             </div>
+            <div class="form-group">
+              <label>Ảnh</label>
+              <input type="file" name="img_dv" required/>
+            </div>
+
           </div>
           <div class="col-md-12">
             <div class="form-group">
               <label> Bài Viết </label>
-              <textarea id="mytextarea" name="bai_viet" style="width: 70vw"></textarea>
+              <textarea id="mytextarea" name="bv" style="width: 70vw"></textarea>
             </div>
           </div>
           <div class="control-form col-md-12">

@@ -1,6 +1,7 @@
 <?php
 ob_start();
 require_once('../model/model_user.php');
+require_once('../model/model_home.php');
 require_once('../model/model_dv_user.php');
 require_once('../model/model_tt.php');
 require_once('../model/model_dv.php');
@@ -159,6 +160,9 @@ if (isset($_GET['act']) && $_GET['act']) {
 			}
 			break;
 		case 'dv':
+			$DV = new dv;
+			$DVList=$DV->getAllDV();
+			$i=0;
 			include('dv_ldv/dv/dv.php');
 			break;
 
@@ -172,12 +176,10 @@ if (isset($_GET['act']) && $_GET['act']) {
 			if (isset($_POST['save']) && $_POST['save']) {
 				extract($_POST);
 				$target_dir = "../uploads/";
-				$target_name = basename($_FILES["img_dv"]["name"]);
 				$target_file = $target_dir . date('HisadmY') . basename($_FILES["img_dv"]["name"]);
 				$uploadOk = 1;
 				$imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 				// Kiểm tra xem tệp có phải là ảnh hay không
-				if ($target_name != "") {
 					$check = getimagesize($_FILES["img_dv"]["tmp_name"]);
 					if ($check !== false) {
 						$uploadOk = 1;
@@ -185,15 +187,6 @@ if (isset($_GET['act']) && $_GET['act']) {
 						$alert = "không phải file ảnh, vui lòng chọn lại";
 						$uploadOk = 0;
 					}
-				}
-				// Cho phép chỉ tải lên các định dạng ảnh nhất định
-				if (
-					$imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-					&& $imageFileType != "gif"
-				) {
-					$alert = "chỉ cho phép ảnh có đuôi JPG, JPEG, PNG & GIF";
-					$uploadOk = 0;
-				}
 				// Kiểm tra xem có xảy ra lỗi khi tải lên tệp hay không
 				if ($uploadOk == 0) {
 					$alert = "đăng ảnh không thành công";
@@ -201,7 +194,7 @@ if (isset($_GET['act']) && $_GET['act']) {
 					move_uploaded_file($_FILES["img_dv"]["tmp_name"], $target_file);
 				}
 				$dv = new dv;
-				$dv->insert_DV($name, $diem_den, $gia, $tong_ng, $target_file, $ngay_bd, $ngay_kt, $id_pk_loai, $noi_bd, $bai_viet);
+				$dv->insert_DV($name, $noi_bd, $diem_den, $price_old, $price_young, $day_start, $day_end, $id_pk_loai, $tong_ng,$target_file, $bv);
 				if (isset($alert) && $alert != "")
 					echo "<script>alert('$alert');</script>";
 				header('location:?act=dv');
@@ -269,16 +262,13 @@ if (isset($_GET['act']) && $_GET['act']) {
 
 				$dv = new dv;
 				if ($target_name == "") {
-					$dv->update_DV($name, $diem_den, $gia, $tong_ng, "", $ngay_bd, $ngay_kt, $id_pk_loai, $noi_bd, $bv, $id_dv);
-					if (isset($alert) && $alert != "")
-						echo "<script>alert('$alert');</script>";
-					header('location:?act=dv');
+					$dv->update_DV($name, $noi_bd, $diem_den, $price_old, $price_young, $day_start, $day_end, $id_pk_loai, $tong_ng,'', $bv, $id_dv);
 				} else {
-					$dv->update_DV($name, $diem_den, $gia, $tong_ng, $target_file, $ngay_bd, $ngay_kt, $id_pk_loai, $noi_bd, $bv, $id_dv);
+					$dv->update_DV($name, $noi_bd, $diem_den, $price_old, $price_young, $day_start, $day_end, $id_pk_loai, $tong_ng,$target_file, $bv, $id_dv);
+				}
 					if (isset($alert) && $alert != "")
 						echo "<script>alert('$alert');</script>";
 					header('location:?act=dv');
-				}
 			}
 			break;
 		case 'tt':
@@ -421,9 +411,9 @@ if (isset($_GET['act']) && $_GET['act']) {
 			break;
 		case 'edit_act':
 			if (isset($_GET['id'])&&$_GET['id']!='') {
-				$id_user = $_GET['id'];
+				$id = $_GET['id'];
 				$dvUser = new dvUser;
-				$dvIdUser=$dvUser->getDVUserID_user($id_user);
+				$trang_thai=$dvUser->gettrang_thai($id);
 				include('dv_ldv/dv_act/change_dv_act.php');
 			}
 			break;
@@ -432,8 +422,18 @@ if (isset($_GET['act']) && $_GET['act']) {
 				// lỗ hổng bảo mật
 				extract($_POST);
 				$dvUser = new dvUser;
-				$dvUser->updateDVUser($ng_dk,$trang_thai,$id_pk_user);
+				$dvUser->updateDVUser($trang_thai,$id_dv_user);
 				header('location:?act=dv_act');
+			}
+			break;
+		case 'search':
+			if (isset($_POST['get'])&&$_POST['get']) {
+				$results = new home;
+				$results1= $results-> search_user($_POST['value']);
+				$results2= $results-> search_tt($_POST['value']);
+				$results3= $results-> search_loai($_POST['value']);
+				$results4= $results-> search_dv($_POST['value']);
+			include('view/layoutfind.php');
 			}
 			break;
 

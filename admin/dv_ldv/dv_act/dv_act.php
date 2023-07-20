@@ -16,7 +16,8 @@
       <table class="table fixed-table-container ">
         <thead class="fixed-table-header th-inner">
           <th class="th-inner">STT</th>
-          <th class="th-inner">ID DV</th>
+          <th class="th-inner">Nơi xuất Phát</th>
+          <th class="th-inner">Điểm đến</th>
           <th class="th-inner">Ngày Đi</th>
           <th class="th-inner">Ngày Về</th>
           <th class="th-inner">Tổng Người</th>
@@ -34,19 +35,22 @@
                 <?= $i ?>
               </td>
               <td class="th-inner">
-                <?= $result['id_dv'] ?>
+                <?= $result['noi_bd'] ?>
               </td>
               <td class="th-inner">
-                <?= $result['ngay_bd'] ?>
+                <?= $result['diem_den'] ?>
               </td>
               <td class="th-inner">
-                <?= $result['ngay_kt'] ?>
+                <?= $result['day_start'] ?>
               </td>
               <td class="th-inner">
-                <?= $result['so_luong'] ?>
+                <?= $result['day_end'] ?>
               </td>
               <td class="th-inner">
-                <?= $result['ng_dk'] ?>
+                <?= $result['tong_ng'] ?>
+              </td>
+              <td class="th-inner">
+                <?= $result['so_luong_old']+$result['so_luong_young'] ?>
               </td>
               <td class="th-inner">
                 <?php
@@ -69,8 +73,9 @@
               </td>
             <tbody>
               <td colspan="11">
-                <a href="?act=ct_dv_act&id=<?= $result['id_dv'] ?>">Chi tiết</a>
-                <a href="?act=delete_dv_act&id=<?= $result['id_dv_user'] ?>">Xóa</a>
+                <a href="?act=ct_dv_act&id=<?= $result['id_pk_dv'] ?>">Chi tiết</a>
+                <a href="?act=delete_dv_act&id=<?= $result['id_pk_dv'] ?>">Xóa</a>
+                <a href="?act=edit_act&id=<?= $result['id_dv_user']?>" class="mr-l-5">Sửa</a>
               </td>
             </tbody>
             </tbody>
