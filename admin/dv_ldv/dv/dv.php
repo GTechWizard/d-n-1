@@ -17,7 +17,7 @@
           <thead class="fixed-table-header th-inner">
             <th class="th-inner">STT</th>
             <th class="th-inner">ID DV</th>
-            <th class="th-inner">Loại DV</th>
+            <th class="th-inner">Tên DV</th>
             <th class="th-inner">Nơi Bắt Đầu</th>
             <th class="th-inner">Điểm đến</th>
             <th class="th-inner">Ngày Đi</th>

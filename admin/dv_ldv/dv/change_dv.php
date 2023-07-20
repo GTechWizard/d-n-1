@@ -67,10 +67,6 @@
               </select>
             </div>
             <div class="form-group">
-              <label>Tag</label>
-              <input type="text" class="form-control" value="<?= $result['tag'] ?>" name="tag" />
-            </div>
-            <div class="form-group">
               <label>Tổng người</label>
               <input type="number" class="form-control" value="<?= $result['tong_ng'] ?>" name="tong_ng" />
             </div>
