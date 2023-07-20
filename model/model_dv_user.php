@@ -10,17 +10,17 @@ class dvUser{
     $this->fm =new Format;
   }
   public function getAllDVUser(){
-    $query ="SELECT price_tour.id_price,dv.noi_bd, dv.diem_den,dv_user.id_pk_dv, dv_user.user_name, price_tour.day_start, price_tour.day_end, dv.tong_ng, SUM(sl_ng_dk_user.so_luong) AS so_luong, price_tour.trang_thai, price_tour.type_ng, dv.tag FROM dv_user JOIN sl_ng_dk_user ON dv_user.id_dv_user = sl_ng_dk_user.id_pk_dv_user JOIN price_tour ON price_tour.id_price = sl_ng_dk_user.id_pk_price_tour JOIN dv ON dv.id_dv = dv_user.id_pk_dv GROUP BY dv.tong_ng";
+    $query ="SELECT dv.noi_bd, dv.diem_den,dv_user.id_pk_dv,dv_user.id_dv_user, dv_user.user_name, price_tour.day_start, price_tour.day_end, dv.tong_ng, sl_ng_dk_user.so_luong_old,sl_ng_dk_user.so_luong_young, dv_user.trang_thai,dv.tag FROM dv_user JOIN sl_ng_dk_user ON dv_user.id_dv_user = sl_ng_dk_user.id_pk_dv_user JOIN price_tour ON price_tour.id_price = sl_ng_dk_user.id_pk_price_tour JOIN dv ON dv.id_dv = dv_user.id_pk_dv GROUP BY dv.tong_ng;";
     $result =$this->db->select($query);
       return $result;
   }
   public function getDVUserID($id_dv){
-    $query ="SELECT sl_ng_dk_user.so_luong,price_tour.type_ng, user.id_user, user.name, user.sdt, user.dia_chi, user.email,dv_user.ngay_dkdv, price_tour.trang_thai, user.vai_tro FROM dv_user JOIN sl_ng_dk_user ON dv_user.id_dv_user = sl_ng_dk_user.id_pk_dv_user JOIN price_tour ON price_tour.id_price = sl_ng_dk_user.id_pk_price_tour JOIN dv ON dv.id_dv = dv_user.id_pk_dv JOIN user ON user.id_user = dv_user.id_pk_user WHERE dv.id_dv='$id_dv'";
+    $query ="SELECT dv.noi_bd, dv.diem_den,dv_user.id_pk_dv,dv_user.user_sdt, dv_user.user_email, dv_user.user_name,dv_user.ngay_dkdv, price_tour.day_start, price_tour.day_end, dv.tong_ng, sl_ng_dk_user.so_luong_old,sl_ng_dk_user.so_luong_young, dv_user.trang_thai,dv.tag FROM dv_user JOIN sl_ng_dk_user ON dv_user.id_dv_user = sl_ng_dk_user.id_pk_dv_user JOIN price_tour ON price_tour.id_price = sl_ng_dk_user.id_pk_price_tour JOIN dv ON dv.id_dv = dv_user.id_pk_dv WHERE dv.id_dv='$id_dv'";
     $result =$this->db->select($query);
       return $result;
   }
   public function gettrang_thai($id){
-    $query ="SELECT * FROM price_tour WHERE price_tour.id_price ='$id'";
+    $query ="SELECT * FROM dv_user WHERE dv_user.id_dv_user ='$id'";
     $result =$this->db->select($query);
       return $result;
   }
@@ -28,8 +28,8 @@ class dvUser{
     $query ="DELETE FROM dv_user WHERE dv_user.id_pk_dv='$id_dv_act';";
     $this->db->detele($query);
   }
-  public function updateDVUser($trang_thai,$id_price){
-    $query ="UPDATE `price_tour` SET `trang_thai` = '$trang_thai' WHERE `price_tour`.`id_price` = '$id_price';";
+  public function updateDVUser($trang_thai,$id_dv_user){
+    $query ="UPDATE `dv_user` SET `trang_thai` = '$trang_thai' WHERE `dv_user`.`id_dv_user` = '$id_dv_user';";
     $this->db->update($query);
   }
 //   public function insert_DV($name,$diem_den,$gia,$tong_ng,$img_dv,$ngay_bd,$ngay_kt,$id_pk_loai,$noi_bd,$bv){

@@ -46,7 +46,7 @@
               <option value="3">Hoàn thành tour</option>
             </select>
           </div>
-          <input type="hidden" value="<?=$result['id_price']?>"name="id_price">
+          <input type="hidden" value="<?=$result['id_dv_user']?>"name="id_dv_user">
           <div class="control-form col-md-12">
             <input type="submit" value="Lưu" class="btn btn-success" name="save">
             <a href="?act=dv_act">Cancel</a>

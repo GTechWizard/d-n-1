@@ -159,6 +159,9 @@ if (isset($_GET['act']) && $_GET['act']) {
 			}
 			break;
 		case 'dv':
+			$DV = new dv;
+			$DVList=$DV->getAllDV();
+			$i=0;
 			include('dv_ldv/dv/dv.php');
 			break;
 
@@ -432,7 +435,7 @@ if (isset($_GET['act']) && $_GET['act']) {
 				// lỗ hổng bảo mật
 				extract($_POST);
 				$dvUser = new dvUser;
-				$dvUser->updateDVUser($trang_thai,$id_price);
+				$dvUser->updateDVUser($trang_thai,$id_dv_user);
 				header('location:?act=dv_act');
 			}
 			break;

@@ -10,7 +10,7 @@ class dv{
     $this->fm =new Format;
   }
   public function getAllDV(){
-    $query ="SELECT * FROM `dv` LEFT JOIN `loai` ON `dv`.`id_pk_loai` = `loai`.`id_loai`";
+    $query ="SELECT * FROM `dv` JOIN `loai` ON `dv`.`id_pk_loai` = `loai`.`id_loai` JOIN price_tour ON `price_tour`.`id_pk_dv` = `dv`.`id_dv`;";
     $result =$this->db->select($query);
       return $result;
   }
@@ -20,7 +20,7 @@ class dv{
       return $result;
   }
   public function getDVID($id_dv){
-    $query ="SELECT * FROM `dv` LEFT JOIN `loai` ON `dv`.`id_pk_loai` = `loai`.`id_loai` WHERE id_dv = '$id_dv'";
+    $query ="SELECT * FROM `dv` LEFT JOIN `loai` ON `dv`.`id_pk_loai` = `loai`.`id_loai` JOIN price_tour ON price_tour.id_pk_dv = dv.id_dv WHERE id_dv = '$id_dv';";
     $result =$this->db->select($query);
       return $result;
   }

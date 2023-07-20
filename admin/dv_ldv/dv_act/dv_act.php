@@ -50,7 +50,7 @@
                 <?= $result['tong_ng'] ?>
               </td>
               <td class="th-inner">
-                <?= $result['so_luong'] ?>
+                <?= $result['so_luong_old']+$result['so_luong_young'] ?>
               </td>
               <td class="th-inner">
                 <?php
@@ -75,7 +75,7 @@
               <td colspan="11">
                 <a href="?act=ct_dv_act&id=<?= $result['id_pk_dv'] ?>">Chi tiết</a>
                 <a href="?act=delete_dv_act&id=<?= $result['id_pk_dv'] ?>">Xóa</a>
-                <a href="?act=edit_act&id=<?= $result['id_price']?>" class="mr-l-5">Sửa</a>
+                <a href="?act=edit_act&id=<?= $result['id_dv_user']?>" class="mr-l-5">Sửa</a>
               </td>
             </tbody>
             </tbody>
