@@ -29,6 +29,9 @@
 			<a href="index.php"><em class="fa fa-dashboard">&nbsp;</em> Trang Chính</a>
 		</li>
 		<li>
+			<a href="?act=ff"><em class="fa fa-folder-open">&nbsp;</em>File/Folder </a>
+		</li>
+		<li>
 			<a href="?act=user"><em class="fa fa-user">&nbsp;</em>Người Dùng</a>
 		</li>
 		<li>
