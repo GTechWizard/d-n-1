@@ -436,6 +436,34 @@ if (isset($_GET['act']) && $_GET['act']) {
 			include('view/layoutfind.php');
 			}
 			break;
+		case 'ff':
+			include('view/file_folder.php');
+			break;
+		case 'fup':
+			include('view/file_folder.php');
+			break;
+		case 'fvi':
+			include('view/file_folder.php');
+			break;
+		case 'fim':
+			include('view/file_folder.php');
+			break;
+		case 'delete_file':
+			if(isset($_GET['value'])&&$_GET['value']!=''&&isset($_GET['dir'])&&$_GET['dir']!=''){
+				$dir=$_GET['dir'];
+				$value="/".$_GET['value'];
+				$hr=$_GET['hr'];
+$file_path = $dir . $value;
+
+if (file_exists($file_path)) {
+    unlink($file_path);
+    $alert= "<script>alert('Đã xóa file $value thành công từ thư mục $dir');</script>";
+} else {
+    $alert="<script>alert('File $value không tồn tại trong thư mục $dir');</script>";
+}
+			header('location:?act='.$hr.'&alert='.$alert.'');
+			}
+			break;
 
 		default:
 			require_once('view/home.php');
