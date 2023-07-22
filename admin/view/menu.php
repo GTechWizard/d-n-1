@@ -67,7 +67,7 @@
 			<a href="?act=comment"><em class="fa fa-comment">&nbsp;</em>Bình Luận</a>
 		</li>
 		<li>
-			<a href="../index.html"><em class="fa fa-power-off">&nbsp;</em> Trang Khách</a>
+			<a href="../index.php"><em class="fa fa-power-off">&nbsp;</em> Trang Khách</a>
 		</li>
 	</ul>
 </div>
