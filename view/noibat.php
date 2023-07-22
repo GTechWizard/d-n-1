@@ -1,5 +1,5 @@
  <!-- thẻ tour trong nước -->
- <div class="main-container-mb">
+ <div  class="main-container-mb">
     <div class="main-container-mb-h1">
       <h1>địa điểm du lịch nổi bật</h1>
       <span>Một chuyến đi khám phá là cơ hội để bạn tìm hiểu về chính mình và thế giới xung quanh.</span>

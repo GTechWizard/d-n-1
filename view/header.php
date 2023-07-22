@@ -60,6 +60,7 @@ nav ul li a {
 <body>
   <input type="checkbox" id="check">
   <nav>
+
     <div class="icon">
       <a href="#"><img src="img/logononfont.png" alt=""></a>
     </div>

@@ -96,14 +96,8 @@
                         </div>
                     </div>
                 </div>
-
-
             </section>
-
-
-
             <section class="reviews-container">
-
                 <div class="heading">
                     <h1>tất cả đánh giá</h1>
                     <input type="submit" value="đánh giá" class="inline-delete-btn" id="my-input">

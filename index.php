@@ -1,13 +1,17 @@
 <?php
   include "view/header.php";
 ?>
+    <?php
+  include "view/div.php";
+ ?>
  <?php
   include "view/baner.php";
  ?>
-  
+
   <?php
   include "view/gioithieu.php";
  ?>
+
   <?php
   include "view/danhmuc.php";
  ?>

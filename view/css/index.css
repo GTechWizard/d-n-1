@@ -725,7 +725,7 @@ img {
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease-out;
-
+  background-color: #000;
 }
 
 .ui-card img {
@@ -739,7 +739,8 @@ img {
 
 .ui-card:hover img {
   transform: scale(1.1) translateY(-7px);
-  opacity: 0.3
+  opacity: 0.3;
+
 }
 
 .ui-card .description {
@@ -1910,6 +1911,16 @@ body {
   color: var(--black);
   font-weight: 400;
   font-style: normal;
+  animation: modalFaceIn ease 0.5s;
+}
+@keyframes modalFaceIn {
+  from {
+    transform: translateY(-100px);
+  }
+
+  to {
+      transform: translateY(0);
+  }
 }
 
 :root {
@@ -3362,9 +3373,8 @@ div.stars {
 .stars form{
 display: flex;
 }
- 
+
 input.star { display: none; }
- 
 label.star {
   float: right;
   padding: 10px;
