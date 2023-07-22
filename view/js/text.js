@@ -1,4 +1,4 @@
-let maxLength = 137;
+let maxLength = 90;
 let elements = document.querySelectorAll(".new-bottom-h3 span");
 for(let i = 0; i < elements.length; i++) {
   let text = elements[i].textContent.trim();

@@ -1,65 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Box icons -->
-    <!-- Custom StyleSheet -->
-    <link rel="stylesheet" href="css/dv_ct.css" />
-  <link rel="stylesheet" href="css/index2.css">
-    <title>dịch vụ chi tiết</title>
-</head>
-
-<body>
-    <header>
-        <input type="checkbox" id="check">
-        <nav>
-          <div class="icon">
-            <a href="#"><img src="../img/logononfont.png" alt=""></a>
-          </div>
-          <div class="search_box">
-            <input type="search" placeholder="search_box" />
-            <span class="fa fa-search"></span>
-          </div>
-          <ul>
-            <li><a href="#chungtoi" class="card">Chúng tôi</a></li>
-            <li><a href="view/dv.html" class="card">Du Lịch</a></li>
-            <li><a href="view/tt.html" class="card">Tin Tức</a></li>
-            <li><a href="#hotro" class="card">Hỗ Trợ</a></li>
-          </ul>
-          <div class="navbar">
-            <a href="view/dkdn.html" class="btn-icon fas fa-arrow-right-to-bracket"></a>
-            <a href="view/user.html" id="user-btn" class="far fa-user"></a>
-    
-          </div>
-          <label for="check" class="bar">
-            <span class="fa fa-bars" id="bars"></span>
-            <span class="fa fa-times" id="times"></span>
-          </label>
-        </nav>
-      </header>
-    <!-- Product Details -->
-    <section class="section product-detail">
+  <!-- Product Details -->
+  <section class="section product-detail">
         <div class="div-mb-span" style="width: 72%; margin: auto; margin-bottom: 20px; text-transform: uppercase;">
             <span>trang chủ/du lịch đảo cát bà</span>
         </div>
         <div class="details container-product">
             <div class="left image-container">
                 <div class="main" style="border-radius:10px ;">
-                    <img src="../img/4.jpg" id="zoom" alt="" style="border-radius:10px ;" />
+                    <img src="img/kinh-nghiem-du-lich-dao-cat-ba-1.jpg" id="zoom" alt="" style="border-radius:10px ;" />
                 </div>
                 <div>
 
                 </div>
             </div>
             <div class="right">
+
                 <h1 style="text-transform: uppercase;">tour du lịch đảo cát bà </h1>
-                <div class="detail-span">
-                    <p>Ngày khởi hành: 24/5/2023</p>
-                    <br><p>Ngày kết thúc: 28/4/2023</p>
-                    <br><p>Xuất phát: Hà Nội</p><br>
                 <div class="price">4.000.000</div> <span>VND</span>
+                <br>
+                <div class="detail-span">
+                    <span>ngày bắt đầu:24/5/2023</span>-<span>ngày kết thúc:28/4/2023</span>
                     <br>
                     <span></span>
                 </div>
@@ -67,7 +26,7 @@
                     <a href="cart.html" class="addCart"
                         style="text-decoration: none; text-transform: uppercase; font-weight: bold;">đặt tour</a>
                 </form>
-                <h3>Mô tả</h3>
+                <h3>mô tả</h3>
                 <p>
                     đảo Cát Bà còn có rất nhiều hệ sinh thái độc đáo và phong phú. Trong đó,
                     khu rừng ngập mặn Cát Bà là một trong những diện tích lớn nhất của loại rừng này tại Việt Nam,
@@ -80,8 +39,8 @@
     </section>
     <div class="tabContainer container-product">
         <div class="buttonContainer">
-            <button onclick="showPanel(0,'orange')">chi tiết</button>
-            <button class="ml10" onclick="showPanel(1,'rgb(0, 179, 255)')">đánh giá</button>
+            <button onclick="showPanel(0,'red')">chi tiết</button>
+            <button class="ml10" onclick="showPanel(1,'#f44336')">đánh giá</button>
         </div>
         <div class="tabPanel">chi tiết</div>
         <div class="tabPanel">
@@ -93,14 +52,14 @@
 
                 <div class="row">
                     <div class="col">
-                        <img src="../img/1.jpg" alt="" class="image">
+                        <img src="img/sapa.jpg" alt="" class="image">
                         <h3 class="title"></h3>
                     </div>
                     <div class="col">
                         <div class="flex">
                             <div class="total-reviews">
                                 <h3>5<i class="fas fa-star"></i></h3>
-                                <p>2 đánh giá</p>
+                                <p>10 đánh giá</p>
                             </div>
                             <div class="total-ratings">
                                 <p>
@@ -116,18 +75,18 @@
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
-                                    <span>4</span>
+                                    <span>0</span>
                                 </p>
                                 <p>
                                     <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <span>3</span>
-                                </p>
-                                <p>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <span>2</span>
+                                </p>
+                                <p>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>0</span>
                                 </p>
                                 <p>
                                     <i class="fas fa-star"></i>
@@ -137,7 +96,11 @@
                         </div>
                     </div>
                 </div>
+
+
             </section>
+
+
 
             <section class="reviews-container">
 
@@ -147,14 +110,14 @@
 
                     <div id="my-form" class="hidden">
                         <form action="" method="post" class="from-main">
-                            <h3>Đánh Giá Của Bạn</h3>
-                            <p class="placeholder">Tiêu đề</p>
+                            <h3>đánh giá của bạn</h3>
+                            <p class="placeholder">tiêu đề <span>*</span></p>
                             <input type="text" name="title" required maxlength="50" placeholder="nhập tiêu đề"
                                 class="box">
-                            <p class="placeholder">Nội dung</p>
+                            <p class="placeholder">nội dung</p>
                             <textarea name="description" class="box" placeholder="nhập nội dung" maxlength="1000"
                                 cols="30" rows="10"></textarea>
-                            <p class="placeholder">Đánh giá sao <span>*</span></p>
+                            <p class="placeholder">đánh giá sao <span>*</span></p>
                             <select name="rating" class="box" required>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -173,7 +136,7 @@
                     <div class="box">
                         <div class="user">
 
-                            <img src="355044588_1036629327343770_750038732468820602_n.png" alt="">
+                            <img src="img/profile8.jpg" alt="">
                             <!-- <h3><?= substr($fetch_user['name'], 0, 1); ?></h3> -->
                             <div>
                                 <p>binhpeo</p>
@@ -207,7 +170,7 @@
                     <div class="box">
                         <div class="user">
 
-                            <img src="355044588_1036629327343770_750038732468820602_n.png" alt="">
+                            <img src="img/profile6.jpg" alt="">
                             <!-- <h3><?= substr($fetch_user['name'], 0, 1); ?></h3> -->
                             <div>
                                 <p>binhpeo</p>
@@ -239,55 +202,4 @@
 
     </div>
 
-    <footer class="footer " id="hotro">
-        <div class="icon-ft">
-          <a href="#"><i class="fa-solid fa-arrow-up"></i></a>
-        </div>
-        <div class="fot-container">
-    
-          <div class="row">
-            <div class="footer-col">
-              <h4>về chúng tôi</h4>
-              <ul>
-                <li><a href="#">địa chỉ: trường cao đẳng fpt polytechnic,Q12,HCM </a></li>
-                <li><a href="#">sdt: 0364898403</a></li>
-                <li><a href="#">gmail: onhbinh55430@gmail.com</a></li>
-                <li><a href="#">fb: Đào Thanh Bình</a></li>
-              </ul>
-            </div>
-            <div class="footer-col">
-              <h4>menu</h4>
-              <ul>
-                <li><a href="#">trang chủ</a></li>
-                <li><a href="#">du lịch miền nam</a></li>
-                <li><a href="#">du lịch quốc tế</a></li>
-                <li><a href="#">du lịch miền bắc</a></li>
-                <li><a href="#">tin tức</a></li>
-              </ul>
-            </div>
-            <div class="footer-col">
-              <h4>online shop</h4>
-              <ul>
-                <li><a href="#">liên hệ</a></li>
-                <li><a href="#">hỗ trợ</a></li>
-                <li><a href="#">giới thiệu</a></li>
-                <li><a href="#">địa chỉ</a></li>
-              </ul>
-            </div>
-            <div class="footer-col">
-              <h4>theo dõi chúng tôi</h4>
-              <div class="social-links">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-              </div>
-            </div>
-    
-          </div>
-        </div>
-      </footer>
-</body>
-    <script src="js/dv_ct.js"></script>
-
-</html>
+    <script src="view/js/nav.js"></script>

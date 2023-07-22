@@ -37,8 +37,9 @@ closeButton.addEventListener("click", function() {
 // cài đặt nội dung và kiểu dáng cho nút đóng
 closeButton.textContent = "X";
 closeButton.style.position = "fixed";
-closeButton.style.top = "20px";
-closeButton.style.right = "20px";
+closeButton.style.zIndex="9999";
+closeButton.style.top = "80px";
+closeButton.style.right = "530px";
 closeButton.style.fontSize = "20px";
 closeButton.style.cursor = "pointer";
 

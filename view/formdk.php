@@ -1,25 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login & Registration</title>
-    <link rel="stylesheet" href="css/dkdn.css">
-    <link
-      rel="stylesheet"
-      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
-    />
-  </head>
-  <body>
-    <!-- Header -->
-    <header class="header">
-      <nav class="nav">
-        <a href="../index.html"></a>
-      </nav>
-    </header>
-    <!-- Home -->
-    <section class="home">
+<section class="home mb40">
       <div class="form_container">
         <!-- Login From -->
         <div class="form login_form">
@@ -89,6 +68,3 @@
         </div>
       </div>
     </section>
-    <script src="js/dkdn.js"></script>
-  </body>
-</html>
