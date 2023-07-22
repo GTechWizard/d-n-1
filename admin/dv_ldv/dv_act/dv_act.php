@@ -75,7 +75,7 @@
               <td colspan="11">
                 <a href="?act=ct_dv_act&id=<?= $result['id_pk_dv'] ?>">Chi tiết</a>
                 <a href="?act=delete_dv_act&id=<?= $result['id_pk_dv'] ?>">Xóa</a>
-                <a href="?act=edit_act&id=<?= $result['id_dv_user']?>" class="mr-l-5">Sửa</a>
+                <a href="?act=edit_act&id=<?= $result['id_dv_user']?>" class="ml-5">Cập Nhật Trạng Thái</a>
               </td>
             </tbody>
             </tbody>
