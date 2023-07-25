@@ -3349,7 +3349,7 @@ form span {
     border-bottom-right-radius: 150px;
     padding: 3%;
     font-size: large;
-    color: rgb(25, 25, 25);
+    color: rgb(0, 0, 0);
     font-family:Georgia, 'Times New Roman', Times, serif;
     text-shadow: 2px 0px 5px rgb(255, 255, 255);
       text-align: center;
@@ -3370,8 +3370,15 @@ form span {
   color: black;
   display: grid;
   grid-template-columns: 30% 70%;
-  border-top:1px solid black ;
-  padding-top: 4%;
+}
+a{
+  padding: 1%;
+}
+a hr{
+  width: 30%;
+  color: rgb(216, 216, 216);
+  display: block;
+  margin: 0 auto;
 }
 .link:hover .mini1{
   text-decoration: underline
