@@ -2,12 +2,9 @@
   include "view/header.php";
  ?>
     <?php
-  include "view/productct.php";
+  include "view/tintuc-ct.php";
  ?>
- <?php
-  include "view/tintuc.php";
- ?>
-
+ 
 <?php
   include "view/footer.php";
  ?>
