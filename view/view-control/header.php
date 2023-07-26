@@ -26,8 +26,8 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
     />
-    <link rel="stylesheet" href="view/css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="view/css/index.css">
+    <link rel="stylesheet" href="../view/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../view/css/index.css">
   <style>
     .card {
     background-color:rgb(255, 255, 255);

@@ -42,18 +42,18 @@
   	 </div>
   </footer>
 <!-- cuộn thẻ header  -->
-<script src="view/js/header.js"></script>
+<script src="../view/js/header.js"></script>
 <!-- slide -->
-<script src="view/js/swiper-bundle.min.js"></script>
-<script src="view/js/slide.js"></script>
+<script src="../view/js/swiper-bundle.min.js"></script>
+<script src="../view/js/slide.js"></script>
 <!-- điều hướng thẻ div -->
-<script src="view/js/div.js"></script>
+<script src="../view/js/div.js"></script>
 <!-- thu gon chu -->
-<script src="view/js/text.js"></script>
+<script src="../view/js/text.js"></script>
 <!--  -->
-<script src="view/js/nav.js"></script>
+<script src="../view/js/nav.js"></script>
 <!-- dkdn -->
-<script src="view/js/dkdn.js"></script>
+<script src="../view/js/dkdn.js"></script>
 <!-- userkh -->
 
 </body>
