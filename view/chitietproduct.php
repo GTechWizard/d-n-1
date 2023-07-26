@@ -1,10 +1,5 @@
-<?php
-  include "view/header.php";
- ?>
-    <?php
-  include "view/tintuc-ct.php";
+  <?php
+  include "./view/view-control/productct.php";
+  include "./view/view-control/tintuc.php";
  ?>
  
-<?php
-  include "view/footer.php";
- ?>
