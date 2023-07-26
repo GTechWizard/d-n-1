@@ -3262,23 +3262,27 @@ form span {
 
 
 
-
 .wrapperz1 {
-  position: relative;
   margin: 0 auto;
-  width: 900px;
+  width: 95vw;
   height: 100%;
-  background-color: #008912;
 
   }
   /*  ben trai */
   .content {
-  width: 595px;
+  width: 70%;  
   height: 100%;
-  background: #e7e7e7;
-  border: 1px solid #000;
+  box-shadow: 0px 5px 10px rgb(228, 228, 228);
   float: left;
   margin-bottom: 10px;
+  padding: 1%;
+  }
+  .content h5{
+  font-weight: bold;
+  font-size:larger;
+  text-align: center;
+  padding: 3% 0;
+  font-family: sans-serif;
   }
   .an{
       display: block;
@@ -3290,55 +3294,71 @@ form span {
 
   /* khung ben phai */
   .sidebar {
-  width: 300px;
+  width: 29%;
   height: auto;
-  background: #e7e7e7;
-  border: 1px solid #000;
+  background: #ffffff;
   float: right;
+  padding: .5%;
+  border-top-left-radius: 15px;
+  box-shadow: 0px 5px 10px rgb(228, 228, 228);
+  }
+  .content_sile1{
+  margin-left: 3%;
+  }
+  .content_sile1 .mini1{
+     padding: 2%;
+     font-weight: bold;
+     font-size: 90%;
+  }
+  .content_sile1 .row{
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: gray;
   }
   
   .sidebar h4{
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 150px;
+    padding: 3%;
+    font-size: large;
+    color: rgb(0, 0, 0);
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-shadow: 2px 0px 5px rgb(255, 255, 255);
       text-align: center;
-      background-image: linear-gradient(to top left, rgb(255, 223, 167),rgb(255, 203, 112));
+      background-image: linear-gradient(to top left, rgb(255, 255, 255),rgb(94, 131, 255));
   }
-  .sile1{
-   border: 1px solid black;
-  }
-.anh img {
-  display: block;
-  max-width:230px;
-  max-height:95px;
-  width: auto;
-  height: auto;
+.anh{
+  width: 100%;
 }
-
-.sile2{
-  border: 1px solid black;
- }
-.anh img {
- display: block;
- max-width:230px;
- max-height:95px;
- width: auto;
- height: auto;
-}
-.sile3{
-  border: 1px solid black;
- }
-.anh img {
- display: block;
- max-width:230px;
- max-height:95px;
- width: auto;
- height: auto;
+.anh img{
+  width: 100%;
+  border-radius: 10px;
+  background-position: center;
+  object-fit: cover;
 }
 .link{
+  margin-top: 5%;
   text-decoration: none;
   color: black;
+  display: grid;
+  grid-template-columns: 30% 70%;
 }
-.link:hover{
-  color: rgb(255, 123, 0);
-  transform: scale(1.05);
+a{
+  padding: 1%;
+}
+a hr{
+  width: 30%;
+  color: rgb(216, 216, 216);
+  display: block;
+  margin: 0 auto;
+}
+.link:hover .mini1{
+  text-decoration: underline
+}
+.link:hover img{
+  transform: scale(1.04)
 }
 
   
@@ -4663,7 +4683,95 @@ ul {
   list-style: none;
 }
 
+<<<<<<< HEAD
 
+=======
+.footer {
+  width: 100%;
+  padding: 70px 0;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  line-height: 1.5;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer-col {
+  width: 25%;
+  padding: 0 15px;
+}
+
+.footer-col h4 {
+  font-size: 18px;
+  color: #ffffff;
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  font-weight: 500;
+  position: relative;
+}
+
+.footer-col h4::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: #e91e63;
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+}
+
+.footer-col ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 300;
+  color: #bbbbbb;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: #ffffff;
+  padding-left: 8px;
+}
+
+.footer-col .social-links a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover {
+  color: #24262b;
+  background-color: #ffffff;
+}
+
+/*responsive*/
+@media(max-width: 767px) {
+  .footer-col {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+}
+
+@media(max-width: 574px) {
+  .footer-col {
+    width: 100%;
+  }
+}
+>>>>>>> 0eade786632cea04934cc5ddb4be514fa8f91710
 
 
 
