@@ -1,53 +1,46 @@
-<footer class="footer mb40">
-  <a href="#header">
-    <div class="icon-ft">
-      <i class="fa-solid fa-arrow-up"></i>
-    </div>
-  </a>
-  <div class="fot-container" view>
-
-    <div class="row">
-      <div class="footer-col">
-        <h4>về chúng tôi</h4>
-        <ul>
-          <li><a href="#">địa chỉ: trường cao đẳng fpt polytechnic,Q12,HCM </a></li>
-          <li><a href="#">sdt: 0364898403</a></li>
-          <li><a href="#">gmail: onhbinh55430@gmail.com</a></li>
-          <li><a href="#">fb: Đào Thanh Bình</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>menu</h4>
-        <ul>
-          <li><a href="#">trang chủ</a></li>
-          <li><a href="#">du lịch miền nam</a></li>
-          <li><a href="#">du lịch quốc tế</a></li>
-          <li><a href="#">du lịch miền bắc</a></li>
-          <li><a href="#">tin tức</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>online shop</h4>
-        <ul>
-          <li><a href="#">liên hệ</a></li>
-          <li><a href="#">hỗ trợ</a></li>
-          <li><a href="#">giới thiệu</a></li>
-          <li><a href="#">địa chỉ</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>theo dõi chúng tôi</h4>
-        <div class="social-links">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</footer>
+ <footer class="footer">
+  	 <div class="container">
+  	 	<div class="row">
+  	 		<div class="footer-col">
+  	 			<h4>Về Chúng Tôi</h4>
+  	 			<ul>
+  	 				<li><a href="#">Địa Chỉ: Trường Cao Đẳng Fpt Polytechnic,Q12,HCM</a></li>
+  	 				<li><a href="#">Sdt: 0364898403</a></li>
+  	 				<li><a href="#">Gmail: Onhbinh55430@Gmail.Com</a></li>
+  	 				<li><a href="#">Fb: Đào Thanh Bình</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>Menu</h4>
+  	 			<ul>
+  	 				<li><a href="#">Trang Chủ</a></li>
+  	 				<li><a href="#">Du Lịch Miền Nam</a></li>
+  	 				<li><a href="#">Du Lịch Quốc Tế</a></li>
+  	 				<li><a href="#">Du Lịch Miền Bắc</a></li>
+  	 				<li><a href="#">Tin Tức</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>online shop</h4>
+  	 			<ul>
+  	 				<li><a href="#">Liên Hệ</a></li>
+  	 				<li><a href="#">Hỗ Trợ</a></li>
+  	 				<li><a href="#">Giới Thiệu</a></li>
+  	 				<li><a href="#">Địa Chỉ</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>Theo Dõi Chúng Tôi</h4>
+  	 			<div class="social-links">
+  	 				<a href="#"><i class="fab fa-facebook-f"></i></a>
+  	 				<a href="#"><i class="fab fa-twitter"></i></a>
+  	 				<a href="#"><i class="fab fa-instagram"></i></a>
+  	 				<a href="#"><i class="fab fa-linkedin-in"></i></a>
+  	 			</div>
+  	 		</div>
+  	 	</div>
+  	 </div>
+  </footer>
 <!-- cuộn thẻ header  -->
 <script src="view/js/header.js"></script>
 <!-- slide -->

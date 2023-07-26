@@ -26,22 +26,29 @@
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam officia amet quas animi, minima quidem at aperiam optio error eveniet atque odit repellendus sapiente molestiae
             beatae facilis cupiditate nam.<br><br><br>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam officia amet quas animi, minima quidem at aperiam optio error eveniet atque odit repellendus sapiente molestiae
-            beatae facilis cupiditate nam.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam officia amet quas animi, minima quidem at aperiam optio error eveniet atque odit repellendus sapiente molestiae
-            beatae facilis cupiditate nam.<br><br><br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam officia amet quas animi, minima quidem at aperiam optio error eveniet atque odit repellendus sapiente molestiae
-            beatae facilis cupiditate nam.<br><br><br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam officia amet quas animi, minima quidem at aperiam optio error eveniet atque odit repellendus sapiente molestiae
-            beatae facilis cupiditate nam.<br><br><br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam officia amet quas animi, minima quidem at aperiam optio error eveniet atque odit repellendus sapiente molestiae
-            beatae facilis cupiditate nam.<br><br><br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam officia amet quas animi, minima quidem at aperiam optio error eveniet atque odit repellendus sapiente molestiae
             beatae facilis cupiditate nam.<br><br><br>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam officia amet quas animi, minima quidem at aperiam optio error eveniet atque odit repellendus sapiente molestiae
             beatae facilis cupiditate nam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam officia amet quas animi, minima quidem at aperiam optio error eveniet atque odit repellendus sapiente molestiae
+            beatae facilis cupiditate nam.<br><br><br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam officia amet quas animi, minima quidem at aperiam optio error eveniet atque odit repellendus sapiente molestiae
+            beatae facilis cupiditate nam.<br><br><br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam officia amet quas animi, minima quidem at aperiam optio error eveniet atque odit repellendus sapiente molestiae
+            beatae facilis cupiditate nam.<br><br><br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam officia amet quas animi, minima quidem at aperiam optio error eveniet atque odit repellendus sapiente molestiae
+            beatae facilis cupiditate nam.<br><br><br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam officia amet quas animi, minima quidem at aperiam optio error eveniet atque odit repellendus sapiente molestiae
+            beatae facilis cupiditate nam.<br><br><br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam officia amet quas animi, minima quidem at aperiam optio error eveniet atque odit repellendus sapiente molestiae
+            beatae facilis cupiditate nam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam officia amet quas animi, minima quidem at aperiam optio error eveniet atque odit repellendus sapiente molestiae
+            beatae facilis cupiditate nam.<br><br><br>
+    
+    
         </span>
+        
     </div>
-
+    
     <!-- tin mới  -->
     <div class="sidebar">
         <h4>Tin Mới</h4>
@@ -99,3 +106,4 @@
             
     </div>
 </div>
+<br/> <br/>
