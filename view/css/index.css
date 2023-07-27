@@ -891,7 +891,6 @@ img {
   position: absolute;
   bottom: 0;
   left: 0;
-  padding: 15px;
   width: 100%;
   text-align: center;
   color: #fff;
@@ -2920,7 +2919,7 @@ li {
   position: absolute;
   bottom: 0;
   left: 0;
-  padding: 15px;
+
   width: 100%;
   text-align: center;
   color: #fff;
@@ -4131,7 +4130,6 @@ img {
   position: absolute;
   bottom: 0;
   left: 0;
-  padding: 15px;
   width: 100%;
   text-align: center;
   color: #fff;
@@ -4275,7 +4273,6 @@ img {
   position: absolute;
   bottom: 0;
   left: 0;
-  padding: 15px;
   width: 100%;
   text-align: center;
   color: #fff;
@@ -6195,7 +6192,7 @@ li {
   position: absolute;
   bottom: 0;
   left: 0;
-  padding: 15px;
+  padding: 10px 0px;
   width: 100%;
   text-align: center;
   color: #fff;

@@ -10,36 +10,27 @@
     <div class="slide-container swiper">
       <div class="slide-content">
         <div class="card-wrapper swiper-wrapper">
+
+        <?php
+          $getallloai = new loai;
+          $getloai = $getallloai->getAllLoai();
+          while($result=$getloai->fetch_assoc())
+          {
+        ?>
           <div class="card swiper-slide">
             <div class="ui-card">
-              <img src="img/dulich1.jpg">
+              <img src="uploads/<?=$result['img']?>">
               <div class="description">
-                <h3>TOUR MIỀN BẮC</h3>
+                <h3><?=$result['kieu_dv']?></h3>
                 <p>SỐ TOUR:10</p>
                 <a href="">TÌM THÊM</a>
               </div>
             </div>
           </div>
-          <div class="card swiper-slide">
-            <div class="ui-card">
-              <img src="img/dulich2.jpg">
-              <div class="description">
-                <h3>TOUR MIỀN NAM</h3>
-                <p>SỐ TOUR:1</p>
-                <a href="">TÌM THÊM</a>
-              </div>
-            </div>
-          </div>
-          <div class="card swiper-slide">
-            <div class="ui-card">
-              <img src="img/dulich3.jpg">
-              <div class="description">
-                <h3>TOUR NƯỚC NGOÀI</h3>
-                <p>SỐ TOUR:15</p>
-                <a href="">TÌM THÊM</a>
-              </div>
-            </div>
-          </div>
+          <?php 
+              }
+          ?>
+         
         </div>
       </div>
       <div class="swiper-button-next swiper-navBtn"></div>
