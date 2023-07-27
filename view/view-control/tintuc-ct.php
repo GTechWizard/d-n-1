@@ -1,52 +1,11 @@
 <br><br><br><br><br><br>
 <div class="wrapperz1">
     <div class="content">
-        <h5>HỒ CHÍ MINH - MALAYSIA - SINGAPORE </h5>
+        <h5><?=$result['name']?></h5>
         <span>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam officia amet quas animi, minima quidem at aperiam optio error eveniet atque odit repellendus sapiente molestiae
-            beatae facilis cupiditate nam.<br><br><br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam officia amet quas animi, minima quidem at aperiam optio error eveniet atque odit repellendus sapiente molestiae
-            beatae facilis cupiditate nam.<br><br><br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam officia amet quas animi, minima quidem at aperiam optio error eveniet atque odit repellendus sapiente molestiae
-            beatae facilis cupiditate nam.<br><br><br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam officia amet quas animi, minima quidem at aperiam optio error eveniet atque odit repellendus sapiente molestiae
-            beatae facilis cupiditate nam.<br><br><br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam officia amet quas animi, minima quidem at aperiam optio error eveniet atque odit repellendus sapiente molestiae
-            beatae facilis cupiditate nam.<br><br><br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam officia amet quas animi, minima quidem at aperiam optio error eveniet atque odit repellendus sapiente molestiae
-            beatae facilis cupiditate nam.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam officia amet quas animi, minima quidem at aperiam optio error eveniet atque odit repellendus sapiente molestiae
-            beatae facilis cupiditate nam.<br><br><br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam officia amet quas animi, minima quidem at aperiam optio error eveniet atque odit repellendus sapiente molestiae
-            beatae facilis cupiditate nam.<br><br><br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam officia amet quas animi, minima quidem at aperiam optio error eveniet atque odit repellendus sapiente molestiae
-            beatae facilis cupiditate nam.<br><br><br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam officia amet quas animi, minima quidem at aperiam optio error eveniet atque odit repellendus sapiente molestiae
-            beatae facilis cupiditate nam.<br><br><br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam officia amet quas animi, minima quidem at aperiam optio error eveniet atque odit repellendus sapiente molestiae
-            beatae facilis cupiditate nam.<br><br><br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam officia amet quas animi, minima quidem at aperiam optio error eveniet atque odit repellendus sapiente molestiae
-            beatae facilis cupiditate nam.<br><br><br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam officia amet quas animi, minima quidem at aperiam optio error eveniet atque odit repellendus sapiente molestiae
-            beatae facilis cupiditate nam.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam officia amet quas animi, minima quidem at aperiam optio error eveniet atque odit repellendus sapiente molestiae
-            beatae facilis cupiditate nam.<br><br><br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam officia amet quas animi, minima quidem at aperiam optio error eveniet atque odit repellendus sapiente molestiae
-            beatae facilis cupiditate nam.<br><br><br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam officia amet quas animi, minima quidem at aperiam optio error eveniet atque odit repellendus sapiente molestiae
-            beatae facilis cupiditate nam.<br><br><br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam officia amet quas animi, minima quidem at aperiam optio error eveniet atque odit repellendus sapiente molestiae
-            beatae facilis cupiditate nam.<br><br><br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam officia amet quas animi, minima quidem at aperiam optio error eveniet atque odit repellendus sapiente molestiae
-            beatae facilis cupiditate nam.<br><br><br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam officia amet quas animi, minima quidem at aperiam optio error eveniet atque odit repellendus sapiente molestiae
-            beatae facilis cupiditate nam.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta numquam officia amet quas animi, minima quidem at aperiam optio error eveniet atque odit repellendus sapiente molestiae
-            beatae facilis cupiditate nam.<br><br><br>
-    
-    
+        <?=$result['bai_viet']?>
         </span>
-        
+            
     </div>
     
     <!-- tin mới  -->
