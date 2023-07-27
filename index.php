@@ -15,8 +15,8 @@
 
 
 
-         case 'about':
-             include "/view/about.php";   
+         case 'chitiettour':
+             include "view/chitietprduct.php";   
              break;
         
 
