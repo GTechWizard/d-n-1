@@ -105,7 +105,7 @@
 		</div>
 		<!--/.row-->
 
-		<!-- dưới biểu đồ -->
+		<!-- dưới biểu đồ thôn sgố đo-->
 		<div class="row">
 			<div class="col-xs-6 col-md-3">
 				<div class="panel panel-default">

@@ -17,14 +17,12 @@
           <thead class="fixed-table-header th-inner">
             <th class="th-inner">STT</th>
             <th class="th-inner">Lượng Người Đăng ký</th>
-            <th class="th-inner">ID Người Dùng</th>
-            <th class="th-inner">Tên </th>
+            <th class="th-inner">Trẻ Em</th>
+            <th class="th-inner">Người Lớn</th>
+            <th class="th-inner">Người Dùng</th>
             <th class="th-inner">SĐT</th>
-            <th class="th-inner">Địa chỉ</th>
             <th class="th-inner">Email</th>
             <th class="th-inner">Ngày ĐK</th>
-            <th class="th-inner">Trạng Thái</th>
-            <th class="th-inner">Vai Trò</th>
             <th></th>
           </thead>
           <?php 
@@ -35,42 +33,13 @@
           ?>
           <tbody class="fixed-table-body">
             <td class="th-inner"><?=$i?></td>
-            <td class="th-inner"><?=$result['ng_dk']?></td>
-            <td class="th-inner"><?=$result['id_user']?></td>
-            <td class="th-inner"><?=$result['ten_user']?></td>
-            <td class="th-inner"><?=$result['sdt']?></td>
-            <td class="th-inner"><?=$result['dia_chi']?></td>
-            <td class="th-inner"><?=$result['email']?></td>
+            <td class="th-inner"><?=$result['so_luong_old']+$result['so_luong_young']?></td>
+            <td class="th-inner"><?=$result['so_luong_young']?></td>
+            <td class="th-inner"><?=$result['so_luong_old']?></td>
+            <td class="th-inner"><?=$result['user_name']?></td>
+            <td class="th-inner"><?=$result['user_sdt']?></td>
+            <td class="th-inner"><?=$result['user_email']?></td>
             <td class="th-inner"><?=$result['ngay_dkdv']?></td>
-            <td class="th-inner"><?php 
-            switch ($result['trang_thai']) {
-              case 0:
-                echo "Đang chờ xác nhận";
-                break;
-              case 1:
-                echo "Chưa bắt đầu";
-                break;
-              case 2:
-                echo "Đang trong tour";
-                break;
-              case 3:
-                echo "Hoàn thành tour";
-                break;
-            }
-            ?></td>
-            <td class="th-inner"><?php 
-            switch ($result['vai_tro']) {
-              case 0:
-                echo "Khách Hàng";
-                break;
-              case 1:
-                echo "Quản Lý";
-                break;
-            }
-            ?></td>
-            <td class="th-inner">
-              <a href="?act=edit_act&id=<?=$result['id_user']?>">Sửa</a>
-            </td>
           <tbody>
           <?php }}?>
         </table>

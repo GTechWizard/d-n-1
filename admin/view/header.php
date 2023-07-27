@@ -29,8 +29,29 @@
 				display: block;
 				word-wrap: break-word;
 			}
-			.mr-l-5{
+			.pm-1_05{
+				padding: 1%;
+				margin: 0 5%;
+			}
+			.mt-3{
+				margin-top: 3%;
+			}
+			.ml-5{
 				margin-left: 5%;
+			}
+			.ul {
+				list-style: none;
+			}
+			.overh{
+				overflow: hidden;
+			}
+			.flex{
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.w-100{
+				width: 100%;
 			}
 		</style>
 </head>

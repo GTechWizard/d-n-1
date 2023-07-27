@@ -25,32 +25,31 @@
               <input type="hidden" value="<?= $result['id_dv'] ?>" name="id_dv" />
             </div>
             <div class="form-group">
+              <label>Nơi Bắt Đầu</label>
+              <input type="text" class="form-control" value="<?= $result['noi_bd'] ?>" name="noi_bd" />
+            </div>
+            <div class="form-group">
               <label>Điểm đến</label>
               <input type="text" class="form-control" value="<?= $result['diem_den'] ?>" name="diem_den" />
             </div>
             <div class="form-group">
-              <label>Giá</label>
-              <input type="number" class="form-control" value="<?= $result['gia'] ?>" name="gia" />
+              <label>Giá Người Lớn</label>
+              <input type="number" class="form-control" value="<?=$result['price_old']?>" name="price_old" />
             </div>
             <div class="form-group">
-              <label>Tổng người</label>
-              <input type="number" class="form-control" value="<?= $result['tong_ng'] ?>" name="tong_ng" />
-            </div>
-            <div class="form-group">
-              <label>Ảnh</label>
-              <label><img src="<?= $result['img_dv'] ?>" alt="img" width="20%" title="Ảnh trước đó"></label>
-              <input type="file" name="img_dv" />
+              <label>Giá Trẻ Em</label>
+              <input type="number" class="form-control" value="<?=$result['price_young']?>" name="price_young" />
             </div>
           </div>
 
           <div class="col-md-6">
             <div class="form-group">
               <label>Ngày bắt đầu</label>
-              <input type="text" class="form-control" value="<?= $result['ngay_bd'] ?>" name="ngay_bd" />
+              <input type="text" class="form-control" value="<?= $result['day_start'] ?>" name="day_start" />
             </div>
             <div class="form-group">
               <label>Ngày kết thúc</label>
-              <input type="text" class="form-control" value="<?= $result['ngay_kt'] ?>" name="ngay_kt" />
+              <input type="text" class="form-control" value="<?= $result['day_end'] ?>" name="day_end" />
             </div>
             <div class="form-group">
               <label>Loại Dịch Vụ</label>
@@ -68,9 +67,15 @@
               </select>
             </div>
             <div class="form-group">
-              <label>Nơi Bắt Đầu</label>
-              <input type="text" class="form-control" value="<?= $result['noi_bd'] ?>" name="noi_bd" />
+              <label>Tổng người</label>
+              <input type="number" class="form-control" value="<?= $result['tong_ng'] ?>" name="tong_ng" />
             </div>
+            <div class="form-group">
+              <label>Ảnh</label>
+              <label><img src="<?= $result['img_dv'] ?>" alt="img" width="20%" title="Ảnh trước đó"></label>
+              <input type="file" name="img_dv" />
+            </div>
+
           </div>
           <div class="col-md-12">
             <div class="form-group">
