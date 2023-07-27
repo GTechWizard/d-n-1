@@ -27,7 +27,7 @@
                   <div class="new-bottom-span-container">
                   </div>
                   <div class="new-bottom-submit">
-                    <input type="submit" value="chi tiết">
+                    <a href="?act=ct_tt&id=2">chi tiết</a>
                   </div>
                 </div>
               </div>
