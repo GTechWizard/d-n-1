@@ -1,6 +1,6 @@
 <?php 
-require_once('../lib/database.php');
-require_once('../lib/format.php');
+require_once('database.php');
+require_once('format.php');
 
 class home{
   private $db;

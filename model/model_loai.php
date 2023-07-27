@@ -1,6 +1,6 @@
 <?php 
-require_once('../lib/database.php');
-require_once('../lib/format.php');
+require_once('database.php');
+require_once('format.php');
 
 class loai{
   private $db;
@@ -19,6 +19,7 @@ class loai{
     $result =$this->db->select($query);
       return $result;
   }
+
   public function delete_loai($id_loai){
     $query ="DELETE FROM `loai` WHERE `loai`.`id_loai` = '$id_loai'";
     $this->db->detele($query);

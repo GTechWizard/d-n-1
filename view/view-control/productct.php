@@ -1,4 +1,7 @@
   <!-- Product Details -->
+  <?php
+  $result=$getiddv->fetch_assoc();
+  ?>
   <section class="section product-detail">
         <div class="div-mb-span" style="width: 72%; margin: auto; margin-bottom: 20px; text-transform: uppercase;">
             <span>trang chủ/du lịch đảo cát bà</span>
@@ -6,7 +9,7 @@
         <div class="details container-product">
             <div class="left image-container">
                 <div class="main" style="border-radius:10px ;">
-                    <img src="img/kinh-nghiem-du-lich-dao-cat-ba-1.jpg" id="zoom" alt="" style="border-radius:10px ;" />
+                    <img src="uploads/<?=$result['img_dv']?>" id="zoom" alt="" style="border-radius:10px ;" />
                 </div>
                 <div>
 
@@ -14,17 +17,21 @@
             </div>
             <div class="right">
 
-                <h1 style="text-transform: uppercase;">tour du lịch đảo cát bà </h1>
-                <div class="price">4.000.000</div> <span>VND</span>
+                <h1 style="text-transform: uppercase;"><?=$result['name']?> </h1>
+                <div class="price"><?=$result['price_young']?></div> <span>VND</span>
                 <br>
                 <div class="detail-span">
-                    <span>ngày bắt đầu:24/5/2023</span>-<span>ngày kết thúc:28/4/2023</span>
+                    <span>ngày bắt đầu:<?=$result['day_start']?></span>-<span>ngày kết thúc:<?=$result['day_end']?></span>
                     <br>
-                    <span></span>
+                    <span>điểm đón:<?=$result['noi_bd']?> --> điểm đến:<?=$result['diem_den']?></span>
+                    <br>
+                    <br>
                 </div>
                 <form class="form-product">
                     <a href="cart.html" class="addCart"
                         style="text-decoration: none; text-transform: uppercase; font-weight: bold;">đặt tour</a>
+                        <a href="cart.html" class="addCart"
+                        style="text-decoration: none; text-transform: uppercase; font-weight: bold;">yêu thích</a>
                 </form>
                 <h3>mô tả</h3>
                 <p>
@@ -47,7 +54,7 @@
             <section class="view-post">
 
                 <div class="heading">
-                    <h1>đánh giá tour: du lịch đảo cái bà</h1>
+                    <h1>đánh giá tour:<?=$result['name']?></h1>
                 </div>
 
                 <div class="row">

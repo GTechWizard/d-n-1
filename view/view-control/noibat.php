@@ -64,7 +64,7 @@
                   </div>
 
                   <div class="card-bottom-submit">
-                    <input type="submit" value="chi tiết">
+                  <a href="index.php?act=chitiettour&idsp=<?php echo $result['id_dv'] ?>"><input type="submit" value="chi tiết"></a>
                   </div>
                 </div>
               </div>
