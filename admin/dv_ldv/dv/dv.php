@@ -47,7 +47,7 @@
             <td class="th-inner"><?=$result['tong_ng']?></td>
             <td class="th-inner"><a href="?act=ctbv_dv&id=<?=$result['id_dv']?>">Chi tiết</a></td>
           <tbody>
-            <td colspan="11"><a href="?act=edit_dv&id=<?=$result['id_dv']?>">Sửa</a> <a href="?act=delete_dv&id=<?=$result['id_dv']?>">Xóa</a></td>
+            <td colspan="11"><a href="?act=edit_dv&id=<?=$result['id_dv']?>" onclick="return confirm('Bạn chắn chắn muốn chỉnh sửa?')">Sửa</a> <a href="?act=delete_dv&id=<?=$result['id_dv']?>" onclick="return confirm('Bạn chắn chắn muốn xóa?')">Xóa</a></td>
           </tbody>
           </tbody>
           <?php }}?>

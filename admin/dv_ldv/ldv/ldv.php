@@ -34,7 +34,7 @@
             <td class="th-inner"><?=$result['img']?></td>
             <td class="th-inner"><?=$result['kieu_dv']?></td>
           <tbody>
-            <td colspan="4"><a href="?act=edit_loai&id=<?=$result['id_loai']?>">Sửa</a> <a href="?act=delete_loai&id=<?=$result['id_loai']?>">Xóa</a></td>
+            <td colspan="4"><a href="?act=edit_loai&id=<?=$result['id_loai']?>" onclick="return confirm('Bạn chắn chắn muốn sửa?')">Sửa</a> <a href="?act=delete_loai&id=<?=$result['id_loai']?>" onclick="return confirm('Bạn chắn chắn muốn xóa?')">Xóa</a></td>
           </tbody>
           </tbody>
           <?php }}?>

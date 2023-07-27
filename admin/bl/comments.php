@@ -36,7 +36,7 @@
             <td class="th-inner"><?=$result['noi_dung']?></td>
             <td class="th-inner"><?=$result['danh_gia']?></td>
             <td class="th-inner"><?=$result['id_pk_user']?></td>
-            <td class="th-inner"><a href="?act=delete_comment&id=<?=$result['id_bl']?>">Xóa</a></td>
+            <td class="th-inner"><a href="?act=delete_comment&id=<?=$result['id_bl']?>" onclick="return confirm('Bạn chắn chắn muốn xóa?')">Xóa</a></td>
           </tbody>
           <?php }}?>
         </table>

@@ -29,8 +29,8 @@
           <li class="list-group-item"><a href="?act=bai_viet_tt&id=<?=$result['id_tt']?>">Nội dung</a></li>
         </ul>
         <div class="card-body-btn">
-          <a href="?act=edit_tt&id=<?=$result['id_tt']?>" class="card-link">Sửa</a>
-          <a href="?act=delete_tt&id=<?=$result['id_tt']?>" class="card-link">Xóa</a>
+          <a href="?act=edit_tt&id=<?=$result['id_tt']?>" class="card-link" onclick="return confirm('Bạn chắn chắn muốn chỉnh sửa?')">Sửa</a>
+          <a href="?act=delete_tt&id=<?=$result['id_tt']?>" class="card-link" onclick="return confirm('Bạn chắn chắn muốn xóa?')">Xóa</a>
         </div>
       </div>
     </div>

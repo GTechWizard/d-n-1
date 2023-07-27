@@ -42,7 +42,7 @@
             <td class="th-inner"><?=$result['img']?></td>
             <td class="th-inner"><?=$result['vai_tro']?></td>
           <tbody>
-            <td colspan="8"><a href="?act=edit_user&id=<?=$result['id_user']?>">Sửa</a><a href="?act=delete_user&id=<?=$result['id_user']?>">Xóa</a></td>
+            <td colspan="8"><a href="?act=edit_user&id=<?=$result['id_user']?>" onclick="return confirm('Bạn chắn chắn muốn sửa?')">Sửa</a><a href="?act=delete_user&id=<?=$result['id_user']?>" onclick="return confirm('Bạn chắn chắn muốn xóa?')">Xóa</a></td>
           </tbody>
           </tbody>
           <?php }}?>

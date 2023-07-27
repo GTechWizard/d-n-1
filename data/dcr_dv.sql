@@ -191,7 +191,6 @@ INSERT INTO `sl_ng_dk_user` (`id_sl`, `id_pk_dv_user`, `id_pk_price_tour`, `so_l
 
 CREATE TABLE `tt` (
   `id_tt` int(10) NOT NULL,
-  `id_pk_dv` int(10) NOT NULL,
   `bai_viet` longblob NOT NULL COMMENT 'bài viết',
   `name` varchar(255) NOT NULL,
   `mo_ta` text NOT NULL COMMENT 'mô tả ngắn',
@@ -205,9 +204,9 @@ CREATE TABLE `tt` (
 -- Đang đổ dữ liệu cho bảng `tt`
 --
 
-INSERT INTO `tt` (`id_tt`, `id_pk_dv`, `bai_viet`, `name`, `mo_ta`, `dia_diem`, `tac_gia`, `img_tt`, `ngay_d`) VALUES
-(2, 0, 0x3c703e76756920c491267567726176653b612063267567726176653b6e67206d266567726176653b6f20c491656e2061692063e1baad70206b68266f636972633b6e672076756920c4912661636972633b753c2f703e, 'sa mạc nơi những cái xác biết đi', 'vui hay không vui khi mèo ở bên bạn', 'ai cập', 'kien', '../uploads/050604am17072023fantasy-2543658_1920.jpg', '2023-07-29'),
-(8, 0, 0x3c703e6d266567726176653b6f2063c6b0e1bb9d69207675693c2f703e, 'mèo con', 'hay nak no no', 'heo 12 12', 'heo2', '', '2023-07-27');
+INSERT INTO `tt` (`id_tt`, `bai_viet`, `name`, `mo_ta`, `dia_diem`, `tac_gia`, `img_tt`, `ngay_d`) VALUES
+(2, 0x3c703e76756920c491267567726176653b612063267567726176653b6e67206d266567726176653b6f20c491656e2061692063e1baad70206b68266f636972633b6e672076756920c4912661636972633b753c2f703e, 'sa mạc nơi những cái xác biết đi', 'vui hay không vui khi mèo ở bên bạn', 'ai cập', 'kien', '../uploads/050604am17072023fantasy-2543658_1920.jpg', '2023-07-29'),
+(8, 0x3c703e6d266567726176653b6f2063c6b0e1bb9d69207675693c2f703e, 'mèo con', 'hay nak no no', 'heo 12 12', 'heo2', '', '2023-07-27');
 
 -- --------------------------------------------------------
 
