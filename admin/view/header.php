@@ -53,6 +53,12 @@
 			.w-100{
 				width: 100%;
 			}
+			ul{
+				list-style: none;
+			}
+			img{
+				width: 50%;
+			}
 		</style>
 </head>
 

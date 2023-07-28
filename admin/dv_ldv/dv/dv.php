@@ -16,7 +16,7 @@
         <table class="table fixed-table-container ">
           <thead class="fixed-table-header th-inner">
             <th class="th-inner">STT</th>
-            <th class="th-inner">ID DV</th>
+            <th class="th-inner">Loại</th>
             <th class="th-inner">Tên DV</th>
             <th class="th-inner">Nơi Bắt Đầu</th>
             <th class="th-inner">Điểm đến</th>
@@ -35,7 +35,7 @@
           ?>
           <tbody class="fixed-table-body">
             <td class="th-inner"><?=$i?></td>
-            <td class="th-inner"><?=$result['id_dv']?></td>
+            <td class="th-inner"><?=$result['id_pk_loai']?></td>
             <td class="th-inner"><?=$result['name']?></td>
             <td class="th-inner"><?=$result['noi_bd']?></td>
             <td class="th-inner"><?=$result['diem_den']?></td>

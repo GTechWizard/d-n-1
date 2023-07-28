@@ -12,8 +12,19 @@
     </div>
     <!--/.row-->
     <div class="row">
-       
+       <ul>
           <?php 
+           if($files && $files!=''){
+          foreach ($files as $file) {
+            echo '<li><img src="'.$file.'" alt="img" width="20%" title="Ảnh đã tìm">
+            <em>'.$search_term.'</em>
+            <li>'; // In ra tên của từng file tìm được
+          }
+        }else{
+          echo"<li>Không có ảnh trong folder uploads</li>";
+        }?>
+</ul>
+        <?php 
             if($results1 && $results1!=false){
               while($result=$results1->fetch_assoc()){
               echo'
