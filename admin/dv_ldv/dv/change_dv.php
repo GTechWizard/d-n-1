@@ -73,6 +73,7 @@
             <div class="form-group">
               <label>Ảnh</label>
               <label><img src="<?= $result['img_dv'] ?>" alt="img" width="20%" title="Ảnh trước đó"></label>
+              <?= $result['img_dv'] ?>
               <input type="file" name="img_dv" />
             </div>
 

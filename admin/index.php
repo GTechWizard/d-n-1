@@ -161,8 +161,8 @@ if (isset($_GET['act']) && $_GET['act']) {
 			break;
 		case 'dv':
 			$DV = new dv;
-			$DVList=$DV->getAllDV();
-			$i=0;
+			$DVList = $DV->getAllDV();
+			$i = 0;
 			include('dv_ldv/dv/dv.php');
 			break;
 
@@ -180,13 +180,13 @@ if (isset($_GET['act']) && $_GET['act']) {
 				$uploadOk = 1;
 				$imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 				// Kiểm tra xem tệp có phải là ảnh hay không
-					$check = getimagesize($_FILES["img_dv"]["tmp_name"]);
-					if ($check !== false) {
-						$uploadOk = 1;
-					} else {
-						$alert = "không phải file ảnh, vui lòng chọn lại";
-						$uploadOk = 0;
-					}
+				$check = getimagesize($_FILES["img_dv"]["tmp_name"]);
+				if ($check !== false) {
+					$uploadOk = 1;
+				} else {
+					$alert = "không phải file ảnh, vui lòng chọn lại";
+					$uploadOk = 0;
+				}
 				// Kiểm tra xem có xảy ra lỗi khi tải lên tệp hay không
 				if ($uploadOk == 0) {
 					$alert = "đăng ảnh không thành công";
@@ -194,7 +194,7 @@ if (isset($_GET['act']) && $_GET['act']) {
 					move_uploaded_file($_FILES["img_dv"]["tmp_name"], $target_file);
 				}
 				$dv = new dv;
-				$dv->insert_DV($name, $noi_bd, $diem_den, $price_old, $price_young, $day_start, $day_end, $id_pk_loai, $tong_ng,$target_file, $bv);
+				$dv->insert_DV($name, $noi_bd, $diem_den, $price_old, $price_young, $day_start, $day_end, $id_pk_loai, $tong_ng, $target_file, $bv);
 				if (isset($alert) && $alert != "")
 					echo "<script>alert('$alert');</script>";
 				header('location:?act=dv');
@@ -230,46 +230,39 @@ if (isset($_GET['act']) && $_GET['act']) {
 		case 'update_dv':
 			if (isset($_POST['save']) && $_POST['save']) {
 				extract($_POST);
-				$target_dir = "../uploads/";
-				$target_name = basename($_FILES["img_dv"]["name"]);
-				$target_file = $target_dir . date('HisadmY') . basename($_FILES["img_dv"]["name"]);
-				$uploadOk = 1;
-				$imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-				// Kiểm tra xem tệp có phải là ảnh hay không
-				if ($target_name != "") {
-					$check = getimagesize($_FILES["img_dv"]["tmp_name"]);
-					if ($check !== false) {
-						$uploadOk = 1;
-					} else {
-						$alert = "không phải file ảnh, vui lòng chọn lại";
-						$uploadOk = 0;
-					}
-				}
-				// Cho phép chỉ tải lên các định dạng ảnh nhất định
-				if (
-					$imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-					&& $imageFileType != "gif"
-				) {
-					$alert = "chỉ cho phép ảnh có đuôi JPG, JPEG, PNG & GIF";
-					$uploadOk = 0;
-				}
-				// Kiểm tra xem có xảy ra lỗi khi tải lên tệp hay không
-				if ($uploadOk == 0) {
-					$alert = "đăng ảnh không thành công";
-				} else {
-					move_uploaded_file($_FILES["img_dv"]["tmp_name"], $target_file);
-				}
-
 				$dv = new dv;
-				if ($target_name == "") {
-					$dv->update_DV($name, $noi_bd, $diem_den, $price_old, $price_young, $day_start, $day_end, $id_pk_loai, $tong_ng,'', $bv, $id_dv);
+				// Kiểm tra xem người dùng đã chọn ảnh mới hay chưa
+				if (!empty($_FILES["img_dv"]["name"])) {
+						$target_dir = "../uploads/";
+						$target_name = basename($_FILES["img_dv"]["name"]);
+						$target_file = $target_dir . date('HisadmY') . basename($_FILES["img_dv"]["name"]);
+						$uploadOk = 1;
+						$imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+						// Kiểm tra xem tệp có phải là ảnh hay không
+						$check = getimagesize($_FILES["img_dv"]["tmp_name"]);
+						if ($check !== false) {
+								$uploadOk = 1;
+						} else {
+								$alert = "Không phải file ảnh, vui lòng chọn lại";
+								$uploadOk = 0;
+						}
+						// Kiểm tra xem có xảy ra lỗi khi tải lên tệp hay không
+						if ($uploadOk == 0) {
+								$alert = "Đăng ảnh không thành công";
+						} else {
+								move_uploaded_file($_FILES["img_dv"]["tmp_name"], $target_file);
+								$dv->update_DV($name, $noi_bd, $diem_den, $price_old, $price_young, $day_start, $day_end, $id_pk_loai, $tong_ng, $target_file, $bv, $id_dv);
+						}
 				} else {
-					$dv->update_DV($name, $noi_bd, $diem_den, $price_old, $price_young, $day_start, $day_end, $id_pk_loai, $tong_ng,$target_file, $bv, $id_dv);
+						$dv->update_DV($name, $noi_bd, $diem_den, $price_old, $price_young, $day_start, $day_end, $id_pk_loai, $tong_ng, '', $bv, $id_dv);
 				}
-					if (isset($alert) && $alert != "")
+				
+				if (isset($alert) && $alert != "") {
 						echo "<script>alert('$alert');</script>";
-					header('location:?act=dv');
-			}
+				 }
+		
+				header('location:?act=dv');
+		}
 			break;
 		case 'tt':
 			$tt = new tt;
@@ -312,25 +305,25 @@ if (isset($_GET['act']) && $_GET['act']) {
 					move_uploaded_file($_FILES["img"]["tmp_name"], $target_file);
 				}
 				$tt = new tt;
-					$tt->insert_TT($bai_viet, $name, $mo_ta, $dia_diem, $tac_gia, $target_file, $ngay_d);
-					if (isset($alert) && $alert != "") {
-						echo "<script>alert('$alert');</script>";
+				$tt->insert_TT($bai_viet, $name, $mo_ta, $dia_diem, $tac_gia, $target_file, $ngay_d);
+				if (isset($alert) && $alert != "") {
+					echo "<script>alert('$alert');</script>";
 				}
-						header('location:?act=tt');
+				header('location:?act=tt');
 			}
 			break;
 		case 'edit_tt':
-			if (isset($_GET['id'])&&$_GET['id']!='') {
+			if (isset($_GET['id']) && $_GET['id'] != '') {
 				$id = $_GET['id'];
 				$tt = new tt;
-				$ttID=$tt->getTTID($id);
+				$ttID = $tt->getTTID($id);
 				include('tt/change_news.php');
 			}
 			break;
 		case 'update_tt':
-			if(isset($_POST['save'])&&($_POST['save'])){
+			if (isset($_POST['save']) && ($_POST['save'])) {
 				extract($_POST);
-			$target_dir = "../uploads/";
+				$target_dir = "../uploads/";
 				$target_name = basename($_FILES["img"]["name"]);
 				$target_file = $target_dir . date('HisadmY') . basename($_FILES["img"]["name"]);
 				$uploadOk = 1;
@@ -361,79 +354,83 @@ if (isset($_GET['act']) && $_GET['act']) {
 				}
 				$tt = new tt;
 				if ($target_name == "") {
-					$tt->update_TT($bai_viet,$name,$mo_ta,$dia_diem,$tac_gia,'',$ngay_d,$id_tt);
+					$tt->update_TT($bai_viet, $name, $mo_ta, $dia_diem, $tac_gia, '', $ngay_d, $id_tt);
 				} else {
-					$tt->update_TT($bai_viet,$name,$mo_ta,$dia_diem,$tac_gia,$target_file,$ngay_d,$id_tt);
+					$tt->update_TT($bai_viet, $name, $mo_ta, $dia_diem, $tac_gia, $target_file, $ngay_d, $id_tt);
 				}
-				if (isset($alert) && $alert != "")echo "<script>alert('$alert');</script>";
+				if (isset($alert) && $alert != "")
+					echo "<script>alert('$alert');</script>";
 				header('location:?act=tt');
 			}
 			break;
 		case 'delete_tt':
-			if (isset($_GET['id'])&&$_GET['id']!='') {
+			if (isset($_GET['id']) && $_GET['id'] != '') {
 				$id = $_GET['id'];
 				$tt = new tt;
-				$ttID=$tt->delete_TT($id);
+				$ttID = $tt->delete_TT($id);
 				header('location:?act=tt');
 			}
 			break;
 
 		case 'bai_viet_tt':
-			if (isset($_GET['id'])&&$_GET['id']!='') {
+			if (isset($_GET['id']) && $_GET['id'] != '') {
 				$id = $_GET['id'];
 				$tt = new tt;
-				$data=$tt->getTTID($id);
+				$data = $tt->getTTID($id);
 				include('tt/bv_tt.php');
 			}
 			break;
 
 		case 'dv_act':
 			$dvUser = new dvUser;
-            $dvUserList=$dvUser->getAllDVUser();
-				include('dv_ldv/dv_act/dv_act.php');
+			$dvUserList = $dvUser->getAllDVUser();
+			include('dv_ldv/dv_act/dv_act.php');
 			break;
 
 		case 'ct_dv_act':
-			if (isset($_GET['id'])&&$_GET['id']!='') {
-			$id_dv = $_GET['id'];
-			$dvUser = new dvUser;
-			$list=$dvUser->getDVUserID($id_dv);
-	include('dv_ldv/dv_act/ct_dv_act.php');
-		}
+			if (isset($_GET['id']) && $_GET['id'] != '') {
+				$id_dv = $_GET['id'];
+				$dvUser = new dvUser;
+				$list = $dvUser->getDVUserID($id_dv);
+				include('dv_ldv/dv_act/ct_dv_act.php');
+			}
 			break;
 		case 'delete_dv_act':
-			if (isset($_GET['id'])&&$_GET['id']!='') {
-			$id_dv_act = $_GET['id'];
-			$dvUser = new dvUser;
-			$list=$dvUser->delete_DVUser($id_dv_act);
-			header('location:?act=dv_act');
-		}
+			if (isset($_GET['id']) && $_GET['id'] != '') {
+				$id_dv_act = $_GET['id'];
+				$dvUser = new dvUser;
+				$list = $dvUser->delete_DVUser($id_dv_act);
+				header('location:?act=dv_act');
+			}
 			break;
 		case 'edit_act':
-			if (isset($_GET['id'])&&$_GET['id']!='') {
+			if (isset($_GET['id']) && $_GET['id'] != '') {
 				$id = $_GET['id'];
 				$dvUser = new dvUser;
-				$trang_thai=$dvUser->gettrang_thai($id);
+				$trang_thai = $dvUser->gettrang_thai($id);
 				include('dv_ldv/dv_act/change_dv_act.php');
 			}
 			break;
 		case 'update_dv_user':
-			if (isset($_POST['save'])&&$_POST['save']) {
+			if (isset($_POST['save']) && $_POST['save']) {
 				// lỗ hổng bảo mật
 				extract($_POST);
 				$dvUser = new dvUser;
-				$dvUser->updateDVUser($trang_thai,$id_dv_user);
+				$dvUser->updateDVUser($trang_thai, $id_dv_user);
 				header('location:?act=dv_act');
 			}
 			break;
 		case 'search':
-			if (isset($_POST['get'])&&$_POST['get']) {
+			if (isset($_POST['get']) && $_POST['get']) {
+				$search_term = $_POST['value']; // Lấy từ khóa tìm kiếm từ input
+				$dir_path = '../uploads'; // Đường dẫn đến thư mục chứa ảnh
+				$files = glob('../uploads*' . '/*' . $search_term. '*.{jpg,png,gif}', GLOB_BRACE); // Tìm tất cả các file có tên chứa từ khóa được nhập từ input
 				$results = new home;
-				$results1= $results-> search_user($_POST['value']);
-				$results2= $results-> search_tt($_POST['value']);
-				$results3= $results-> search_loai($_POST['value']);
-				$results4= $results-> search_dv($_POST['value']);
-			include('view/layoutfind.php');
+				$results1 = $results->search_user($_POST['value']);
+				$results2 = $results->search_tt($_POST['value']);
+				$results3 = $results->search_loai($_POST['value']);
+				$results4 = $results->search_dv($_POST['value']);
+				include('view/layoutfind.php');
 			}
 			break;
 		case 'ff':
@@ -449,19 +446,19 @@ if (isset($_GET['act']) && $_GET['act']) {
 			include('view/file_folder.php');
 			break;
 		case 'delete_file':
-			if(isset($_GET['value'])&&$_GET['value']!=''&&isset($_GET['dir'])&&$_GET['dir']!=''){
-				$dir=$_GET['dir'];
-				$value="/".$_GET['value'];
-				$hr=$_GET['hr'];
-$file_path = $dir . $value;
+			if (isset($_GET['value']) && $_GET['value'] != '' && isset($_GET['dir']) && $_GET['dir'] != '') {
+				$dir = $_GET['dir'];
+				$value = "/" . $_GET['value'];
+				$hr = $_GET['hr'];
+				$file_path = $dir . $value;
 
-if (file_exists($file_path)) {
-    unlink($file_path);
-    $alert= "<script>alert('Đã xóa file $value thành công từ thư mục $dir');</script>";
-} else {
-    $alert="<script>alert('File $value không tồn tại trong thư mục $dir');</script>";
-}
-			header('location:?act='.$hr.'&alert='.$alert.'');
+				if (file_exists($file_path)) {
+					unlink($file_path);
+					$alert = "<script>alert('Đã xóa file $value thành công từ thư mục $dir');</script>";
+				} else {
+					$alert = "<script>alert('File $value không tồn tại trong thư mục $dir');</script>";
+				}
+				header('location:?act=' . $hr . '&alert=' . $alert . '');
 			}
 			break;
 
