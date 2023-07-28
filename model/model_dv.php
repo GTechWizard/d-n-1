@@ -76,4 +76,10 @@ public function getDVID($id_dv)
     $result = $this->db->select($query);
     return $result;
   }
+  public function loat_sanpham($iddm)
+{
+    $query= "select * from dv where id_pk_loai=".$iddm;
+    $result = $this->db->select($query);
+    return $result;
+}
 }

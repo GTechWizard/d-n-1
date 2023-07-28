@@ -39,9 +39,14 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             break;
         case'dmsp':
             if (isset($_GET['iddm']) && is_numeric($_GET['iddm']) && $_GET['iddm'] > 0) {
-                $id_loai = $_GET['iddm'];
-                $getid = new loai;
-                $getiddm = $getid->getLoaiID($id_loai);
+                $iddm = $_GET['iddm'];
+                $getdm= new dv;
+                $getall = new dv;
+                $getname = new loai;
+                $getnameid = $getname ->getiddm($iddm);
+                $getallsp = $getall->getAllDV();
+                $getloai = $getdm->loat_sanpham($iddm);
+                
 
 
                 include "view/view-control/chitiet.php";
