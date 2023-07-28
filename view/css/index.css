@@ -102,7 +102,7 @@ nav .search_box input {
   height: 100%;
   padding: 2%;
   font-size: 16px;
-  width: 350px;
+  width: 405px;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 10px;
   z-index: 99;
@@ -3487,7 +3487,7 @@ nav .search_box input {
   height: 100%;
   padding: 2%;
   font-size: 16px;
-  width: 350px;
+  width: 405px;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 10px;
   z-index: 99;
@@ -7207,4 +7207,42 @@ input[type=number]::-webkit-inner-spin-button {
 
 .query.active {
   display: block;
+}
+.search-product
+{
+  background-color: white;
+  border: 2px solid red;
+  box-shadow: 0px 0px 2px 2px red;
+  display: flex;
+}
+.search-img
+{
+  width: 35%;
+  height: 100%;
+}
+.search-img img
+{
+ width: 100%;
+ height: 100%;
+ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.search-product a 
+{
+  width: 70%;
+}
+.mb10
+{
+  margin-bottom: 10px;
+}
+.search-price
+{
+  margin-bottom: 5px;
+}
+.mt20
+{
+  margin-top: 3px;
+}
+.search-h2 h2
+{
+  font-size: 20px;
 }
