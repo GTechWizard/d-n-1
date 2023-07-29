@@ -82,4 +82,10 @@ public function getDVID($id_dv)
     $result = $this->db->select($query);
     return $result;
 }
+public function  searchsp($search)
+{
+  $query= "SELECT * FROM dv WHERE name LIKE '%$search%' LIMIT 10";
+    $result = $this->db->select($query);
+    return $result;
+}
 }

@@ -22,8 +22,6 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
 
 
 
-
-
         case 'chitiettour':
             if (isset($_GET['idsp']) && is_numeric($_GET['idsp']) && $_GET['idsp'] > 0) {
                 $id_dv = $_GET['idsp'];
@@ -55,35 +53,6 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 include "view/home.php";
             }
             break;
-            
-
-
-
-
-
-
-
-
-
-            // huy
-
-
-
-
-
-
-
-
-
-
-
-            // quân
-
-
-
-
-
-
 
         default:
             include "view/home.php";
