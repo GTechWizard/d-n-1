@@ -37,7 +37,7 @@ public function getDVID($id_dv)
   }
   public function update_DV($name, $noi_bd, $diem_den, $price_old, $price_young, $day_start, $day_end, $id_pk_loai, $tong_ng, $img_dv, $bv, $id_dv)
   {
-    if ($img_dv = '') {
+    if ($img_dv == '') {
       $query = "UPDATE dv JOIN price_tour ON dv.id_dv = price_tour.id_pk_dv SET dv.name='$name',dv.noi_bd='$noi_bd',dv.diem_den='$diem_den',price_tour.price_old='$price_old',price_tour.price_young='$price_young',price_tour.day_start='$day_start',price_tour.day_end='$day_end',dv.id_pk_loai='$id_pk_loai',dv.tong_ng='$tong_ng',dv.bai_viet='$bv' WHERE `id_dv` = '$id_dv';";
       $this->db->update($query);
     } else {
