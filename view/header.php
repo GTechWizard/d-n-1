@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <!-- boostrap -->
-  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- icon-font -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
@@ -26,6 +26,11 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
     />
+  
+   
+
+
+
     <link rel="stylesheet" href="./view/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="./view/css/index.css">
   <style>
@@ -64,10 +69,9 @@ nav ul li a {
     <div class="icon">
       <a href="#"><img src="img/logononfont.png" alt=""></a>
     </div>
-    <div class="search_box">
-      <input type="search" placeholder="search_box" />
-      <span class="fa fa-search"></span>
-    </div>
+    <?php
+      include "./view/view-control/search.php";
+    ?>
     <ul>
       <li><a href="" class="card">Chúng tôi</a></li>
       <li><a href="#" class="card">Du Lịch</a></li>

@@ -29,6 +29,12 @@ class home{
    $result4= $this->db->select($query4);
    return $result4;
   }
+  public function search($name){
+
+    $query5 ="SELECT * FROM `dv` WHERE name LIKE '%$name%' order by id DESC LIMIT 5";
+    $result5= $this->db->select($query5);
+   return $result5;
+  }
 
 }
 
