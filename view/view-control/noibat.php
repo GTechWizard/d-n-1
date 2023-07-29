@@ -44,10 +44,6 @@
                 <div class="card-bottom-h1">
                   <span class="h3-mb"><?=$result['name']?></span>
                 </div>
-                <div class="card-bottom-h3">
-                  <span>Đảo Cát Bà là một địa điểm du lịch phổ biến với vẻ đẹp hoang sơ của thiên nhiên, phong cảnh rừng
-                    núi và biển cả hùng vĩ.</span>
-                </div>
                 <div class="card-bottom-main">
                   <div class="card-bottom-span-container">
                   </div>
