@@ -44,9 +44,6 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $getnameid = $getname ->getiddm($iddm);
                 $getallsp = $getall->getAllDV();
                 $getloai = $getdm->loat_sanpham($iddm);
-                
-
-
                 include "view/view-control/chitiet.php";
             } else {
 
@@ -54,9 +51,19 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             }
             break;
 
-        default:
-            include "view/home.php";
+            case'dattour':
+                if(isset($_GET['dattuor']) && ($_GET['dattuor'])){
+                    $name=$_GET['name'];
+                    $diemden=$_GET['diemden'];
+                    $diemdi=$_GET['diemdi'];
+                    $diembatdau=$_GET['diembatdau'];
+                    $diemketthuc=$_GET['diemketthuc'];
+                    
+                }
+                break;
 
+
+            // cttt
         case 'ct_tt':
             if (isset($_GET['id']) && ($_GET['id'] != '')) {
                 $id = $_GET['id'];
@@ -65,6 +72,11 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             }
             include "view/chitiettt.php";
             break;
+            
+
+        default:
+        include "view/home.php";
+
     }
 } else {
     include "view/home.php";
