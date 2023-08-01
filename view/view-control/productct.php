@@ -41,7 +41,7 @@ $result = $getiddv->fetch_assoc();
                 <br>
             </div>
             <form class="form-product">
-                <a href="cart.html" class="addCart" style="text-decoration: none; text-transform: uppercase; font-weight: bold;">đặt tour</a>
+                <a href="cart.html?act=" class="addCart" style="text-decoration: none; text-transform: uppercase; font-weight: bold;">đặt tour</a>
                 <a href="cart.html" class="addCart" style="text-decoration: none; text-transform: uppercase; font-weight: bold;">yêu thích</a>
             </form>
         </div>
