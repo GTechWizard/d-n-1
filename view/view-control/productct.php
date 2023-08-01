@@ -28,8 +28,9 @@
                     <br>
                 </div>
                 <form class="form-product">
-                    <a href="cart.html" class="addCart"
-                        style="text-decoration: none; text-transform: uppercase; font-weight: bold;">đặt tour</a>
+                    <a href="?act=dattour&name=<?=$result['name']?>&nkt=<?=$result['day_end']?>&nbd=<?=$result['day_start']?>&diemden=<?=$result['diem_den']?>&diemdi=<?=$result['noi_bd']?>" class="addCart" style="text-decoration: none; text-transform: uppercase; font-weight: bold;">
+                    đặt tour</a>
+
                         <a href="cart.html" class="addCart"
                         style="text-decoration: none; text-transform: uppercase; font-weight: bold;">yêu thích</a>
                 </form>
