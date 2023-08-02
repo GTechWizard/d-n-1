@@ -79,9 +79,10 @@ nav ul li a {
       <?php 
         function log_or_user() {
           if (isset($_SESSION['user']) && $_SESSION['user']) {
-            echo 'http://localhost/dn1/?act=user';
+            // http://localhost/dn1/index.php lỗi tạo 1 trang hoàn toàn mới
+            echo '?act=user';
           }else{
-            echo 'http://localhost/dn1/?act=dn';
+            echo '?act=dn';
           }
         }
       ?>
