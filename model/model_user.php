@@ -1,4 +1,5 @@
 <?php 
+// model_sign_log bỏ đi
 require_once('database.php');
 require_once('format.php');
 
@@ -9,10 +10,21 @@ class user{
     $this->db =new Database;
     $this->fm =new Format;
   }
-  public function getAllUser(){
-    $query ="SELECT * FROM user ";
+  public function getAllUser($query){
     $result =$this->db->select($query);
-      return $result;
+    return $result;
+  }
+  // $query ="SELECT * FROM user ";
+    
+  //it me hishiyamma
+  public function get_one_User($id){
+    $query ="SELECT * FROM user WHERE id_user = '$id'";
+    $result =$this->db->select($query);
+    return $result;
+  }
+  public function set_one_User($sql){
+    $query = $sql;
+    $result =$this->db->select($query);
   }
   public function count_user(){
     $query ="SELECT COUNT(`user`.`id_user`) AS `count_user` FROM `user`";
@@ -32,31 +44,39 @@ class user{
     $query ="UPDATE `user` SET `name` = '$name', `sdt`='$sdt',`vai_tro`='$vai_tro',`dia_chi`='$dia_chi',`email`='$email' WHERE `id_user` = '$id';";
     $this->db->update($query);
   }
-//   public function show_category(){
-//     $query ="SELECT * FROM tbl_category order by cateID desc";
-//     $result =$this->db->select($query);
-//       return $result;
-//   }
-//   public function insert_category($cateName){
-//     $cateName=$this->fm->validation($cateName);
-//     $cateName =mysqli_real_escape_string($this->db->link, $cateName);
-//     // kết nối cơ sở dữ liệu (cơ sở dữ liệu, dữ liệu)
-//     if(empty($cateName)){
-//       $alert="empty";
-//       return $alert;
-//     }else{
-//       $query ="INSERT INTO tbl_category(cateName) VALUE ('$cateName')";
-//       $result =$this->db->insert($query);
-//       if($result){
-//         $aleart="Successfully";
-//         return $aleart;
-//       }else{
-//         $aleart=" Not Success";
-//         return $aleart;
-//       }
-//     }
-//   }
+  // ai viết sao ko cho thực thi
+  public function update_img($id, $new_img){
+    $sql ="UPDATE `user` SET `img`='$new_img' WHERE 'id_user'= '$id'";
+  }
+   // ai viết sao ko cho thực thi
+  public function update_pass($id, $new_pass){
+    $sql ="UPDATE `user` SET `pass`='$new_pass' WHERE 'id_user'= '$id'";
+  }
+
+  public function list_service_user($id){
+    $sql ="SELECT * FROM `dv_user` WHERE 'id_user'= '$id'";
+    // thực thi
+    $result =$this->db->select($sql);
+    return $result;
+  }
+  public function service_user($id){
+    $sql ="SELECT * FROM `dv` WHERE 'id_dv'= '$id'";
+    $result =$this->db->select($sql);
+    return $result;
+  }
+  public function get_user_email($email){
+    // = sai bằng là so sánh cả kiều và các dạng ký tự
+    $sql ="SELECT * FROM `user` WHERE `user`.`email` LIKE '$email'";
+    $result =$this->db->select($sql);
+    return $result;
+  }
+  public function sign_up($name, $img, $email, $pass, $locate, $num){
+    $sql ="INSERT INTO user (user.id_user,user.name,user.pass,user.sdt,user.dia_chi,user.email,user.img,user.vai_tro) VALUES (NULL,'$name','$pass','$num','$locate','$email','$img','')";
+    $this->db->insert($sql);
+  }
+
 }
+?>
 
 
 

@@ -58,15 +58,35 @@ nav ul li a {
   border-radius: 10px;
   background-color: white;
 }
-
+.grid_two{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.w-50{
+  max-width: 50%;
+}
+.w-200{
+  max-width: 200%;
+}
+.w-100{
+  width: 100%;
+}
+.center{
+  display: grid;
+  place-items: center;;
+}
+.hidden{
+  overflow: hidden;
+  
+}
   </style>
 </head>
 
 <body>
   <input type="checkbox" id="check">
-  <nav>
+     <nav>
 
-    <div class="icon">
+  <div class="icon">
       <a href="#"><img src="img/logononfont.png" alt=""></a>
     </div>
     <?php
@@ -79,8 +99,14 @@ nav ul li a {
       <li><a href="#" class="card">Hỗ Trợ</a></li>
     </ul>
     <div class="navbar">
-      <a href="php/login.php" class="btn-icon fas fa-arrow-right-to-bracket"></a>
-      <!-- <div id="user-btn" class="far fa-user"></div> -->
+      <?php 
+          if (isset($_SESSION['id']) && $_SESSION['id']) {
+            // http://localhost/dn1/index.php lỗi tạo 1 trang hoàn toàn mới
+            echo '<a id="user-btn" class="far fa-user" href="?act=user"></a>';
+          }else{
+            echo '<a href="?act=dn" class="btn-icon fas fa-arrow-right-to-bracket"></a>';
+          }
+      ?>
 
     </div>
     <label for="check" class="bar">
