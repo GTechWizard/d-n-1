@@ -59,9 +59,9 @@ nav ul li a {
 
 <body>
   <input type="checkbox" id="check">
-  <nav>
+     <nav>
 
-    <div class="icon">
+  <div class="icon">
       <a href="#"><img src="img/logononfont.png" alt=""></a>
     </div>
     <div class="search_box">
@@ -75,7 +75,16 @@ nav ul li a {
       <li><a href="#" class="card">Hỗ Trợ</a></li>
     </ul>
     <div class="navbar">
-      <a href="php/login.php" class="btn-icon fas fa-arrow-right-to-bracket"></a>
+      <a href="<?php echo log_or_user();?>" class="btn-icon fas fa-arrow-right-to-bracket"></a>
+      <?php 
+        function log_or_user() {
+          if (isset($_SESSION['user']) && $_SESSION['user']) {
+            echo 'http://localhost/dn1/?act=user';
+          }else{
+            echo 'http://localhost/dn1/?act=dn';
+          }
+        }
+      ?>
       <!-- <div id="user-btn" class="far fa-user"></div> -->
 
     </div>

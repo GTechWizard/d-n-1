@@ -6,6 +6,10 @@ public $host = DB_HOST;
 public $user = DB_USER;
 public $pass = DB_PASS;
 public $dbname = DB_NAME;
+// public $host = "localhost";
+// public $user = "root";
+// public $pass = "";
+// public $dbname = "dcr_dv";
 
 public $link; // kết nối tới csdl
 public $error;// kết nối ko thành công
