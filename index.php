@@ -62,6 +62,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $price_young=$_GET['price_young'];
                 $diem_den=$_GET['diem_den'];
                 $noi_bd=$_GET['noi_bd'];
+                include('view/card.php');
             }
             break;
             
