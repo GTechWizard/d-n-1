@@ -6422,7 +6422,6 @@ form span {
 }
 .form_container {
   max-width: 320px;
-  width: 100%;
   margin-top: 2%;
   background: #fff;
   padding: 25px;
@@ -7060,7 +7059,7 @@ form input:focus {
   }
 }
 
-.dvs .dv ul[class='uldvtd'] {
+.dvs .dv ul[class='uldvtd']{
   width: 100%;
   list-style: none;
   display: grid;
@@ -7070,12 +7069,12 @@ form input:focus {
   text-align: center;
 }
 
-.dvs .dv ul[class='uldvtd']:nth-child(even) {
+.dvs .dv ul[class='uldvtd']:nth-child(even){
   background-color: #f0f0f0;
   font-size: 10px;
 }
 
-.dvs .dv ul[class='uldvtd']:nth-child(odd) {
+.dvs .dv ul[class='uldvtd']:nth-child(odd){
   background-color: #ffffff;
 }
 
@@ -7084,7 +7083,7 @@ form input:focus {
   color: black;
 }
 
-.dvs .dv ul[class='uldvtd'] li img {
+.dvs .dv ul[class='uldvtd'] li img{
   width: 80%;
   border-radius: 10px;
 }
