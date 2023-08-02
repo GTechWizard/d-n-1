@@ -5,7 +5,7 @@
         <main class="left-bar-user-page">
             <div>
                 <ul>
-                    <li class="">
+                    <li>
                         <a>Tài Khoản</a>
                         <ul>
                             <li><a data-target="account-user-page" class="query_btn">hồ sơ của tôi</a></li>
@@ -33,74 +33,34 @@
                             <div class="form_ck">
                                 <!-- in ra bản thông tin -->
                                 <?php 
-                                    if(isset($_SESSION['user']) && $_SESSION['user']){
-                                            $user = $_SESSION['user'];
+                                    if(isset($_SESSION['id']) && $_SESSION['id']){
                                           echo '<label for="">
                                                     <p>Tên đăng nhập</p>
-                                                    <em>'.$user['name'].'</em>
+                                                    <em>'.$_SESSION['name'].'</em>
                                                 </label>
                                                 <label for="">
                                                     <p>Email</p>
-                                                    <em>'.$user['email'].'</em>
+                                                    <em>'.$_SESSION['email'].'</em>
                                                 </label>
                                                 <label for="">
                                                     <p>Số điện thoại</p>
-                                                    <em>'.$user['sdt'].'</em>
+                                                    <em>'.$_SESSION['sdt'].'</em>
                                                 </label>
                                                 <label for="">
                                                     <p>Địa chỉ</p>
-                                                    <em>'.$user['dia_chi'].'</em>
+                                                    <em>'.$_SESSION['dia_chi'].'</em>
                                                 </label>';
-                                    }else{
-                                        echo'<label for="">
-                                                <p>Tên đăng nhập</p>
-                                                <em>trung minh</em>
-                                            </label>
-                                            <label for="">
-                                                <p>Email</p>
-                                                <em>123*******com</em>
-                                            </label>
-                                            <label for="">
-                                                <p>Số điện thoại</p>
-                                                <em>0123****90</em>
-                                            </label>
-                                            <label for="">
-                                                <p>Địa chỉ</p>
-                                                <em>quang trung, tp hcm</em>
-                                            </label>';
                                     }
                                 ?>
                             </div>
                             <div class="img_ur">
-                                <img src="
-                                <?php
-
-                                // img user 
-                                if(isset($_SESSION['user']) && $_SESSION['user']){
-                                    $user = $_SESSION['user'];
-                                    echo $user['img'];
-                                }else{
-                                    echo'./img/user.png"';
-                                }
-                                ?>
-                                " alt="ảnh đại diện" />
-
+                                <img src="../<?=$_SESSION['img']?>" alt="ảnh đại diện" />
+                                <?php echo $_SESSION['img'];?>
                                 <input type="file" id="iput_file" name="user_img"/>
                             </div>
                         </div>
                         <input type="submit" value="Lưu" name="save_img"/>
                         <!-- lưu ảnh mới -->
-                        <?php
-                        if(isset($_POST['save_img']) && $_POST['save_img']){
-                            $new_img = $_POST['save_img'];
-                            $conn = new user;
-                            $id = $_SESSION['user']['id'];
-
-                            $conn->update_img($id, $new_img);
-
-                            $_SESSION['user']['img'] = $new_img;
-                        }
-                        ?>
                     </form>
                 </div>
             </div>

@@ -1,5 +1,6 @@
 <?php
 session_start();
+ob_start();
 include "view/header.php";
 include "model/model_tt.php";
 include "model/model_user.php";
@@ -38,10 +39,12 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                             $_SESSION['pass'] = $result['pass'];
                             $_SESSION['dia_chi'] = $result['dia_chi'];
                             $_SESSION['email'] = $result['email'];
+                            $_SESSION['sdt'] = $result['sdt'];
+                            $_SESSION['img'] = $result['img'];
                             $_SESSION['vai_tro'] = $result['vai_tro'];
                             header('location:?act=home');
                         } else {
-                              header('location:?act=dn');
+                            header('location:?act=dn');
                             echo "<script>
                                 alert('Email hoặc mật khẩu không đúng');
                               </script>";
@@ -51,57 +54,62 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 }
             }
             break;
-            // đăng xuất
-            case 'logout':
-                unset ($_SESSION["id"], $_SESSION['id'],$_SESSION['name'],$_SESSION['pass'],$_SESSION['dia_chi'],$_SESSION['email'],$_SESSION['vai_tro']);
-                header('location:?act=home');
-                break;
+        // đăng xuất
+        case 'logout':
+            unset($_SESSION["id"], $_SESSION['id'], $_SESSION['name'], $_SESSION['pass'], $_SESSION['dia_chi'], $_SESSION['email'], $_SESSION['vai_tro'], $_SESSION['sdt'], $_SESSION['img']);
+            header('location:?act=home');
+            break;
 
-            case 'signup':
-                if(isset($_POST['sign']) && $_POST['sign']){
-                    $name = $_POST['user_sign'];
-                    $email = $_POST['emal_sign'];
-                    $pass = $_POST['pass_sign'];
-                    $re_pass = $_POST['re_pass_sign'];
-                    $locate = $_POST['locate_sign'];
-                    $num = $_POST['num_phone_sign'];
+        case 'signup':
+            if (isset($_POST['sign']) && $_POST['sign']) {
+                $name = $_POST['user_sign'];
+                $email = $_POST['email_sign'];
+                $pass = $_POST['pass_sign'];
+                $re_pass = $_POST['re_pass_sign'];
+                $locate = $_POST['locate_sign'];
+                $num = $_POST['num_phone_sign'];
+                $user = new user;
 
-                    $logsign= new user;
-                    $sign = $logsign->sign_up($name,$email, $pass, $locate,$num);
-                      if(isset($log) && $log == false){
-                        if($pass != $re_pass){
-                          echo "<script>
-                                  alert('Mật Khẩu xác nhận không trung khớp');
-                                </script>";
-                        }else{
-                          $sql ="INSERT INTO `user`( `name`, `pass`, `sdt`, `dia_chi`, `email`, `img`, `vai_tro`) VALUES ('$name','$pass','$num','$locate','$email','./img/user.png','0'";
-                          $logsign->set_one_User($sql);
-                        }
-                      }else{
-                        echo "<script>
-                                alert('ko lấy đc db');
-                              </script>";
-                      }
-                  }else{               
-                    echo "<script>
-                          alert('ko có post sign');
-                      </script>";
-                  }
-                  // print_r("<script>
-                    //     alert(''.$log.'');
-                    //   </script>") ;
-                    // }
-                break;
+                $target_dir = "uploads/";
+                $target_file = $target_dir . date('HisadmY') . basename($_FILES["img"]["name"]);
+                $uploadOk = 1;
+                $ok = 1;
+                $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+                // Kiểm tra xem tệp có phải là ảnh hay không
+                $check = getimagesize($_FILES["img"]["tmp_name"]);
+                if ($check !== false) {
+                    $uploadOk = 1;
+                } else {
+                    $alert = "Không phải file ảnh, vui lòng chọn lại";
+                    $uploadOk = 0;
+                }
+                if ($pass != $re_pass) $ok=0;
+
+                // Kiểm tra xem có xảy ra lỗi khi tải lên tệp hay không
+                if ($uploadOk == 0) {
+                    $alert = "Đăng ảnh không thành công";
+                }elseif($ok==0){
+                    $alert = "Mật Khẩu xác nhận không trùng khớp";
+                }else {
+                    move_uploaded_file($_FILES["imig"]["tmp_name"], $target_file);
+                    $user->sign_up($name, $target_file, $email, $pass, $locate, $num);
+                    $alert = "Đăng ký thành công";
+                }
+                echo "<script>alert('$alert');</script>";
+                include('location:?act=dn');
+            }
+            break;
+
         case 'user':
             include "view/user-kh.php";
             break;
 
-            // thiếu là sai
-            default: 
-            include "view/home.php"; 
-            if(isset($_SESSION['id'])&&$_SESSION['id']!='')
+        // thiếu là sai
+        default:
+            include "view/home.php";
+            if (isset($_SESSION['id']) && $_SESSION['id'] != '')
                 echo "<script>
-                            alert('chào mừng " . $_SESSION['name']."');
+                            alert('chào mừng " . $_SESSION['name'] . "');
                             </script>";
             break;
     }

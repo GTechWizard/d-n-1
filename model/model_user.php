@@ -70,6 +70,10 @@ class user{
     $result =$this->db->select($sql);
     return $result;
   }
+  public function sign_up($name, $img, $email, $pass, $locate, $num){
+    $sql ="INSERT INTO user (user.id_user,user.name,user.pass,user.sdt,user.dia_chi,user.email,user.img,user.vai_tro) VALUES (NULL,'$name','$pass','$num','$locate','$email','$img','')";
+    $this->db->insert($sql);
+  }
 
 }
 ?>

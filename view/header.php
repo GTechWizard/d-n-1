@@ -57,15 +57,22 @@ nav ul li a {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-.w-300{
+.w-50{
   max-width: 50%;
 }
+.w-200{
+  max-width: 200%;
+}
 .w-100{
-  width: 150%;
+  width: 100%;
 }
 .center{
   display: grid;
   place-items: center;;
+}
+.hidden{
+  overflow: hidden;
+  
 }
   </style>
 </head>
