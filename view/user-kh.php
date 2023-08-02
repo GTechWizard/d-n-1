@@ -18,8 +18,8 @@
                     <li data-target="dvl" class="query_btn">Dịch vụ Đã Thích</li>
                     <li data-target="dvs" class="query_btn">Dịch vụ Của Bạn</li>
                     <li><a href="../admin/index.html">Đăng Nhập Admin</a></li>
+                    <li><a href="?act=logout" onclick="return confirm('Bạn Muốn Đăng Xuất')">Đăng Xuất</a></li>
                 </ul>
-                <a href=""><img src="../img/logout.png" alt="log out" title="log out" /></a>
             </div>
         </main>
         <div class="user-control-trang-user">

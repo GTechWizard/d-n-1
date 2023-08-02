@@ -53,7 +53,20 @@ nav ul li a {
   border-radius: 10px;
   background-color: white;
 }
-
+.grid_two{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.w-300{
+  max-width: 50%;
+}
+.w-100{
+  width: 150%;
+}
+.center{
+  display: grid;
+  place-items: center;;
+}
   </style>
 </head>
 
@@ -75,18 +88,14 @@ nav ul li a {
       <li><a href="#" class="card">Hỗ Trợ</a></li>
     </ul>
     <div class="navbar">
-      <a href="<?php echo log_or_user();?>" class="btn-icon fas fa-arrow-right-to-bracket"></a>
       <?php 
-        function log_or_user() {
-          if (isset($_SESSION['user']) && $_SESSION['user']) {
+          if (isset($_SESSION['id']) && $_SESSION['id']) {
             // http://localhost/dn1/index.php lỗi tạo 1 trang hoàn toàn mới
-            echo '?act=user';
+            echo '<a id="user-btn" class="far fa-user" href="?act=user"></a>';
           }else{
-            echo '?act=dn';
+            echo '<a href="?act=dn" class="btn-icon fas fa-arrow-right-to-bracket"></a>';
           }
-        }
       ?>
-      <!-- <div id="user-btn" class="far fa-user"></div> -->
 
     </div>
     <label for="check" class="bar">

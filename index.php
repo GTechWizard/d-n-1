@@ -51,6 +51,12 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 }
             }
             break;
+            // đăng xuất
+            case 'logout':
+                unset ($_SESSION["id"], $_SESSION['id'],$_SESSION['name'],$_SESSION['pass'],$_SESSION['dia_chi'],$_SESSION['email'],$_SESSION['vai_tro']);
+                header('location:?act=home');
+                break;
+
             case 'signup':
                 if(isset($_POST['sign']) && $_POST['sign']){
                     $name = $_POST['user_sign'];
@@ -59,10 +65,9 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                     $re_pass = $_POST['re_pass_sign'];
                     $locate = $_POST['locate_sign'];
                     $num = $_POST['num_phone_sign'];
-    
-    
-                    $logsign= new log_sign;
-                    $sign = $logsign->sign_log($email);
+
+                    $logsign= new user;
+                    $sign = $logsign->sign_up($name,$email, $pass, $locate,$num);
                       if(isset($log) && $log == false){
                         if($pass != $re_pass){
                           echo "<script>
@@ -77,7 +82,6 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                                 alert('ko lấy đc db');
                               </script>";
                       }
-    
                   }else{               
                     echo "<script>
                           alert('ko có post sign');

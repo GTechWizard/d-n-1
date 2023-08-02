@@ -1,5 +1,5 @@
 <section class="home mb40">
-      <div class="form_container">
+      <div class="form_container w-300">
         <!-- Login From -->
         <div class="form login_form">
           <!-- ko cần index.php rồi ?act=... -->
@@ -31,23 +31,25 @@
         </div>
 
         <!-- Signup From -->
-        <div class="form signup_form">
-          <form action="?act=signup" method="post">
+        <div class="form signup_form w-100">
             <h2>Signup</h2>
+          <form action="?act=signup" method="post" class="grid_two w-300">
             <div class="input_box">
+              <input type="text" placeholder="full name" required name="user_sign"/>
               <i class="  uil-user"></i>
-              <input type="Full name" placeholder="full name" required name="user_sign"/>
             </div>
 
             <div class="input_box">
               <input type="email" placeholder="Enter your email" required name="email_sign"/>
               <i class="uil uil-envelope-alt email"></i>
             </div>
+
             <div class="input_box">
               <input type="password" placeholder="Create password" required name="pass_sign"/>
               <i class="uil uil-lock password"></i>
               <i class="uil uil-eye-slash pw_hide"></i>
             </div>
+
             <div class="input_box">
               <input type="password" placeholder="Confirm password" required name="re_pass_sign"/>
               <i class="uil uil-lock password"></i>
@@ -56,15 +58,22 @@
 
             <div class="input_box">
               <i class="uil-home"></i>
-              <input type="Địa chỉ" placeholder="Địa chỉ" required name="locate_sign"/>
+              <input type="text" placeholder="Địa chỉ" required name="locate_sign"/>
             </div>
+
             <div class="input_box">
               <i class="uil uil-phone"></i>
               <input type="phone" placeholder="Enter your phone" required name="num_phone_sign"/>
             </div>
-            <input class="button" type="submit" name="sign" value="Signup Now">
-              <input type="reset" value="reset">
+
+            <div class="input_box">
+              <input type="file" required name="img"/>
+            </div>
             <div class="login_signup">Already have an account? <a id="login">Login</a></div>
+            <div class="grid_two">
+            <input class="button" type="submit" name="sign" value="Signup Now">
+              <input type="reset" value="reset" class="button" >
+            </div>
           </form>
         </div>
       </div>
