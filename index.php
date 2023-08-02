@@ -1,6 +1,7 @@
 <?php
-<<<<<<< HEAD
-
+session_start();
+ob_start();
+include "view/header.php";
 require_once('model/model_user.php');
 require_once('model/model_home.php');
 require_once('model/model_dv_user.php');
@@ -9,27 +10,15 @@ require_once('model/model_dv.php');
 require_once('model/model_loai.php');
 require_once('model/model_bl.php');
 
-include "view/header.php";
 if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     switch ($act) {
-
-
-
-
-
-
             // bình
-
-
-
         case 'chitiettour':
             if (isset($_GET['idsp']) && is_numeric($_GET['idsp']) && $_GET['idsp'] > 0) {
                 $id_dv = $_GET['idsp'];
                 $getid = new dv;
                 $getiddv = $getid->getDVID($id_dv);
-
-
                 include "view/chitietproduct.php";
             } else {
 
@@ -54,26 +43,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 include "view/home.php";
             }
             break;
-
-        default:
-            include "view/home.php";
-
-        case 'ct_tt':
-            if (isset($_GET['id']) && ($_GET['id'] != '')) {
-                $id = $_GET['id'];
-                $tt = new tt;
-                $ttID = $tt->getTTID($id);
-            }
-            include "view/chitiettt.php";
-=======
-session_start();
-ob_start();
-include "view/header.php";
-include "model/model_tt.php";
-include "model/model_user.php";
-if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
-    $act = $_GET['act'];
-    switch ($act) {
+            
         case 'ct_tt':
             if (isset($_GET['id']) && ($_GET['id'] != '')) {
                 $id = $_GET['id'];
@@ -178,15 +148,9 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 echo "<script>
                             alert('chào mừng " . $_SESSION['name'] . "');
                             </script>";
->>>>>>> huy
             break;
     }
 } else {
     include "view/home.php";
 }
-
-<<<<<<< HEAD
 include "view/footer.php";
-=======
-include "view/footer.php";
->>>>>>> huy
