@@ -43,7 +43,6 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 include "view/home.php";
             }
             break;
-<<<<<<< HEAD
 
         case'dattuor':
             if (isset($_GET['dattuor']) && ($_GET['dattuor']) ) {
@@ -56,13 +55,6 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             }
             break;
             
-
-        default:
-            include "view/home.php";
-
-=======
-            
->>>>>>> main
         case 'ct_tt':
             if (isset($_GET['id']) && ($_GET['id'] != '')) {
                 $id = $_GET['id'];
