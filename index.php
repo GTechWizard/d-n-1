@@ -40,7 +40,6 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 include "view/home.php";
             }
             break;
-<<<<<<< HEAD
 
             case'dattour':
                 if(isset($_GET['dattuor']) && ($_GET['dattuor'])){
@@ -55,9 +54,6 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
 
 
             // cttt
-=======
-            
->>>>>>> main
         case 'ct_tt':
             if (isset($_GET['id']) && ($_GET['id'] != '')) {
                 $id = $_GET['id'];
@@ -66,13 +62,6 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             }
             include "view/chitiettt.php";
             break;
-<<<<<<< HEAD
-            
-
-        default:
-        include "view/home.php";
-
-=======
 
         // nhấn vào đăng nhập
         case 'dn':
@@ -170,7 +159,6 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                             alert('chào mừng " . $_SESSION['name'] . "');
                             </script>";
             break;
->>>>>>> main
     }
 } else {
     include "view/home.php";
