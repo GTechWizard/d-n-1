@@ -1,9 +1,12 @@
+<?php 
+echo '<script>alert("Đăng nhập không thành công");</script>';
+?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Lumino - Login</title>
+	<title>Login</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/datepicker3.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
@@ -14,16 +17,14 @@
 			<div class="login-panel panel panel-default">
 				<div class="panel-heading">Đăng nhập</div>
 				<div class="panel-body">
-					<form role="form">
-						<fieldset>
+					<form role="form" method="post" action="index.php?act=login" >
 							<div class="form-group">
-								<input class="form-control" placeholder="Name" name="Username" type="text" autofocus>
+								<input class="form-control" placeholder="email" name="email" type="email" autofocus>
 							</div>
 							<div class="form-group">
-								<input class="form-control" placeholder="Password" name="password" type="password" value="">
+								<input class="form-control" placeholder="Password" name="password" type="password">
 							</div>
 							<input type="submit" name="get" value="Gửi" class="btn btn-primary">
-						</fieldset>
 					</form>
 				</div>
 			</div>

@@ -1,4 +1,5 @@
 <?php
+session_start();
 ob_start();
 require_once('../model/model_user.php');
 require_once('../model/model_home.php');
@@ -13,6 +14,32 @@ require_once('view/menu.php');
 if (isset($_GET['act']) && $_GET['act']) {
 	$act = $_GET['act'];
 	switch ($act) {
+
+		case 'login':
+			if(isset($_POST['get']) && $_POST['get']){
+				$email=$_POST['email'];
+				echo $email, $password;
+				$user  = new user;
+				$userID = $user->get_user_email($email);
+				if(isset($userID)&&($userID)){
+					while($userOne = $userID->fetch_assoc()){
+					$_SESSION['id'] = $userOne['id_user'];
+					$_SESSION['name'] = $userOne['name'];
+					$_SESSION['pass'] = $userOne['pass'];
+					$_SESSION['dia_chi'] = $userOne['dia_chi'];
+					$_SESSION['email'] = $userOne['email'];
+					$_SESSION['sdt'] = $userOne['sdt'];
+					$_SESSION['img'] = $userOne['img'];
+					$_SESSION['vai_tro'] = $userOne['vai_tro'];
+					header('location:?act=home');
+					}
+				}else{
+					header('location:login.php');
+				}
+				
+			}
+			break;
+
 		case 'user':
 			include('user/user.php');
 			break;
@@ -464,7 +491,16 @@ if (isset($_GET['act']) && $_GET['act']) {
 
 		default:
 			require_once('view/home.php');
+			break;
 	}
 } else {
-	require_once('view/home.php');
+	if(isset($_SESSION['id']) && $_SESSION['id']!=''){
+		if($_SESSION['vai_tro'] == '1'){
+			require_once('view/home.php');
+		}else{
+			header('location:login.php');
+		}
+	}else{
+		header('location:login.php');
+	}
 }

@@ -3,10 +3,10 @@
 	<div class="profile-sidebar">
 		<div class="profile-userpic">
 			<!-- ảnh đại diện -->
-			<img src="../img/boat.jpg" class="img-responsive" alt="" />
+			<img src="../<?=$_SESSION['img']?>" class="img-responsive" alt="ảnh đại diện" />
 		</div>
 		<div class="profile-usertitle">
-			<div class="profile-usertitle-name">Username</div>
+			<div class="profile-usertitle-name"><?=$_SESSION['name']?></div>
 			<div class="profile-usertitle-status">
 				<span class="indicator label-success"></span>Online
 			</div>
