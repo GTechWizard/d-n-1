@@ -39,7 +39,7 @@
                 <div class="group">
                     <label for="country">Trẻ em</label>
                     <label for="quantity">Từ 1 Đến 18</label>
-                <input type="number" id="quantity" name="quantity" min="1" max="18">
+                <input type="number" id="quantity" name="quantity" min="1" max="5">
                 </div>
     
                 <div class="group">

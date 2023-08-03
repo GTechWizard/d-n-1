@@ -41,6 +41,7 @@
   	 	</div>
   	 </div>
   </footer>
+<script src="checkout.js"></script>
 <!-- cuộn thẻ header  -->
 <script src="./view/js/header.js"></script>
 <!-- slide -->
