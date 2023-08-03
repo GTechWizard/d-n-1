@@ -41,7 +41,7 @@ $result = $getiddv->fetch_assoc();
                 <br>
             </div>
             <form class="form-product">
-                <a href="?act=dattuor&name=<?=$result['name']?>&day_start=<?=$result['day_start']?>&day_end=<?=$result['day_end']?>&price_young=<?=$result['price_young']?>&price_old=<?=$result['price_old']?>&diem_den=<?=$result['diem_den'] ?>&noi_bd=<?=$result['noi_bd']?>" class="addCart" style="txext-decoration: none; text-transform: uppercase; font-weight: bold;">đặt tour</a>
+                <a href="?act=dattuor&id_dv=<?=$result['id_dv']?>&name=<?=$result['name']?>&day_start=<?=$result['day_start']?>&day_end=<?=$result['day_end']?>&price_young=<?=$result['price_young']?>&price_old=<?=$result['price_old']?>&diem_den=<?=$result['diem_den'] ?>&noi_bd=<?=$result['noi_bd']?>" class="addCart" style="txext-decoration: none; text-transform: uppercase; font-weight: bold;">đặt tour</a>
                 <a href="cart.html" class="addCart" style="text-decoration: none; text-transform: uppercase; font-weight: bold;">yêu thích</a>
             </form>
         </div>
