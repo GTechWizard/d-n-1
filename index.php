@@ -62,6 +62,16 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             include "view/view-control/formdk.php";
             break;
 
+            // bill
+            case 'bill':
+                if(isset($_POST['get'])&&($_POST['get'])){
+                    $current_date = date('Y-m-d');
+                    $id_pk_dv= $_POST['id_pk_dv'];
+
+                include "view/bill.php";
+                }
+                break;
+
         // thực thi đăng nhập
         case 'login':
             if (isset($_POST['log']) && $_POST['log']) {
