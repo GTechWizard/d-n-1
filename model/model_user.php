@@ -11,10 +11,11 @@ class user{
     $this->fm =new Format;
   }
   public function getAllUser($query){
+    $query ="SELECT * FROM user ";
     $result =$this->db->select($query);
     return $result;
   }
-  // $query ="SELECT * FROM user ";
+
     
   //it me hishiyamma
   public function get_one_User($id){
