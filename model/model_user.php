@@ -10,7 +10,7 @@ class user{
     $this->db =new Database;
     $this->fm =new Format;
   }
-  public function getAllUser($query){
+  public function getAllUser(){
     $query ="SELECT * FROM user ";
     $result =$this->db->select($query);
     return $result;
