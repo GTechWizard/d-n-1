@@ -163,9 +163,14 @@ justify-content: center;
       <li><a href="#" class="card">Hỗ Trợ</a></li>
     </ul>
     <div class="navbar">
-      <a href="php/login.php" class="btn-icon fas fa-arrow-right-to-bracket"></a>
-      <!-- <div id="user-btn" class="far fa-user"></div> -->
-
+    <?php 
+          if (isset($_SESSION['id']) && $_SESSION['id']) {
+            // http://localhost/dn1/index.php lỗi tạo 1 trang hoàn toàn mới
+            echo '<a id="user-btn" class="far fa-user" href="?act=user"></a>';
+          }else{
+            echo '<a href="?act=dn" class="btn-icon fas fa-arrow-right-to-bracket"></a>';
+          }
+      ?>
     </div>
     <label for="check" class="bar">
       <span class="fa fa-bars" id="bars"></span>
