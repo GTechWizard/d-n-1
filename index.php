@@ -45,15 +45,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             break;
 
         case'dattuor':
-            if (isset($_GET['dattuor']) && ($_GET['dattuor']) ) {
-                $name=$_GET['name'];    
-                $day_start=$_GET['day_start'];
-                $day_end=$_GET['day_end'];
-                $price_young=$_GET['price_young'];
-                $diem_den=$_GET['diem_den'];
-                $noi_bd=$_GET['noi_bd'];
-                include('view/card.php');
-            }
+                include 'view/card.php';
             break;
             
         case 'ct_tt':
