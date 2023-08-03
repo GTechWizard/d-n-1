@@ -54,8 +54,7 @@
                                 ?>
                             </div>
                             <div class="img_ur">
-                                <img src="../<?=$_SESSION['img']?>" alt="ảnh đại diện" />
-                                <?php echo $_SESSION['img'];?>
+                                <img src="<?=$_SESSION['img']?>" alt="ảnh đại diện" />
                                 <input type="file" id="iput_file" name="user_img"/>
                             </div>
                         </div>

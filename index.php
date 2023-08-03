@@ -123,6 +123,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             header('location:?act=home');
             break;
 
+            // đk
         case 'signup':
             if (isset($_POST['sign']) && $_POST['sign']) {
                 $name = $_POST['user_sign'];
@@ -154,12 +155,12 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 }elseif($ok==0){
                     $alert = "Mật Khẩu xác nhận không trùng khớp";
                 }else {
-                    move_uploaded_file($_FILES["imig"]["tmp_name"], $target_file);
+                    move_uploaded_file($_FILES["img"]["tmp_name"], $target_file);
                     $user->sign_up($name, $target_file, $email, $pass, $locate, $num);
                     $alert = "Đăng ký thành công";
                 }
+                header('location:?act=dn');
                 echo "<script>alert('$alert');</script>";
-                include('location:?act=dn');
             }
             break;
 
