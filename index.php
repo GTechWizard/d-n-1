@@ -19,6 +19,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $id_dv = $_GET['idsp'];
                 $getid = new dv;
                 $getiddv = $getid->getDVID($id_dv);
+                $getPriceDay = $getid->getContentPrice($id_dv);
                 include "view/chitietproduct.php";
             } else {
 
@@ -45,6 +46,8 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             break;
 
         case'dattuor':
+            $getid = new dv;
+                $getPriceDay = $getid->getContentPrice($_GET['id_dv']);
                 include 'view/card.php';
             break;
             
@@ -65,9 +68,18 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             // bill
             case 'bill':
                 if(isset($_POST['get'])&&($_POST['get'])){
-                    $current_date = date('Y-m-d');
+                    $ngay_dkdv = date('Y-m-d');
                     $id_pk_dv= $_POST['id_pk_dv'];
-
+                    $nameuser= $_POST['nameuser'];
+                    $diemden= $_POST['diemden'];
+                    $email= $_POST['email'];
+                    $sdt= $_POST['sdt'];
+                    $price_young= $_POST['price_young'];
+                    $price_old= $_POST['price_old'];
+                    $id_pk_user= $_SESSION['id'];
+                    $id_pk_price_tour= $_POST['id_pk_price_tour'];
+                    $dv_user= new dvUser;
+                    $dv_user-> insert_dv_user( $ngay_dkdv,$id_pk_dv,$nameuser,$email,$sdt,$price_young,$price_old,$id_pk_user,$id_pk_price_tour);
                 include "view/bill.php";
                 }
                 break;

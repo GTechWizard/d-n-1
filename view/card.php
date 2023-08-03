@@ -25,6 +25,18 @@
                     <label for="phone">Điểm đón</label>
                     <input type="text" name="diemden" id="phone" value="<?= $_GET['diem_den'] ?>">
                 </div>
+                <div class="group">
+                    <label for="phone">Ngày đi</label>
+                    <select name="id_pk_price_tour">
+                        <?php 
+                            if(isset($getPriceDay) && $getPriceDay!=''){
+                               while ($result= $getPriceDay->fetch_assoc()) {
+                                    echo '<option value="'.$result['id_price'].'">'.$result['day_start']." - ".$result['day_end'].'</option>';
+                               }
+                                }
+                        ?>
+                    </select>
+                </div>
 
                 <div class="group">
                     <label for="name">EMail</label>
@@ -51,7 +63,6 @@
                     <label for="city">Giá Người Lớn: <?= $_GET['price_old'] ?></label>
                     <input type="number" id="quantity" name="price_old" min="1" max="10" require>
                     <input type="hidden"name="price_old_origin"  value="<?= $_GET['price_old'] ?>">
-                    </select>
                 </div>
             </div>
             <div class="return">

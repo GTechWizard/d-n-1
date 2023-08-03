@@ -1,6 +1,6 @@
 <!-- Product Details -->
 <?php
-$result = $getiddv->fetch_assoc();
+$result = $getiddv->fetch_assoc()
 ?>
 <section class="section product-detail">
     <div class="div-mb-span" style="width: 72%; margin: auto; margin-bottom: 20px; text-transform: uppercase;">
@@ -23,18 +23,19 @@ $result = $getiddv->fetch_assoc();
                 <?= $result['name'] ?>
             </h1>
             <div class="price">
-                <?= $result['price_young'] ?>
-            </div> <span>VND</span>
+                <?= $result['price_young'] ?> <span>VND</span>
+            </div> 
             <br>
             <div class="detail-span">
-                <span>Ngày bắt đầu:
-                    <?= $result['day_start'] ?>
-                </span>-<span>Ngày kết thúc:
-                    <?= $result['day_end'] ?>
-                </span>
+                        <span>Ngày bắt đầu - Ngày kết thúc</span><br>
+                 <?php 
+                    while ($result2 = $getPriceDay->fetch_assoc()) {
+                        echo $result2['day_start']." - ".$result2['day_end']."<br>";
+                    }
+                        ?>
                 <br>
-                <span>điểm đón:
-                    <?= $result['noi_bd'] ?> --> điểm đến:
+                <span>Điểm Đón:
+                    <?= $result['noi_bd'] ?> --> Điểm Đến:
                     <?= $result['diem_den'] ?>
                 </span>
                 <br>

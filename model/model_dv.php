@@ -26,7 +26,13 @@ class dv
   }
 public function getDVID($id_dv)
 {
-  $query = "SELECT * FROM `dv` LEFT JOIN `loai` ON `dv`.`id_pk_loai` = `loai`.`id_loai` JOIN price_tour ON price_tour.id_pk_dv = dv.id_dv WHERE id_dv = '$id_dv';";
+  $query = "SELECT * FROM `dv` JOIN `loai` ON `dv`.`id_pk_loai` = `loai`.`id_loai` JOIN price_tour ON price_tour.id_pk_dv = dv.id_dv WHERE id_dv = '$id_dv';";
+  $result = $this->db->select($query);
+  return $result;
+}
+public function getContentPrice($id_dv)
+{
+  $query = "SELECT DISTINCT price_tour.id_price,price_tour.day_end, price_tour.day_start, price_tour.price_young, price_tour.price_old FROM `price_tour`WHERE price_tour.id_pk_dv = '$id_dv';";
   $result = $this->db->select($query);
   return $result;
 }
