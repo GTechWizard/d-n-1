@@ -17,7 +17,17 @@
                     </li>
                     <li data-target="dvl" class="query_btn">Dịch vụ Đã Thích</li>
                     <li data-target="dvs" class="query_btn">Dịch vụ Của Bạn</li>
-                    <li><a href="../admin/index.html">Đăng Nhập Admin</a></li>
+                    <?php 
+                        if(isset($_SESSION['id']) && $_SESSION['id']!=''){
+                            if($_SESSION['vai_tro']== 1){
+                                echo '<li><a href="admin/index.php">Đăng Nhập Admin</a></li>';
+                            }else{
+                                echo '';
+                            }
+                        }else{
+                            echo '';
+                        }
+                    ?>
                     <li><a href="?act=logout" onclick="return confirm('Bạn Muốn Đăng Xuất')">Đăng Xuất</a></li>
                 </ul>
             </div>
