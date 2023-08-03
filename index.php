@@ -43,6 +43,10 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 include "view/home.php";
             }
             break;
+
+        case'dattuor':
+                include 'view/card.php';
+            break;
             
         case 'ct_tt':
             if (isset($_GET['id']) && ($_GET['id'] != '')) {

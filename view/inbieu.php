@@ -17,35 +17,35 @@
                 </div>
                 <div class="group">
                     <label for="name">Full Name</label>
-                    <input type="text" name="name" id="name" value="<?=$_SESSION['name']?>">
+                    <input type="text" name="name" id="name" value="<?$_GET['day_start']?>">
                 </div>
     
                 <div class="group">
                     <label for="phone">Điểm đón</label>
-                    <input type="text" name="phone" id="phone" value="<?=$_GET['diem_den']?>">
+                    <input type="text" name="phone" id="phone" value="<?['day_end'];?>">
                 </div>
 
                 <div class="group">
                     <label for="name">GMail</label>
-                    <input type="text" name="name" id="name" value="<?=$_SESSION['gmail']?>">
+                    <input type="text" name="name" id="name" value="<?$_GET['price_young']?>">
                 </div>
     
                 <div class="group">
                     <label for="address">Phone number</label>
-                    <input type="text" name="address" id="address" value="<?=$_SESSION['sdt']?>">
+                    <input type="text" name="address" id="address" value="<?$_GET['diem_den'];?>">
                 </div>
     
 
                 <div class="group">
-                    <label for="country">Trẻ Em</label>
+                    <label for="country">Trẻ em</label>
                     <label for="quantity">Từ 1 Đến 18</label>
-                <input type="number" id="quantity" name="quantity" min="1" max="18" placeholder="Giá Trẻ Em: <?=$_GET['price_young']?>">
+                <input type="number" id="quantity" name="quantity" min="1" max="5">
                 </div>
     
                 <div class="group">
-                    <label for="city">Người Lớn</label>
+                    <label for="city">người lớn</label>
                     <label for="quantity">Từ 19 Đến 100</label>
-                    <input type="number" id="quantity" name="quantity" min="19" max="100"  placeholder="Giá Người Lớn: <?=$_GET['price_old']?>">
+                    <input type="number" id="quantity" name="quantity" min="19" max="100">
                     </select>
                 </div>
             </div>
@@ -65,7 +65,7 @@
                     <div class="totalPrice">$900</div>
                 </div>
             </div>
-            <button class="buttonCheckout"onclick=" return confirm('bạn có  chắc chắc không')">checkout</button>
+            <button class="buttonCheckout"onclick="alert('bạn có  chắc chắc không')">checkout</button>
             </div>
     </div>
 </div>
