@@ -89,7 +89,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                             $_SESSION['sdt'] = $result['sdt'];
                             $_SESSION['img'] = $result['img'];
                             $_SESSION['vai_tro'] = $result['vai_tro'];
-                            header('location:?act=home');
+                            include "view/home.php";
                         } else {
                             header('location:?act=dn');
                             echo "<script>
@@ -151,7 +151,18 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             include "view/user-kh.php";
             break;
 
-        // thiếu là sai
+        //thiếu là sai
+        // case 'startcm':
+        //     if (isset($_POST['submit']) && $_POST['submit'])
+        //     {
+        //         $tieude= $_POST['tieude'];
+        //         $noidung= $_POST['noidung'];
+        //         $start= $_POST['start'];
+        //         $id_pk_dv= 
+        //         $startnd= new comment;
+        //         $start1= $startnd -> insetcm($tieude,$noidung,$start,$danhgia,$name,$img);
+                
+        //     }
         default:
             include "view/home.php";
             if (isset($_SESSION['id']) && $_SESSION['id'] != '')

@@ -23,6 +23,16 @@ class comment{
     $query ="DELETE FROM `bl` WHERE `bl`.`id_bl` = '$blID'";
     $this->db->detele($query);
   }
+ public function insetcm($id_pk_dv,$nd,$ngay_bl,$danhgia,$name,$img)
+ {
+  $query = "INSERT INTO bl (id_pk_user, noi_dung, ngay_bl, danh_gia, name, img)
+  SELECT user.name, user.img, bl.noi_dung, bl.danh_gia, bl.ngay_bl
+  FROM bl
+  JOIN user ON user.id_user = bl.id_pk_user
+  WHERE bl.id_pk_dv = '$id_pk_dv' AND user.name = '$name' AND user.img = '$img' AND bl.ngay_bl = '$ngay_bl' AND bl.noi_dung = '$nd' AND bl.danh_gia = '$danhgia';";
+  $result =$this->db->select($query);
+  return $result;
+ }
 //   public function show_category(){
 //     $query ="SELECT * FROM tbl_category order by cateID desc";
 //     $result =$this->db->select($query);

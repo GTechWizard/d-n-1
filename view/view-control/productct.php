@@ -1,5 +1,6 @@
   <!-- Product Details -->
   <?php
+  $id_pk_pro_from=$_REQUEST['id_product']
   $result=$getiddv->fetch_assoc();
   ?>
   <section class="section product-detail">
@@ -45,6 +46,11 @@
             </div>
         </div>
     </section>
+
+
+
+
+
     <div class="tabContainer container-product">
         <div class="buttonContainer">
             <button onclick="showPanel(0,'red')">chi tiết</button>
@@ -63,6 +69,7 @@
                         <img src="img/sapa.jpg" alt="" class="image">
                         <h3 class="title"></h3>
                     </div>
+           
                     <div class="col">
                         <div class="flex">
                             <div class="total-reviews">
@@ -105,23 +112,26 @@
                     </div>
                 </div>
             </section>
+
+           
+
             <section class="reviews-container">
                 <div class="heading">
                     <h1>tất cả đánh giá</h1>
                     <input type="submit" value="đánh giá" class="inline-delete-btn" id="my-input">
 
                     <div id="my-form" class="hidden">
-                        <form action="" method="post" class="from-main">
+                        <form action="index.php?act=startcm" method="post" class="from-main">
                             <h3>đánh giá của bạn</h3>
                             <p class="placeholder">tiêu đề <span>*</span></p>
-                            <input type="text" name="title" required maxlength="50" placeholder="nhập tiêu đề"
+                            <input type="text" name="tieude" required maxlength="50" placeholder="nhập tiêu đề"
                                 class="box">
                             <p class="placeholder">nội dung</p>
-                            <textarea name="description" class="box" placeholder="nhập nội dung" maxlength="1000"
+                            <textarea name="noidung" class="box" placeholder="nhập nội dung" maxlength="1000"
                                 cols="30" rows="10"></textarea>
                             <p class="placeholder">đánh giá sao <span>*</span></p>
-                            <select name="rating" class="box" required>
-                                <option value="1">1</option>
+                            <select name="start" class="box" required>
+                                <option value="1">r1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
