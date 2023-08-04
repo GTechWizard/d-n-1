@@ -50,7 +50,7 @@
           </div>
         </div>
           <div class="col-md-12">
-        <img src="<?=$result['img_tt']?>" alt="ảnh trước" width="20%" title="ảnh trước">
+        <img src="../<?=$result['img_tt']?>" alt="ảnh trước" width="20%" title="ảnh trước">
         <input type="file" name="img">
       </div>
         <div class="control-from col-md-12">

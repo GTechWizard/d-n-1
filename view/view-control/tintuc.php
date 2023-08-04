@@ -13,17 +13,17 @@
         <div class="card-wrapper swiper-wrapper">
 
         <?php
-          $tintuc= new tt;
-          $tintucz1= $tintuc-> getAllTT();
-          if($tintucz1){
-            while($result=$tintucz1->fetch_assoc())
+            $tt = new tt;
+                $alltt = $tt->getAllTT();
+          if($alltt){
+            while($result=$alltt->fetch_assoc())
             {
         ?>
           <div class="card swiper-slide">
             <div class="card-1">
               <div class="new-top">
                 <div class="new-top-img">
-                  <img src="uploads/<?=$result['img_tt']?>" alt="">
+                  <img src="<?=$result['img_tt']?>" alt="img">
                 </div>
               </div>
               <div class="new-bottom">
@@ -34,7 +34,7 @@
                   <div class="new-bottom-span-container">
                   </div>
                   <div class="new-bottom-submit">
-                    <input type="submit" value="chi tiết">
+                    <a href="?act=ct_tt&id=<?=$result['id_tt']?>">chi tiết</a>
                   </div>
                 </div>
               </div>

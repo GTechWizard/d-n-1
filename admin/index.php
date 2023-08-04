@@ -202,7 +202,7 @@ if (isset($_GET['act']) && $_GET['act']) {
 		case 'dv_new':
 			if (isset($_POST['save']) && $_POST['save']) {
 				extract($_POST);
-				$target_dir = "../uploads/";
+				$target_dir = "uploads/";
 				$target_file = $target_dir . date('HisadmY') . basename($_FILES["img_dv"]["name"]);
 				$uploadOk = 1;
 				$imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
@@ -221,7 +221,7 @@ if (isset($_GET['act']) && $_GET['act']) {
 					move_uploaded_file($_FILES["img_dv"]["tmp_name"], $target_file);
 				}
 				$dv = new dv;
-				$dv->insert_DV($name, $noi_bd, $diem_den, $price_old, $price_young, $day_start, $day_end, $id_pk_loai, $tong_ng, $target_file, $bv);
+				$dv->insert_DV($name, $noi_bd, $diem_den, $id_pk_loai, $tong_ng, $target_file, $bv);
 				if (isset($alert) && $alert != "")
 					echo "<script>alert('$alert');</script>";
 				header('location:?act=dv');
@@ -240,7 +240,7 @@ if (isset($_GET['act']) && $_GET['act']) {
 			if (isset($_GET['id']) && $_GET['id']) {
 				$id_dv = $_GET['id'];
 				$dv = new dv;
-				$data = $dv->getDVID($id_dv);
+				$data = $dv->getDVID_notprice($id_dv);
 				include('dv_ldv/dv/ctbv_dv.php');
 			}
 			break;
@@ -248,7 +248,7 @@ if (isset($_GET['act']) && $_GET['act']) {
 			if (isset($_GET['id']) && $_GET['id']) {
 				$id = $_GET['id'];
 				$dv = new dv;
-				$dvID = $dv->getDVID($id);
+				$dvID = $dv->getDVID_notprice($id);
 				$loai = new loai;
 				$dsl = $loai->getAllLoai();
 				include('dv_ldv/dv/change_dv.php');
@@ -260,7 +260,7 @@ if (isset($_GET['act']) && $_GET['act']) {
 				$dv = new dv;
 				// Kiểm tra xem người dùng đã chọn ảnh mới hay chưa
 				if (!empty($_FILES["img_dv"]["name"])) {
-						$target_dir = "../uploads/";
+						$target_dir = "uploads/";
 						$target_name = basename($_FILES["img_dv"]["name"]);
 						$target_file = $target_dir . date('HisadmY') . basename($_FILES["img_dv"]["name"]);
 						$uploadOk = 1;
@@ -278,10 +278,10 @@ if (isset($_GET['act']) && $_GET['act']) {
 								$alert = "Đăng ảnh không thành công";
 						} else {
 								move_uploaded_file($_FILES["img_dv"]["tmp_name"], $target_file);
-								$dv->update_DV($name, $noi_bd, $diem_den, $price_old, $price_young, $day_start, $day_end, $id_pk_loai, $tong_ng, $target_file, $bv, $id_dv);
+								$dv->update_DV($name, $noi_bd, $diem_den, $id_pk_loai, $tong_ng, $target_file, $bv, $id_dv);
 						}
 				} else {
-						$dv->update_DV($name, $noi_bd, $diem_den, $price_old, $price_young, $day_start, $day_end, $id_pk_loai, $tong_ng, '', $bv, $id_dv);
+						$dv->update_DV($name, $noi_bd, $diem_den, $id_pk_loai, $tong_ng, '', $bv, $id_dv);
 				}
 				
 				if (isset($alert) && $alert != "") {
@@ -290,6 +290,35 @@ if (isset($_GET['act']) && $_GET['act']) {
 		
 				header('location:?act=dv');
 		}
+			break;
+		case 'price':
+			$price = new dv;
+			$priceList = $price->getAllPrice();
+			$i = 0;
+			include('price/price.php');
+			break;
+
+		case 'add_price':
+			$dv = new dv;
+			$dsdv = $dv->getAllDV();
+			include('price/add_price.php');
+			break;
+
+		case 'price_new':
+			if (isset($_POST['save']) && $_POST['save']) {
+				$dv = new dv;
+				$dv->insert_price($_POST['id_dv'],$_POST['day_end'],$_POST['day_start'],$_POST['price_young'],$_POST['price_old']);
+				header('location:?act=price');
+			}
+			break;
+
+		case 'delete_price':
+			if (isset($_GET['id']) && $_GET['id']) {
+				$id_price = $_GET['id'];
+				$price = new dv;
+				$price->delete_price($id_price);
+				header("Location:?act=price");
+			}
 			break;
 		case 'tt':
 			$tt = new tt;
@@ -302,7 +331,7 @@ if (isset($_GET['act']) && $_GET['act']) {
 		case 'add_news':
 			if (isset($_POST['save']) && $_POST['save']) {
 				extract($_POST);
-				$target_dir = "../uploads/";
+				$target_dir = "uploads/";
 				$target_name = basename($_FILES["img"]["name"]);
 				$target_file = $target_dir . date('HisadmY') . basename($_FILES["img"]["name"]);
 				$uploadOk = 1;
@@ -350,7 +379,7 @@ if (isset($_GET['act']) && $_GET['act']) {
 		case 'update_tt':
 			if (isset($_POST['save']) && ($_POST['save'])) {
 				extract($_POST);
-				$target_dir = "../uploads/";
+				$target_dir = "uploads/";
 				$target_name = basename($_FILES["img"]["name"]);
 				$target_file = $target_dir . date('HisadmY') . basename($_FILES["img"]["name"]);
 				$uploadOk = 1;

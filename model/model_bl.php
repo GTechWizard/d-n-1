@@ -23,30 +23,12 @@ class comment{
     $query ="DELETE FROM `bl` WHERE `bl`.`id_bl` = '$blID'";
     $this->db->detele($query);
   }
-//   public function show_category(){
-//     $query ="SELECT * FROM tbl_category order by cateID desc";
-//     $result =$this->db->select($query);
-//       return $result;
-//   }
-//   public function insert_category($cateName){
-//     $cateName=$this->fm->validation($cateName);
-//     $cateName =mysqli_real_escape_string($this->db->link, $cateName);
-//     // kết nối cơ sở dữ liệu (cơ sở dữ liệu, dữ liệu)
-//     if(empty($cateName)){
-//       $alert="empty";
-//       return $alert;
-//     }else{
-//       $query ="INSERT INTO tbl_category(cateName) VALUE ('$cateName')";
-//       $result =$this->db->insert($query);
-//       if($result){
-//         $aleart="Successfully";
-//         return $aleart;
-//       }else{
-//         $aleart=" Not Success";
-//         return $aleart;
-//       }
-//     }
-//   }
+  public function avg_sart($id_dv){
+    $query ="SELECT AVG(bl.danh_gia) AS avg FROM bl WHERE bl.id_pk_dv='$id_dv';";
+    $result = $this->db->select($query);
+    return $result;
+  }
+
 }
 
 

@@ -22,7 +22,6 @@
               <img src="uploads/<?=$result['img']?>">
               <div class="description">
                 <h3><?=$result['kieu_dv']?></h3>
-                <p>SỐ TOUR:10</p>
                 <a href="index.php?act=dmsp&iddm=<?php echo $result['id_loai'] ?>">TÌM THÊM</a>
               </div>
             </div>

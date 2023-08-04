@@ -55,10 +55,22 @@
 			</a>
 		</li>
 		<li>
+		<li>
+			<a href="?act=price">
+				<span class="fa fa-window-restore">&nbsp;</span> Giá Dịch Vụ
+			</a>
+		</li>
+		<li>
+		<li>
+			<a href="?act=add_price">
+				<span class="fa fa-window-restore">&nbsp;</span> Thêm Giá DV
+			</a>
+		</li>
+		<li>
 			<a href="?act=tt"><em class="fa fa-meetup">&nbsp;</em>Tin Tức</a>
 		</li>
 		<li>
-			<a href="?act=add_tt"><em class="fa fa-window-restore">&nbsp;</em>Thêm Mới Tin Tức</a>
+			<a href="?act=add_tt"><em class="fa fa-meetup">&nbsp;</em>Thêm Mới Tin Tức</a>
 		</li>
 		<li>
 			<a href="?act=dv_act"><em class="fa fa-bolt">&nbsp;</em>Dịch Vụ Đang Có</a>

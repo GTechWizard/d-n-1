@@ -30,10 +30,9 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             if (isset($_GET['iddm']) && is_numeric($_GET['iddm']) && $_GET['iddm'] > 0) {
                 $iddm = $_GET['iddm'];
                 $getdm= new dv;
-                $getall = new dv;
                 $getname = new loai;
+                $sart= new comment;
                 $getnameid = $getname ->getiddm($iddm);
-                $getallsp = $getall->getAllDV();
                 $getloai = $getdm->loat_sanpham($iddm);
                 
 
@@ -49,6 +48,10 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             $getid = new dv;
                 $getPriceDay = $getid->getContentPrice($_GET['id_dv']);
                 include 'view/card.php';
+            break;
+            // tt
+        case'tt':
+                include 'view/view-control/tintuc.php';
             break;
             
         case 'ct_tt':
@@ -167,6 +170,22 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         case 'user':
             include "view/user-kh.php";
             break;
+
+            // form tìm nahnh
+        case 'findfast':
+            if(isset($_POST['find'])&&$_POST['find']){
+                $day_start=$_POST['day_start'];
+                $day_end=$_POST['day_end'];
+                $price_start=$_POST['price_start'];
+                $price_end=$_POST['price_end'];
+                $diem_den=$_POST['diem_den'];
+                $dv= new dv;
+                $list=$dv->findfast($day_start,$day_end,$price_start,$price_end,$diem_den);
+                include('view/findfast.php');
+            }
+            
+            break;
+        
 
         // thiếu là sai
         default:

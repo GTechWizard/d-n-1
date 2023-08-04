@@ -15,24 +15,20 @@
       </div>
       <div class="form_find_bn" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
         <h2>tìm dịch vụ nhanh</h2>
-        <form action="#" method="post">
+        <form action="?act=findfast" method="post">
           <div class="form_in">
-            <label for="date1">Ngày bắt đầu
-              <input type="date" name="" id="date1" />
-            </label>
-            <label for="date2">Ngày kết thúc
-              <input type="date" name="" id="date2" />
-            </label>
-            <label for="gia">Giá tiền
-              <select name="" id="gia">
-                <option>Chọn giá</option>
-                <option value="">1 triệu -> 2 triệu</option>
-                <option value="">5 triệu -> 7 triệu</option>
-                <option value="">9 triệu -> 12 triệu</option>
-              </select>
+            <label for="date1">Khoảng Ngày
+              <input type="date" name="day_start" id="date1"/>
+              <input type="date" name="day_end" id="date1"/>
             </label>
             <label for="place">Nơi đến
-              <input type="text" name="" id="place" placeholder="Nơi đến" />
+              <input type="text" name="diem_den" id="place" placeholder="Nơi đến" />
+            </label>
+            <label for="giad">Giá Từ
+              <input type="number" name="price_start" id="giad" placeholder="1.200.000 VND">
+            </label>
+            <label for="gian"> Đến Giá
+            <input type="number" name="price_end" id="gian" placeholder="12.000.000 VND">
             </label>
           </div>
           <input type="submit" name="find" id="find_bn_hr" value="Tìm" />

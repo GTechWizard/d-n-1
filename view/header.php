@@ -142,6 +142,23 @@ justify-content: center;
   font-size: large;
   font-weight: bold;
 }
+.content{
+    width: 70%;
+}
+.a{
+  text-decoration: none!important ;
+  text-transform: capitalize;
+  padding: 1%;
+  width: 20%;
+  background-color: blue;
+  border-radius: 15px;
+  color: white;
+}
+.a:hover{
+  background-color: blue;
+  color: white;
+  box-shadow: 0px 0px 10px white;
+}
 
   </style>
 </head>
@@ -151,7 +168,7 @@ justify-content: center;
   <nav>
 
     <div class="icon">
-      <a href="#"><img src="img/logononfont.png" alt=""></a>
+      <a href="?act=home"><img src="img/logononfont.png" alt="Come Back"></a>
     </div>
     <?php
       include "./view/view-control/search.php";

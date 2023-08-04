@@ -11,7 +11,7 @@ $result = $getiddv->fetch_assoc()
     <div class="details container-product">
         <div class="left image-container">
             <div class="main" style="border-radius:10px ;">
-                <img src="uploads/<?= $result['img_dv'] ?>" id="zoom" alt="" style="border-radius:10px ;" />
+                <img src="<?= $result['img_dv'] ?>" id="zoom" alt="img" style="border-radius:10px ;" />
             </div>
             <div>
 

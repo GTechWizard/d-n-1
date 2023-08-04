@@ -11,58 +11,30 @@
     <!-- tin mới  -->
     <div class="sidebar">
         <h4>Tin Mới</h4>
-            <a href="">
+        <?php
+          $noibattt= new tt;
+          $tt = $noibattt->noibat();
+          if($tt){
+            while($result=$tt->fetch_assoc())
+            {
+        ?>
+            <a href="?act=ct_tt&id=<?=$result['id_tt']?>">
                 <hr>
                 <div class="link">
                 <div class="anh">
-                    <img src="img/1.jpg" alt="">
+                    <img src="<?=$result['img_tt']?>" alt="img">
                 </div>
                 <div class="content_sile1">
                     <h6 class="mini1">
-                        CHUYẾN ĐI CỦA BẠN TỚI NHỮNG NƠI BẠN CẦN ĐẾN cùng bạn bè
-                        và người thân yêu
+                    <?=$result['name']?>
                     </h6>
                     <div class="row">
-                        <div class="riw">Bởi: mewo meow</div>
-                        <div class="riw0">Ngày: 12/12/1212</div>
+                        <div class="riw">Bởi: <?=$result['tac_gia']?></div>
+                        <div class="riw0">Ngày: <?=$result['ngay_d']?></div>
                     </div>
                 </div></div>
             </a>
-            <a href="">
-                <hr>
-                <div class="link">
-                <div class="anh">
-                    <img src="img/1.jpg" alt="">
-                </div>
-                <div class="content_sile1">
-                    <h6 class="mini1">
-                        CHUYẾN ĐI CỦA BẠN TỚI NHỮNG NƠI BẠN CẦN ĐẾN cùng bạn bè
-                        và người thân yêu
-                    </h6>
-                    <div class="row">
-                        <div class="riw">Bởi: mewo meow</div>
-                        <div class="riw0">Ngày: 12/12/1212</div>
-                    </div>
-                </div></div>
-            </a>
-            <a href="">
-                <hr>
-                <div class="link">
-                <div class="anh">
-                    <img src="img/1.jpg" alt="">
-                </div>
-                <div class="content_sile1">
-                    <h6 class="mini1">
-                        CHUYẾN ĐI CỦA BẠN TỚI NHỮNG NƠI BẠN CẦN ĐẾN cùng bạn bè
-                        và người thân yêu
-                    </h6>
-                    <div class="row">
-                        <div class="riw">Bởi: mewo meow</div>
-                        <div class="riw0">Ngày: 12/12/1212</div>
-                    </div>
-                </div></div>
-            </a>
-            
+           <?php }}?>
     </div>
 </div>
 <br/> <br/>

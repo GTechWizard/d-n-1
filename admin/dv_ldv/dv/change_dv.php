@@ -32,25 +32,9 @@
               <label>Điểm đến</label>
               <input type="text" class="form-control" value="<?= $result['diem_den'] ?>" name="diem_den" />
             </div>
-            <div class="form-group">
-              <label>Giá Người Lớn</label>
-              <input type="number" class="form-control" value="<?=$result['price_old']?>" name="price_old" />
-            </div>
-            <div class="form-group">
-              <label>Giá Trẻ Em</label>
-              <input type="number" class="form-control" value="<?=$result['price_young']?>" name="price_young" />
-            </div>
           </div>
 
           <div class="col-md-6">
-            <div class="form-group">
-              <label>Ngày bắt đầu</label>
-              <input type="text" class="form-control" value="<?= $result['day_start'] ?>" name="day_start" />
-            </div>
-            <div class="form-group">
-              <label>Ngày kết thúc</label>
-              <input type="text" class="form-control" value="<?= $result['day_end'] ?>" name="day_end" />
-            </div>
             <div class="form-group">
               <label>Loại Dịch Vụ</label>
               <select class="form-control" name="id_pk_loai">
@@ -72,7 +56,7 @@
             </div>
             <div class="form-group">
               <label>Ảnh</label>
-              <label><img src="<?= $result['img_dv'] ?>" alt="img" width="20%" title="Ảnh trước đó"></label>
+              <label><img src="../<?= $result['img_dv'] ?>" alt="img" width="20%" title="Ảnh trước đó"></label>
               <?= $result['img_dv'] ?>
               <input type="file" name="img_dv" />
             </div>
