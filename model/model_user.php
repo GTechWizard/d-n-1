@@ -42,8 +42,8 @@ class user{
     $this->db->update($query);
   }
   // ai viết sao ko cho thực thi
-  public function update_img($id, $new_img){
-    $query="UPDATE `user` SET `img`='$new_img' WHERE `id_user= '$id'";
+  public function update_img($id,$new_img){
+    $query="UPDATE `user` SET `img`='$new_img' WHERE `id_user`= '$id'";
     $this->db->update($query);
   }
   //  ai viết sao ko cho thực thi

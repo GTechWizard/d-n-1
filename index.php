@@ -179,10 +179,10 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             include "view/user-kh.php";
             //ảnh mới
             if(isset($_POST['save_img']) && $_POST['save_img'] && isset($_POST['user_img']) && $_POST['user_img']){
-                $id = $_SESSION["id"];
+                $id = $_SESSION['id'];
                 $new_img = $_POST['user_img'];
-                $user = new user;
-                $user->update_img($id, $new_img);                         
+                $conn = new user;
+                $user = $conn->update_img($id,$new_img);                         
                 $_SESSION['img'] = $new_img;                       
             }
 
