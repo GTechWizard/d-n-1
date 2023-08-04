@@ -2,7 +2,7 @@
 <div class="wrapper">
     <article class="final-user-page">
         <!-- thanh bar -->
-        <main class="left-bar-user-page">
+        <main class="left-bar-user-page" style="user-select: none;">
             <div>
                 <ul>
                     <li>
@@ -15,7 +15,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li data-target="dvl" class="query_btn">Dịch vụ Đã Thích</li>
+                    <!-- <li data-target="dvl" class="query_btn">Dịch vụ Đã Thích</li> -->
                     <li data-target="dvs" class="query_btn">Dịch vụ Của Bạn</li>
                     <?php 
                         if(isset($_SESSION['id']) && $_SESSION['id']!=''){
@@ -92,13 +92,12 @@
                         <label for="">
                             <p>Nhập lại mật khẩu mới:</p>
                             <input type="password" class="input_pass" id="see2" name="re_new_pass"/>
-                            <label data-pass_see="see2" class="input_check_pass" id="hmk3">
-                                ẩn/hiện</label>
+                            <label data-pass_see="see2" class="input_check_pass" id="hmk3">ẩn/hiện</label>
                         </label>
                         <div class="input_submit">
-                            <input type="submit" value="Lưu" name="up_pass" />
+                            <input type="submit" value="Lưu" name="update_pass" />
                             <!-- lưu pass -->
-                        </div>
+                        </div>  
                         <p data-target="qmk" class="query_btn">Quên mật khẩu</p>
                     </form>
                 </div>
@@ -158,37 +157,31 @@
                         <li><a href="#">chi tiết</a></li>
                     </ul>
 
-                    <?php 
-                        function cc (){
-                        $conn = new user;
-                        $id = $_SESSION['id'];
-                        //lấy danh sách dịch vụ
-                        $result = $conn->list_service_user($id);
-                        $list_dv = $result->fetch_assoc();
-                        //tìm tất cả dv của kh
-                        foreach($list_dv as $index=>$dich_vu){
-                            //id dể tìm tên dịch vụ từ id dịch vụ trong bảng dv_user
-                            $id_pk_dv = $dich_vu['id_pk_dv'];
-                            $service = $conn->name_service_user($id_pk_dv);
-                            $infor__dv = $service->fetch_assoc();
-                            if($dich_vu['trang_thai'] == 0){
-                                $trang_thai = 'Chưa đi';
-                            }else{
-                                $trang_thai = 'Đã đi';
+                    <?php
+                            $conn = new user;
+                            $id = $_SESSION['id'];
+                            //lấy danh sách dịch vụ
+                            $list_service = $conn->list_service_user($id);
+                            
+                            foreach($list_service as $index=>$dich_vu){
+                                //id dể tìm tên dịch vụ từ id dịch vụ trong bảng dv_user
+
+                                $id_pk_dv = $dich_vu['id_pk_dv'];
+                                $service = $conn->name_service_user($id_pk_dv);
+                                $infor_dv =$service->fetch_assoc();
+                                echo'<ul class="uldvtd">
+                                        <li>'.($index+1).'</li>
+                                        <li>'.$infor_dv['name'].'</li>
+                                        <li><img src="'.$infor_dv['img_dv'].'" /></li>
+                                        <li>'.$dich_vu['ngay_dkdv'].'</li>
+                                        <li>'.$infor_dv['tong_ng'].'</li>
+                                        <li>'.$dich_vu['trang_thai'].'</li>
+                                        <li><a href="#">chi tiết</a></li>
+                                    </ul>';
                             }
-                            echo'<ul class="uldvtd">
-                                    <li>'.($index+1).'</li>
-                                    <li>'.$infor__dv['name'].'</li>
-                                    <li><img src="'.$infor__dv['img_dv'].'" /></li>
-                                    <li>'.$dich_vu['ngay_dkdv'].'</li>
-                                    <li>'.$infor__dv['tong_ng'].'</li>
-                                    <li>'.$trang_thai.'</li>
-                                    <li><a href="#">chi tiết</a></li>
-                                </ul>';
-                        }
-                        }
-                        cc();
+    
                     ?>
+
                 </div>
             </div>
             <!-- nhap lai mat khau -->
@@ -205,7 +198,7 @@
                         <input type="password" name="" class="input_pass" id="mknew_2" />
                         <p class="input_check_pass" data-pass_see="mknew_2">ẩn/hiện</p>
                     </label>
-                    <input type="submit" value="Lưu" name="up_pass" />
+                    <input type="submit" value="Lưu" name="change_pass" />
                 </form>
                 <!-- ko biết nó ở đâu -->
             </div>
@@ -223,7 +216,7 @@
                                 <p>email:</p>
                                 <input type="email" name="up_email" value="
                                 <?php 
-                                echo $_SESSION['user']['eamail'];
+                                echo $_SESSION['email'];
                                 ?>
                                 "/>
                             </label>
@@ -249,29 +242,7 @@
                         <input type="submit" value="lưu" name="up_infor">
                         <input type="reset" value="làm lại">
                     </div>
-                    <?php 
-                        if(isset($_POST['up_infor']) && $_POST['up_for']){
-                            //kiểm tra mật khẩu cũ
-                            $user_pass = $_SESSION['user']['pass'];
-                            $new_name = $_POST['name'];
-                            $check_pass = $_POST['up_pass'];
-                            $num_phone = $_POST['up_num'];
-                            $locate = $_POST['up_locate'];
-                            if($check_pass != $user_pass){
-                                echo "<script>
-                                        alert('Mật khẩu không đúng');
-                                    </script>";
-                            }else{
-                                
-                                $conn = new user;
-                                $id = $_SESSION['user']['id'];
-                                $email = $_SESSION['user']['email'];
-                                $vai_tro = 0;
-                                $conn->update_user($new_name,$num_phone,$vai_tro,$locate,$email,$id);
-                                $_SESSION['user'] = $conn->get_one_User($id);
-                            }
-                        }
-                    ?>
+
                 </form>
             </div>
         </div>

@@ -16,7 +16,7 @@ class user{
     return $result;
   }
   public function get_one_User($id){
-    $query ="SELECT * FROM user WHERE id_user = '$id'";
+    $query ="SELECT * FROM `user` WHERE `id_user` = '$id'";
     $result =$this->db->select($query);
     return $result;
   }
@@ -43,12 +43,12 @@ class user{
   }
   // ai viết sao ko cho thực thi
   public function update_img($id, $new_img){
-    $query="UPDATE `user` SET `img`='$new_img' WHERE 'id_user'= '$id'";
+    $query="UPDATE `user` SET `img`='$new_img' WHERE `id_user= '$id'";
     $this->db->update($query);
   }
   //  ai viết sao ko cho thực thi
   public function update_pass($id, $new_pass){
-    $query="UPDATE `user` SET `pass`='$new_pass' WHERE 'id_user' Like '$id'";
+    $query="UPDATE `user` SET `pass`='$new_pass' WHERE `id_user` = '$id'";
     $this->db->update($query);
   }
 
@@ -63,13 +63,13 @@ class user{
 
 
   public function list_service_user($id){
-    $query="SELECT * FROM `dv_user` WHERE 'id_pk_user' = '$id'";
+    $query="SELECT * FROM `dv_user` WHERE `id_pk_user` = '$id'";
     // thực thi
     $result =$this->db->select($query);
     return $result;
   }
   public function name_service_user($id_pk_dv){
-    $query="SELECT * FROM `dv` WHERE 'id_dv'= '$id_pk_dv'";
+    $query="SELECT * FROM `dv` WHERE `id_dv`= '$id_pk_dv'";
     $result =$this->db->select($query);
     return $result;
   }
@@ -80,7 +80,7 @@ class user{
     return $result;
   }
   public function sign_up($name, $img, $email, $pass, $locate, $num){
-    $query="INSERT INTO user (user.id_user,user.name,user.pass,user.sdt,user.dia_chi,user.email,user.img,user.vai_tro) VALUES (NULL,'$name','$pass','$num','$locate','$email','$img','')";
+    $query="INSERT INTO `user` (.id_user,user.name,user.pass,user.sdt,user.dia_chi,user.email,user.img,user.vai_tro) VALUES (NULL,'$name','$pass','$num','$locate','$email','$img','')";
     $this->db->insert($query);
   }
 

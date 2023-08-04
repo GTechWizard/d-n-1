@@ -187,7 +187,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             }
 
             //pass mới
-            if(isset($_POST['up_pass']) && $_POST['up_pass']){
+            if(isset($_POST['update_pass']) && $_POST['update_pass']){
                 //kiểm tra mật khẩu cũ
                 $user_pass = $_SESSION['pass'];
                 $old_pass = $_POST['old_pass'];
@@ -203,18 +203,18 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                               alert('Xác nhận mật khẩu mới không đúng');
                           </script>";
                     }else{
-                        $conn = new user;
                         $id = $_SESSION['id'];
-                        $conn->update_pass($id, $new_pass);
+                        $conn = new user;
+                        $conn->update_pass($id,$new_pass);
                         $_SESSION['pass'] = $new_pass;
                     }
                 }
             }
             //update infor
-            if(isset($_POST['up_infor']) && $_POST['up_for']){
+            if(isset($_POST['up_infor']) && $_POST['up_infor']){
                 //kiểm tra mật khẩu cũ
                 $user_pass = $_SESSION['pass'];
-                $new_name = $_POST['name'];
+                $new_name = $_POST['up_name'];
                 $check_pass = $_POST['up_pass'];
                 $num_phone = $_POST['up_num'];
                 $locate = $_POST['up_locate'];
