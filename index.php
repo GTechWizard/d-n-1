@@ -66,7 +66,94 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         // nhấn vào đăng nhập
         case 'dn':
             include "view/view-control/formdk.php";
+            // thực thi đăng nhập
+            if (isset($_POST['log']) && $_POST['log']) {
+                $email = $_POST['log_email'];
+                $pass = $_POST['log_pass'];
+
+                $logsign = new user;
+                $log = $logsign->get_user_email($email);
+                if (isset($log) && $log) {
+                    // important!! fetch_assoc quét object
+                    $result = $log->fetch_assoc();
+                    if($result){
+                        if ($pass == $result['pass']) {
+                            // xét session
+                            $_SESSION['id'] = $result['id_user'];
+                            $_SESSION['name'] = $result['name'];
+                            $_SESSION['pass'] = $result['pass'];
+                            $_SESSION['dia_chi'] = $result['dia_chi'];
+                            $_SESSION['email'] = $result['email'];
+                            $_SESSION['sdt'] = $result['sdt'];
+                            $_SESSION['img'] = $result['img'];
+                            $_SESSION['vai_tro'] = $result['vai_tro'];
+                            header('location:?act=home');
+                        } else {
+                            echo "<script>
+                                alert('Mật khẩu không đúng');
+                              </script>";
+
+                        }
+                    }
+
+                }else{
+                    echo "<script>
+                            alert('Tài khoản không tồn tại');
+                        </script>";
+                }
+            }
+
+                // đk
+
+            if (isset($_POST['sign']) && $_POST['sign']) {
+                $name = $_POST['user_sign'];
+                $email = $_POST['email_sign'];
+                $pass = $_POST['pass_sign'];
+                $re_pass = $_POST['re_pass_sign'];
+                $locate = $_POST['locate_sign'];
+                $num = $_POST['num_phone_sign'];
+
+                $user = new user;
+                $sign = $user->get_user_email($email);
+                if (isset($sign) && $sign) {
+                    echo "<script>alert('Email đã tồn tại');</script>";
+                }else{
+                    $target_dir = "uploads/";
+                    $target_file = $target_dir . date('HisadmY') . basename($_FILES["img"]["name"]);
+                    $uploadOk = 1;
+                    $ok = 1;
+                    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+                    // Kiểm tra xem tệp có phải là ảnh hay không
+                    $check = getimagesize($_FILES["img"]["tmp_name"]);
+                    if ($check !== false) {
+                        $uploadOk = 1;
+                    } else {
+                        $alert = "Không phải file ảnh, vui lòng chọn lại";
+                        $uploadOk = 0;
+                    }
+                    if ($pass != $re_pass) $ok=0;
+
+                    // Kiểm tra xem có xảy ra lỗi khi tải lên tệp hay không
+                    if ($uploadOk == 0) {
+                        $alert = "Đăng ảnh không thành công";
+                    }elseif($ok==0){
+                        $alert = "Mật Khẩu xác nhận không trùng khớp";
+                    }else {
+                        move_uploaded_file($_FILES["img"]["tmp_name"], $target_file);
+                        $user->sign_up($name, $target_file, $email, $pass, $locate, $num);
+                        $alert = "Đăng ký thành công";
+                    }
+                    header('location:?act=dn');
+                    echo "<script>alert('$alert');</script>";
+                }
+            }
             break;
+
+            // đăng xuất
+            case 'logout':
+                unset($_SESSION["id"], $_SESSION['id'], $_SESSION['name'], $_SESSION['pass'], $_SESSION['dia_chi'], $_SESSION['email'], $_SESSION['vai_tro'], $_SESSION['sdt'], $_SESSION['img']);
+                header('location:?act=home');
+                break;
 
             // bill
             case 'bill':
@@ -87,88 +174,73 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 }
                 break;
 
-        // thực thi đăng nhập
-        case 'login':
-            if (isset($_POST['log']) && $_POST['log']) {
-                $email = $_POST['log_email'];
-                $pass = $_POST['log_pass'];
-
-                $logsign = new user;
-                $log = $logsign->get_user_email($email);
-                if (isset($log) && $log) {
-                    // important!! fetch_assoc quét object
-                    while ($result = $log->fetch_assoc()) {
-                        if ($pass == $result['pass']) {
-                            // xét session
-                            $_SESSION['id'] = $result['id_user'];
-                            $_SESSION['name'] = $result['name'];
-                            $_SESSION['pass'] = $result['pass'];
-                            $_SESSION['dia_chi'] = $result['dia_chi'];
-                            $_SESSION['email'] = $result['email'];
-                            $_SESSION['sdt'] = $result['sdt'];
-                            $_SESSION['img'] = $result['img'];
-                            $_SESSION['vai_tro'] = $result['vai_tro'];
-                            header('location:?act=home');
-                        } else {
-                            header('location:?act=dn');
-                            echo "<script>
-                                alert('Email hoặc mật khẩu không đúng');
-                              </script>";
-                        }
-                    }
-
-                }
-            }
-            break;
-        // đăng xuất
-        case 'logout':
-            unset($_SESSION["id"], $_SESSION['id'], $_SESSION['name'], $_SESSION['pass'], $_SESSION['dia_chi'], $_SESSION['email'], $_SESSION['vai_tro'], $_SESSION['sdt'], $_SESSION['img']);
-            header('location:?act=home');
-            break;
-
-            // đk
-        case 'signup':
-            if (isset($_POST['sign']) && $_POST['sign']) {
-                $name = $_POST['user_sign'];
-                $email = $_POST['email_sign'];
-                $pass = $_POST['pass_sign'];
-                $re_pass = $_POST['re_pass_sign'];
-                $locate = $_POST['locate_sign'];
-                $num = $_POST['num_phone_sign'];
-                $user = new user;
-
-                $target_dir = "uploads/";
-                $target_file = $target_dir . date('HisadmY') . basename($_FILES["img"]["name"]);
-                $uploadOk = 1;
-                $ok = 1;
-                $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-                // Kiểm tra xem tệp có phải là ảnh hay không
-                $check = getimagesize($_FILES["img"]["tmp_name"]);
-                if ($check !== false) {
-                    $uploadOk = 1;
-                } else {
-                    $alert = "Không phải file ảnh, vui lòng chọn lại";
-                    $uploadOk = 0;
-                }
-                if ($pass != $re_pass) $ok=0;
-
-                // Kiểm tra xem có xảy ra lỗi khi tải lên tệp hay không
-                if ($uploadOk == 0) {
-                    $alert = "Đăng ảnh không thành công";
-                }elseif($ok==0){
-                    $alert = "Mật Khẩu xác nhận không trùng khớp";
-                }else {
-                    move_uploaded_file($_FILES["img"]["tmp_name"], $target_file);
-                    $user->sign_up($name, $target_file, $email, $pass, $locate, $num);
-                    $alert = "Đăng ký thành công";
-                }
-                header('location:?act=dn');
-                echo "<script>alert('$alert');</script>";
-            }
-            break;
 
         case 'user':
             include "view/user-kh.php";
+            //ảnh mới
+            if(isset($_POST['save_img']) && $_POST['save_img'] && isset($_POST['user_img']) && $_POST['user_img']){
+                $id = $_SESSION["id"];
+                $new_img = $_POST['user_img'];
+                $user = new user;
+                $user->update_img($id, $new_img);                         
+                $_SESSION['img'] = $new_img;                       
+            }
+
+            //pass mới
+            if(isset($_POST['up_pass']) && $_POST['up_pass']){
+                //kiểm tra mật khẩu cũ
+                $user_pass = $_SESSION['pass'];
+                $old_pass = $_POST['old_pass'];
+                $new_pass = $_POST['new_pass'];
+                $re_new_pass = $_POST['re_new_pass'];
+                if($user_pass != $old_pass){
+                    echo "<script>
+                            alert('Mật khẩu không đúng');
+                        </script>";
+                }else{
+                    if($new_pass != $re_new_pass){
+                        echo "<script>
+                              alert('Xác nhận mật khẩu mới không đúng');
+                          </script>";
+                    }else{
+                        $conn = new user;
+                        $id = $_SESSION['id'];
+                        $conn->update_pass($id, $new_pass);
+                        $_SESSION['pass'] = $new_pass;
+                    }
+                }
+            }
+            //update infor
+            if(isset($_POST['up_infor']) && $_POST['up_for']){
+                //kiểm tra mật khẩu cũ
+                $user_pass = $_SESSION['pass'];
+                $new_name = $_POST['name'];
+                $check_pass = $_POST['up_pass'];
+                $num_phone = $_POST['up_num'];
+                $locate = $_POST['up_locate'];
+                if($check_pass != $user_pass){
+                    echo "<script>
+                            alert('Mật khẩu không đúng');
+                        </script>";
+                }else{
+                    
+                    $conn = new user;
+                    $id = $_SESSION['id'];
+                    $email = $_SESSION['email'];
+                    $vai_tro = 0;
+                    $conn->update_user($new_name,$num_phone,$vai_tro,$locate,$email,$id);
+                    $up = $conn->get_one_User($id);
+                    $back_reult = $up->fetch_assoc();
+
+                    
+                    $_SESSION['name'] = $back_result['name'];
+                    $_SESSION['pass'] = $back_result['pass'];
+                    $_SESSION['dia_chi'] = $back_result['dia_chi'];
+                    $_SESSION['email'] = $back_result['email'];
+                    $_SESSION['sdt'] = $back_result['sdt'];
+                }
+            }
+
             break;
 
             // form tìm nahnh

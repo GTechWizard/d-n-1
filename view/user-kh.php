@@ -62,6 +62,7 @@
                                                 </label>';
                                     }
                                 ?>
+                                
                             </div>
                             <div class="img_ur">
                                 <img src="<?=$_SESSION['img']?>" alt="ảnh đại diện" />
@@ -97,32 +98,6 @@
                         <div class="input_submit">
                             <input type="submit" value="Lưu" name="up_pass" />
                             <!-- lưu pass -->
-                            <?php 
-                                if(isset($_POST['up_pass']) && $_POST['up_pass']){
-                                    //kiểm tra mật khẩu cũ
-                                    $user_pass = $_SESSION['user']['pass'];
-                                    $old_pass = $_POST['old_pass'];
-                                    $new_pass = $_POST['new_pass'];
-                                    $re_new_pass = $_POST['re_new_pass'];
-                                    if($user_pass != $old_pass){
-                                        echo "<script>
-                                                alert('Mật khẩu không đúng');
-                                            </script>";
-                                    }else{
-                                        if($new_pass != $re_new_pass){
-                                            echo "<script>
-                                                  alert('Xác nhận mật khẩu mới không đúng');
-                                              </script>";
-                                        }else{
-                                            $conn = new user;
-                                            $id = $_SESSION['user']['id'];
-                                            $conn->update_pass($id, $new_pass);
-
-                                            $_SESSION['user']['pass'] = $new_pass;
-                                        }
-                                    }
-                                }
-                            ?>
                         </div>
                         <p data-target="qmk" class="query_btn">Quên mật khẩu</p>
                     </form>
@@ -184,26 +159,35 @@
                     </ul>
 
                     <?php 
+                        function cc (){
                         $conn = new user;
-                        $id = $_SESSION['user']['id'];
+                        $id = $_SESSION['id'];
                         //lấy danh sách dịch vụ
-                        $list_service = $conn->list_service_user($id);
-
-                        foreach($list_service as $index=>$dich_vu){
+                        $result = $conn->list_service_user($id);
+                        $list_dv = $result->fetch_assoc();
+                        //tìm tất cả dv của kh
+                        foreach($list_dv as $index=>$dich_vu){
                             //id dể tìm tên dịch vụ từ id dịch vụ trong bảng dv_user
                             $id_pk_dv = $dich_vu['id_pk_dv'];
-                            $service = $conn->service_user($id);
-
+                            $service = $conn->name_service_user($id_pk_dv);
+                            $infor__dv = $service->fetch_assoc();
+                            if($dich_vu['trang_thai'] == 0){
+                                $trang_thai = 'Chưa đi';
+                            }else{
+                                $trang_thai = 'Đã đi';
+                            }
                             echo'<ul class="uldvtd">
                                     <li>'.($index+1).'</li>
-                                    <li>'.$service['name'].'</li>
-                                    <li><img src="'.$service['img_dv'].'" /></li>
+                                    <li>'.$infor__dv['name'].'</li>
+                                    <li><img src="'.$infor__dv['img_dv'].'" /></li>
                                     <li>'.$dich_vu['ngay_dkdv'].'</li>
-                                    <li>'.$service['tong_ng'].'</li>
-                                    <li>'.$dich_vu['trang_thai'].'</li>
+                                    <li>'.$infor__dv['tong_ng'].'</li>
+                                    <li>'.$trang_thai.'</li>
                                     <li><a href="#">chi tiết</a></li>
                                 </ul>';
                         }
+                        }
+                        cc();
                     ?>
                 </div>
             </div>
