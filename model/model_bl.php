@@ -41,6 +41,12 @@ class comment{
   $result =$this->db->select($query);
   return $result;
  }
+ public function getBlIdUser($id_user,$id_dv)
+ {
+  $query = "SELECT COUNT(bl.id_bl) AS count FROM bl WHERE bl.id_pk_user='$id_user' AND bl.id_pk_dv='$id_dv'";
+  $result =$this->db->select($query);
+  return $result;
+ }
 
 }
 

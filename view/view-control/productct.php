@@ -130,8 +130,18 @@ $result = $getiddv->fetch_assoc()
         <section class="reviews-container">
             <div class="heading">
                 <h1>tất cả đánh giá</h1>
-                
-                <div id="my-form" class="hidden">
+                 <?php 
+                $bl = new comment;
+                        $bls= $bl->userOfBl( $result['id_dv']);
+                        $counts= $bl->getBlIdUser($_SESSION['id'],$result['id_dv']);
+                        $count=$counts->fetch_assoc();
+                        if($count['count']>0){
+                            echo '';
+                        }else{
+echo '<input type="submit" value="đánh giá" class="inline-delete-btn" id="my-input">';
+                        }
+                ?>
+               <div id="my-form" class="hidden">
                     <form action="?act=bl" method="post" class="from-main">
                         <h3>Đánh Giá Của Bạn</h3>
                         <p class="placeholder">tiêu đề <span>*</span></p>
@@ -150,26 +160,13 @@ $result = $getiddv->fetch_assoc()
                         <input type="submit" value="đăng bài" name="submit" class="btn">
                     </form>
                 </div>
-                
             </div>
-            
+
             <div class="box-container">
                 <?php 
-                $bl = new comment;
-                        $bls= $bl->userOfBl( $result['id_dv']);
                         if($bls){
                             while($result=$bls->fetch_assoc()){
-                    if( count($result['id_pk_user'])>1){ echo"";
-                    }else{
-                        echo'
-                        <input type="submit" value="đánh giá" class="inline-delete-btn" id="my-input">';
-                        echo $_SESSION['id'];
-                        echo $result['id_pk_user'];
-                    }
-                ?>
-               
-
-
+                                ?>
                 <div class="box">
                     <div class="user">
                         <img src="<?=$result['img']?>" alt="ảnh đại diện">
