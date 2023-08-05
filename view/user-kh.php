@@ -108,7 +108,6 @@
                 <form>
                     <label for="">Nhập dãy số trong email<input type="text" placeholder="1234..." name="" /></label>
                     <input type="submit" value="Gửi" name="" data-target="mk_new" class="query_btn" />
-                    <input type="text" placeholder= "chưa làm">
                 </form>
             </div>
             <!-- dich vụ đã thích -->
@@ -167,7 +166,7 @@
                                         <li>'.$dich_vu['ngay_dkdv'].'</li>
                                         <li>'.$infor_dv['tong_ng'].'</li>
                                         <li>'.$dich_vu['trang_thai'].'</li>
-                                        <li><a href="#">chi tiết</a></li>
+                                        <li><a href="?act=chitiettour&idsp='.$infor_dv['id_dv'].'">chi tiết</a></li>
                                     </ul>';
                             }
     
@@ -201,7 +200,11 @@
                         <div>
                             <label for="">
                                 <p>tên đăng nhập:</p>
-                                <input type="text" name="up_name" />
+                                <input type="text" name="up_name" value="
+                                <?php 
+                                echo $_SESSION['name'];
+                                ?>
+                                " />
                             </label>
                             <label for="">
                                 <p>email:</p>
@@ -220,11 +223,19 @@
                         <div>
                             <label for="">
                                 <p>số điện thoại:</p>
-                                <input type="number" name="up_num" />
+                                <input type="number" name="up_num" value="
+                                <?php 
+                                echo $_SESSION['sdt'];
+                                ?>
+                                "/>
                             </label>
                             <label for="">
                                 <p>địa chỉ:</p>
-                                <input type="text" name="up_locate" /><br>
+                                <input type="text" name="up_locate" value="
+                                <?php 
+                                echo $_SESSION['dia_chi'];
+                                ?>
+                                "/><br>
                                 <em>Lưu ý: chúng tôi sẽ xác định bạn ở đâu, để chọn tuyến đường phù hợp</em>
                             </label>
                         </div>
