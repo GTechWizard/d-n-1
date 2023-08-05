@@ -15,7 +15,7 @@ if (isset($_POST["action"])) {
         while ($result = $search2->fetch_assoc()) { ?>
             <div class="search-product mt20" style="width: 430px; height: 118px;margin: auto;">
                 <div class="search-img">
-                    <img src="" alt="">
+                    <img src="/duan1/d-n-1/<?= $result['img_dv'] ?>" alt="" width="100px">
                 </div>
                 <div class="search-font">
                     <div class="search-h2 mt20">
