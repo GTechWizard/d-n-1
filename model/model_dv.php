@@ -127,5 +127,16 @@ public function  searchsp($search)
     $result = $this->db->select($query);
     return $result;
 }
+public function  like($iduser,$iddv)
+{
+  $query= "INSERT INTO `like_dv` (`id_like_dv`, `id_pk_user`, `id_pk_dv`) VALUES (NULL, '$iduser', '$iddv');";
+    $this->db->insert($query);
+}
+public function  getlikeuser($iduser)
+{
+  $query= "SELECT `dv`.`id_dv`,`dv`.`name`,`dv`.`img_dv`,`dv`.`tong_ng` FROM `like_dv` JOIN `dv` ON `like_dv`.`id_pk_dv` = `dv`.`id_dv` WHERE `like_dv`.`id_pk_user` = '$iduser' GROUP BY `like_dv`.`id_pk_dv`";
+    $result= $this->db->select($query);
+    return $result;
+}
 
 }

@@ -160,6 +160,13 @@ justify-content: center;
   box-shadow: 0px 0px 10px white;
 }
 
+.account-user-page .form_tt form .check_tt .img_ur img {
+  width: 50%;
+  height: 150%;
+  border-radius: 50%;
+  object-fit: contain;
+  background-color: gray;
+}
   </style>
 </head>
 

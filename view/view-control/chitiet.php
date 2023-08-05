@@ -51,8 +51,7 @@
               </p>
             </div>
             <div class="card-top-submit">
-              <input type="submit" value="yêu thích">
-              <input type="submit" value="đặt Tour">
+            <a href="?act=like&iduser=<?=$_SESSION['id']?>&iddv=<?=$result['id_dv']?>" class="addCart" style="text-decoration: none; text-transform: uppercase; font-weight: bold;">yêu thích</a>
             </div>
           </div>
         </div>

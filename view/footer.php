@@ -1,4 +1,4 @@
-<?php if(isset($_GET['act']) && $_GET['act']!= 'user'){
+<?php if(isset($_GET['act']) && $_GET['act']!= 'user' && $_GET['act']!= 'tk'){
 	echo'<footer class="footer">
 	<div class="container">
 		<div class="row">

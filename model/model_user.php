@@ -73,6 +73,7 @@ class user{
     $result =$this->db->select($query);
     return $result;
   }
+  
   public function get_user_email($email){
     // = sai bằng là so sánh cả kiều và các dạng ký tự
     $query="SELECT * FROM `user` WHERE `user`.`email` LIKE '$email'";
