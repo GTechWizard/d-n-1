@@ -19,7 +19,8 @@
 
             
             $.ajax({
-                url: "/duan1/d-n-1/model/model_search.php",
+                // đừng dẫn
+                url: "/da1/d-n-1/model/model_search.php",
                 method: "POST",
                 data: {action: action, search_name: search_name},
                 success: function(data) {
