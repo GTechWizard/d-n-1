@@ -257,6 +257,21 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             }
             
             break;
+        case 'bl':
+            if(isset($_POST['submit'])&&$_POST['submit']){
+                $td= $_POST['title'];
+                $id_pk_dv= $_POST['id_dv'];
+                $id_pk_user= $_SESSION['id'];
+                $nd= $_POST['description'];
+                $ngay_bl= date('d-m-Y');
+                $danhgia= $_POST['rating'];
+             $bl = new comment;
+             $bl -> insetcm($id_pk_dv,$id_pk_user,$td,$nd,$ngay_bl,$danhgia);
+             header("location:?act=chitiettour&idsp=$id_pk_dv");
+            }
+
+            
+            break;
         
 
         // thiếu là sai

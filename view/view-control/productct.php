@@ -82,7 +82,7 @@ $result = $getiddv->fetch_assoc()
 
             <div class="row">
                 <div class="col">
-                    <img src="img/sapa.jpg" alt="" class="image">
+                    <img src="<?= $result['img_dv'] ?>" alt="img" class="image">
                     <h3 class="title"></h3>
                 </div>
                 <div class="col">
@@ -130,13 +130,13 @@ $result = $getiddv->fetch_assoc()
         <section class="reviews-container">
             <div class="heading">
                 <h1>tất cả đánh giá</h1>
-                <input type="submit" value="đánh giá" class="inline-delete-btn" id="my-input">
-
+                
                 <div id="my-form" class="hidden">
-                    <form action="" method="post" class="from-main">
-                        <h3>đánh giá của bạn</h3>
+                    <form action="?act=bl" method="post" class="from-main">
+                        <h3>Đánh Giá Của Bạn</h3>
                         <p class="placeholder">tiêu đề <span>*</span></p>
                         <input type="text" name="title" required maxlength="50" placeholder="nhập tiêu đề" class="box">
+                        <input type="hidden" name="id_dv" value="<?= $result['id_dv'] ?>">
                         <p class="placeholder">nội dung</p>
                         <textarea name="description" class="box" placeholder="nhập nội dung" maxlength="1000" cols="30" rows="10"></textarea>
                         <p class="placeholder">đánh giá sao <span>*</span></p>
@@ -150,36 +150,47 @@ $result = $getiddv->fetch_assoc()
                         <input type="submit" value="đăng bài" name="submit" class="btn">
                     </form>
                 </div>
+                
             </div>
-
+            
             <div class="box-container">
+                <?php 
+                $bl = new comment;
+                        $bls= $bl->userOfBl( $result['id_dv']);
+                        if($bls){
+                            while($result=$bls->fetch_assoc()){
+                    if( count($result['id_pk_user'])>1){ echo"";
+                    }else{
+                        echo'
+                        <input type="submit" value="đánh giá" class="inline-delete-btn" id="my-input">';
+                        echo $_SESSION['id'];
+                        echo $result['id_pk_user'];
+                    }
+                ?>
+               
 
 
                 <div class="box">
                     <div class="user">
-
-                        <img src="img/profile8.jpg" alt="">
-                        <!-- <h3><?= substr($fetch_user['name'], 0, 1); ?></h3> -->
+                        <img src="<?=$result['img']?>" alt="ảnh đại diện">
+                        <h3><?= substr($fetch_user['name'], 0, 1); ?></h3>
                         <div>
-                            <p>binhpeo</p>
-                            <span>23-1-2023</span>
+                            <p></p>
+                            <span><?=$result['ngay_bl']?></span>
                         </div>
                     </div>
 
                     <div class="ratings">
 
-                        <p style="background:var(--red);"><i class="fas fa-star"></i><span>1</span></p>
+                        <p style="background:var(--red);"><i class="fas fa-star"></i><span><?=$result['danh_gia']?></span></p>
                         <!-- <p style="background:var(--orange);"><i class="fas fa-star"></i> <span></span></p>
                   <p style="background:var(--orange);"><i class="fas fa-star"></i> <span></span></p>
                   <p style="background:var(--main-color);"><i class="fas fa-star"></i> <span></span></p>
                   <p style="background:var(--main-color);"><i class="fas fa-star"></i> <span></span></p> -->
                     </div>
-                    <h3 class="title">tốt</h3>
+                    <h3 class="title"><?=$result['td']?></h3>
 
-                    <p class="description">Tại đất nước hồi giáo Malaysia: vui chơi giải trí tại Cao nguyên Genting
-                        – Quần thể Resort Casino nổi tiếng thế giới.
-                        Tham quan động Batu, Phố cổ Malacca và tòa nhà cao nhất Malaysia – Twin Towers (Niềm tự hào
-                        của người dân Malaysia).</p>
+                    <p class="description"><?=$result['noi_dung']?></p>
                     <br>
                     <form action="" method="post" class="flex-btn">
                         <input type="hidden" name="delete_id" value="">
@@ -188,33 +199,7 @@ $result = $getiddv->fetch_assoc()
                         <input type="submit" value="xóa đánh giá" class="inline-delete-btn" name="delete_review" onclick="return confirm('delete this review?');">
                     </form>
                 </div>
-                <div class="box">
-                    <div class="user">
-
-                        <img src="img/profile6.jpg" alt="">
-                        <!-- <h3><?= substr($fetch_user['name'], 0, 1); ?></h3> -->
-                        <div>
-                            <p>binhpeo</p>
-                            <span>23-1-2023</span>
-                        </div>
-                    </div>
-
-                    <div class="ratings">
-
-                        <p style="background:var(--red);"><i class="fas fa-star"></i><span>1</span></p>
-                        <!-- <p style="background:var(--orange);"><i class="fas fa-star"></i> <span></span></p>
-                  <p style="background:var(--orange);"><i class="fas fa-star"></i> <span></span></p>
-                  <p style="background:var(--main-color);"><i class="fas fa-star"></i> <span></span></p>
-                  <p style="background:var(--main-color);"><i class="fas fa-star"></i> <span></span></p> -->
-                    </div>
-                    <h3 class="title">tốt</h3>
-
-                    <p class="description">Tại đất nước hồi giáo Malaysia: vui chơi giải trí tại Cao nguyên Genting
-                        – Quần thể Resort Casino nổi tiếng thế giới.
-                        Tham quan động Batu, Phố cổ Malacca và tòa nhà cao nhất Malaysia – Twin Towers (Niềm tự hào
-                        của người dân Malaysia).</p>
-
-                </div>
+                <?php }}?>
             </div>
 
         </section>
