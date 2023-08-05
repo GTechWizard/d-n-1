@@ -1,6 +1,6 @@
  <!-- dich vụ đã thích -->
  <div class="dvl " id="dvl">
-                <h2>dịch vụ đã thích</h2>
+                <h2>Dịch Vụ Đã Thích</h2>
                 <div class="dv">
                     <ul class="uldvth">
                         <li>stt</li>
