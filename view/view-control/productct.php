@@ -42,8 +42,15 @@ $result = $getiddv->fetch_assoc()
                 <br>
             </div>
             <form class="form-product">
+                <?php 
+                    if(isset($_SESSION['id'])&&$_SESSION['id']!=''){?>
                 <a href="?act=dattuor&id_dv=<?=$result['id_dv']?>&name=<?=$result['name']?>&day_start=<?=$result['day_start']?>&day_end=<?=$result['day_end']?>&price_young=<?=$result['price_young']?>&price_old=<?=$result['price_old']?>&diem_den=<?=$result['diem_den'] ?>&noi_bd=<?=$result['noi_bd']?>" class="addCart" style="txext-decoration: none; text-transform: uppercase; font-weight: bold;">đặt tour</a>
                 <a href="cart.html" class="addCart" style="text-decoration: none; text-transform: uppercase; font-weight: bold;">yêu thích</a>
+                    <?php
+                    }else{?>
+                    <em>Hãy đăng nhập để có thể đặt tour</em><br><br><br>
+ <a href="?act=dn" class="addCart" style="text-decoration: none; text-transform: uppercase; font-weight: bold;">đăng nhập</a>
+                    <?php }?>
             </form>
         </div>
     </div>

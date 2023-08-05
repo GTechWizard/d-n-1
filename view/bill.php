@@ -32,8 +32,11 @@
     
 
                 <div class="group">
-                    <p> Tổng Tiền: <?php $tongtien= $_POST['price_young'] * $_POST['price_young_origin'] + $_POST['price_old'] * $_POST['price_old_origin']
-                     ;echo $tongtien;?> VND</p>
+                    <p> Tổng Tiền: 
+                        <?php 
+                    if(isset($_POST['price_young'])&& isset($_POST['price_old']))
+                    {$tongtien= $_POST['price_young'] * $_POST['price_young_origin'] + $_POST['price_old'] * $_POST['price_old_origin']
+                     ;echo $tongtien;}else{echo "bạn chưa chọn số lượng";}?> VND</p>
                 </div>
             </div>
             <div class="return">
