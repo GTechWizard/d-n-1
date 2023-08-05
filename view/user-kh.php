@@ -147,15 +147,6 @@
                         <li>Trạng thái</li>
                         <li>chi tiết</li>
                     </ul>
-                    <ul class="uldvtd">
-                        <li>1</li>
-                        <li>cắm trại nơi sơn la kỳ thú</li>
-                        <li><img src="./img/3.jpg" alt="" /></li>
-                        <li>12/02/1212</li>
-                        <li>12</li>
-                        <li>chưa đi</li>
-                        <li><a href="#">chi tiết</a></li>
-                    </ul>
 
                     <?php
                             $conn = new user;
