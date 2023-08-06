@@ -18,6 +18,20 @@ class dv
     $result = $this->db->select($query);
     return $result;
   }
+  public function getDvWeak()
+  {
+    $query = "SELECT COUNT(*) AS count
+    FROM price_tour
+    WHERE price_tour.day_start BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 7 DAY)";
+    $result = $this->db->select($query);
+    return $result;
+  }
+  public function getForChairRadio()
+  {
+    $query = "SELECT COUNT(id_dv) AS count , loai.id_loai, loai.kieu_dv FROM `dv` JOIN `loai` ON `dv`.`id_pk_loai` = `loai`.`id_loai` GROUP BY loai.id_loai";
+    $result = $this->db->select($query);
+    return $result;
+  }
   public function count_dv()
   {
     $query = "SELECT COUNT(`dv`.`id_dv`) AS `count_dv` FROM `dv`";

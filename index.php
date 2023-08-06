@@ -280,14 +280,14 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             break;
         case 'unlike':
             if (isset($_GET['id']) && $_GET['id']) {
-                $iddv=$_GET['id'];
-                $iduser=$_SESSION['id'];
+                $iddv = $_GET['id'];
+                $iduser = $_SESSION['id'];
                 $user = new user;
-               $user->deletelike($iduser,$iddv);
+                $user->deletelike($iduser, $iddv);
             }
-                header('location:?act=user&cn=dvl');
+            header('location:?act=user&cn=dvl');
             break;
-            
+
         // form tìm nahnh
         case 'findfast':
             if (isset($_POST['find']) && $_POST['find']) {
@@ -335,9 +335,15 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 echo "<script>
                             alert('chào mừng " . $_SESSION['name'] . "');
                             </script>";
+            $date = $date = date('d-m-Y');
+            $home = new home;
+            $home->luotxem($date);
             break;
     }
 } else {
     include "view/home.php";
+    $date = $date = date('d-m-Y');
+    $home = new home;
+    $home->luotxem($date);
 }
 include "view/footer.php";

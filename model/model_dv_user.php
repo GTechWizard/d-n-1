@@ -43,6 +43,14 @@ class dvUser{
     $query2 = "INSERT INTO sl_ng_dk_user (sl_ng_dk_user.id_sl,sl_ng_dk_user.id_pk_dv_user,sl_ng_dk_user.id_pk_price_tour,sl_ng_dk_user.so_luong_old,sl_ng_dk_user.so_luong_young) VALUES (NULL,'$id_pk_dv_user','$id_pk_price_tour','$price_old','$price_young')";
     $this->db->insert($query2);
   }
+  public function getDvUserWeak()
+  {
+    $query = "SELECT COUNT(*) AS count
+    FROM dv_user
+    WHERE STR_TO_DATE(dv_user.ngay_dkdv, '%Y-%m-%d') BETWEEN DATE_SUB(CURDATE(), INTERVAL 7 DAY) AND CURDATE();";
+    $result = $this->db->select($query);
+    return $result;
+  }
 }
 
 

@@ -47,7 +47,14 @@ class comment{
   $result =$this->db->select($query);
   return $result;
  }
-
+ public function getBlWeak()
+ {
+   $query = "SELECT COUNT(*) AS count
+   FROM bl
+   WHERE STR_TO_DATE(bl.ngay_bl, '%d-%m-%Y') BETWEEN DATE_SUB(CURDATE(), INTERVAL 7 DAY) AND CURDATE()";
+   $result = $this->db->select($query);
+   return $result;
+ }
 }
 
 
