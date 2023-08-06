@@ -277,9 +277,17 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                     $_SESSION['sdt'] = $back_result['sdt'];
                 }
             }
-
             break;
-
+        case 'unlike':
+            if (isset($_GET['id']) && $_GET['id']) {
+                $iddv=$_GET['id'];
+                $iduser=$_SESSION['id'];
+                $user = new user;
+               $user->deletelike($iduser,$iddv);
+            }
+                header('location:?act=user&cn=dvl');
+            break;
+            
         // form tìm nahnh
         case 'findfast':
             if (isset($_POST['find']) && $_POST['find']) {

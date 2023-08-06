@@ -1,5 +1,5 @@
  <!-- dich vụ đã thích -->
- <div class="dvl " id="dvl">
+ <div class="dvs " id="dvs">
                 <h2>Dịch Vụ Đã Thích</h2>
                 <div class="dv">
                     <ul class="uldvth">
@@ -8,6 +8,7 @@
                         <li>ảnh</li>
                         <li>số người</li>
                         <li>chi tiết</li>
+                        <li></li>
                     </ul>
                 <?php
                 $dv= new dv;
@@ -23,6 +24,7 @@
                         <li><img src=" <?= $result['img_dv'] ?>" alt="img" /></li>
                         <li>  <?= $result['tong_ng'] ?></li>
                         <li><a href="?act=chitiettour&idsp=  <?= $result['id_dv'] ?>">chi tiết</a></li>
+                        <li> <a href="?act=unlike&id=  <?= $result['id_dv'] ?>">Bỏ</a></li>
                     </ul>
                 <?php
                 }}

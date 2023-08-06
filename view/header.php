@@ -167,6 +167,21 @@ justify-content: center;
   object-fit: contain;
   background-color: gray;
 }
+.card-top-hover .card-top-submit a{
+  background-color: white;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  font-size: large;
+  width: 50%;
+  display: none;
+  position: relative;
+}
+.card-top-hover:hover a{
+  display: block;
+}
+.card-top-hover .card-top-submit a:hover{
+  background-color: pink;
+}
   </style>
 </head>
 

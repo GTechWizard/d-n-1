@@ -53,13 +53,10 @@ class user{
   }
 
 
-  // public function update_pass($id, $new_pass){
-  //     $query = "UPDATE `user` SET `pass` = :new_pass WHERE `id_user` = :id";
-  //     $stmt = $this->db->update($query);
-  //     $stmt->bindParam(':new_pass', $new_pass);
-  //     $stmt->bindParam(':id', $id);
-  //     $stmt->execute();
-  // }
+  public function deletelike($iduser,$iddv){ 
+    $query ="DELETE FROM like_dv WHERE like_dv.id_pk_user='$iduser' AND like_dv.id_pk_dv='$iddv'";
+    $this->db->detele($query);
+ }
 
 
   public function list_service_user($id){
