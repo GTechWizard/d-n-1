@@ -190,7 +190,7 @@ justify-content: center;
   <nav>
 
     <div class="icon">
-      <a href="?act=home"><img src="img/logononfont.png" alt="Come Back"></a>
+      <a href="?act=home"><img src="img/logononfont.jpg" alt="Come Back"></a>
     </div>
     <?php
       include "./view/view-control/search.php";
