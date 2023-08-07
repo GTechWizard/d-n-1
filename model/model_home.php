@@ -51,11 +51,18 @@ class home{
     $result= $this->db->select($query);
     return $result;
   }
+  public function getDataChair($month){
+    $query ="SELECT *
+    FROM home
+    WHERE EXTRACT(MONTH FROM home.date) = '$month';";
+    $result= $this->db->select($query);
+    return $result;
+  }
   public function getLxWeak()
   {
     $query = "SELECT home.luot_xem
     FROM home
-    WHERE STR_TO_DATE(home.date, '%d-%m-%Y') BETWEEN DATE_SUB(CURDATE(), INTERVAL 7 DAY) AND CURDATE();";
+    WHERE STR_TO_DATE(home.date, '%Y-%m-%d') BETWEEN DATE_SUB(CURDATE(), INTERVAL 7 DAY) AND CURDATE();";
     $result = $this->db->select($query);
     return $result;
   }

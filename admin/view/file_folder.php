@@ -50,7 +50,7 @@
                 echo '<div class="col-md-4 ">
           <img src="' . $dir . '/' . $file . '" alt="img" width="90%" height="150px" class="mt-3">
           <em>' . $file . '</em>
-          <a href="?act=delete_file&dir=' . $dir . '&value=' . $file . '&hr=' . $act . '">Xóa</a>
+          <a href="?act=delete_file&dir=' . $dir . '&value=' . $file . '&hr=' . $act . '" onclick="return confirm(\'Bạn chắn chắn muốn xóa?\')">Xóa</a>
           </div>';
               }
               echo "</ul>";
@@ -73,7 +73,7 @@
               echo '<div class="col-md-4">
         <img src="' . $dir . '/' . $file . '" alt="img" width="100%" class="mt-3">
         <em>' . $file . '</em>
-        <a href="?act=delete_file&dir=' . $dir . '&value=' . $file . '&hr=' . $act . '">Xóa</a>
+        <a href="?act=delete_file&dir=' . $dir . '&value=' . $file . '&hr=' . $act . '" onclick="return confirm(\'Bạn chắn chắn muốn xóa?\')">Xóa</a>
         </div>';
             }
             echo "</ul>";
@@ -99,7 +99,7 @@
         </div>
         <div class="container">
         <em>' . $file . '</em>
-        <a href="?act=delete_file&dir=' . $dir . '&value=' . $file . '&hr=' . $act . '">Xóa</a>
+        <a href="?act=delete_file&dir=' . $dir . '&value=' . $file . '&hr=' . $act . '" onclick="return confirm(\'Bạn chắn chắn muốn xóa?\')">Xóa</a>
         </div>
         </div>';
             }

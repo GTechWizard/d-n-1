@@ -370,16 +370,25 @@
 <script>
 	var lineChartData = {
 		labels: [<?php
-		$dateString = $home->getAllLuotXem();
-		if ($dateString) {
-			while ($result = $dateString->fetch_assoc()) {
-				$dateParts = date_parse_from_format('d-m-Y', $result['date']);
+	$months = array(); // Mảng lưu trữ các tháng đã xuất hiện
 
-				if ($dateParts['month'])
-					$month = str_pad($dateParts['month'], 2, '0', STR_PAD_LEFT);
-				echo "\"Tháng $month\",";
+	for ($i = 1; $i < 13; $i++) {
+			$dateString = $home->getDataChair($i);
+			if ($dateString) {
+					while ($result = $dateString->fetch_assoc()) {
+							$dateParts = date_parse_from_format('Y-m-d', $result['date']);
+	
+							if ($dateParts['month']) {
+									$month = str_pad($dateParts['month'], 2, '0', STR_PAD_LEFT);
+									// Kiểm tra xem tháng đã tồn tại trong mảng chưa
+									if (!in_array($month, $months)) {
+											$months[] = $month; // Thêm tháng vào mảng
+											echo "\"Tháng $month\",";
+									}
+							}
+					}
 			}
-		}
+	}
 		?>],
 		datasets: [
 			{
@@ -391,12 +400,15 @@
 				pointHighlightFill: "#fff",
 				pointHighlightStroke: "rgba(48, 164, 255, 1)",
 				data: [<?php
-				$luotxem = $home->getAllLuotXem();
+			for ($i=1; $i < 13; $i++) { 
+				$luotxem = $home-> getDataChair($i);
 				if ($luotxem) {
+					$countlx=0;
 					while ($result = $luotxem->fetch_assoc()) {
-						echo $result['luot_xem'] . ", ";
+						$countlx+= $result['luot_xem'];
 					}
-				}
+					echo $countlx . ", ";
+				}}
 				?>]
 			}
 		]

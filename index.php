@@ -342,7 +342,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
     }
 } else {
     include "view/home.php";
-    $date = $date = date('d-m-Y');
+    $date = $date = date('Y-m-d');
     $home = new home;
     $home->luotxem($date);
 }

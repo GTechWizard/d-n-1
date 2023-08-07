@@ -47,7 +47,8 @@
             <td class="th-inner">'.$result['img'].'</td>
             <td class="th-inner">'.$result['vai_tro'].'</td>
           <tbody>
-            <td colspan="8"><a href="?act=edit_user&id='.$result['id_user'].'">Sửa</a><a href="?act=delete_user&id='.$result['id_user'].'">Xóa</a></td>
+            <td colspan="8"><a href="?act=edit_user&id='.$result['id_user'].'"  onclick="return confirm(\'Bạn chắn chắn muốn chỉnh sửa?\')">Sửa</a>
+            <a href="?act=delete_user&id='.$result['id_user'].'" onclick="return confirm(\'Bạn chắn chắn muốn xóa?\')">Xóa</a></td>
           </tbody>
           </tbody>
         </table>';
@@ -69,8 +70,8 @@
           <li class="list-group-item"><a href="?act=bai_viet_tt&id='.$result['id_tt'].'">Nội dung</a></li>
         </ul>
         <div class="card-body-btn">
-          <a href="?act=edit_tt&id='.$result['id_tt'].'" class="card-link">Sửa</a>
-          <a href="?act=delete_tt&id='.$result['id_tt'].'" class="card-link">Xóa</a>
+          <a href="?act=edit_tt&id='.$result['id_tt'].'" class="card-link" onclick="return confirm(\'Bạn chắn chắn muốn chỉnh sửa?\')">Sửa</a>
+          <a href="?act=delete_tt&id='.$result['id_tt'].'" class="card-link" onclick="return confirm(\'Bạn chắn chắn muốn xóa?\')">Xóa</a>
         </div>
       </div>
     </div>';
@@ -91,7 +92,7 @@
             <td class="th-inner">'.$result['img'].'</td>
             <td class="th-inner">'.$result['kieu_dv'].'</td>
           <tbody>
-            <td colspan="4"><a href="?act=edit_loai&id='.$result['id_loai'].'">Sửa</a> <a href="?act=delete_loai&id='.$result['id_loai'].'">Xóa</a></td>
+            <td colspan="4"><a href="?act=edit_loai&id='.$result['id_loai'].'" onclick="return confirm(\'Bạn chắn chắn muốn chỉnh sửa?\')">Sửa</a> <a href="?act=delete_loai&id='.$result['id_loai'].'" onclick="return confirm(\'Bạn chắn chắn muốn xóa?\')">Xóa</a></td>
           </tbody>
           </tbody>
         </table>';
@@ -128,7 +129,7 @@
                   <td class="th-inner">'.$result['tong_ng'].'</td>
                   <td class="th-inner"><a href="?act=ctbv_dv&id='.$result['id_dv'].'">Chi tiết</a></td>
                 <tbody>
-                  <td colspan="11"><a href="?act=edit_dv&id='.$result['id_dv'].'">Sửa</a> <a href="?act=delete_dv&id='.$result['id_dv'].'">Xóa</a></td>
+                  <td colspan="11"><a href="?act=edit_dv&id='.$result['id_dv'].'" onclick="return confirm(\'Bạn chắn chắn muốn chỉnh sửa?\')">Sửa</a> <a href="?act=delete_dv&id='.$result['id_dv'].'" onclick="return confirm(\'Bạn chắn chắn muốn xóa?\')">Xóa</a></td>
                 </tbody>
                 </tbody>
               </table>';

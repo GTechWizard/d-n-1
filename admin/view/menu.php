@@ -18,7 +18,7 @@
 	<!-- form search -->
 	<form role="search" method="post" action="?act=search">
 		<div class="form-group">
-			<input type="text" class="form-control" placeholder="Search" name="value"/>
+			<input type="text" class="form-control" placeholder="Search" name="value" required/>
 			<input type="submit" class="btn btn-info" name="get" value="Tìm"/>
 		</div>
 	</form>
