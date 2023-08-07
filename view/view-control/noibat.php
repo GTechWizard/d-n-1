@@ -41,7 +41,7 @@
                       </p>
                     </div>
                     <div class="card-top-submit">
-                    <a href="?act=like&iduser=<?=$_SESSION['id']?>&iddv=<?=$result['id_dv']?>" class="addCart" style="text-decoration: none; text-transform: uppercase; font-weight: bold;">yêu thích</a>
+                    <a href="?act=like&iduser=<?php if(isset($_SESSION['id'])){ echo $_SESSION['id'];} ?>&iddv=<?=$result['id_dv']?>" class="addCart" style="text-decoration: none; text-transform: uppercase; font-weight: bold;">yêu thích</a>
                     </div>
                   </div>
                 </div>

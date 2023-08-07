@@ -69,6 +69,11 @@ class tt{
       }
     }   
   }
+  function tt_pt($offset ,$limit){
+    $query="SELECT * FROM `tt` LIMIT $offset,$limit";
+    $result= $this->db->select($query);
+    return $result;
+  }
 }
 
 

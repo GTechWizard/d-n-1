@@ -9,24 +9,24 @@
 
   <div class="product-center container">
 
-    <?php
-    $dv = new dv;
-    // Thiết lập các biến phân trang
-    $limit = 3; // Số lượng mục trên mỗi trang
-    $dvs = $dv->getAllDV(); // Tổng số kết quả 
-    $countdv = 0;
-    if ($dvs) {
-      while ($result = $dvs->fetch_assoc()) {
-        $countdv++;
-      }
-      $total_pages = ceil($countdv / $limit);
-      $current_page = isset($_GET['page']) ? $_GET['page'] : 1; // Trang hiện tại
-      $offset = ($current_page - 1) * $limit; // Vị trí bắt đầu của trang hiện tại
-      $query = $dv->dv_pt($offset, $limit);
-      // // Hiển thị dữ liệu trên trang hiện tại
-      if ($query) {
-        while ($result1 = $query->fetch_assoc()) {
-          ?>
+        <?php
+        $dv = new dv;
+        // Thiết lập các biến phân trang
+        $limit = 6; // Số lượng mục trên mỗi trang
+        $dvs = $dv->getAllDV(); // Tổng số kết quả 
+        $countdv = 0;
+        if ($dvs) {
+          while ($result = $dvs->fetch_assoc()) {
+            $countdv++;
+          }
+          $total_pages = ceil($countdv / $limit);
+          $current_page = isset($_GET['page']) ? $_GET['page'] : 1; // Trang hiện tại
+          $offset = ($current_page - 1) * $limit; // Vị trí bắt đầu của trang hiện tại
+          $query = $dv->dv_pt($offset, $limit);
+          // Hiển thị dữ liệu trên trang hiện tại
+          if ($query) {
+            while ($result1 = $query->fetch_assoc()) {
+              ?>
           <div class="product-item">
             <div class="card-1">
               <div class="card-top">
@@ -38,7 +38,7 @@
                     <p>Hãy nhấn yêu thích để có thể xem lại</p>
                   </div>
                   <div class="card-top-submit">
-                    <a href="?act=like&iduser=<?= $_SESSION['id'] ?>&iddv=<?= $result1['id_dv'] ?>" class="addCart" style="text-decoration: none; text-transform: uppercase; font-weight: bold;">yêu thích</a>
+                    <a href="?act=like&iduser=<?php if(isset($_SESSION['id'])){ echo $_SESSION['id'];} ?>&iddv=<?= $result1['id_dv'] ?>" class="addCart" style="text-decoration: none; text-transform: uppercase; font-weight: bold;">yêu thích</a>
                   </div>
                 </div>
               </div>
@@ -86,13 +86,15 @@
               </div>
             </div>
           </div>
-        </div>
-      </section>
-      <?php
+          <?php 
       
     }
   }
-} 
+} ?>
+          
+  </div>
+</section>
+      <?php
       // Hiển thị phân trang
       if ($total_pages > 1) {
         echo' <section class="pagination">
