@@ -112,7 +112,6 @@
 						<em class="fa fa-toggle-up"></em>
 					</span>
 				</div>
-				<!-- xxx -->
 				<div class="panel-body">
 					<div class="canvas-wrapper">
 						<!-- biểu đồ -->
