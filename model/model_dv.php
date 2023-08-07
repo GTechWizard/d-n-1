@@ -152,5 +152,9 @@ public function  getlikeuser($iduser)
     $result= $this->db->select($query);
     return $result;
 }
-
+function dv_pt($offset ,$limit){
+  $query="SELECT * FROM `dv` LIMIT $offset,$limit";
+  $result= $this->db->select($query);
+  return $result;
+}
 }

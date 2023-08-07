@@ -13,7 +13,13 @@ require_once('model/model_bl.php');
 if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     switch ($act) {
-        // bình
+        case 'alldv':
+                include "view/alldv.php";
+            break;
+        case 'alltt':
+                include "view/alltt.php";
+            break;
+
         case 'chitiettour':
             if (isset($_GET['idsp']) && is_numeric($_GET['idsp']) && $_GET['idsp'] > 0) {
                 $id_dv = $_GET['idsp'];

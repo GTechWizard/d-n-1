@@ -30,7 +30,7 @@
                     <div class="card-top-hover-price">
                       <p><span>
                           <?= $result['price_young'] ?>
-                        </span> <span>Đ</span></p>
+                        </span> <span>VNĐ</span></p>
                       <p>
                         <span>
                           <?= $result['day_start'] ?>

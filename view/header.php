@@ -197,8 +197,8 @@ justify-content: center;
     ?>
     <ul>
       <li><a href="" class="card">Chúng tôi</a></li>
-      <li><a href="#" class="card">Du Lịch</a></li>
-      <li><a href="?act=tt" class="card">Tin Tức</a></li>
+      <li><a href="?act=alldv" class="card">Du Lịch</a></li>
+      <li><a href="?act=alltt" class="card">Tin Tức</a></li>
       <li><a href="#" class="card">Hỗ Trợ</a></li>
     </ul>
     <div class="navbar">
