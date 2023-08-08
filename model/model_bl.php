@@ -37,7 +37,7 @@ class comment{
  }
  public function userOfBl($id_dv)
  {
-  $query = "SELECT * FROM user JOIN bl ON bl.id_pk_user = user.id_user JOIN dv ON dv.id_dv = bl.id_pk_dv WHERE dv.id_dv='$id_dv'";
+  $query = "SELECT bl.noi_dung,bl.td,bl.ngay_bl,bl.danh_gia, user.name, dv.id_dv, user.img FROM user JOIN bl ON bl.id_pk_user = user.id_user JOIN dv ON dv.id_dv = bl.id_pk_dv WHERE dv.id_dv='$id_dv'";
   $result =$this->db->select($query);
   return $result;
  }

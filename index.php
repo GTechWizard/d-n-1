@@ -18,6 +18,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             if (isset($_GET['idsp']) && is_numeric($_GET['idsp']) && $_GET['idsp'] > 0) {
                 $id_dv = $_GET['idsp'];
                 $getid = new dv;
+                $getid->update_lx_dv($id_dv);
                 $getiddv = $getid->getDVID($id_dv);
                 include "view/chitietproduct.php";
             } else {
