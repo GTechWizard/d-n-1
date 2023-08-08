@@ -13,7 +13,6 @@ require_once('model/model_bl.php');
 if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     switch ($act) {
-            // bình
         case 'chitiettour':
             if (isset($_GET['idsp']) && is_numeric($_GET['idsp']) && $_GET['idsp'] > 0) {
                 $id_dv = $_GET['idsp'];
@@ -22,7 +21,6 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $getiddv = $getid->getDVID($id_dv);
                 include "view/chitietproduct.php";
             } else {
-
                 include "view/home.php";
             }
             break;
@@ -330,20 +328,6 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                         </script>";
             }
             break;
-
-        case'banersearch':
-            if (isset($_POST['submit']) && $_POST['submit']) {
-            $startDate = $_POST["start"];
-            $endDate = $_POST["end"];        
-            $startDate = date('Y-m-d', strtotime($startDate));
-            $endDate = date('Y-m-d', strtotime($endDate));
-            $date1 = new dv;
-            $dm = new dv;
-            $dm1 = $dm->getAllDV();
-            $date2 = $date1 ->searchct($startDate,$endDate);
-            }
-            include "view/view-control/ctsearch.php";
-                 break;
         default:
             include "view/home.php";
             if (isset($_SESSION['id']) && $_SESSION['id'] != '')

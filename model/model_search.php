@@ -10,12 +10,12 @@ if (isset($_POST["action"])) {
     $search1 = new dv;
     $search2 = $search1->searchsp($search_name);
     if (!$search2) {
-        echo "KHONG CÓ SẢN PHẨM";
+        echo "KHÔNG CÓ SẢN PHẨM";
     } else {
         while ($result = $search2->fetch_assoc()) { ?>
-            <div class="search-product mt20" style="width: 430px; height: 118px;margin: auto;">
+            <a href="index.php?act=chitiettour&idsp=<?=$result['id_dv'] ?>"><div class="search-product mt20" style="width: 430px; height: 118px;margin: auto;">
                 <div class="search-img">
-                    <img src="uploads/<?= $result['name'] ?>" alt="img">
+                    <img src="uploads/<?= $result['img_dv'] ?>" alt="" width="100px">
                 </div>
                 <div class="search-font">
                     <div class="search-h2 mt20">
@@ -23,7 +23,7 @@ if (isset($_POST["action"])) {
                     </div>
                 </div>
             </div>
-            
+            </a>
         <?php
         }
     }
