@@ -119,7 +119,7 @@ public function getContentPrice($id_dv)
   }
   public function noibat()
   {
-    $query = "SELECT * FROM `dv` JOIN `loai` ON `dv`.`id_pk_loai` = `loai`.`id_loai` JOIN `price_tour` ON `price_tour`.`id_pk_dv` = `dv`.`id_dv` ORDER BY `dv`.`luot_xem` DESC LIMIT 3;";
+    $query = "SELECT * FROM `dv` JOIN `loai` ON `dv`.`id_pk_loai` = `loai`.`id_loai` JOIN `price_tour` ON `price_tour`.`id_pk_dv` = `dv`.`id_dv` GROUP BY `dv`.`luot_xem` DESC LIMIT 3;";
     $result = $this->db->select($query);
     return $result;
   }
