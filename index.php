@@ -150,6 +150,186 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         case 'user':
             include "view/user-kh.php";
             break;
+             // bill
+        case 'bill':
+            if (isset($_POST['get']) && ($_POST['get'])) {
+                $ngay_dkdv = date('Y-m-d');
+                $id_pk_dv = $_POST['id_pk_dv'];
+                $nameuser = $_POST['nameuser'];
+                $diemden = $_POST['diemden'];
+                $email = $_POST['email'];
+                $sdt = $_POST['sdt'];
+                $price_young = $_POST['price_young'];
+                $price_old = $_POST['price_old'];
+                $id_pk_user = $_SESSION['id'];
+                $id_pk_price_tour = $_POST['id_pk_price_tour'];
+                $dv_user = new dvUser;
+                $dv_user->insert_dv_user($ngay_dkdv, $id_pk_dv, $nameuser, $email, $sdt, $price_young, $price_old, $id_pk_user, $id_pk_price_tour);
+                include "view/bill.php";
+            }
+            break;
+
+
+        case 'user':
+            include('view/user-kh.php');
+            //ảnh mới
+            if (isset($_POST['save_img']) && $_POST['save_img']) {
+                $id = $_SESSION['id'];
+                extract($_POST);
+                $target_dir = "uploads/";
+                $target_name = basename($_FILES["img"]["name"]);
+                $target_file = $target_dir . date('HisadmY') . basename($_FILES["img"]["name"]);
+                $uploadOk = 1;
+                $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+                // Kiểm tra xem tệp có phải là ảnh hay không
+                if ($target_name != "") {
+                    $check = getimagesize($_FILES["img"]["tmp_name"]);
+                    if ($check !== false) {
+                        $uploadOk = 1;
+                    } else {
+                        $alert = "không phải file ảnh, vui lòng chọn lại";
+                        $uploadOk = 0;
+                    }
+                }
+                // Cho phép chỉ tải lên các định dạng ảnh nhất định
+                if (
+                    $imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+                    && $imageFileType != "gif"
+                ) {
+                    $alert = "chỉ cho phép ảnh có đuôi JPG, JPEG, PNG & GIF";
+                    $uploadOk = 0;
+                }
+                // Kiểm tra xem có xảy ra lỗi khi tải lên tệp hay không
+                if ($uploadOk == 0) {
+                    $alert = "đăng ảnh không thành công";
+                } else {
+                    move_uploaded_file($_FILES["img"]["tmp_name"], $target_file);
+                }
+                $conn = new user;
+                $user = $conn->update_img($id, $target_file);
+                $_SESSION['img'] = $target_file;
+                if (isset($alert) && $alert != "")
+                    echo "<script>alert('$alert');</script>";
+                include('view/user-kh.php');
+                header('location:?act=user&cn=hsct');
+            }
+
+            //pass mới
+            if (isset($_POST['update_pass']) && $_POST['update_pass']) {
+                //kiểm tra mật khẩu cũ
+                $user_pass = $_SESSION['pass'];
+                $old_pass = $_POST['old_pass'];
+                $new_pass = $_POST['new_pass'];
+                $re_new_pass = $_POST['re_new_pass'];
+                if ($user_pass != $old_pass) {
+                    echo "<script>
+                    alert('Mật khẩu không đúng');
+                  </script>";
+                    header('Location: ?act=user&cn=change_mk');
+                    exit;
+                } else {
+                    if ($new_pass != $re_new_pass) {
+                        echo "<script>
+                              alert('Xác nhận mật khẩu mới không đúng');
+                          </script>";
+                        header('Location: ?act=user&cn=change_mk');
+                        exit;
+                    } else {
+                        $id = $_SESSION['id'];
+                        $conn = new user;
+                        $conn->update_pass($id, $new_pass);
+                        $_SESSION['pass'] = $new_pass;
+                        header('Location: ?act=user&cn=hsct');
+                        exit;
+                    }
+                }
+            }
+            //update infor
+            if (isset($_POST['up_infor']) && $_POST['up_infor']) {
+                //kiểm tra mật khẩu cũ
+                $user_pass = $_SESSION['pass'];
+                $new_name = $_POST['up_name'];
+                $check_pass = $_POST['up_pass'];
+                $num_phone = $_POST['up_num'];
+                $locate = $_POST['up_locate'];
+                if ($check_pass != $user_pass) {
+                    echo "<script>
+                            alert('Mật khẩu không đúng');
+                        </script>";
+                } else {
+
+                    $conn = new user;
+                    $id = $_SESSION['id'];
+                    $email = $_POST['up_email'];
+                    $vai_tro = 0;
+                    $conn->update_user($new_name, $num_phone, $vai_tro, $locate, $email, $id);
+                    $up = $conn->get_one_User($id);
+                    $back_result = $up->fetch_assoc();
+
+
+                    $_SESSION['name'] = $back_result['name'];
+                    $_SESSION['pass'] = $back_result['pass'];
+                    $_SESSION['dia_chi'] = $back_result['dia_chi'];
+                    $_SESSION['email'] = $back_result['email'];
+                    $_SESSION['sdt'] = $back_result['sdt'];
+                    header('location:?act=user&cn=hsct');
+                }
+            }
+            break;
+        case 'unlike':
+            if (isset($_GET['id']) && $_GET['id']) {
+                $iddv = $_GET['id'];
+                $iduser = $_SESSION['id'];
+                $user = new user;
+                $user->deletelike($iduser, $iddv);
+            }
+            header('location:?act=user&cn=dvl');
+            break;
+
+        // form tìm nahnh
+        case 'findfast':
+            if (isset($_POST['find']) && $_POST['find']) {
+                $day_start = $_POST['day_start'];
+                $day_end = $_POST['day_end'];
+                $price_start = $_POST['price_start'];
+                $price_end = $_POST['price_end'];
+                $diem_den = $_POST['diem_den'];
+                $dv = new dv;
+                $list = $dv->findfast($day_start, $day_end, $price_start, $price_end, $diem_den);
+                include('view/findfast.php');
+            }
+
+            break;
+        case 'bl':
+            if (isset($_POST['submit']) && $_POST['submit']) {
+                $td = $_POST['title'];
+                $id_pk_dv = $_POST['id_dv'];
+                $id_pk_user = $_SESSION['id'];
+                $nd = $_POST['description'];
+                $ngay_bl = date('d-m-Y');
+                $danhgia = $_POST['rating'];
+                $bl = new comment;
+                $bl->insetcm($id_pk_dv, $id_pk_user, $td, $nd, $ngay_bl, $danhgia);
+                header("location:?act=chitiettour&idsp=$id_pk_dv");
+            }
+
+
+            break;
+        case 'like':
+            if (isset($_GET['iduser']) && isset($_GET['iddv']) && $_GET['iddv']!='' && $_GET['iduser']!='') {
+                $iduser = $_GET['iduser'];
+                $iddv = $_GET['iddv'];
+                $like = new dv;
+                $like->like($iduser, $iddv);
+                header("location:?act=chitiettour&idsp=$iddv");
+            }else{
+                        include "view/view-control/formdk.php";
+                echo "<script>
+                            alert('Vui lòng đăng nhập');
+                        </script>";
+            }
+            break;
+
         case'banersearch':
             if (isset($_POST['submit']) && $_POST['submit']) {
             $startDate = $_POST["start"];

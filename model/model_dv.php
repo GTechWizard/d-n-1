@@ -95,4 +95,28 @@ public function searchct($startDate,$endDate)
   $result = $this->db->select($query);
   return $result;
 }
+public function  like($iduser,$iddv)
+{
+  $query= "INSERT INTO `like_dv` (`id_like_dv`, `id_pk_user`, `id_pk_dv`) VALUES (NULL, '$iduser', '$iddv');";
+    $this->db->insert($query);
+}
+public function  getlikeuser($iduser)
+{
+  $query= "SELECT `dv`.`id_dv`,`dv`.`name`,`dv`.`img_dv`,`dv`.`tong_ng` FROM `like_dv` JOIN `dv` ON `like_dv`.`id_pk_dv` = `dv`.`id_dv` WHERE `like_dv`.`id_pk_user` = '$iduser' GROUP BY `like_dv`.`id_pk_dv`";
+    $result= $this->db->select($query);
+    return $result;
+}
+
+public function dv_pt($offset ,$limit){
+  $query="SELECT * FROM `dv` LIMIT $offset,$limit";
+  $result= $this->db->select($query);
+  return $result;
+}
+// public function searchct($startDate,$endDate)
+// {
+//   $query = "SELECT * FROM price_tour WHERE price_tour.day_start And price_tour.day_end  BETWEEN '$startDate' AND '$endDate'
+//   ";
+//   $result = $this->db->select($query);
+//   return $result;
+// }
 }

@@ -34,7 +34,7 @@
           </div>
           <div class="card-top-hover">
             <div class="card-top-hover-price">
-              <p><span></span> <span>Đ</span></p>
+              <p><span></span> <span>VNĐ</span></p>
               <p>
                 <span></span> -
                 <span></span>
