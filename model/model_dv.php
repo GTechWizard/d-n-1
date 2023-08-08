@@ -137,7 +137,7 @@ public function getContentPrice($id_dv)
 }
 public function  searchsp($search)
 {
-  $query= "SELECT * FROM dv WHERE name LIKE '%$search%' LIMIT 10";
+  $query= "SELECT * FROM dv WHERE name LIKE '%$search%' LIMIT 7";
     $result = $this->db->select($query);
     return $result;
 }

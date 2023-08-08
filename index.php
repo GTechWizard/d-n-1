@@ -13,25 +13,33 @@ require_once('model/model_bl.php');
 if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     switch ($act) {
+        case 'alldv':
+                include "view/alldv.php";
+            break;
+        case 'alltt':
+                include "view/alltt.php";
+            break;
+
         case 'chitiettour':
             if (isset($_GET['idsp']) && is_numeric($_GET['idsp']) && $_GET['idsp'] > 0) {
                 $id_dv = $_GET['idsp'];
                 $getid = new dv;
                 $getid->update_lx_dv($id_dv);
                 $getiddv = $getid->getDVID($id_dv);
+                $getPriceDay = $getid->getContentPrice($id_dv);
                 include "view/chitietproduct.php";
             } else {
+
                 include "view/home.php";
             }
             break;
-        case'dmsp':
+        case 'dmsp':
             if (isset($_GET['iddm']) && is_numeric($_GET['iddm']) && $_GET['iddm'] > 0) {
                 $iddm = $_GET['iddm'];
-                $getdm= new dv;
-                $getall = new dv;
+                $getdm = new dv;
                 $getname = new loai;
-                $getnameid = $getname ->getiddm($iddm);
-                $getallsp = $getall->getAllDV();
+                $sart = new comment;
+                $getnameid = $getname->getiddm($iddm);
                 $getloai = $getdm->loat_sanpham($iddm);
                 include "view/view-control/chitiet.php";
             } else {
@@ -40,19 +48,16 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             }
             break;
 
-            case'dattour':
-                if(isset($_GET['dattuor']) && ($_GET['dattuor'])){
-                    $name=$_GET['name'];
-                    $diemden=$_GET['diemden'];
-                    $diemdi=$_GET['diemdi'];
-                    $diembatdau=$_GET['diembatdau'];
-                    $diemketthuc=$_GET['diemketthuc'];
-                    
-                }
-                break;
+        case 'dattuor':
+            $getid = new dv;
+            $getPriceDay = $getid->getContentPrice($_GET['id_dv']);
+            include 'view/card.php';
+            break;
+        // tt
+        case 'tt':
+            include 'view/view-control/tintuc.php';
+            break;
 
-
-            // cttt
         case 'ct_tt':
             if (isset($_GET['id']) && ($_GET['id'] != '')) {
                 $id = $_GET['id'];
@@ -65,10 +70,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         // nhấn vào đăng nhập
         case 'dn':
             include "view/view-control/formdk.php";
-            break;
-
-        // thực thi đăng nhập
-        case 'login':
+            // thực thi đăng nhập
             if (isset($_POST['log']) && $_POST['log']) {
                 $email = $_POST['log_email'];
                 $pass = $_POST['log_pass'];
@@ -77,7 +79,8 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $log = $logsign->get_user_email($email);
                 if (isset($log) && $log) {
                     // important!! fetch_assoc quét object
-                    while ($result = $log->fetch_assoc()) {
+                    $result = $log->fetch_assoc();
+                    if ($result) {
                         if ($pass == $result['pass']) {
                             // xét session
                             $_SESSION['id'] = $result['id_user'];
@@ -88,25 +91,24 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                             $_SESSION['sdt'] = $result['sdt'];
                             $_SESSION['img'] = $result['img'];
                             $_SESSION['vai_tro'] = $result['vai_tro'];
-                            include "view/home.php";
+                            header('location:?act=home');
                         } else {
-                            header('location:?act=dn');
                             echo "<script>
-                                alert('Email hoặc mật khẩu không đúng');
+                                alert('Mật khẩu không đúng');
                               </script>";
+
                         }
                     }
 
+                } else {
+                    echo "<script>
+                            alert('Tài khoản không tồn tại');
+                        </script>";
                 }
             }
-            break;
-        // đăng xuất
-        case 'logout':
-            unset($_SESSION["id"], $_SESSION['id'], $_SESSION['name'], $_SESSION['pass'], $_SESSION['dia_chi'], $_SESSION['email'], $_SESSION['vai_tro'], $_SESSION['sdt'], $_SESSION['img']);
-            header('location:?act=home');
-            break;
 
-        case 'signup':
+            // đk
+
             if (isset($_POST['sign']) && $_POST['sign']) {
                 $name = $_POST['user_sign'];
                 $email = $_POST['email_sign'];
@@ -114,42 +116,51 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $re_pass = $_POST['re_pass_sign'];
                 $locate = $_POST['locate_sign'];
                 $num = $_POST['num_phone_sign'];
+
                 $user = new user;
-
-                $target_dir = "uploads/";
-                $target_file = $target_dir . date('HisadmY') . basename($_FILES["img"]["name"]);
-                $uploadOk = 1;
-                $ok = 1;
-                $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-                // Kiểm tra xem tệp có phải là ảnh hay không
-                $check = getimagesize($_FILES["img"]["tmp_name"]);
-                if ($check !== false) {
-                    $uploadOk = 1;
+                $sign = $user->get_user_email($email);
+                if (isset($sign) && $sign) {
+                    echo "<script>alert('Email đã tồn tại');</script>";
                 } else {
-                    $alert = "Không phải file ảnh, vui lòng chọn lại";
-                    $uploadOk = 0;
-                }
-                if ($pass != $re_pass) $ok=0;
+                    $target_dir = "uploads/";
+                    $target_file = $target_dir . date('HisadmY') . basename($_FILES["img"]["name"]);
+                    $uploadOk = 1;
+                    $ok = 1;
+                    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+                    // Kiểm tra xem tệp có phải là ảnh hay không
+                    $check = getimagesize($_FILES["img"]["tmp_name"]);
+                    if ($check !== false) {
+                        $uploadOk = 1;
+                    } else {
+                        $alert = "Không phải file ảnh, vui lòng chọn lại";
+                        $uploadOk = 0;
+                    }
+                    if ($pass != $re_pass)
+                        $ok = 0;
 
-                // Kiểm tra xem có xảy ra lỗi khi tải lên tệp hay không
-                if ($uploadOk == 0) {
-                    $alert = "Đăng ảnh không thành công";
-                }elseif($ok==0){
-                    $alert = "Mật Khẩu xác nhận không trùng khớp";
-                }else {
-                    move_uploaded_file($_FILES["imig"]["tmp_name"], $target_file);
-                    $user->sign_up($name, $target_file, $email, $pass, $locate, $num);
-                    $alert = "Đăng ký thành công";
+                    // Kiểm tra xem có xảy ra lỗi khi tải lên tệp hay không
+                    if ($uploadOk == 0) {
+                        $alert = "Đăng ảnh không thành công";
+                    } elseif ($ok == 0) {
+                        $alert = "Mật Khẩu xác nhận không trùng khớp";
+                    } else {
+                        move_uploaded_file($_FILES["img"]["tmp_name"], $target_file);
+                        $user->sign_up($name, $target_file, $email, $pass, $locate, $num);
+                        $alert = "Đăng ký thành công";
+                    }
+                    header('location:?act=dn');
+                    echo "<script>alert('$alert');</script>";
                 }
-                echo "<script>alert('$alert');</script>";
-                include('location:?act=dn');
             }
             break;
 
-        case 'user':
-            include "view/user-kh.php";
+        // đăng xuất
+        case 'logout':
+            unset($_SESSION["id"], $_SESSION['id'], $_SESSION['name'], $_SESSION['pass'], $_SESSION['dia_chi'], $_SESSION['email'], $_SESSION['vai_tro'], $_SESSION['sdt'], $_SESSION['img']);
+            header('location:?act=home');
             break;
-             // bill
+
+        // bill
         case 'bill':
             if (isset($_POST['get']) && ($_POST['get'])) {
                 $ngay_dkdv = date('Y-m-d');
@@ -328,15 +339,24 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                         </script>";
             }
             break;
+
+
+        // thiếu là sai
         default:
             include "view/home.php";
             if (isset($_SESSION['id']) && $_SESSION['id'] != '')
                 echo "<script>
                             alert('chào mừng " . $_SESSION['name'] . "');
                             </script>";
+            $date = $date = date('d-m-Y');
+            $home = new home;
+            $home->luotxem($date);
             break;
     }
 } else {
     include "view/home.php";
+    $date = $date = date('Y-m-d');
+    $home = new home;
+    $home->luotxem($date);
 }
 include "view/footer.php";

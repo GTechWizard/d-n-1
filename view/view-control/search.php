@@ -16,10 +16,8 @@
             var search_name = $("#search_name").val();
             if(search_name !='')
             {
-
-            
             $.ajax({
-                // đừng dẫn
+                // đường dẫn
                 url: "/da1/d-n-1/model/model_search.php",
                 method: "POST",
                 data: {action: action, search_name: search_name},
