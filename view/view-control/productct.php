@@ -1,7 +1,7 @@
 <!-- Product Details -->
 <?php
 $result = $getiddv->fetch_assoc()
-?>
+    ?>
 <section class="section product-detail">
     <div class="div-mb-span" style="width: 72%; margin: auto; margin-bottom: 20px; text-transform: uppercase;">
         <span>trang chủ/
@@ -11,7 +11,7 @@ $result = $getiddv->fetch_assoc()
     <div class="details container-product">
         <div class="left image-container">
             <div class="main" style="border-radius:10px ;">
-                <img src="<?= $result['img_dv'] ?>" id="zoom" alt="img" style="border-radius:10px ;" />
+                <img src="uploads/<?= $result['img_dv'] ?>" id="zoom" alt="img" style="border-radius:10px ;" />
             </div>
             <div>
 
@@ -24,15 +24,15 @@ $result = $getiddv->fetch_assoc()
             </h1>
             <div class="price">
                 <?= $result['price_young'] ?> <span>VND</span>
-            </div> 
+            </div>
             <br>
             <div class="detail-span">
-                        <span>Ngày bắt đầu - Ngày kết thúc</span><br>
-                 <?php 
-                    while ($result2 = $getPriceDay->fetch_assoc()) {
-                        echo $result2['day_start']." - ".$result2['day_end']."<br>";
-                    }
-                        ?>
+                <span>Ngày bắt đầu - Ngày kết thúc</span><br>
+                <?php
+                while ($result2 = $getPriceDay->fetch_assoc()) {
+                    echo $result2['day_start'] . " - " . $result2['day_end'] . "<br>";
+                }
+                ?>
                 <br>
                 <span>Điểm Đón:
                     <?= $result['noi_bd'] ?> --> Điểm Đến:
@@ -42,15 +42,16 @@ $result = $getiddv->fetch_assoc()
                 <br>
             </div>
             <form class="form-product">
-                <?php 
-                    if(isset($_SESSION['id'])&&$_SESSION['id']!=''){?>
-                <a href="?act=dattuor&id_dv=<?=$result['id_dv']?>&name=<?=$result['name']?>&day_start=<?=$result['day_start']?>&day_end=<?=$result['day_end']?>&price_young=<?=$result['price_young']?>&price_old=<?=$result['price_old']?>&diem_den=<?=$result['diem_den'] ?>&noi_bd=<?=$result['noi_bd']?>" class="addCart" style="txext-decoration: none; text-transform: uppercase; font-weight: bold;">đặt tour</a>
-                <a href="?act=like&iduser=<?=$_SESSION['id']?>&iddv=<?=$result['id_dv']?>" class="addCart" style="text-decoration: none; text-transform: uppercase; font-weight: bold;">yêu thích</a>
+                <?php
+                if (isset($_SESSION['id']) && $_SESSION['id'] != '') { ?>
+                    <a href="?act=dattuor&id_dv=<?= $result['id_dv'] ?>&name=<?= $result['name'] ?>&day_start=<?= $result['day_start'] ?>&day_end=<?= $result['day_end'] ?>&price_young=<?= $result['price_young'] ?>&price_old=<?= $result['price_old'] ?>&diem_den=<?= $result['diem_den'] ?>&noi_bd=<?= $result['noi_bd'] ?>"
+                        class="addCart" style="txext-decoration: none; text-transform: uppercase; font-weight: bold;">đặt tour</a>
+                    <a href="?act=like&iduser=<?= $_SESSION['id'] ?>&iddv=<?= $result['id_dv'] ?>" class="addCart" style="text-decoration: none; text-transform: uppercase; font-weight: bold;">yêu thích</a>
                     <?php
-                    }else{?>
+                } else { ?>
                     <em>Hãy đăng nhập để có thể đặt tour</em><br><br><br>
- <a href="?act=dn" class="addCart" style="text-decoration: none; text-transform: uppercase; font-weight: bold;">đăng nhập</a>
-                    <?php }?>
+                    <a href="?act=dn" class="addCart" style="text-decoration: none; text-transform: uppercase; font-weight: bold;">đăng nhập</a>
+                <?php } ?>
             </form>
         </div>
     </div>
@@ -58,38 +59,38 @@ $result = $getiddv->fetch_assoc()
 <div class="tabContainer container-product">
     <div class="buttonContainer">
         <button onclick="showPanel(0,'red')">chi tiết</button>
-        <?php 
-          if(isset($_SESSION['id'])&&$_SESSION['id']!=''){
+        <?php
+        if (isset($_SESSION['id']) && $_SESSION['id'] != '') {
             echo ' <button class="ml10" onclick="showPanel(1,\'#f44336\')">đánh giá</button>';
-          }else{
+        } else {
             echo '<em>Hãy đăng nhập để bình luận cho dịch vụ này</em>';
-          }
+        }
         ?>
-       
+
     </div>
     <div class="tabPanel">
         <section class="view-post">
 
             <div class="heading">
                 <h1>
-                    <?= $result['bai_viet']?>
+                    <?= $result['bai_viet'] ?>
                 </h1>
             </div>
 
-            
-           
+
+
         </section>
     </div>
     <div class="tabPanel">
         <section class="view-post">
 
             <div class="heading">
-                    <?= $result['name'] ?>
+                <?= $result['name'] ?>
             </div>
 
             <div class="row">
                 <div class="col">
-                    <img src="<?= $result['img_dv'] ?>" alt="img" class="image">
+                    <img src="uploads/<?= $result['img_dv'] ?>" alt="img" class="image">
                     <h3 class="title"></h3>
                 </div>
                 <div class="col">
@@ -137,18 +138,17 @@ $result = $getiddv->fetch_assoc()
         <section class="reviews-container">
             <div class="heading">
                 <h1>tất cả đánh giá</h1>
-                 <?php 
+                <?php
                 $bl = new comment;
-                        $bls= $bl->userOfBl( $result['id_dv']);
-                        $counts= $bl->getBlIdUser($_SESSION['id'],$result['id_dv']);
-                        $count=$counts->fetch_assoc();
-                        if($count['count']>0){
-                            echo '';
-                        }else{
-echo '<input type="submit" value="đánh giá" class="inline-delete-btn" id="my-input">';
-                        }
+                $counts = $bl->getBlIdUser($_SESSION['id'], $result['id_dv']);
+                $count = $counts->fetch_assoc();
+                if ($count['count'] > 0) {
+                    echo '';
+                } else {
+                    echo '<input type="submit" value="đánh giá" class="inline-delete-btn" id="my-input">';
+                }
                 ?>
-               <div id="my-form" class="hidden">
+                <div id="my-form" class="hidden">
                     <form action="?act=bl" method="post" class="from-main">
                         <h3>Đánh Giá Của Bạn</h3>
                         <p class="placeholder">tiêu đề <span>*</span></p>
@@ -170,40 +170,52 @@ echo '<input type="submit" value="đánh giá" class="inline-delete-btn" id="my-
             </div>
 
             <div class="box-container">
-                <?php 
-                        if($bls){
-                            while($result=$bls->fetch_assoc()){
-                                ?>
-                <div class="box">
-                    <div class="user">
-                        <img src="<?=$result['img']?>" alt="ảnh đại diện">
-                        <h3><?= substr($fetch_user['name'], 0, 1); ?></h3>
-                        <div>
-                            <p></p>
-                            <span><?=$result['ngay_bl']?></span>
-                        </div>
-                    </div>
+                <?php
+                $blall = $bl->userOfBl($result['id_dv']);
+                if ($blall) {
+                    while ($resultbluser = $blall->fetch_assoc()) {
+                        ?>
+                       <div class="box">
+                            <div class="user">
+                                <img src="<?= $resultbluser['img'] ?>" alt="ảnh đại diện">
+                                <p>
+                                    <?= $resultbluser['name']; ?>
+                                </p>
+                                <div>
+                                    <p></p>
+                                    <span>
+                                        <?= $resultbluser['ngay_bl'] ?>
+                                    </span>
+                                </div>
+                            </div>
 
-                    <div class="ratings">
+                            <div class="ratings">
 
-                        <p style="background:var(--red);"><i class="fas fa-star"></i><span><?=$result['danh_gia']?></span></p>
-                        <!-- <p style="background:var(--orange);"><i class="fas fa-star"></i> <span></span></p>
+                                <p style="background:var(--red);"><i class="fas fa-star"></i><span>
+                                        <?= $resultbluser['danh_gia'] ?>
+                                    </span></p>
+                                <!-- <p style="background:var(--orange);"><i class="fas fa-star"></i> <span></span></p>
                   <p style="background:var(--orange);"><i class="fas fa-star"></i> <span></span></p>
                   <p style="background:var(--main-color);"><i class="fas fa-star"></i> <span></span></p>
                   <p style="background:var(--main-color);"><i class="fas fa-star"></i> <span></span></p> -->
-                    </div>
-                    <h3 class="title"><?=$result['td']?></h3>
+                            </div>
+                            <h3 class="title">
+                                <?= $resultbluser['td'] ?>
+                            </h3>
 
-                    <p class="description"><?=$result['noi_dung']?></p>
-                    <br>
-                    <form action="" method="post" class="flex-btn">
-                        <input type="hidden" name="delete_id" value="">
-                        <div id="my-form" class="hidden">
+                            <p class="description">
+                                <?= $resultbluser['noi_dung'] ?>
+                            </p>
+                            <br>
+                            <form action="" method="post" class="flex-btn">
+                                <input type="hidden" name="delete_id" value="">
+                                <div id="my-form" class="hidden">
+                                </div>
+                                <input type="submit" value="xóa đánh giá" class="inline-delete-btn" name="delete_review" onclick="return confirm('delete this review?');">
+                            </form>
                         </div>
-                        <input type="submit" value="xóa đánh giá" class="inline-delete-btn" name="delete_review" onclick="return confirm('delete this review?');">
-                    </form>
-                </div>
-                <?php }}?>
+                    <?php }
+                } ?>
             </div>
 
         </section>
