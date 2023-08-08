@@ -269,11 +269,11 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
 
                     $conn = new user;
                     $id = $_SESSION['id'];
-                    $email = $_SESSION['email'];
+                    $email = $_POST['up_email'];
                     $vai_tro = 0;
                     $conn->update_user($new_name, $num_phone, $vai_tro, $locate, $email, $id);
                     $up = $conn->get_one_User($id);
-                    $back_reult = $up->fetch_assoc();
+                    $back_result = $up->fetch_assoc();
 
 
                     $_SESSION['name'] = $back_result['name'];
@@ -281,6 +281,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                     $_SESSION['dia_chi'] = $back_result['dia_chi'];
                     $_SESSION['email'] = $back_result['email'];
                     $_SESSION['sdt'] = $back_result['sdt'];
+                    header('location:?act=user&cn=hsct');
                 }
             }
             break;

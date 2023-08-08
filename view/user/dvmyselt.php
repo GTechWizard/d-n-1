@@ -26,7 +26,7 @@
                                 echo'<ul class="uldvtd">
                                         <li>'.($index+1).'</li>
                                         <li>'.$infor_dv['name'].'</li>
-                                        <li><img src="'.$infor_dv['img_dv'].'" /></li>
+                                        <li><img src="uploads/'.$infor_dv['img_dv'].'" /></li>
                                         <li>'.$dich_vu['ngay_dkdv'].'</li>
                                         <li>'.$infor_dv['tong_ng'].'</li>
                                         <li>'.$dich_vu['trang_thai'].'</li>
