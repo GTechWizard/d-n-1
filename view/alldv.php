@@ -31,7 +31,7 @@
             <div class="card-1">
               <div class="card-top">
                 <div class="card-top-img">
-                  <img src="<?= $result1['img_dv'] ?>" alt="img">
+                  <img src="uploads/<?= $result1['img_dv'] ?>" alt="img">
                 </div>
                 <div class="card-top-hover">
                   <div class="card-top-hover-price">

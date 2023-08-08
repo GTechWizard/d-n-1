@@ -21,7 +21,7 @@
                 <ul class="uldvtd">
                         <li>  <?= $y ?></li>
                         <li>  <?= $result['name'] ?></li>
-                        <li><img src=" <?= $result['img_dv'] ?>" alt="img" /></li>
+                        <li><img src="uploads/ <?= $result['img_dv'] ?>" alt="img" /></li>
                         <li>  <?= $result['tong_ng'] ?></li>
                         <li><a href="?act=chitiettour&idsp=  <?= $result['id_dv'] ?>">chi tiết</a></li>
                         <li> <a href="?act=unlike&id=  <?= $result['id_dv'] ?>">Bỏ</a></li>
