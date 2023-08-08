@@ -59,8 +59,14 @@
                     </div>
                   </div>
 
+<<<<<<< Updated upstream
                   <div class="card-bottom-submit">
                   <a href="index.php?act=chitiettour&idsp=<?php echo $result['id_dv'] ?>"><input type="submit" value="chi tiết"></a>
+=======
+                    <div class="card-bottom-submit">
+                      <a href="index.php?act=chitiettour&idsp=<?php echo $result['id_dv']?>&lx=1"><input type="submit" value="chi tiết"></a>
+                    </div>
+>>>>>>> Stashed changes
                   </div>
                 </div>
               </div>
