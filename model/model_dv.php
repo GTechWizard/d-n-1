@@ -157,4 +157,9 @@ function dv_pt($offset ,$limit){
   $result= $this->db->select($query);
   return $result;
 }
+public function update_lx_dv($id_dv)
+{
+  $query = "UPDATE dv SET dv.luot_xem = dv.luot_xem + 1 WHERE dv.id_dv='$id_dv'";
+  $this->db->update($query);
+}
 }
