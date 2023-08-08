@@ -1,8 +1,10 @@
 <section class="home mb40">
+        <br><br>
       <div class="form_container w-50">
         <!-- Login From -->
         <div class="form login_form">
           <!-- ko cần index.php rồi ?act=... -->
+          
           <form action="?act=dn" method="post">
             <h2>Login</h2>
             <div class="input_box">
@@ -73,11 +75,11 @@
             <div class="input_box">
               <input type="file" required name="img"/>
             </div>
-            <div class="login_signup">Already have an account? <a id="login">Login</a></div>
             <div class="grid_two">
             <input class="button" type="submit" name="sign" value="Signup Now">
               <input type="reset" value="reset" class="button" >
             </div>
+            <div class="login_signup">Already have an account? <a id="login">Login</a></div>
           </form>
         </div>
       </div>

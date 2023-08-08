@@ -24,7 +24,7 @@
               <div class="card-1">
                 <div class="card-top">
                   <div class="card-top-img">
-                    <img src="<?= $result['img_dv'] ?>" alt="">
+                    <img src="uploads/<?= $result['img_dv'] ?>" alt="">
                   </div>
                   <div class="card-top-hover">
                     <div class="card-top-hover-price">
