@@ -88,5 +88,11 @@ public function  searchsp($search)
     $result = $this->db->select($query);
     return $result;
 }
-
+public function searchct($startDate,$endDate)
+{
+  $query = "SELECT * FROM price_tour WHERE price_tour.day_start And price_tour.day_end  BETWEEN '$startDate' AND '$endDate'
+  ";
+  $result = $this->db->select($query);
+  return $result;
+}
 }

@@ -15,13 +15,13 @@
       </div>
       <div class="form_find_bn" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
         <h2>tìm dịch vụ nhanh</h2>
-        <form action="#" method="post">
+        <form action="index.php?act=banersearch" method="POST" id="searchForm">
           <div class="form_in">
             <label for="date1">Ngày bắt đầu
-              <input type="date" name="" id="date1" />
+              <input type="date" name="start" id="date1" />
             </label>
             <label for="date2">Ngày kết thúc
-              <input type="date" name="" id="date2" />
+              <input type="date" name="end" id="date2" />
             </label>
             <label for="gia">Giá tiền
               <select name="" id="gia">
@@ -32,11 +32,26 @@
               </select>
             </label>
             <label for="place">Nơi đến
-              <input type="text" name="" id="place" placeholder="Nơi đến" />
+              <input type="text" name="noiden" id="place" placeholder="Nơi đến" />
             </label>
           </div>
-          <input type="submit" name="find" id="find_bn_hr" value="Tìm" />
+          <input type="submit" name="submit" id="result" value="Tìm" />
         </form>
+        <!-- <script>
+ $(document).ready(function() {
+  $('#searchForm').submit(function(e) {
+    e.preventDefault();
+    
+    var startDate = $('#date1').val();
+    var endDate = $('#date2').val();
+    
+    // Chuyển hướng sang trang "index.php" và truyền tham số trên URL
+    window.location.href = 'index.php?act=banersearch&startDate=' + startDate + '&endDate=' + endDate;
+  });
+});
+</script> -->
+
+        
       </div>
     </div>
   </div>
