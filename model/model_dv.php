@@ -74,14 +74,14 @@ public function getContentPrice($id_dv)
   }
   public function findfast($day_start, $day_end, $price_start, $price_end, $diem_den)
 {
-    // $query = "SELECT *
-    // FROM dv
-    // JOIN price_tour ON dv.id_dv = price_tour.id_pk_dv
-    // WHERE price_tour.day_start BETWEEN '$day_start' AND '$day_end'
-    //   AND price_tour.price_old >= $price_start AND price_tour.price_old <= $price_end
-    //   AND dv.diem_den LIKE '%$diem_den%'";
-    $query = "SELECT * FROM dv JOIN price_tour ON dv.id_dv = price_tour.id_pk_dv WHERE price_tour.day_start BETWEEN '2023-06-12' AND '2023-07-12' AND price_tour.price_old >= 1100000 AND price_tour.price_old <= 1800000 AND dv.diem_den LIKE '%HẠ LONG%'";
-    $this->db->query($query);
+    $query = "SELECT *
+    FROM dv
+    JOIN price_tour ON dv.id_dv = price_tour.id_pk_dv
+    WHERE price_tour.day_start BETWEEN '$day_start' AND '$day_end'
+      AND price_tour.price_old >= $price_start AND price_tour.price_old <= $price_end
+      AND dv.diem_den LIKE '%$diem_den%'";
+    $result= $this->db->query($query);
+    return $result;
 }
   public function update_DV($name, $noi_bd, $diem_den, $id_pk_loai, $tong_ng, $img_dv, $bv, $id_dv)
   {

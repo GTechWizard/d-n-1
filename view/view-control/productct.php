@@ -58,7 +58,14 @@ $result = $getiddv->fetch_assoc()
 <div class="tabContainer container-product">
     <div class="buttonContainer">
         <button onclick="showPanel(0,'red')">chi tiết</button>
-        <button class="ml10" onclick="showPanel(1,'#f44336')">đánh giá</button>
+        <?php 
+          if(isset($_SESSION['id'])&&$_SESSION['id']!=''){
+            echo ' <button class="ml10" onclick="showPanel(1,\'#f44336\')">đánh giá</button>';
+          }else{
+            echo '<em>Hãy đăng nhập để bình luận cho dịch vụ này</em>';
+          }
+        ?>
+       
     </div>
     <div class="tabPanel">
         <section class="view-post">

@@ -3,7 +3,7 @@
 ?>
 <div class="baner-product">
   <div class="text-product">
-    <h2 class="mb30">kính chào quý khách</h2>
+    <h1 class="mb30">kính chào quý khách</h1>
   </div>
 </div>
 
@@ -26,7 +26,7 @@
                 <div class="card-top-hover-price">
                   <p><span>
                       <?= $result['price_young'] ?>
-                    </span> <span>Đ</span></p>
+                    </span> <span>VNĐ</span></p>
                   <p>
                     <span>
                       <?= $result['day_start'] ?>
@@ -37,8 +37,7 @@
                   </p>
                 </div>
                 <div class="card-top-submit">
-                  <input type="submit" value="yêu thích">
-                  <input type="submit" value="đặt Tour">
+                <a href="?act=like&iduser=<?php if(isset($_SESSION['id'])){ echo $_SESSION['id'];} ?>&iddv=<?=$result['id_dv']?>" class="addCart" style="text-decoration: none; text-transform: uppercase; font-weight: bold;">yêu thích</a>
                 </div>
               </div>
             </div>
@@ -58,7 +57,9 @@
                   <div class="card-bottom-span-1">
                     <span>
                       <span>
-                        <?php $getsart = $sart->avg_sart($result['id_dv']);
+                        <?php 
+                        $sart= new comment;
+                        $getsart = $sart->avg_sart($result['id_dv']);
                         if ($getsart && isset($getsart)) {
                           while ($result2 = $getsart->fetch_assoc()) {
                             $checkout = floatval($result2['avg']);
