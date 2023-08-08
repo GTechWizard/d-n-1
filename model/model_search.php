@@ -15,19 +15,12 @@ if (isset($_POST["action"])) {
         while ($result = $search2->fetch_assoc()) { ?>
             <div class="search-product mt20" style="width: 430px; height: 118px;margin: auto;">
                 <div class="search-img">
-                    <img src="" alt="">
+                    <img src="uploads/<?= $result['name'] ?>" alt="img">
                 </div>
                 <div class="search-font">
                     <div class="search-h2 mt20">
                         <h2><?= $result['name'] ?></h2>
                     </div>
-                    <div class="search-price">
-                        <span><?= $result['tong_ng'] ?></span>
-                    </div>
-                    <div class="search-date">
-                        <span>Từ đến s</span>
-                    </div>
-                    <img src="" alt="">
                 </div>
             </div>
             
