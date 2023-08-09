@@ -6,7 +6,7 @@
                         <div>
                             <label for="">
                                 <p>tên đăng nhập:</p>
-                                <input type="text" name="up_name" />
+                                <input type="text" name="up_name" min="5" max="20"/>
                             </label>
                             <br>
                             <label for="">
@@ -26,7 +26,7 @@
                         <div>
                             <label for="">
                                 <p>số điện thoại:</p>
-                                <input type="number" name="up_num"/>
+                                <input type="number" name="up_num" min="10" max="11"/>
                             </label>
                             <label for="">
                                 <p>địa chỉ:</p>
