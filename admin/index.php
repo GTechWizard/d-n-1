@@ -215,7 +215,7 @@ if (isset($_GET['act']) && $_GET['act']) {
 		case 'dv_new':
 			if (isset($_POST['save']) && $_POST['save']) {
 				extract($_POST);
-				$target_dir = "uploads/";
+				$target_dir = "../uploads/";
 				$target_file = $target_dir . date('HisadmY') . basename($_FILES["img_dv"]["name"]);
 				$uploadOk = 1;
 				$imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
@@ -347,7 +347,7 @@ if (isset($_GET['act']) && $_GET['act']) {
 		case 'add_news':
 			if (isset($_POST['save']) && $_POST['save']) {
 				extract($_POST);
-				$target_dir = "uploads/";
+				$target_dir = "../uploads/";
 				$target_name = basename($_FILES["img"]["name"]);
 				$target_file = $target_dir . date('HisadmY') . basename($_FILES["img"]["name"]);
 				$uploadOk = 1;
@@ -395,7 +395,7 @@ if (isset($_GET['act']) && $_GET['act']) {
 		case 'update_tt':
 			if (isset($_POST['save']) && ($_POST['save'])) {
 				extract($_POST);
-				$target_dir = "uploads/";
+				$target_dir = "../uploads/";
 				$target_name = basename($_FILES["img"]["name"]);
 				$target_file = $target_dir . date('HisadmY') . basename($_FILES["img"]["name"]);
 				$uploadOk = 1;

@@ -26,7 +26,7 @@
         <div class="col-md-6">
           <div class="form-group">
             <label for="tuabv">Tựa bài viết </label>
-            <input type="text" name="name" class="form-control" id="tuabv" placeholder="tên bài viết..." required>
+            <input type="text" name="name" class="form-control" id="tuabv" placeholder="tên bài viết..." maxlength="60" required>
           </div>
           <div class="form-group">
             <label for="place">Địa điểm (bài viết về nơi nào) </label>
@@ -41,7 +41,7 @@
           </div>
           <div class="form-group">
             <label>Mô tả ngắn (200 từ) </label>
-            <textarea name="mo_ta" class="form-control" rows="5" required></textarea>
+            <textarea name="mo_ta" class="form-control" rows="5" maxlength="200" required></textarea>
           </div>
         </div>
         <input type="file" name="img" required>

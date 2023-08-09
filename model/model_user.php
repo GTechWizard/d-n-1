@@ -82,6 +82,12 @@ class user{
     $result =$this->db->select($query);
     return $result;
   }
+  public function get_user_email_pass($pass,$email){
+    // = sai bằng là so sánh cả kiều và các dạng ký tự
+    $query="SELECT * FROM `user` WHERE user.pass= $pass AND `user`.`email` LIKE '$email'";
+    $result =$this->db->select($query);
+    return $result;
+  }
   public function sign_up($name, $img, $email, $pass, $locate, $num){
     $query="INSERT INTO `user` (.id_user,user.name,user.pass,user.sdt,user.dia_chi,user.email,user.img,user.vai_tro) VALUES (NULL,'$name','$pass','$num','$locate','$email','$img','')";
     $this->db->insert($query);

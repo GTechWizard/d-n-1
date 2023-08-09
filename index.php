@@ -76,7 +76,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $pass = $_POST['log_pass'];
 
                 $logsign = new user;
-                $log = $logsign->get_user_email($email);
+                $log = $logsign->get_user_email_pass($pass,$email);
                 if (isset($log) && $log) {
                     // important!! fetch_assoc quét object
                     $result = $log->fetch_assoc();

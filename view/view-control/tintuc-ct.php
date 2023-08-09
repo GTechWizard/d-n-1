@@ -22,7 +22,7 @@
                 <hr>
                 <div class="link">
                 <div class="anh">
-                    <img src="<?=$result['img_tt']?>" alt="img">
+                    <img src="uploads/<?=$result['img_tt']?>" alt="img">
                 </div>
                 <div class="content_sile1">
                     <h6 class="mini1">
