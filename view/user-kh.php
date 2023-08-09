@@ -33,8 +33,8 @@
             </div>
         </main>
         <div class="user-control-trang-user">
-            <?php 
-                if( isset($_GET['cn']) && $_GET['cn']!=''){
+            <?php
+            if (isset($_GET['cn']) && $_GET['cn'] != '') {
                 $cn = $_GET['cn'];
                 switch ($cn) {
 
@@ -62,15 +62,58 @@
                         include('user/quenpass.php');
                         break;
 
-                        default:
+                    default:
                         include('user/hsct.php');
                         break;
-                    }
-                }else{
-                    include('user/hsct.php');
                 }
+            } else {
+                include('user/hsct.php');
+            }
             ?>
         </div>
     </article>
 </div>
 <script src="view/js/userkh.js"></script>
+<script>
+    function hideEmail(email) {
+        // Tìm vị trí của ký tự @ trong email
+        var atIndex = email.indexOf('@');
+
+        // Lấy phần tên người dùng (trước ký tự @)
+        var username = email.slice(0, atIndex);
+
+        // Lấy phần tên miền (sau ký tự @)
+        var domain = email.slice(atIndex + 6);
+
+        // Ẩn các ký tự trong phần tên người dùng
+        var hiddenUsername = username.substring(0, 2) + '*******'.repeat(username.length - 2);
+
+        // Kết hợp phần tên người dùng ẩn và phần tên miền
+        var hiddenEmail = hiddenUsername + '@' + domain;
+
+        return hiddenEmail;
+    }
+    var email = '<?= $_SESSION['email'] ?>';
+    var hiddenEmail = hideEmail(email);
+    document.getElementById("email").innerHTML=hiddenEmail;
+
+    function hideCharacters(str) {
+  // Kiểm tra xem chuỗi có đủ độ dài để ẩn hay không
+  if (str.length < 10) {
+    return str; // Trả về chuỗi ban đầu nếu không đủ độ dài
+  }
+  
+  // Lấy ký tự đầu tiên và ký tự cuối cùng
+  var firstChar = str[0];
+  var lastChar = str[str.length - 1];
+  
+  // Tạo chuỗi với ký tự đầu tiên, các dấu * và ký tự cuối cùng
+  var hiddenStr = firstChar + '*'.repeat(str.length - 3) + lastChar;
+  
+  return hiddenStr;
+}
+
+var inputStr = '<?= $_SESSION['sdt'] ?>';
+var hiddenStr = hideCharacters(inputStr);
+document.getElementById("sdt").innerHTML=hiddenStr;
+</script>

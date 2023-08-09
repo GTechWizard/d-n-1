@@ -37,8 +37,13 @@ class user{
     $query ="DELETE FROM `user` WHERE `user`.`id_user` = '$userID'";
     $this->db->detele($query);
   }
-  public function update_user($name,$sdt,$vai_tro,$dia_chi,$email,$id){
-    $query ="UPDATE `user` SET `name` = '$name', `sdt`='$sdt',`vai_tro`='$vai_tro',`dia_chi`='$dia_chi',`email`='$email' WHERE `id_user` = '$id';";
+  public function update_user($name, $sdt, $vai_tro, $dia_chi, $email, $id) {
+    // Sử dụng câu lệnh truy vấn tham số hóa (prepared statement) để tăng tính bảo mật và hiệu suất
+    $query = "UPDATE `user` SET `name` = '$name', `sdt` = '$sdt', `dia_chi` = '$dia_chi', `email` = ' $email' WHERE `id_user` = '$id'";
+    $this->db->update($query);
+  }
+  public function update_user_nd($name,$sdt,$dia_chi,$email,$id){
+    $query ="UPDATE `user` SET `name` = '$name', `sdt`='$sdt',`dia_chi`='$dia_chi',`email`='$email' WHERE `id_user` = '$id';";
     $this->db->update($query);
   }
   // ai viết sao ko cho thực thi

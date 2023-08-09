@@ -6,7 +6,7 @@
                         <div>
                             <label for="">
                                 <p>tên đăng nhập:</p>
-                                <input type="text" name="up_name"  required/>
+                                <input type="text" name="up_name" />
                             </label>
                             <br>
                             <label for="">
@@ -15,7 +15,7 @@
                                 <?php
                                 echo $_SESSION['email'];
                                 ?>
-                                " required/>
+                                "/>
                             </label>
                             <label for="">
                                 <p>Mật khẩu:</p>
@@ -26,11 +26,11 @@
                         <div>
                             <label for="">
                                 <p>số điện thoại:</p>
-                                <input type="number" name="up_num"required/>
+                                <input type="number" name="up_num"/>
                             </label>
                             <label for="">
                                 <p>địa chỉ:</p>
-                                <input type="text" name="up_locate" required/><br>
+                                <input type="text" name="up_locate"/><br>
                                 <em>Lưu ý: chúng tôi sẽ xác định bạn ở đâu, để chọn tuyến đường phù hợp</em>
                             </label>
                         </div>
