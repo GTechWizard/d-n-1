@@ -17,11 +17,6 @@
             if(search_name !='')
             {
             $.ajax({
-<<<<<<< Updated upstream
-
-=======
-                // đừng dẫn
->>>>>>> Stashed changes
                 url: "/duan1/d-n-1/model/model_search.php",
                 method: "POST",
                 data: {action: action, search_name: search_name},
