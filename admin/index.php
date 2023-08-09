@@ -172,15 +172,28 @@ if (isset($_GET['act']) && $_GET['act']) {
 					$alert = "chỉ cho phép ảnh có đuôi JPG, JPEG, PNG & GIF";
 					$uploadOk = 0;
 				}
+				$check = 1;
+				$loai = new loai;
+				$allloai = $loai->getAllLoai();
+				while ($result = $allloai->fetch_assoc()) {
+					if ($_POST['kieu_dv'] == $result['kieu_dv']) {
+						echo "<script>alert('Đã tồn tại loại này');</script>";
+						$check = 0;
+					}
+				}
+
+				if ($check == 1) {
+					$loai->insert_loai($kieu_dv, $target_file);
+				} else {
+					header('location:?act=loai');
+					die("error");
+				}
 				// Kiểm tra xem có xảy ra lỗi khi tải lên tệp hay không
-				if ($uploadOk == 0) {
+				if ($uploadOk == 0 && $check == 1) {
 					$alert = "ảnh up không thành công";
 				} else {
 					move_uploaded_file($_FILES["img"]["tmp_name"], $target_file);
 				}
-
-				$loai = new loai;
-				$loai->insert_loai($kieu_dv, $target_file);
 				if (isset($alert) && $alert != "")
 					echo "<script>alert('$alert');</script>";
 				header('location:?act=loai');
@@ -289,9 +302,9 @@ if (isset($_GET['act']) && $_GET['act']) {
 					// echo $_POST['name'], $_POST['noi_bd'], $_POST['diem_den'], $_POST['id_pk_loai'], $_POST['tong_ng'], '', $_POST['bv'], $_POST['id_dv'];
 				}
 				if (isset($alert) && $alert != "") {
-				echo "<script>alert('$alert');</script>";
-			}
-			header('location:?act=dv');
+					echo "<script>alert('$alert');</script>";
+				}
+				header('location:?act=dv');
 			}
 			break;
 		case 'price':
