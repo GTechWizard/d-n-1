@@ -98,8 +98,18 @@ if (isset($getiddv) && $getiddv) {
                     <div class="col">
                         <div class="flex">
                             <div class="total-reviews">
-                                <h3>5<i class="fas fa-star"></i></h3>
-                                <p>10 đánh giá</p>
+                                <?php
+                                $bl = new comment;
+                                $bl_product = $bl->getdgcountbl($result['id_dv']);
+                                $conn = $bl_product->fetch_assoc();
+                                $formatted_number = number_format($conn['dg'], 1);
+                                ?>
+                                <h3>
+                                    <?= $formatted_number ?><i class="fas fa-star"></i>
+                                </h3>
+                                <p>
+                                    <?= $conn['count'] ?> đánh giá
+                                </p>
                             </div>
                             <div class="total-ratings">
                                 <p>
@@ -209,12 +219,12 @@ if (isset($getiddv) && $getiddv) {
                                     <?= $resultbluser['noi_dung'] ?>
                                 </p>
                                 <br>
-                                <form action="" method="post" class="flex-btn">
+                                <!-- <form action="" method="post" class="flex-btn">
                                     <input type="hidden" name="delete_id" value="">
                                     <div id="my-form" class="hidden">
                                     </div>
                                     <input type="submit" value="xóa đánh giá" class="inline-delete-btn" name="delete_review" onclick="return confirm('delete this review?');">
-                                </form>
+                                </form> -->
                             </div>
                         <?php }
                     }
