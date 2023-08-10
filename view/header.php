@@ -58,48 +58,151 @@ nav ul li a {
   border-radius: 10px;
   background-color: white;
 }
-.grid_two{
+  /* layout */
+.checkoutLayout{
+ display: flex;
+align-items: center;
+justify-content: center;
+ overflow: hidden;  
+  padding: 20px;
+  /* transform: translate(50%, 00%); */
+}
+.checkoutLayout .right{
+  background-color: #5358B3;
+  border-radius: 20px;
+  padding: 40px;
+  color: #fff;
+  margin: auto;
+}
+.checkoutLayout .right .form{
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  border-bottom: 1px solid #7a7fe2;
+  padding-bottom: 20px;
 }
-.w-50{
-  max-width: 50%;
+.checkoutLayout .form h1,
+.checkoutLayout .form .group:nth-child(-n+3){
+  grid-column-start: 1;
+  grid-column-end: 3;
 }
-.w-200{
-  max-width: 200%;
-}
-.w-100{
+.checkoutLayout .form input, 
+.checkoutLayout .form select
+{
   width: 100%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  margin-top: 10px;
+  border:none;
+  background-color: #6a6fc9;
+  color: #fff;
 }
-.center{
+.checkoutLayout .right .return .row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+.checkoutLayout .right .return .row div:nth-child(2){
+  font-weight: bold;
+  font-size: x-large;
+}
+.buttonCheckout{
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-radius: 20px;
+  background-color: #49D8B9;
+  margin-top: 20px;
+  font-weight: bold;
+  color: #fff;
+
+
+}
+.left h1{
+  border-top: 1px solid #eee;  
+  padding: 20px 0;
+}
+.left .list .item img{
+  height: 80px;
+}
+.left .list .item{
   display: grid;
-  place-items: center;;
+  grid-template-columns: 80px 1fr  50px 80px;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+  padding: 0 10px;
+  box-shadow: 0 10px 20px #5555;
+  border-radius: 20px;
 }
-.hidden{
-  overflow: hidden;
-  
+.left .list .item .name,
+.left .list .item .returnPrice{
+  font-size: large;
+  font-weight: bold;
+}
+.content{
+    width: 70%;
+}
+.a{
+  text-decoration: none!important ;
+  text-transform: capitalize;
+  padding: 1%;
+  width: 20%;
+  background-color: blue;
+  border-radius: 15px;
+  color: white;
+}
+.a:hover{
+  background-color: blue;
+  color: white;
+  box-shadow: 0px 0px 10px white;
+}
+
+.account-user-page .form_tt form .check_tt .img_ur img {
+  width: 50%;
+  height: 150%;
+  border-radius: 50%;
+  object-fit: contain;
+  background-color: gray;
+}
+.card-top-hover .card-top-submit a{
+  background-color: white;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  font-size: large;
+  width: 50%;
+  display: none;
+  position: relative;
+}
+.card-top-hover:hover a{
+  display: block;
+}
+.card-top-hover .card-top-submit a:hover{
+  background-color: pink;
 }
   </style>
 </head>
 
 <body>
   <input type="checkbox" id="check">
-     <nav>
+  <nav>
 
-  <div class="icon">
-      <a href="#"><img src="img/logononfont.png" alt=""></a>
+    <div class="icon">
+      <a href="?act=home"><img src="img/logononfont.jpg" alt="Come Back"></a>
     </div>
     <?php
       include "./view/view-control/search.php";
     ?>
     <ul>
       <li><a href="" class="card">Chúng tôi</a></li>
-      <li><a href="#" class="card">Du Lịch</a></li>
-      <li><a href="?act=tt" class="card">Tin Tức</a></li>
+      <li><a href="?act=alldv" class="card">Du Lịch</a></li>
+      <li><a href="?act=alltt" class="card">Tin Tức</a></li>
       <li><a href="#" class="card">Hỗ Trợ</a></li>
     </ul>
     <div class="navbar">
-      <?php 
+    <?php 
           if (isset($_SESSION['id']) && $_SESSION['id']) {
             // http://localhost/dn1/index.php lỗi tạo 1 trang hoàn toàn mới
             echo '<a id="user-btn" class="far fa-user" href="?act=user"></a>';
@@ -107,7 +210,6 @@ nav ul li a {
             echo '<a href="?act=dn" class="btn-icon fas fa-arrow-right-to-bracket"></a>';
           }
       ?>
-
     </div>
     <label for="check" class="bar">
       <span class="fa fa-bars" id="bars"></span>

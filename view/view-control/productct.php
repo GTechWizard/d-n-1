@@ -1,16 +1,18 @@
-  <!-- Product Details -->
-  <?php
-  $id_pk_pro_from=$_REQUEST['id_product']
-  $result=$getiddv->fetch_assoc();
-  ?>
-  <section class="section product-detail">
+<!-- Product Details -->
+<?php
+if (isset($getiddv) && $getiddv) {
+    $result = $getiddv->fetch_assoc()
+        ?>
+    <section class="section product-detail">
         <div class="div-mb-span" style="width: 72%; margin: auto; margin-bottom: 20px; text-transform: uppercase;">
-            <span>trang chủ/du lịch đảo cát bà</span>
+            <span>trang chủ/
+                <?= $result['name'] ?>
+            </span>
         </div>
         <div class="details container-product">
             <div class="left image-container">
                 <div class="main" style="border-radius:10px ;">
-                    <img src="uploads/<?=$result['img_dv']?>" id="zoom" alt="" style="border-radius:10px ;" />
+                    <img src="uploads/<?= $result['img_dv'] ?>" id="zoom" alt="img" style="border-radius:10px ;" />
                 </div>
                 <div>
 
@@ -18,58 +20,81 @@
             </div>
             <div class="right">
 
-                <h1 style="text-transform: uppercase;"><?=$result['name']?> </h1>
-                <div class="price"><?=$result['price_young']?></div> <span>VND</span>
+                <h1 style="text-transform: uppercase;">
+                    <?= $result['name'] ?>
+                </h1>
+                <div class="price">
+                    <?= $result['price_young'] ?> <span>VND</span>
+                </div>
                 <br>
                 <div class="detail-span">
-                    <span>ngày bắt đầu:<?=$result['day_start']?></span>-<span>ngày kết thúc:<?=$result['day_end']?></span>
+                    <span>Ngày bắt đầu - Ngày kết thúc</span><br>
+                    <?php
+                    while ($result2 = $getPriceDay->fetch_assoc()) {
+                        echo $result2['day_start'] . " - " . $result2['day_end'] . "<br>";
+                    }
+                    ?>
                     <br>
-                    <span>điểm đón:<?=$result['noi_bd']?> --> điểm đến:<?=$result['diem_den']?></span>
+                    <span>Điểm Đón:
+                        <?= $result['noi_bd'] ?> --> Điểm Đến:
+                        <?= $result['diem_den'] ?>
+                    </span>
                     <br>
                     <br>
                 </div>
                 <form class="form-product">
-                    <a href="?act=dattour&name=<?=$result['name']?>&nkt=<?=$result['day_end']?>&nbd=<?=$result['day_start']?>&diemden=<?=$result['diem_den']?>&diemdi=<?=$result['noi_bd']?>" class="addCart" style="text-decoration: none; text-transform: uppercase; font-weight: bold;">
-                    đặt tour</a>
-
-                        <a href="cart.html" class="addCart"
-                        style="text-decoration: none; text-transform: uppercase; font-weight: bold;">yêu thích</a>
+                    <?php
+                    if (isset($_SESSION['id']) && $_SESSION['id'] != '') { ?>
+                        <a href="?act=dattuor&id_dv=<?= $result['id_dv'] ?>&name=<?= $result['name'] ?>&day_start=<?= $result['day_start'] ?>&day_end=<?= $result['day_end'] ?>&price_young=<?= $result['price_young'] ?>&price_old=<?= $result['price_old'] ?>&diem_den=<?= $result['diem_den'] ?>&noi_bd=<?= $result['noi_bd'] ?>"
+                            class="addCart" style="txext-decoration: none; text-transform: uppercase; font-weight: bold;">đặt tour</a>
+                        <a href="?act=like&iduser=<?= $_SESSION['id'] ?>&iddv=<?= $result['id_dv'] ?>" class="addCart" style="text-decoration: none; text-transform: uppercase; font-weight: bold;">yêu
+                            thích</a>
+                        <?php
+                    } else { ?>
+                        <em>Hãy đăng nhập để có thể đặt tour</em><br><br><br>
+                        <a href="?act=dn" class="addCart" style="text-decoration: none; text-transform: uppercase; font-weight: bold;">đăng nhập</a>
+                    <?php } ?>
                 </form>
-                <h3>mô tả</h3>
-                <p>
-                    đảo Cát Bà còn có rất nhiều hệ sinh thái độc đáo và phong phú. Trong đó,
-                    khu rừng ngập mặn Cát Bà là một trong những diện tích lớn nhất của loại rừng này tại Việt Nam,
-                    với nhiều loài động thực vật quý hiếm như khỉ đột, khỉ đen, mèo rừng, hổ rừng, sóc đỏ, đại bàng cùng
-                    nhiều
-                    loài cá và tôm hùm.
-                </p>
             </div>
         </div>
     </section>
-
-
-
-
-
     <div class="tabContainer container-product">
         <div class="buttonContainer">
             <button onclick="showPanel(0,'red')">chi tiết</button>
-            <button class="ml10" onclick="showPanel(1,'#f44336')">đánh giá</button>
+            <?php
+            if (isset($_SESSION['id']) && $_SESSION['id'] != '') {
+                echo ' <button class="ml10" onclick="showPanel(1,\'#f44336\')">đánh giá</button>';
+            } else {
+                echo '<em>Hãy đăng nhập để bình luận cho dịch vụ này</em>';
+            }
+            ?>
+
         </div>
-        <div class="tabPanel">chi tiết</div>
         <div class="tabPanel">
             <section class="view-post">
 
                 <div class="heading">
-                    <h1>đánh giá tour:<?=$result['name']?></h1>
+                    <h1>
+                        <?= $result['bai_viet'] ?>
+                    </h1>
+                </div>
+
+
+
+            </section>
+        </div>
+        <div class="tabPanel">
+            <section class="view-post">
+
+                <div class="heading">
+                    <?= $result['name'] ?>
                 </div>
 
                 <div class="row">
                     <div class="col">
-                        <img src="img/sapa.jpg" alt="" class="image">
+                        <img src="uploads/<?= $result['img_dv'] ?>" alt="img" class="image">
                         <h3 class="title"></h3>
                     </div>
-           
                     <div class="col">
                         <div class="flex">
                             <div class="total-reviews">
@@ -112,26 +137,30 @@
                     </div>
                 </div>
             </section>
-
-           
-
             <section class="reviews-container">
                 <div class="heading">
                     <h1>tất cả đánh giá</h1>
-                    <input type="submit" value="đánh giá" class="inline-delete-btn" id="my-input">
-
+                    <?php
+                    $bl = new comment;
+                    $counts = $bl->getBlIdUser($_SESSION['id'], $result['id_dv']);
+                    $count = $counts->fetch_assoc();
+                    if ($count['count'] > 0) {
+                        echo '';
+                    } else {
+                        echo '<input type="submit" value="đánh giá" class="inline-delete-btn" id="my-input">';
+                    }
+                    ?>
                     <div id="my-form" class="hidden">
-                        <form action="index.php?act=startcm" method="post" class="from-main">
-                            <h3>đánh giá của bạn</h3>
+                        <form action="?act=bl" method="post" class="from-main">
+                            <h3>Đánh Giá Của Bạn</h3>
                             <p class="placeholder">tiêu đề <span>*</span></p>
-                            <input type="text" name="tieude" required maxlength="50" placeholder="nhập tiêu đề"
-                                class="box">
+                            <input type="text" name="title" required maxlength="50" placeholder="nhập tiêu đề" class="box">
+                            <input type="hidden" name="id_dv" value="<?= $result['id_dv'] ?>">
                             <p class="placeholder">nội dung</p>
-                            <textarea name="noidung" class="box" placeholder="nhập nội dung" maxlength="1000"
-                                cols="30" rows="10"></textarea>
+                            <textarea name="description" class="box" placeholder="nhập nội dung" maxlength="1000" cols="30" rows="10"></textarea>
                             <p class="placeholder">đánh giá sao <span>*</span></p>
-                            <select name="start" class="box" required>
-                                <option value="1">r1</option>
+                            <select name="rating" class="box" required>
+                                <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
@@ -143,75 +172,60 @@
                 </div>
 
                 <div class="box-container">
+                    <?php
+                    $blall = $bl->userOfBl($result['id_dv']);
+                    if ($blall) {
+                        while ($resultbluser = $blall->fetch_assoc()) {
+                            ?>
+                            <div class="box">
+                                <div class="user">
+                                    <img src="<?= $resultbluser['img'] ?>" alt="ảnh đại diện">
+                                    <p>
+                                        <?= $resultbluser['name']; ?>
+                                    </p>
+                                    <div>
+                                        <p></p>
+                                        <span>
+                                            <?= $resultbluser['ngay_bl'] ?>
+                                        </span>
+                                    </div>
+                                </div>
 
+                                <div class="ratings">
 
-                    <div class="box">
-                        <div class="user">
-
-                            <img src="img/profile8.jpg" alt="">
-                            <!-- <h3><?= substr($fetch_user['name'], 0, 1); ?></h3> -->
-                            <div>
-                                <p>binhpeo</p>
-                                <span>23-1-2023</span>
-                            </div>
-                        </div>
-
-                        <div class="ratings">
-
-                            <p style="background:var(--red);"><i class="fas fa-star"></i><span>1</span></p>
-                            <!-- <p style="background:var(--orange);"><i class="fas fa-star"></i> <span></span></p>
+                                    <p style="background:var(--red);"><i class="fas fa-star"></i><span>
+                                            <?= $resultbluser['danh_gia'] ?>
+                                        </span></p>
+                                    <!-- <p style="background:var(--orange);"><i class="fas fa-star"></i> <span></span></p>
                   <p style="background:var(--orange);"><i class="fas fa-star"></i> <span></span></p>
                   <p style="background:var(--main-color);"><i class="fas fa-star"></i> <span></span></p>
                   <p style="background:var(--main-color);"><i class="fas fa-star"></i> <span></span></p> -->
-                        </div>
-                        <h3 class="title">tốt</h3>
+                                </div>
+                                <h3 class="title">
+                                    <?= $resultbluser['td'] ?>
+                                </h3>
 
-                        <p class="description">Tại đất nước hồi giáo Malaysia: vui chơi giải trí tại Cao nguyên Genting
-                            – Quần thể Resort Casino nổi tiếng thế giới.
-                            Tham quan động Batu, Phố cổ Malacca và tòa nhà cao nhất Malaysia – Twin Towers (Niềm tự hào
-                            của người dân Malaysia).</p>
-                        <br>
-                        <form action="" method="post" class="flex-btn">
-                            <input type="hidden" name="delete_id" value="">
-                            <div id="my-form" class="hidden">
+                                <p class="description">
+                                    <?= $resultbluser['noi_dung'] ?>
+                                </p>
+                                <br>
+                                <form action="" method="post" class="flex-btn">
+                                    <input type="hidden" name="delete_id" value="">
+                                    <div id="my-form" class="hidden">
+                                    </div>
+                                    <input type="submit" value="xóa đánh giá" class="inline-delete-btn" name="delete_review" onclick="return confirm('delete this review?');">
+                                </form>
                             </div>
-                            <input type="submit" value="xóa đánh giá" class="inline-delete-btn" name="delete_review"
-                                onclick="return confirm('delete this review?');">
-                        </form>
-                    </div>
-                    <div class="box">
-                        <div class="user">
+                        <?php }
+                    }
 
-                            <img src="img/profile6.jpg" alt="">
-                            <!-- <h3><?= substr($fetch_user['name'], 0, 1); ?></h3> -->
-                            <div>
-                                <p>binhpeo</p>
-                                <span>23-1-2023</span>
-                            </div>
-                        </div>
+} ?>
+            </div>
 
-                        <div class="ratings">
-
-                            <p style="background:var(--red);"><i class="fas fa-star"></i><span>1</span></p>
-                            <!-- <p style="background:var(--orange);"><i class="fas fa-star"></i> <span></span></p>
-                  <p style="background:var(--orange);"><i class="fas fa-star"></i> <span></span></p>
-                  <p style="background:var(--main-color);"><i class="fas fa-star"></i> <span></span></p>
-                  <p style="background:var(--main-color);"><i class="fas fa-star"></i> <span></span></p> -->
-                        </div>
-                        <h3 class="title">tốt</h3>
-
-                        <p class="description">Tại đất nước hồi giáo Malaysia: vui chơi giải trí tại Cao nguyên Genting
-                            – Quần thể Resort Casino nổi tiếng thế giới.
-                            Tham quan động Batu, Phố cổ Malacca và tòa nhà cao nhất Malaysia – Twin Towers (Niềm tự hào
-                            của người dân Malaysia).</p>
-
-                    </div>
-                </div>
-
-            </section>
-
-        </div>
+        </section>
 
     </div>
 
-    <script src="view/js/nav.js"></script>
+</div>
+
+<script src="view/js/nav.js"></script>

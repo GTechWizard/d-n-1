@@ -1,31 +1,43 @@
  <!-- the tour yeu thich nhat -->
  <div class="tf-container">
+ <?php
+            $dv = new dv;
+            $sart= new comment;
+                $alldv = $dv->noibatnhat();
+          if($alldv){
+            while($result=$alldv->fetch_assoc())
+            {
+        ?>
     <div class="tf-mian">
       <img src="img/Phu-Quoc-dao-dang-ghe-tham-nhat-hanh-tinh.jpg" alt="">
       <div class="tf-main-font">
         <div class="tf-font">
           <div class="tf-h2 p20">
-            <h2>địa điểm yêu thích nhất</h2>
+            <h1>Địa Điểm Yêu Thích Nhất</h1>
           </div>
           <div class="tf-h2">
             <span style="font-size:16px ; text-transform:uppercase ;">
-              <span>đánh giá:</span>
-              <span>3.5</span>
+              <span>Đánh Giá:</span>
+              <span><?php  $getsart= $sart->avg_sart($result['id_dv']);
+                    if ($getsart && isset($getsart)) {
+                      while($result2 = $getsart->fetch_assoc()) {
+                        $checkout=floatval( $result2['avg']);
+                        echo $checkout;
+                      }
+                    }
+                  ;?></span>
               <i class="fas fa-star" style="color:yellow ;"></i>
             </span>
           </div>
           <div class="tf-h1 p20">
-            <h1>du lịch đảo phú quốc</h1>
-          </div>
-          <div class="tf-time">
-            <span>từ 23/4/2023</span> -
-            <span>đến 28/4/2023</span>
+            <h2><?=$result['name']?></h2>
           </div>
           <br>
           <div class="tf-input mt20">
-            <input type="submit" value="xem thêm">
+            <a href="?act=chitiettour&idsp=<?=$result['id_dv']?>" class="a">Xem Thêm</a>
           </div>
         </div>
       </div>
     </div>
+    <?php }}?>
   </div>

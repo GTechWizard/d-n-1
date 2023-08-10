@@ -35,7 +35,37 @@ class home{
     $result5= $this->db->select($query5);
    return $result5;
   }
-
+  public function luotxem($date){
+    $query ="SELECT * FROM `home` WHERE home.date = '$date'";
+    $result= $this->db->select($query);
+    if($result){
+      $query1 ="UPDATE home SET luot_xem = luot_xem + 1 WHERE home.date='$date';";
+    $this->db->update($query1);
+    }else{
+      $query2 ="INSERT INTO `home` (`id`, `luot_xem`, `date`) VALUES (NULL, '1', '$date');";
+     $this->db->insert($query2);
+    }
+  }
+  public function getAllLuotXem(){
+    $query ="SELECT * FROM `home` ";
+    $result= $this->db->select($query);
+    return $result;
+  }
+  public function getDataChair($month){
+    $query ="SELECT *
+    FROM home
+    WHERE EXTRACT(MONTH FROM home.date) = '$month';";
+    $result= $this->db->select($query);
+    return $result;
+  }
+  public function getLxWeak()
+  {
+    $query = "SELECT home.luot_xem
+    FROM home
+    WHERE STR_TO_DATE(home.date, '%Y-%m-%d') BETWEEN DATE_SUB(CURDATE(), INTERVAL 7 DAY) AND CURDATE();";
+    $result = $this->db->select($query);
+    return $result;
+  }
 }
 
 

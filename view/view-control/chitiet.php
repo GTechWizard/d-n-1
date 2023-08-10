@@ -3,7 +3,6 @@
     if ($getnameid) {
       $result = $getnameid->fetch_assoc();
       $a= $result["kieu_dv"];
-    }
       ?>
   <div class="text-product">
     <h2 class="mb30">kính chào quý khách</h2>
@@ -16,8 +15,8 @@
 <!-- All Products -->
 <section class="section all-products" id="products">
   <div class="top container" style="border-bottom:1px solid black ;">
-    <h1 style="text-transform: uppercase;">tất cả tour <?php echo $a ?></h1>
- 
+    <h1 style="text-transform: uppercase;">tất cả tour</h1>
+<!--  
     <form style="margin-bottom: 10px;">
       <select>
         <option value="1">giá tiền</option>
@@ -27,21 +26,21 @@
         <option value="5">trên 6tr</option>
       </select>
       <span><i class="bx bx-chevron-down"></i></span>
-    </form>
+    </form> -->
   </div>
 
   <div class="product-center container">
     
     <?php
-    if($getloai && $getallsp){
-    while(($result = $getloai->fetch_assoc()) &&( $result = $getallsp->fetch_assoc()))
+    if($getloai){
+    while($result = $getloai->fetch_assoc()) 
     {
     ?>
     <div class="product-item">
       <div class="card-1">
         <div class="card-top">
           <div class="card-top-img">
-            <img src="img/kinh-nghiem-du-lich-dao-cat-ba-1.jpg" alt="">
+            <img src="<?=$result['img_dv']?>" alt="">
           </div>
           <div class="card-top-hover">
             <div class="card-top-hover-price">
@@ -52,8 +51,7 @@
               </p>
             </div>
             <div class="card-top-submit">
-              <input type="submit" value="yêu thích">
-              <input type="submit" value="đặt Tour">
+            <a href="?act=like&iduser=<?=$_SESSION['id']?>&iddv=<?=$result['id_dv']?>" class="addCart" style="text-decoration: none; text-transform: uppercase; font-weight: bold;">yêu thích</a>
             </div>
           </div>
         </div>
@@ -62,8 +60,7 @@
             <span class="h3-mb"><?=$result['name']?></span>
           </div>
           <div class="card-bottom-h3">
-            <span>Đảo Cát Bà là một địa điểm du lịch phổ biến với vẻ đẹp hoang sơ của thiên nhiên, phong cảnh rừng
-              núi và biển cả hùng vĩ.</span>
+            <span></span>
           </div>
           <div class="card-bottom-main">
             <div class="card-bottom-span-container">
@@ -71,12 +68,19 @@
             <div class="cart-bottom-span-main">
               <div class="card-bottom-span-1">
                 <span>
-                  <span>3.5</span>
+                  <span><?php  $getsart= $sart->avg_sart($result['id_dv']);
+                    if ($getsart && isset($getsart)) {
+                      while($result2 = $getsart->fetch_assoc()) {
+                        $checkout=floatval( $result2['avg']);
+                        echo $checkout;
+                      }
+                    }
+                  ;?></span>
                   <i class="fas fa-star" style="color:yellow ;"></i>
                 </span>
               </div>
               <div class="card-bottom-span-2">
-                <span>Vacant: <?=$result['tong_ng']?></span>
+                <span>Tổng Người: <?=$result['tong_ng']?></span>
               </div>
             </div>
 
@@ -87,7 +91,13 @@
         </div>
       </div>
     </div>
-      <?php }}?>
+      <?php }}}else{?>
+        <div class="text-product">
+    <h2 class="mb30">kính chào quý khách</h2>
+    <h2>Hiện Không Còn Dịch Vụ Nào Cho Bạn Ở Mục Này</h2>
+    <a href="?act=home" class='btn'> Trở Lại</a>
+  </div>
+        <?php }?>
   </div>
 </section>
 <section class="pagination">

@@ -15,9 +15,11 @@
       <?php 
             if($data){
               while($result=$data->fetch_assoc()){
+
                 print_r($result['bai_viet']);
               }}
           ?>
+    <a href="?act=dv" class="btn btn-info">Trở Lại</a>
     </div>
     <!--/.main-->
   </body>

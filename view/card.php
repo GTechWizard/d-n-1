@@ -1,72 +1,94 @@
+<br />
+<br /><br /><br /><br />
 
-    
 <div class="container">
     <div class="checkoutLayout">
-<!-- header  -->
-        
+        <!-- header  -->
+
 
         <!--  check in -->
-        <div class="right">
+        <form class="right" method="post" action="?act=bill">
             <h1>Checkout</h1>
 
             <div class="form">
                 <div class="group">
-                    <label for="name">Full Name</label>
-                    <input type="text" name="name" id="name">
+                    <label for="name">Name tour</label>
+                    <input type="text" name="nametour" id="name" value="<?= $_GET['name'] ?>">
+                    <input type="hidden" name="id_pk_dv" value="<?= $_GET['id_dv'] ?>">
                 </div>
-    
+                <div class="group">
+                    <label for="name">Full Name</label>
+                    <input type="text" name="nameuser" id="name" value="<?php 
+                     if(isset($_SESSION['id'])){
+                        echo $_SESSION['name'];
+                    }else{
+                        echo"";
+                    }?>">
+                </div>
+
                 <div class="group">
                     <label for="phone">Điểm đón</label>
-                    <input type="text" name="phone" id="phone">
+                    <input type="text" name="diemden" id="phone" value="<?= $_GET['diem_den'] ?>">
+                </div>
+                <div class="group">
+                    <label for="phone">Ngày đi</label>
+                    <select name="id_pk_price_tour">
+                        <?php 
+                            if(isset($getPriceDay) && $getPriceDay!=''){
+                               while ($result= $getPriceDay->fetch_assoc()) {
+                                    echo '<option value="'.$result['id_price'].'">'.$result['day_start']." - ".$result['day_end'].'</option>';
+                               }
+                                }
+                        ?>
+                    </select>
                 </div>
 
                 <div class="group">
-                    <label for="name">GMail</label>
-                    <input type="text" name="name" id="name">
+                    <label for="name">EMail</label>
+                    <input type="text" name="email" id="name" value="<?php 
+                     if(isset($_SESSION['id'])){
+                        echo $_SESSION['email'];
+                    }else{
+                        echo"";
+                    }?>">
                 </div>
-    
+
                 <div class="group">
                     <label for="address">Phone number</label>
-                    <input type="text" name="address" id="address">
+                    <input type="text" name="sdt" id="address" value="<?php 
+                     if(isset($_SESSION['id'])){
+                        echo $_SESSION['sdt'];
+                    }else{
+                        echo"";
+                    }?>">
                 </div>
-    
+
 
                 <div class="group">
-                    <label for="country">Trẻ em</label>
-                    <label for="quantity">Từ 1 Đến 18</label>
-                <input type="number" id="quantity" name="quantity" min="1" max="18">
+                    <label >Trẻ Em</label>
+                    <label >Từ 1 Đến 18</label><br>
+                    <label >Giá Trẻ Em: <?= $_GET['price_young'] ?></label>
+                    <input type="number"name="price_young" required>
+                    <input type="hidden"name="price_young_origin"  value="<?= $_GET['price_young'] ?>">
                 </div>
-    
+
                 <div class="group">
-                    <label for="city">người lớn</label>
-                    <label for="quantity">Từ 19 Đến 100</label>
-                    <input type="number" id="quantity" name="quantity" min="19" max="100">
-                    </select>
+                    <label >Người Lớn</label>
+                    <label >Từ 19 Đến 100</label><br>
+                    <label >Giá Người Lớn: <?= $_GET['price_old'] ?></label>
+                    <input type="number"name="price_old" required>
+                    <input type="hidden"name="price_old_origin"  value="<?= $_GET['price_old'] ?>">
                 </div>
             </div>
             <div class="return">
                 <div class="row">
-                    <h2> hình thức thanh toán</h2>
-                    <form action="">
-                        <input type="radio" checked="checked" value="male" name="gender"> Tiền Mặt<br>
-                        <input type="radio" value="female" name="gender"> Thẻ Bar<br>
-                        <input type="radio" value="female" name="gender"> App<br>
-                        <input type="radio" value="female" name="gender"> PyPay<br>
-                        
-                      </form>
+                    <h4> Hình Thức Thanh Toán: Thẻ Ngân Hàng</h4>
                 </div>
                 <div class="row">
-                    <div>Total Price</div>
-                    <div class="totalPrice">$900</div>
                 </div>
             </div>
-            <button class="buttonCheckout">CHECKIN</button>
-            </div>
+            <input class="buttonCheckout" onclick=" return confirm('bạn có  chắc chắc không')" type="submit" name="get">
+            <input class="buttonCheckout" type="reset">
+        </form>
     </div>
 </div>
-<!-- footer -->
-
-<script src="checkout.js"></script>
-
-</body>
-</html>

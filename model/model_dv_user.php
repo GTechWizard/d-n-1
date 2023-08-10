@@ -32,7 +32,25 @@ class dvUser{
     $query ="UPDATE `dv_user` SET `trang_thai` = '$trang_thai' WHERE `dv_user`.`id_dv_user` = '$id_dv_user';";
     $this->db->update($query);
   }
+  public function insert_dv_user( $ngay_dkdv,$id_pk_dv,$nameuser,$email,$sdt,$price_young,$price_old,$id_pk_user,$id_pk_price_tour){
+    $query1 = "INSERT INTO dv_user (dv_user.id_dv_user,dv_user.id_pk_dv,dv_user.id_pk_user,dv_user.trang_thai,dv_user.user_name,dv_user.user_sdt,dv_user.user_email,dv_user.ngay_dkdv) VALUES (NULL,'$id_pk_dv','$id_pk_user',0,'$nameuser','$sdt','$email','$ngay_dkdv')";
+    $this->db->insert($query1);
 
+    // Lấy id_pk_dv mới chèn vào bảng dv
+    $id_pk_dv_user = mysqli_insert_id($this->db->link);
+
+    // Chèn dữ liệu vào bảng price_tour
+    $query2 = "INSERT INTO sl_ng_dk_user (sl_ng_dk_user.id_sl,sl_ng_dk_user.id_pk_dv_user,sl_ng_dk_user.id_pk_price_tour,sl_ng_dk_user.so_luong_old,sl_ng_dk_user.so_luong_young) VALUES (NULL,'$id_pk_dv_user','$id_pk_price_tour','$price_old','$price_young')";
+    $this->db->insert($query2);
+  }
+  public function getDvUserWeak()
+  {
+    $query = "SELECT COUNT(*) AS count
+    FROM dv_user
+    WHERE STR_TO_DATE(dv_user.ngay_dkdv, '%Y-%m-%d') BETWEEN DATE_SUB(CURDATE(), INTERVAL 7 DAY) AND CURDATE();";
+    $result = $this->db->select($query);
+    return $result;
+  }
 }
 
 

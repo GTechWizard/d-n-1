@@ -4,7 +4,7 @@
       <div class="conten-font">
         <div class="conten-font-main" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
           <div class="conten-font-top">
-            <h2>HÃY CHỌN TOURPROECK</h2>
+            <h2>HÃY CHỌN DCR</h2>
           </div>
           <div class="conten-font-mid">
             <span>Chúng tôi xin cảm ơn bạn đã dành thời gian để ghé thăm trang

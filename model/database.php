@@ -32,6 +32,15 @@ public function select($query){
     return false;
   }
 }
+public function query($query)
+{
+    $result = $this->link->query($query) or die($this->link->error.__LINE__);
+    if($result->num_rows>0){
+      return $result;
+    }else{
+      return false;
+    }
+}
 public function insert($query){
   $insert_row= $this->link->query($query) or die($this->link->error.__LINE__);
   if($insert_row){

@@ -2,7 +2,7 @@
     <form method="POST">
         <div class="search_box" style="margin: auto;">
             <input type="search" name="search_name" id="search_name" placeholder="search_box" />
-            <input type="submit" class="search">
+            <span class="fa fa-search"></span>
         </div>
     </form>
     <div id="output"></div>

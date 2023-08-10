@@ -10,20 +10,17 @@ class user{
     $this->db =new Database;
     $this->fm =new Format;
   }
-  public function getAllUser($query){
+  public function getAllUser(){ 
+     $query ="SELECT * FROM user ";
     $result =$this->db->select($query);
     return $result;
   }
-  // $query ="SELECT * FROM user ";
-    
-  //it me hishiyamma
   public function get_one_User($id){
-    $query ="SELECT * FROM user WHERE id_user = '$id'";
+    $query ="SELECT * FROM `user` WHERE `id_user` = '$id'";
     $result =$this->db->select($query);
     return $result;
   }
-  public function set_one_User($sql){
-    $query = $sql;
+  public function set_one_User($query){
     $result =$this->db->select($query);
   }
   public function count_user(){
@@ -45,34 +42,44 @@ class user{
     $this->db->update($query);
   }
   // ai viết sao ko cho thực thi
-  public function update_img($id, $new_img){
-    $sql ="UPDATE `user` SET `img`='$new_img' WHERE 'id_user'= '$id'";
+  public function update_img($id,$new_img){
+    $query="UPDATE `user` SET `img`='$new_img' WHERE `id_user`= '$id'";
+    $this->db->update($query);
   }
-   // ai viết sao ko cho thực thi
+  //  ai viết sao ko cho thực thi
   public function update_pass($id, $new_pass){
-    $sql ="UPDATE `user` SET `pass`='$new_pass' WHERE 'id_user'= '$id'";
+    $query="UPDATE `user` SET `pass`='$new_pass' WHERE `id_user` = '$id'";
+    $this->db->update($query);
   }
 
+
+  public function deletelike($iduser,$iddv){ 
+    $query ="DELETE FROM like_dv WHERE like_dv.id_pk_user='$iduser' AND like_dv.id_pk_dv='$iddv'";
+    $this->db->detele($query);
+ }
+
+
   public function list_service_user($id){
-    $sql ="SELECT * FROM `dv_user` WHERE 'id_user'= '$id'";
+    $query="SELECT * FROM `dv_user` WHERE `id_pk_user` = '$id'";
     // thực thi
-    $result =$this->db->select($sql);
+    $result =$this->db->select($query);
     return $result;
   }
-  public function service_user($id){
-    $sql ="SELECT * FROM `dv` WHERE 'id_dv'= '$id'";
-    $result =$this->db->select($sql);
+  public function name_service_user($id_pk_dv){
+    $query="SELECT * FROM `dv` WHERE `id_dv`= '$id_pk_dv'";
+    $result =$this->db->select($query);
     return $result;
   }
+  
   public function get_user_email($email){
     // = sai bằng là so sánh cả kiều và các dạng ký tự
-    $sql ="SELECT * FROM `user` WHERE `user`.`email` LIKE '$email'";
-    $result =$this->db->select($sql);
+    $query="SELECT * FROM `user` WHERE `user`.`email` LIKE '$email'";
+    $result =$this->db->select($query);
     return $result;
   }
   public function sign_up($name, $img, $email, $pass, $locate, $num){
-    $sql ="INSERT INTO user (user.id_user,user.name,user.pass,user.sdt,user.dia_chi,user.email,user.img,user.vai_tro) VALUES (NULL,'$name','$pass','$num','$locate','$email','$img','')";
-    $this->db->insert($sql);
+    $query="INSERT INTO `user` (.id_user,user.name,user.pass,user.sdt,user.dia_chi,user.email,user.img,user.vai_tro) VALUES (NULL,'$name','$pass','$num','$locate','$email','$img','')";
+    $this->db->insert($query);
   }
 
 }

@@ -12,12 +12,14 @@
       </div>
       <!--/.row-->
       <div class="row pa-2">
+      <a href="?act=tt" class="btn btn-info">Trở Lại</a>
       <?php 
             if($data){
               while($result=$data->fetch_assoc()){
                 print_r($result['bai_viet']);
               }}
           ?>
+            <a href="?act=tt" class="btn btn-info">Trở Lại</a>
     </div>
     <!--/.main-->
   </body>

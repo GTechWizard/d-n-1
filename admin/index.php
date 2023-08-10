@@ -1,4 +1,5 @@
 <?php
+session_start();
 ob_start();
 require_once('../model/model_user.php');
 require_once('../model/model_home.php');
@@ -13,6 +14,32 @@ require_once('view/menu.php');
 if (isset($_GET['act']) && $_GET['act']) {
 	$act = $_GET['act'];
 	switch ($act) {
+
+		case 'login':
+			if (isset($_POST['get']) && $_POST['get']) {
+				$email = $_POST['email'];
+				echo $email, $password;
+				$user = new user;
+				$userID = $user->get_user_email($email);
+				if (isset($userID) && ($userID)) {
+					while ($userOne = $userID->fetch_assoc()) {
+						$_SESSION['id'] = $userOne['id_user'];
+						$_SESSION['name'] = $userOne['name'];
+						$_SESSION['pass'] = $userOne['pass'];
+						$_SESSION['dia_chi'] = $userOne['dia_chi'];
+						$_SESSION['email'] = $userOne['email'];
+						$_SESSION['sdt'] = $userOne['sdt'];
+						$_SESSION['img'] = $userOne['img'];
+						$_SESSION['vai_tro'] = $userOne['vai_tro'];
+						header('location:?act=home');
+					}
+				} else {
+					header('location:login.php');
+				}
+
+			}
+			break;
+
 		case 'user':
 			include('user/user.php');
 			break;
@@ -175,7 +202,7 @@ if (isset($_GET['act']) && $_GET['act']) {
 		case 'dv_new':
 			if (isset($_POST['save']) && $_POST['save']) {
 				extract($_POST);
-				$target_dir = "../uploads/";
+				$target_dir = "uploads/";
 				$target_file = $target_dir . date('HisadmY') . basename($_FILES["img_dv"]["name"]);
 				$uploadOk = 1;
 				$imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
@@ -194,7 +221,7 @@ if (isset($_GET['act']) && $_GET['act']) {
 					move_uploaded_file($_FILES["img_dv"]["tmp_name"], $target_file);
 				}
 				$dv = new dv;
-				$dv->insert_DV($name, $noi_bd, $diem_den, $price_old, $price_young, $day_start, $day_end, $id_pk_loai, $tong_ng, $target_file, $bv);
+				$dv->insert_DV($name, $noi_bd, $diem_den, $id_pk_loai, $tong_ng, $target_file, $bv);
 				if (isset($alert) && $alert != "")
 					echo "<script>alert('$alert');</script>";
 				header('location:?act=dv');
@@ -213,7 +240,7 @@ if (isset($_GET['act']) && $_GET['act']) {
 			if (isset($_GET['id']) && $_GET['id']) {
 				$id_dv = $_GET['id'];
 				$dv = new dv;
-				$data = $dv->getDVID($id_dv);
+				$data = $dv->getDVID_notprice($id_dv);
 				include('dv_ldv/dv/ctbv_dv.php');
 			}
 			break;
@@ -221,7 +248,7 @@ if (isset($_GET['act']) && $_GET['act']) {
 			if (isset($_GET['id']) && $_GET['id']) {
 				$id = $_GET['id'];
 				$dv = new dv;
-				$dvID = $dv->getDVID($id);
+				$dvID = $dv->getDVID_notprice($id);
 				$loai = new loai;
 				$dsl = $loai->getAllLoai();
 				include('dv_ldv/dv/change_dv.php');
@@ -229,40 +256,72 @@ if (isset($_GET['act']) && $_GET['act']) {
 			break;
 		case 'update_dv':
 			if (isset($_POST['save']) && $_POST['save']) {
-				extract($_POST);
+				// extract($_POST);
 				$dv = new dv;
 				// Kiểm tra xem người dùng đã chọn ảnh mới hay chưa
-				if (!empty($_FILES["img_dv"]["name"])) {
-						$target_dir = "../uploads/";
-						$target_name = basename($_FILES["img_dv"]["name"]);
-						$target_file = $target_dir . date('HisadmY') . basename($_FILES["img_dv"]["name"]);
+				$target_name = basename($_FILES["img_dv"]["name"]);
+				if ($target_name != '') {
+					$target_dir = "../uploads/";
+					$target_file = $target_dir . date('HisadmY') . basename($_FILES["img_dv"]["name"]);
+					$uploadOk = 1;
+					$imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+
+					//Kiểm tra xem tệp có phải là ảnh hay không
+					$check = getimagesize($_FILES["img_dv"]["tmp_name"]);
+					if ($check !== false) {
 						$uploadOk = 1;
-						$imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-						// Kiểm tra xem tệp có phải là ảnh hay không
-						$check = getimagesize($_FILES["img_dv"]["tmp_name"]);
-						if ($check !== false) {
-								$uploadOk = 1;
-						} else {
-								$alert = "Không phải file ảnh, vui lòng chọn lại";
-								$uploadOk = 0;
-						}
-						// Kiểm tra xem có xảy ra lỗi khi tải lên tệp hay không
-						if ($uploadOk == 0) {
-								$alert = "Đăng ảnh không thành công";
-						} else {
-								move_uploaded_file($_FILES["img_dv"]["tmp_name"], $target_file);
-								$dv->update_DV($name, $noi_bd, $diem_den, $price_old, $price_young, $day_start, $day_end, $id_pk_loai, $tong_ng, $target_file, $bv, $id_dv);
-						}
+					} else {
+						$alert = "Không phải file ảnh, vui lòng chọn lại";
+						$uploadOk = 0;
+					}
+
+					// Kiểm tra xem có xảy ra lỗi khi tải lên tệp hay không
+					if ($uploadOk == 0) {
+						$alert = "Đăng ảnh không thành công";
+						echo 'no';
+					} else {
+						move_uploaded_file($_FILES["img_dv"]["tmp_name"], $target_file);
+						// echo $_POST['name'], $_POST['noi_bd'], $_POST['diem_den'], $_POST['id_pk_loai'], $_POST['tong_ng'], $target_file, $_POST['bv'], $_POST['id_dv'];
+						$dv->update_DV($_POST['name'], $_POST['noi_bd'], $_POST['diem_den'], $_POST['id_pk_loai'], $_POST['tong_ng'], $target_file, $_POST['bv'], $_POST['id_dv']);
+					}
 				} else {
-						$dv->update_DV($name, $noi_bd, $diem_den, $price_old, $price_young, $day_start, $day_end, $id_pk_loai, $tong_ng, '', $bv, $id_dv);
+					$dv->update_DV($_POST['name'], $_POST['noi_bd'], $_POST['diem_den'], $_POST['id_pk_loai'], $_POST['tong_ng'], '', $_POST['bv'], $_POST['id_dv']);
+					// echo $_POST['name'], $_POST['noi_bd'], $_POST['diem_den'], $_POST['id_pk_loai'], $_POST['tong_ng'], '', $_POST['bv'], $_POST['id_dv'];
 				}
-				
 				if (isset($alert) && $alert != "") {
-						echo "<script>alert('$alert');</script>";
-				 }
-		
-				header('location:?act=dv');
-		}
+				echo "<script>alert('$alert');</script>";
+			}
+			header('location:?act=dv');
+			}
+			break;
+		case 'price':
+			$price = new dv;
+			$priceList = $price->getAllPrice();
+			$i = 0;
+			include('price/price.php');
+			break;
+
+		case 'add_price':
+			$dv = new dv;
+			$dsdv = $dv->getAllDV();
+			include('price/add_price.php');
+			break;
+
+		case 'price_new':
+			if (isset($_POST['save']) && $_POST['save']) {
+				$dv = new dv;
+				$dv->insert_price($_POST['id_dv'], $_POST['day_end'], $_POST['day_start'], $_POST['price_young'], $_POST['price_old']);
+				header('location:?act=price');
+			}
+			break;
+
+		case 'delete_price':
+			if (isset($_GET['id']) && $_GET['id']) {
+				$id_price = $_GET['id'];
+				$price = new dv;
+				$price->delete_price($id_price);
+				header("Location:?act=price");
+			}
 			break;
 		case 'tt':
 			$tt = new tt;
@@ -275,7 +334,7 @@ if (isset($_GET['act']) && $_GET['act']) {
 		case 'add_news':
 			if (isset($_POST['save']) && $_POST['save']) {
 				extract($_POST);
-				$target_dir = "../uploads/";
+				$target_dir = "uploads/";
 				$target_name = basename($_FILES["img"]["name"]);
 				$target_file = $target_dir . date('HisadmY') . basename($_FILES["img"]["name"]);
 				$uploadOk = 1;
@@ -323,7 +382,7 @@ if (isset($_GET['act']) && $_GET['act']) {
 		case 'update_tt':
 			if (isset($_POST['save']) && ($_POST['save'])) {
 				extract($_POST);
-				$target_dir = "../uploads/";
+				$target_dir = "uploads/";
 				$target_name = basename($_FILES["img"]["name"]);
 				$target_file = $target_dir . date('HisadmY') . basename($_FILES["img"]["name"]);
 				$uploadOk = 1;
@@ -424,7 +483,7 @@ if (isset($_GET['act']) && $_GET['act']) {
 			if (isset($_POST['get']) && $_POST['get']) {
 				$search_term = $_POST['value']; // Lấy từ khóa tìm kiếm từ input
 				$dir_path = '../uploads'; // Đường dẫn đến thư mục chứa ảnh
-				$files = glob('../uploads*' . '/*' . $search_term. '*.{jpg,png,gif}', GLOB_BRACE); // Tìm tất cả các file có tên chứa từ khóa được nhập từ input
+				$files = glob('../uploads*' . '/*' . $search_term . '*.{jpg,png,gif}', GLOB_BRACE); // Tìm tất cả các file có tên chứa từ khóa được nhập từ input
 				$results = new home;
 				$results1 = $results->search_user($_POST['value']);
 				$results2 = $results->search_tt($_POST['value']);
@@ -464,7 +523,16 @@ if (isset($_GET['act']) && $_GET['act']) {
 
 		default:
 			require_once('view/home.php');
+			break;
 	}
 } else {
-	require_once('view/home.php');
+	if (isset($_SESSION['id']) && $_SESSION['id'] != '') {
+		if ($_SESSION['vai_tro'] == '1') {
+			require_once('view/home.php');
+		} else {
+			header('location:login.php');
+		}
+	} else {
+		header('location:login.php');
+	}
 }

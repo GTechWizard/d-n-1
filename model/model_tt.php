@@ -23,6 +23,12 @@ class tt{
     $query ="DELETE FROM `tt` WHERE `tt`.`id_tt` = '$id'";
     $this->db->detele($query);
   }
+  public function noibat()
+  {
+    $query = "SELECT * FROM tt ORDER BY tt.ngay_d DESC LIMIT 5;";
+    $result = $this->db->select($query);
+    return $result;
+  }
 
   public function insert_TT($bai_viet,$name,$mo_ta,$dia_diem,$tac_gia,$img_tt,$ngay_d){
     $name=$this->fm->validation($name);
@@ -62,6 +68,11 @@ class tt{
         $this->db->update($query);
       }
     }   
+  }
+  function tt_pt($offset ,$limit){
+    $query="SELECT * FROM `tt` LIMIT $offset,$limit";
+    $result= $this->db->select($query);
+    return $result;
   }
 }
 
