@@ -297,6 +297,15 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             break;
 
         // form tìm nahnh
+        case 'like':
+            if (isset($_GET['id']) && $_GET['id']) {
+                $iddv = $_GET['id'];
+                $iduser = $_SESSION['id'];
+                $user = new user;
+                $user->deletelike($iduser, $iddv);
+            }
+            header('location:?act=user&cn=dvl');
+            break;
         case 'findfast':
             if (isset($_POST['find']) && $_POST['find']) {
                 $day_start = $_POST['day_start'];
@@ -325,20 +334,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
 
 
             break;
-        case 'like':
-            if (isset($_GET['iduser']) && isset($_GET['iddv']) && $_GET['iddv']!='' && $_GET['iduser']!='') {
-                $iduser = $_GET['iduser'];
-                $iddv = $_GET['iddv'];
-                $like = new dv;
-                $like->like($iduser, $iddv);
-                header("location:?act=chitiettour&idsp=$iddv");
-            }else{
-                        include "view/view-control/formdk.php";
-                echo "<script>
-                            alert('Vui lòng đăng nhập');
-                        </script>";
-            }
-            break;
+
 
 
         // thiếu là sai
