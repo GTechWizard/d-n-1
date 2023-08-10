@@ -72,14 +72,15 @@ public function getContentPrice($id_dv)
     $query = "DELETE FROM `price_tour` WHERE `price_tour`.`id_price` = '$id_price'";
     $this->db->detele($query);
   }
-  public function findfast($day_start, $day_end, $price_start, $price_end, $diem_den)
+  public function findfast($day_start, $day_end, $price, $noi_di, $diem_den)
 {
     $query = "SELECT *
     FROM dv
     JOIN price_tour ON dv.id_dv = price_tour.id_pk_dv
     WHERE price_tour.day_start BETWEEN '$day_start' AND '$day_end'
-      AND price_tour.price_old >= $price_start AND price_tour.price_old <= $price_end
-      AND dv.diem_den LIKE '%$diem_den%'";
+      AND price_tour.price_old >= $price
+      AND dv.diem_den LIKE '%$diem_den%'
+      AND dv.noi_bd LIKE '%$noi_di%'";
     $result= $this->db->query($query);
     return $result;
 }

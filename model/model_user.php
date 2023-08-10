@@ -71,7 +71,16 @@ class user{
     return $result;
   }
   public function name_service_user($id_pk_dv){
-    $query="SELECT * FROM `dv` WHERE `id_dv`= '$id_pk_dv'";
+    $query="SELECT   dv.id_dv,dv.name,
+    price_tour.day_end,
+    price_tour.day_start,
+    sl_ng_dk_user.so_luong_old,
+    sl_ng_dk_user.so_luong_young,
+    price_tour.price_old,
+    price_tour.price_young,
+    dv_user.trang_thai,dv_user.id_pk_user,dv_user.id_dv_user FROM
+    dv JOIN price_tour ON price_tour.id_pk_dv = dv.id_dv JOIN
+    sl_ng_dk_user ON sl_ng_dk_user.id_pk_price_tour = price_tour.id_price JOIN dv_user ON dv_user.id_pk_dv = dv.id_dv WHERE dv_user.id_dv_user= '$id_pk_dv'";
     $result =$this->db->select($query);
     return $result;
   }

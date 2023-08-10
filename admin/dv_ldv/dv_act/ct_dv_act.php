@@ -22,14 +22,16 @@
             <th class="th-inner">Người Dùng</th>
             <th class="th-inner">SĐT</th>
             <th class="th-inner">Email</th>
+            <th class="th-inner">Tổng tiền</th>
             <th class="th-inner">Ngày ĐK</th>
-            <th></th>
+            <th class="th-inner">Check</th>
           </thead>
           <?php 
 						$i=0;
             if($list){
               while($result=$list->fetch_assoc()){
                 $i++;
+$formatted_number = number_format($result['so_luong_old']*$result['price_old']+$result['so_luong_young']*$result['price_young']);
           ?>
           <tbody class="fixed-table-body">
             <td class="th-inner"><?=$i?></td>
@@ -39,7 +41,16 @@
             <td class="th-inner"><?=$result['user_name']?></td>
             <td class="th-inner"><?=$result['user_sdt']?></td>
             <td class="th-inner"><?=$result['user_email']?></td>
+            <td class="th-inner"><?=$formatted_number?> VND</td>
             <td class="th-inner"><?=$result['ngay_dkdv']?></td>
+            <?php 
+              if($result['checkout']==1){
+                echo"";
+              }else{
+                echo'<td class="th-inner"><a onclick="return confirm(\'Bạn chắn chắn?\')" href="?act=checkdvact&id='.$result['id_dv_user'].'&iddv='.$result['id_pk_dv'].'">OK</a></td>';
+              }
+            ?>
+            
           <tbody>
           <?php }}?>
         </table>

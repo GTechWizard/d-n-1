@@ -21,14 +21,14 @@
               <input type="date" name="day_start" id="date1"/>
               <input type="date" name="day_end" id="date1"/>
             </label>
+            <label for="giad">Giá
+              <input type="number" name="price" id="giad" placeholder="1.200.000 VND">
+            </label>
+            <label for="gian"> Nơi đi
+            <input type="text" name="noi_di" id="gian" placeholder="Nơi bắt đầu">
+            </label>
             <label for="place">Nơi đến
               <input type="text" name="diem_den" id="place" placeholder="Nơi đến" />
-            </label>
-            <label for="giad">Giá Từ
-              <input type="number" name="price_start" id="giad" placeholder="1.200.000 VND">
-            </label>
-            <label for="gian"> Đến Giá
-            <input type="number" name="price_end" id="gian" placeholder="12.000.000 VND">
             </label>
           </div>
           <input type="submit" name="find" id="find_bn_hr" value="Tìm" />

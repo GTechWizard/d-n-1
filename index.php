@@ -166,7 +166,6 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $ngay_dkdv = date('Y-m-d');
                 $id_pk_dv = $_POST['id_pk_dv'];
                 $nameuser = $_POST['nameuser'];
-                $diemden = $_POST['diemden'];
                 $email = $_POST['email'];
                 $sdt = $_POST['sdt'];
                 $price_young = $_POST['price_young'];
@@ -176,6 +175,13 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $dv_user = new dvUser;
                 $dv_user->insert_dv_user($ngay_dkdv, $id_pk_dv, $nameuser, $email, $sdt, $price_young, $price_old, $id_pk_user, $id_pk_price_tour);
                 include "view/bill.php";
+            }
+            break;
+        case 'chitietbill':
+            if (isset($_GET['id']) && isset($_GET['iddvu'])) {
+                $id_user = $_GET['id'];
+                $id_dv_user = $_GET['iddvu'];
+                header('location:view/user/billafter.php?act=chitiet&idu='.$id_user.'&idvu='.$id_dv_user.'');
             }
             break;
 
@@ -320,11 +326,11 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             if (isset($_POST['find']) && $_POST['find']) {
                 $day_start = $_POST['day_start'];
                 $day_end = $_POST['day_end'];
-                $price_start = $_POST['price_start'];
-                $price_end = $_POST['price_end'];
+                $price = $_POST['price'];
+                $noi_di = $_POST['noi_di'];
                 $diem_den = $_POST['diem_den'];
                 $dv = new dv;
-                $list = $dv->findfast($day_start, $day_end, $price_start, $price_end, $diem_den);
+                $list = $dv->findfast($day_start, $day_end, $price, $noi_di, $diem_den);
                 include('view/findfast.php');
             }
 

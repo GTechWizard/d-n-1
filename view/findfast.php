@@ -1,5 +1,5 @@
 <?php 
-  if (isset($list)) {
+  if (isset($list)&& $list) {
 ?>
 <div class="baner-product">
   <div class="text-product">
@@ -91,7 +91,6 @@
   <div class="text-product">
     <h2 class="mb30">kính chào quý khách</h2>
         <h2 class="mb30">Hiện Không Có Dịch Vụ Nào Theo Sự tìm Kiếm Của Bạn</h2>
-        <?php   echo $day_start,$day_end,$price_start,$price_end,$diem_den;?>
         <a href="?act=home" class='btn'> Trở Lại</a>
   </div>
 </div>

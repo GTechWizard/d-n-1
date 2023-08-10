@@ -26,13 +26,13 @@
                     }?>">
                 </div>
 
+                <!-- <div class="group">
+                    <label>Điểm đón</label>
+                    <input type="text" name="diemden" id="phone" value="">
+                </div> -->
                 <div class="group">
-                    <label for="phone">Điểm đón</label>
-                    <input type="text" name="diemden" id="phone" value="<?= $_GET['diem_den'] ?>">
-                </div>
-                <div class="group">
-                    <label for="phone">Ngày đi</label>
-                    <select name="id_pk_price_tour">
+                    <label>Ngày đi</label>
+                    <select name="id_pk_price_tour" id="id_pk_price_tour">
                         <?php 
                             if(isset($getPriceDay) && $getPriceDay!=''){
                                while ($result= $getPriceDay->fetch_assoc()) {
@@ -67,7 +67,7 @@
                 <div class="group">
                     <label >Trẻ Em</label>
                     <label >Từ 1 Đến 18</label><br>
-                    <label >Giá Trẻ Em: <?= $_GET['price_young'] ?></label>
+                    <label>Giá Trẻ Em: <em id="pricey"></em></label>
                     <input type="number"name="price_young" required>
                     <input type="hidden"name="price_young_origin"  value="<?= $_GET['price_young'] ?>">
                 </div>
@@ -75,7 +75,7 @@
                 <div class="group">
                     <label >Người Lớn</label>
                     <label >Từ 19 Đến 100</label><br>
-                    <label >Giá Người Lớn: <?= $_GET['price_old'] ?></label>
+                    <label >Giá Người Lớn: <em id="priceo"></em></label>
                     <input type="number"name="price_old" required>
                     <input type="hidden"name="price_old_origin"  value="<?= $_GET['price_old'] ?>">
                 </div>

@@ -16,6 +16,7 @@
       <table class="table fixed-table-container ">
         <thead class="fixed-table-header th-inner">
           <th class="th-inner">STT</th>
+          <th class="th-inner">Dịch vụ</th>
           <th class="th-inner">Nơi xuất Phát</th>
           <th class="th-inner">Điểm đến</th>
           <th class="th-inner">Ngày Đi</th>
@@ -33,6 +34,9 @@
             <tbody class="fixed-table-body">
               <td class="th-inner">
                 <?= $i ?>
+              </td>
+              <td class="th-inner">
+                <?= $result['name'] ?>
               </td>
               <td class="th-inner">
                 <?= $result['noi_bd'] ?>

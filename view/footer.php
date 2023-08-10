@@ -59,7 +59,21 @@
 <!-- dkdn -->
 <script src="./view/js/dkdn.js"></script>
 <!-- userkh -->
-
+<script>
+   document.getElementById("id_pk_price_tour").addEventListener("change", function() {
+    var selectedOption = this.value;
+    fetch("./model/get_price.php?id_price=" + selectedOption)
+        .then(response => response.json()) 
+        .then(data => {
+            // Cập nhật nội dung của label
+            document.getElementById("pricey").textContent = data.price_young;
+            document.getElementById("priceo").textContent = data.price_old;
+        })
+        .catch(error => {
+            console.error("Lỗi khi lấy giá trị mới: " + error);
+        });
+});
+</script>
 </body>
 
 </html>

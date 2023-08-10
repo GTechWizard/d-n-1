@@ -467,6 +467,15 @@ if (isset($_GET['act']) && $_GET['act']) {
 				include('dv_ldv/dv_act/ct_dv_act.php');
 			}
 			break;
+		case 'checkdvact':
+			if (isset($_GET['id']) && $_GET['id'] != '') {
+				$id_dv_user = $_GET['id'];
+				$id_dv = $_GET['iddv'];
+				$dvUser = new dvUser;
+				$dvUser->updateCheckDvUser($id_dv_user);
+				header('location:?act=ct_dv_act&id='.$id_dv.'');
+			}
+			break;
 		case 'delete_dv_act':
 			if (isset($_GET['id']) && $_GET['id'] != '') {
 				$id_dv_act = $_GET['id'];
