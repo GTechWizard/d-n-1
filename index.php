@@ -324,13 +324,10 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         // form tìm nahnh
         case 'findfast':
             if (isset($_POST['find']) && $_POST['find']) {
-                $day_start = $_POST['day_start'];
-                $day_end = $_POST['day_end'];
-                $price = $_POST['price'];
                 $noi_di = $_POST['noi_di'];
                 $diem_den = $_POST['diem_den'];
                 $dv = new dv;
-                $list = $dv->findfast($day_start, $day_end, $price, $noi_di, $diem_den);
+                $list = $dv->findfast($noi_di, $diem_den);
                 include('view/findfast.php');
             }
 
