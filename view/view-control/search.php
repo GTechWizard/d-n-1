@@ -11,7 +11,7 @@
 
 <script>
     $(document).ready(function() {
-        var action = "search";
+        var action = "search";  
         $("#search_name").keyup(function() {
             var search_name = $("#search_name").val();
             if(search_name !='')

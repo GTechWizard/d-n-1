@@ -100,9 +100,3 @@
         <?php }?>
   </div>
 </section>
-<section class="pagination">
-  <div class="container" style="border-bottom:1px solid black ;">
-    <span>1</span> <span>2</span> <span>3</span> <span>4</span>
-    <span><i class="bx bx-right-arrow-alt"></i></span>
-  </div>
-</section>

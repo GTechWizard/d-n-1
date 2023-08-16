@@ -17,7 +17,7 @@
                             $id = $_SESSION['id'];
                             //lấy danh sách dịch vụ
                             $list_service = $conn->list_service_user($id);
-                            
+                            if(isset($list_service)&&$list_service!=''){
                             foreach($list_service as $index=>$dich_vu){
                                 //id dể tìm tên dịch vụ từ id dịch vụ trong bảng dv_user
 
@@ -50,7 +50,9 @@
                                         <li><a href="?act=chitietbill&id='.$infor_dv['id_pk_user'].'&iddvu='.$infor_dv['id_dv_user'].'">chi tiết</a></li>
                                     </ul>';
                             }
-    
+                          }else{
+                            echo'<br><b>Bạn Chưa Đăng Ký Dịch Vụ Nào</b>';
+                          }
                     ?>
                 </div>
             </div>

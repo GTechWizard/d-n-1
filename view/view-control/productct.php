@@ -202,29 +202,19 @@ if (isset($getiddv) && $getiddv) {
                                 </div>
 
                                 <div class="ratings">
-
-                                    <p style="background:var(--red);"><i class="fas fa-star"></i><span>
+                                    <p style="background:var(--red);">
+                                        <i class="fas fa-star"></i>
+                                        <span>
                                             <?= $resultbluser['danh_gia'] ?>
-                                        </span></p>
-                                    <!-- <p style="background:var(--orange);"><i class="fas fa-star"></i> <span></span></p>
-                  <p style="background:var(--orange);"><i class="fas fa-star"></i> <span></span></p>
-                  <p style="background:var(--main-color);"><i class="fas fa-star"></i> <span></span></p>
-                  <p style="background:var(--main-color);"><i class="fas fa-star"></i> <span></span></p> -->
+                                        </span>
+                                    </p>
                                 </div>
                                 <h3 class="title">
                                     <?= $resultbluser['td'] ?>
                                 </h3>
-
-                                <p class="description">
+                                <span class="description">
                                     <?= $resultbluser['noi_dung'] ?>
-                                </p>
-                                <br>
-                                <!-- <form action="" method="post" class="flex-btn">
-                                    <input type="hidden" name="delete_id" value="">
-                                    <div id="my-form" class="hidden">
-                                    </div>
-                                    <input type="submit" value="xóa đánh giá" class="inline-delete-btn" name="delete_review" onclick="return confirm('delete this review?');">
-                                </form> -->
+                                </span>
                             </div>
                         <?php }
                     }

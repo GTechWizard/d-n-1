@@ -8,7 +8,7 @@
 
         <!--  check in -->
         <div class="right">
-            <h1>Thông Tin Dịch Vụ</h1>
+            <h1>Thông Tin Dịch Vụ</h1><br><br>
 
             <div class="form">
                 <div class="group">
@@ -17,14 +17,10 @@
                 <div class="group">
                 <p>Tên Tour: <?=$_POST['nametour']?></p>
                 </div>
-    
-                <div class="group">
-                <p>Điểm Đón: <?=$_POST['diemden']?></p>
-                </div>
 
                 <div class="group">
                 <p>Email Của Bạn: <?=$_POST['email']?></p>
-                </div><br>
+                </div>
     
                 <div class="group">
                     <p>Số Điện Thoại Của Bạn: <?=$_POST['sdt']?></p>
