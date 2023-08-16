@@ -15,7 +15,7 @@
 <!-- All Products -->
 <section class="section all-products" id="products">
   <div class="top container" style="border-bottom:1px solid black ;">
-    <h1 style="text-transform: uppercase;">tất cả tour</h1>
+    <h1 style="text-transform: uppercase;"><?php echo $a ?></h1>
 <!--  
     <form style="margin-bottom: 10px;">
       <select>
@@ -40,7 +40,7 @@
       <div class="card-1">
         <div class="card-top">
           <div class="card-top-img">
-            <img src="<?=$result['img_dv']?>" alt="">
+            <img src="uploads/<?=$result['img_dv']?>" alt="">
           </div>
           <div class="card-top-hover">
             <div class="card-top-hover-price">

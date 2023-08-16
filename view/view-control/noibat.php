@@ -81,7 +81,20 @@
                     </div>
 
                     <div class="card-bottom-submit">
-                      <a href="index.php?act=chitiettour&idsp=<?php echo $result['id_dv'] ?>"><input type="submit" value="chi tiết"></a>
+                    <div class="card-bottom-submit" style="margin-top: 10px;
+    margin: auto;
+    margin-top: 10px;
+    /* color: white; */
+    /* text-align: center; */
+    /* font-weight: bold; */
+    background: orange;
+    width: 50%;
+    border: 1px solid;
+    padding: 5px;
+    border-radius: 20px;">
+                      <a href="index.php?act=chitiettour&idsp=<?php echo $result['id_dv'] ?>" style="color: white; font-weight: bold; font-size: 20px;">Chi tiết</a>
+                    </div>
+                     
                     </div>
                   </div>
                 </div>

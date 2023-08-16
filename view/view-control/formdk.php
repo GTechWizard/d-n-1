@@ -49,13 +49,13 @@
             </div>
   <div class="grid_two">
             <div class="input_box">
-              <input type="password" placeholder="Create password" required name="pass_sign"/>
+              <input type="password" placeholder="Create password" min="3" max="100" required name="pass_sign"/>
               <i class="uil uil-lock password"></i>
               <i class="uil uil-eye-slash pw_hide"></i>
             </div>
 
             <div class="input_box">
-              <input type="password" placeholder="Confirm password" required name="re_pass_sign"/>
+              <input type="password" placeholder="Confirm password" required name="re_pass_sign" min="3" max="100"/>
               <i class="uil uil-lock password"></i>
               <i class="uil uil-eye-slash pw_hide"></i>
             </div>
@@ -68,7 +68,7 @@
 
             <div class="input_box">
               <i class="uil uil-phone"></i>
-              <input type="phone" placeholder="Enter your phone" required name="num_phone_sign"/>
+              <input type="phone" placeholder="Enter your phone"min="10" max="11" required name="num_phone_sign"/>
             </div>
             </div>
 

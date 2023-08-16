@@ -55,6 +55,12 @@ class comment{
    $result = $this->db->select($query);
    return $result;
  }
+ public function getdgcountbl($id_dv)
+ {
+   $query = "SELECT COUNT(bl.id_bl) AS count, AVG(bl.danh_gia) AS dg FROM `bl` WHERE bl.id_pk_dv= '$id_dv'";
+   $result = $this->db->select($query);
+   return $result;
+ }
 }
 
 

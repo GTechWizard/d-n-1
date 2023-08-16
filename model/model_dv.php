@@ -18,6 +18,24 @@ class dv
     $result = $this->db->select($query);
     return $result;
   }
+  public function getDvNoiBd()
+  {
+    $query = "SELECT * FROM dv GROUP BY dv.noi_bd";
+    $result = $this->db->select($query);
+    return $result;
+  }
+  public function getDiemDen($noi_bd)
+  {
+    $query = "SELECT * FROM dv JOIN price_tour ON price_tour.id_pk_dv =dv.id_dv WHERE dv.noi_bd LIKE '%$noi_bd%'";
+    $result = $this->db->select($query);
+    return $result;
+  }
+  public function getNoiBd($diem_d)
+  {
+    $query = "SELECT * FROM dv JOIN price_tour ON price_tour.id_pk_dv =dv.id_dv WHERE dv.diem_dem LIKE '%$diem_d%'";
+    $result = $this->db->select($query);
+    return $result;
+  }
   public function getDvWeak()
   {
     $query = "SELECT COUNT(*) AS count
@@ -72,14 +90,13 @@ public function getContentPrice($id_dv)
     $query = "DELETE FROM `price_tour` WHERE `price_tour`.`id_price` = '$id_price'";
     $this->db->detele($query);
   }
-  public function findfast($day_start, $day_end, $price_start, $price_end, $diem_den)
+  public function findfast($noi_di, $diem_den)
 {
     $query = "SELECT *
     FROM dv
     JOIN price_tour ON dv.id_dv = price_tour.id_pk_dv
-    WHERE price_tour.day_start BETWEEN '$day_start' AND '$day_end'
-      AND price_tour.price_old >= $price_start AND price_tour.price_old <= $price_end
-      AND dv.diem_den LIKE '%$diem_den%'";
+    WHERE dv.noi_bd LIKE '%$noi_di%'
+    AND dv.diem_den LIKE '%$diem_den%'";
     $result= $this->db->query($query);
     return $result;
 }

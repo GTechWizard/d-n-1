@@ -14,10 +14,10 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     switch ($act) {
         case 'alldv':
-                include "view/alldv.php";
+            include "view/alldv.php";
             break;
         case 'alltt':
-                include "view/alltt.php";
+            include "view/alltt.php";
             break;
 
         case 'chitiettour':
@@ -76,7 +76,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $pass = $_POST['log_pass'];
 
                 $logsign = new user;
-                $log = $logsign->get_user_email($email);
+                $log = $logsign->get_user_email_pass($pass,$email);
                 if (isset($log) && $log) {
                     // important!! fetch_assoc quét object
                     $result = $log->fetch_assoc();
@@ -166,7 +166,6 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $ngay_dkdv = date('Y-m-d');
                 $id_pk_dv = $_POST['id_pk_dv'];
                 $nameuser = $_POST['nameuser'];
-                $diemden = $_POST['diemden'];
                 $email = $_POST['email'];
                 $sdt = $_POST['sdt'];
                 $price_young = $_POST['price_young'];
@@ -176,6 +175,13 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $dv_user = new dvUser;
                 $dv_user->insert_dv_user($ngay_dkdv, $id_pk_dv, $nameuser, $email, $sdt, $price_young, $price_old, $id_pk_user, $id_pk_price_tour);
                 include "view/bill.php";
+            }
+            break;
+        case 'chitietbill':
+            if (isset($_GET['id']) && isset($_GET['iddvu'])) {
+                $id_user = $_GET['id'];
+                $id_dv_user = $_GET['iddvu'];
+                header('location:view/user/billafter.php?act=chitiet&idu='.$id_user.'&idvu='.$id_dv_user.'');
             }
             break;
 
@@ -258,31 +264,50 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             if (isset($_POST['up_infor']) && $_POST['up_infor']) {
                 //kiểm tra mật khẩu cũ
                 $user_pass = $_SESSION['pass'];
-                $new_name = $_POST['up_name'];
+                $name = $_POST['up_name'];
                 $check_pass = $_POST['up_pass'];
-                $num_phone = $_POST['up_num'];
-                $locate = $_POST['up_locate'];
+                $sdt = $_POST['up_num'];
+                $dia_chi = $_POST['up_locate'];
+                $email = $_POST['up_email'];
                 if ($check_pass != $user_pass) {
                     echo "<script>
                             alert('Mật khẩu không đúng');
                         </script>";
                 } else {
-
                     $conn = new user;
                     $id = $_SESSION['id'];
-                    $email = $_POST['up_email'];
-                    $vai_tro = 0;
-                    $conn->update_user($new_name, $num_phone, $vai_tro, $locate, $email, $id);
-                    $up = $conn->get_one_User($id);
-                    $back_result = $up->fetch_assoc();
+                    // Kiểm tra và xử lý biến name
+                    $nameok = $name != '' ? $name : $_SESSION['username'];
 
+                    // Kiểm tra và xử lý biến sdt
+                    $sdtok = $sdt != '' ? $sdt : $_SESSION['sdt'];
 
-                    $_SESSION['name'] = $back_result['name'];
-                    $_SESSION['pass'] = $back_result['pass'];
-                    $_SESSION['dia_chi'] = $back_result['dia_chi'];
-                    $_SESSION['email'] = $back_result['email'];
-                    $_SESSION['sdt'] = $back_result['sdt'];
-                    header('location:?act=user&cn=hsct');
+                    // Kiểm tra và xử lý biến dia_chi
+                    $dia_chiok = $dia_chi != '' ? $dia_chi : $_SESSION['dia_chi'];
+
+                    // Kiểm tra và xử lý biến email
+                    $emailok = $email != '' ? $email : $_SESSION['email'];
+                    $conn->update_user_nd($nameok, $sdtok, $dia_chiok, $emailok, $id);
+
+                }
+                $up = $conn->get_one_User($id);
+                $back_result = $up->fetch_assoc();
+                $_SESSION['name'] = $back_result['name'];
+                $_SESSION['pass'] = $back_result['pass'];
+                $_SESSION['dia_chi'] = $back_result['dia_chi'];
+                $_SESSION['email'] = $back_result['email'];
+                $_SESSION['sdt'] = $back_result['sdt'];
+                header('location:?act=user&cn=hsct');
+            }
+
+            if (isset($_POST['pass']) && $_POST['pass']) {
+                $user_pass = $_SESSION['pass'];
+                $email = $_POST['email'];
+                $sdt = $_POST['sdt'];
+                if ($email != $_SESSION['email'] && $sdt != $_SESSION['sdt']) {
+                    header('location:?act=user&cn=qmk&k098hsjuannkiy');
+                } else {
+                    header('location:?act=user&cn=qmk&mzxcnmjhdajsiwdnn');
                 }
             }
             break;
@@ -297,24 +322,12 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             break;
 
         // form tìm nahnh
-        case 'like':
-            if (isset($_GET['id']) && $_GET['id']) {
-                $iddv = $_GET['id'];
-                $iduser = $_SESSION['id'];
-                $user = new user;
-                $user->deletelike($iduser, $iddv);
-            }
-            header('location:?act=user&cn=dvl');
-            break;
         case 'findfast':
             if (isset($_POST['find']) && $_POST['find']) {
-                $day_start = $_POST['day_start'];
-                $day_end = $_POST['day_end'];
-                $price_start = $_POST['price_start'];
-                $price_end = $_POST['price_end'];
+                $noi_di = $_POST['noi_di'];
                 $diem_den = $_POST['diem_den'];
                 $dv = new dv;
-                $list = $dv->findfast($day_start, $day_end, $price_start, $price_end, $diem_den);
+                $list = $dv->findfast($noi_di, $diem_den);
                 include('view/findfast.php');
             }
 
@@ -334,7 +347,20 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
 
 
             break;
-
+        case 'like':
+            if (isset($_GET['iduser']) && isset($_GET['iddv']) && $_GET['iddv'] != '' && $_GET['iduser'] != '') {
+                $iduser = $_GET['iduser'];
+                $iddv = $_GET['iddv'];
+                $like = new dv;
+                $like->like($iduser, $iddv);
+                header("location:?act=chitiettour&idsp=$iddv");
+            } else {
+                include "view/view-control/formdk.php";
+                echo "<script>
+                            alert('Vui lòng đăng nhập');
+                        </script>";
+            }
+            break;
 
 
         // thiếu là sai

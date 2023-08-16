@@ -37,8 +37,13 @@ class user{
     $query ="DELETE FROM `user` WHERE `user`.`id_user` = '$userID'";
     $this->db->detele($query);
   }
-  public function update_user($name,$sdt,$vai_tro,$dia_chi,$email,$id){
-    $query ="UPDATE `user` SET `name` = '$name', `sdt`='$sdt',`vai_tro`='$vai_tro',`dia_chi`='$dia_chi',`email`='$email' WHERE `id_user` = '$id';";
+  public function update_user($name, $sdt, $vai_tro, $dia_chi, $email, $id) {
+    // Sử dụng câu lệnh truy vấn tham số hóa (prepared statement) để tăng tính bảo mật và hiệu suất
+    $query = "UPDATE `user` SET `name` = '$name', `sdt` = '$sdt',`vai_tro`='$vai_tro', `dia_chi` = '$dia_chi', `email` = ' $email' WHERE `id_user` = '$id'";
+    $this->db->update($query);
+  }
+  public function update_user_nd($name,$sdt,$dia_chi,$email,$id){
+    $query ="UPDATE `user` SET `name` = '$name', `sdt`='$sdt',`dia_chi`='$dia_chi',`email`='$email' WHERE `id_user` = '$id';";
     $this->db->update($query);
   }
   // ai viết sao ko cho thực thi
@@ -66,7 +71,16 @@ class user{
     return $result;
   }
   public function name_service_user($id_pk_dv){
-    $query="SELECT * FROM `dv` WHERE `id_dv`= '$id_pk_dv'";
+    $query="SELECT   dv.id_dv,dv.name,
+    price_tour.day_end,
+    price_tour.day_start,
+    sl_ng_dk_user.so_luong_old,
+    sl_ng_dk_user.so_luong_young,
+    price_tour.price_old,
+    price_tour.price_young,
+    dv_user.trang_thai,dv_user.id_pk_user,dv_user.id_dv_user FROM
+    dv JOIN price_tour ON price_tour.id_pk_dv = dv.id_dv JOIN
+    sl_ng_dk_user ON sl_ng_dk_user.id_pk_price_tour = price_tour.id_price JOIN dv_user ON dv_user.id_pk_dv = dv.id_dv WHERE dv_user.id_dv_user= '$id_pk_dv'";
     $result =$this->db->select($query);
     return $result;
   }
@@ -74,6 +88,12 @@ class user{
   public function get_user_email($email){
     // = sai bằng là so sánh cả kiều và các dạng ký tự
     $query="SELECT * FROM `user` WHERE `user`.`email` LIKE '$email'";
+    $result =$this->db->select($query);
+    return $result;
+  }
+  public function get_user_email_pass($pass,$email){
+    // = sai bằng là so sánh cả kiều và các dạng ký tự
+    $query="SELECT * FROM `user` WHERE user.pass= $pass AND `user`.`email` LIKE '$email'";
     $result =$this->db->select($query);
     return $result;
   }

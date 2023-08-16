@@ -172,15 +172,30 @@ if (isset($_GET['act']) && $_GET['act']) {
 					$alert = "chỉ cho phép ảnh có đuôi JPG, JPEG, PNG & GIF";
 					$uploadOk = 0;
 				}
+				$check = 1;
+				$loai = new loai;
+				$allloai = $loai->getAllLoai();
+				if(isset($allloai)&& $allloai!=''){
+				while ($result = $allloai->fetch_assoc()) {
+					if ($_POST['kieu_dv'] == $result['kieu_dv']) {
+						echo "<script>alert('Đã tồn tại loại này');</script>";
+						$check = 0;
+					}
+				}
+				}
+
+				if ($check == 1) {
+					$loai->insert_loai($kieu_dv, $target_file);
+				} else {
+					header('location:?act=loai');
+					die("error");
+				}
 				// Kiểm tra xem có xảy ra lỗi khi tải lên tệp hay không
-				if ($uploadOk == 0) {
+				if ($uploadOk == 0 && $check == 1) {
 					$alert = "ảnh up không thành công";
 				} else {
 					move_uploaded_file($_FILES["img"]["tmp_name"], $target_file);
 				}
-
-				$loai = new loai;
-				$loai->insert_loai($kieu_dv, $target_file);
 				if (isset($alert) && $alert != "")
 					echo "<script>alert('$alert');</script>";
 				header('location:?act=loai');
@@ -202,7 +217,7 @@ if (isset($_GET['act']) && $_GET['act']) {
 		case 'dv_new':
 			if (isset($_POST['save']) && $_POST['save']) {
 				extract($_POST);
-				$target_dir = "uploads/";
+				$target_dir = "../uploads/";
 				$target_file = $target_dir . date('HisadmY') . basename($_FILES["img_dv"]["name"]);
 				$uploadOk = 1;
 				$imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
@@ -289,9 +304,9 @@ if (isset($_GET['act']) && $_GET['act']) {
 					// echo $_POST['name'], $_POST['noi_bd'], $_POST['diem_den'], $_POST['id_pk_loai'], $_POST['tong_ng'], '', $_POST['bv'], $_POST['id_dv'];
 				}
 				if (isset($alert) && $alert != "") {
-				echo "<script>alert('$alert');</script>";
-			}
-			header('location:?act=dv');
+					echo "<script>alert('$alert');</script>";
+				}
+				header('location:?act=dv');
 			}
 			break;
 		case 'price':
@@ -334,7 +349,7 @@ if (isset($_GET['act']) && $_GET['act']) {
 		case 'add_news':
 			if (isset($_POST['save']) && $_POST['save']) {
 				extract($_POST);
-				$target_dir = "uploads/";
+				$target_dir = "../uploads/";
 				$target_name = basename($_FILES["img"]["name"]);
 				$target_file = $target_dir . date('HisadmY') . basename($_FILES["img"]["name"]);
 				$uploadOk = 1;
@@ -382,7 +397,7 @@ if (isset($_GET['act']) && $_GET['act']) {
 		case 'update_tt':
 			if (isset($_POST['save']) && ($_POST['save'])) {
 				extract($_POST);
-				$target_dir = "uploads/";
+				$target_dir = "../uploads/";
 				$target_name = basename($_FILES["img"]["name"]);
 				$target_file = $target_dir . date('HisadmY') . basename($_FILES["img"]["name"]);
 				$uploadOk = 1;
@@ -452,6 +467,15 @@ if (isset($_GET['act']) && $_GET['act']) {
 				$dvUser = new dvUser;
 				$list = $dvUser->getDVUserID($id_dv);
 				include('dv_ldv/dv_act/ct_dv_act.php');
+			}
+			break;
+		case 'checkdvact':
+			if (isset($_GET['id']) && $_GET['id'] != '') {
+				$id_dv_user = $_GET['id'];
+				$id_dv = $_GET['iddv'];
+				$dvUser = new dvUser;
+				$dvUser->updateCheckDvUser($id_dv_user);
+				header('location:?act=ct_dv_act&id='.$id_dv.'');
 			}
 			break;
 		case 'delete_dv_act':

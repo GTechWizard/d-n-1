@@ -182,6 +182,17 @@ justify-content: center;
 .card-top-hover .card-top-submit a:hover{
   background-color: pink;
 }
+.overscoll{
+  overflow: auto;
+}
+.overscoll::-webkit-scrollbar{
+  width: 1px;
+}
+.mk_new {
+  padding: 1%;
+  background-color:wheat ;
+}
+
   </style>
 </head>
 

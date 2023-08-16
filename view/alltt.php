@@ -32,7 +32,7 @@
                 <div class="card-1">
                   <div class="new-top">
                     <div class="new-top-img">
-                      <img src="<?= $result1['img_tt'] ?>" alt="img">
+                      <img src="uploads/<?= $result1['img_tt'] ?>" alt="img">
                     </div>
                   </div>
                   <div class="new-bottom">
