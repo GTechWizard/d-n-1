@@ -175,11 +175,13 @@ if (isset($_GET['act']) && $_GET['act']) {
 				$check = 1;
 				$loai = new loai;
 				$allloai = $loai->getAllLoai();
+				if(isset($allloai)&& $allloai!=''){
 				while ($result = $allloai->fetch_assoc()) {
 					if ($_POST['kieu_dv'] == $result['kieu_dv']) {
 						echo "<script>alert('Đã tồn tại loại này');</script>";
 						$check = 0;
 					}
+				}
 				}
 
 				if ($check == 1) {
